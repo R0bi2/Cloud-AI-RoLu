@@ -8,12 +8,13 @@ Aufruf:
     docker compose run --rm app tokens.py
 """
 
+
 from llm import MODEL, client
 
 TEXTE = {
-    "Deutsch": "Wie melde ich mich im Studiengang Angewandte Informatik "
-               "für die Prüfung in Mathematik 3 an, und bis wann ist "
-               "die Anmeldefrist?",
+    "Deutsch": "Wie erledige ich als Student im Hochschulstudiengang Angewandte Informatik "
+               "die Prüfungsanmeldung in Studiumsmodul Mathematik 3, und bis zu welchem Endtag ist "
+               "die Prüfungsannmeldefrist?",
     "Englisch": "How do I register for the Mathematics 3 exam in the "
                 "Applied Computer Science program, and what is the "
                 "registration deadline?",

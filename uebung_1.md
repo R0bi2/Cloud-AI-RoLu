@@ -52,13 +52,75 @@ docker compose run --rm app hallo_llm.py "Wie melde ich mich zu einer Prüfung a
 **Aufgaben:**
 
 1. Lest `compose.yaml`, `app/llm.py` und `app/hallo_llm.py`. Beschreibt im README in drei, vier Sätzen: Welche Container laufen, und wie findet die Anwendung das Modell?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+In compose.yaml wird steht in zeile 2 ollama: mit image ollama/ollama:0.35.1 definiert
+der container wird mit Host und entrypoint geladen
+in Zeile 23 wird ein zweiter container "app: " definiert.
+
+in llm.py in Zeile 13 wird 
+MODEL = os.environ["LLM_MODEL"] gesetzt
+"LLM_MODELL" wird dabei aus der .env geholt das gleiche mit der URL
+
+</div>
+
+
+
 2. Stellt drei verschiedene Fragen an den Campus-Assistenten. Notiert jeweils **Time to First Token** und **Gesamtdauer**.
 
----
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Frage 1:
+    "Wie Studenten gibt es an der HTGW?"
+    Modell:              llama3.2:3b @ http://ollama:11434/v1
+    Time to First Token: 128 ms
+    Gesamtdauer:         9694 ms
+    Zeichen Antwort:     538
+<br><br>
+Frage 2:
+    "Wann wurde die HTWG gegründet?"
+    Modell:              llama3.2:3b @ http://ollama:11434/v1
+    Time to First Token: 566 ms
+    Gesamtdauer:         5282 ms
+    Zeichen Antwort:     242
+<br><br>
+Frage 3:
+    "Ist blau eine Farbe?"
+    Modell:              llama3.2:3b @ http://ollama:11434/v1
+    Time to First Token: 384 ms
+    Gesamtdauer:         2935 ms
+    Zeichen Antwort:     122
+
+</div>
 
 ## Teil 2 · Modell austauschen (Kern)
 
 Ändert in `.env` nur die Zeile `LLM_MODEL` auf `qwen2.5:0.5b` und stellt dieselben drei Fragen noch einmal. **Am Code ändert ihr nichts.**
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Frage 1:
+    "Wie viele Studenten gibt es an der HTGW?"
+    Modell:              qwen2.5:0.5b @ http://ollama:11434/v1
+    Time to First Token: 2265 ms
+    Gesamtdauer:         9884 ms
+    Zeichen Antwort:     1348
+<br><br>
+Frage 2:
+    "Wann wurde die HTWG gegründet?"
+    Modell:              qwen2.5:0.5b @ http://ollama:11434/v1
+    Time to First Token: 1645 ms
+    Gesamtdauer:         2064 ms
+    Zeichen Antwort:     61
+<br><br>
+Frage 3:
+    "Ist blau eine Farbe?"
+    Modell:              qwen2.5:0.5b @ http://ollama:11434/v1
+    Time to First Token: 139 ms
+    Gesamtdauer:         290 ms
+    Zeichen Antwort:     24
+</div>
+---
+
 
 **Aufgaben:**
 
@@ -66,11 +128,20 @@ docker compose run --rm app hallo_llm.py "Wie melde ich mich zu einer Prüfung a
 
 | Frage | Modell | TTFT (ms) | Gesamt (ms) | Antwort brauchbar? |
 |---|---|---|---|---|
-| … | llama3.2:3b | | | |
-| … | qwen2.5:0.5b | | | |
+| "Wie viele Studenten gibt es an der HTGW?" | llama3.2:3b | 144 ms | 7575 ms | nein |
+| "Wie viele Studenten gibt es an der HTGW?" | qwen2.5:0.5b | 134 ms | 425 ms | nein |
 
 2. Fragt beide Modelle: „Ist die HTWG Konstanz eine private oder eine staatliche Hochschule?“ Was fällt euch auf?
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+A: Die Antwort ist in beiden fällen knapp gefasst und klar formuliert. llama3.2 sagt richtig aus, es ist eine staatliche Hochschule, auch bei mehrmaligem Fragen. qwen2.5 ebenfalls.
+llama 3.2
+Time to First Token: 588 ms
+Gesamtdauer:         2511 ms
 
+qwen 2.5
+Time to First Token: 97 ms
+Gesamtdauer:         395 ms
+</div>
 **Optional, wenn die Academic Cloud erreichbar ist:** Mit einem API-Key über [KISSKI](https://kisski.gwdg.de/en/leistungen/2-02-llm-service/) tragt ihr Variante B aus `.env.example` ein und nutzt `qwen3-30b-a3b-instruct-2507` als drittes Modell im Vergleich. Wer keinen Key hat oder wenn der Dienst nicht läuft, verliert dadurch nichts. Alle Teile funktionieren komplett lokal.
 
 ---
@@ -88,8 +159,37 @@ docker compose run --rm app sampling.py
 Das Skript stellt dieselbe Frage je fünfmal bei Temperature 0, 0,7 und 1,2 und zählt die verschiedenen Antworten.
 
 1. Wie viele verschiedene Antworten bekommt ihr bei jeder Temperature?
-2. Liefert Temperature 0 wirklich fünfmal dieselbe Antwort? Wenn nicht: Woran könnte das liegen? (Skript VL 2, Abschnitt „Inkonsistenz“.)
-3. Startet das Skript mit einer Faktenfrage, z. B. `sampling.py "Ist die HTWG Konstanz eine private oder staatliche Hochschule? Antworte mit einem Satz."`. Achtet nicht nur auf „privat oder staatlich“, sondern auf jedes Detail, etwa wofür die Abkürzung HTWG steht. Welche Fehler kommen schon bei Temperature 0 vor, welche erst bei höheren Werten? Was sagt das über die Ursache (Sampling oder Trainingsdaten)?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Temperature 0: 1x verschiedene (Sonnenblume)
+<br>
+Temperature 0.7: 5x verschiedene (4 davon im Zusammenhang mit "Sonne" )
+<br>
+Temperature 1.2 5x verschiedene (verschiedene Kontexte, teilweise unkorrekte Grammatik)
+</div>
+
+2. Liefert Temperature 0 wirklich fünfmal dieselbe Antwort? Wenn nicht: Woran könnte das liegen? (Skript VL 2, Abschnitt „Inkonsistenz)
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Auch bei mehrfacher Ausführung liefert es 5x die gleiche Antwort
+</div>
+
+3. Startet das Skript mit einer Faktenfrage, z. B. `docker compose run --rm app sampling.py "Ist die HTWG Konstanz eine private oder staatliche Hochschule? Antworte mit einem Satz."`. Achtet nicht nur auf „privat oder staatlich“, sondern auf jedes Detail, etwa wofür die Abkürzung HTWG steht. Welche Fehler kommen schon bei Temperature 0 vor, welche erst bei höheren Werten? Was sagt das über die Ursache (Sampling oder Trainingsdaten)?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+    Bei Temperatur 0 bleibt die Antwort 5x gleich. Es wird richtigerweise gesagt die HTWG sei eine staatliche hochschule. Es fehlt in der Ausformulierung von HTWG das "und Gestaltung"
+  
+    Bei Temperatur 0.7 Gibt es 3 unterschiedliche Antworten.
+    staatlich bleibt korrekt.
+    Er lässt er die Ausschreibung entweder ganz aus, vergisst wieder das "und Gestaltung", oder erfindet eine Ausschreibung (Technologie statt Technik).
+
+    Bei Temperatur 1.2 gibt es 5x verschiedene Antworten
+    staatlich ist korrekt.
+    Er denkt sich die Ausschreibung jedes mal (-falsch-) neu aus
+
+    Es sagt aus das kreativeres sampling fehlende Trainingsdaten nicht ersetzen kann.
+    Man sollte Temperatur nur bei nicht Fakten erhöhen können
+</div>
 
 ### Tokens
 
@@ -98,7 +198,38 @@ docker compose run --rm app tokens.py
 ```
 
 1. Wie viele Tokens braucht der deutsche Text, wie viele der englische? Um wie viel Prozent ist Deutsch teurer?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+    Modell: llama3.2:3b
+    Deutsch    63 Tokens für 21 Wörter
+    Englisch   49 Tokens für 21 Wörter
+
+    Deutsch braucht 14 Tokens mehr (+29%).
+
+    Wir vermuten im englischen prompt ist das sampling zielgerichteter weil z.B. erst mathematics als wort fällt ausserdem ist es naheliegend dass deutsche Wörter in mehr Tokens aufgeteilt sind
+
+    registration + deadline < |Anmelde|frist|
+</div>
+<br>
 2. Ersetzt in `tokens.py` die Texte durch eine eigene Frage mit langen zusammengesetzten Wörtern (z. B. „Prüfungsanmeldungsfrist“). Wird der Unterschied größer?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Modell: llama3.2:3b
+
+Deutsch    75 Tokens für 21 Wörter
+Englisch   49 Tokens für 21 Wörter
+
+Deutsch braucht 26 Tokens mehr (+53%).
+<br><br><br>
+Modell: llama3.2:3b
+
+Deutsch    81 Tokens für 23 Wörter
+Englisch   49 Tokens für 21 Wörter
+
+Deutsch braucht 32 Tokens mehr (+65%).
+
+mit längeren wörtern verdoppelt sich der Token Mehraufwand schon. Mit zusätzlichen Wörtern noch stärker.
+</div>
 
 ---
 
