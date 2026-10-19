@@ -252,25 +252,146 @@ docker compose run --rm app einordnen.py "Eure eigene Mail"
 **Aufgaben zur Auswertung:**
 
 1. Wie viele der acht Mails ordnen `llama3.2:3b` und `qwen2.5:0.5b` jeweils richtig ein?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Modell: llama3.2:3b<br>
+7 von 8 Anliegen richtig (87,5 %).
+<br><br>
+Modell: qwen2.5:0.5b<br>
+2 von 8 Anliegen richtig (25 %).
+<br><br>
+Die Ergebnisse stammen aus dem Durchlauf am 19.10.2026 auf diesem Laptop.
+Hier wird erstmal nur das Anliegen verglichen, nicht Studiengang und Frist.
+Die einzelnen Antworten stehen in MESSUNGEN.md.
+
+</div>
+
 2. Schaut euch die Fehler an. Ist das Anliegen falsch, oder stimmen Studiengang und Frist nicht?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Bei llama3.2 ist in Mail 7 das Anliegen falsch. Es wird als Prüfung eingeordnet,
+obwohl es um den Zugang zu IEEE Xplore über die Bibliothek geht.
+<br><br>
+Die anderen Anliegen stimmen. Trotzdem sind nicht alle Felder richtig:
+Bei Mail 4 und 8 steht "null" als Text und bei Mail 5 wird eine Frist erfunden.
+<br><br>
+qwen2.5 ordnet jede Mail als Prüfung ein. Deshalb sind nur Mail 1 und 5 beim
+Anliegen richtig. Bei Mail 1 wird aber "3. Semester" als Frist ausgegeben,
+bei Mail 5 steht AIN statt MSI. Auch bei den anderen Mails wird häufig AIN
+ausgegeben oder ein Jahr zur Frist ergänzt, das gar nicht in der Mail steht.
+
+</div>
+
 3. Schaut auch bei den „richtigen“ Fällen genau hin: Steht bei `studiengang` manchmal der **Text** `"null"` statt eines echten leeren Werts? Nennt das Modell eine **Frist, die gar nicht in der Mail steht**? Warum lässt das Schema beides durch?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Ja. llama3.2 gibt bei Mail 4 und 8 für Studiengang und Frist den Text "null" aus.
+Das ist ein String und nicht der leere Wert null.
+Bei Mail 5 wird "bis zum 15.04.2024" als Frist genannt, obwohl keine Frist
+in der Mail steht.
+<br><br>
+Bei qwen2.5 steht z.B. in Mail 3 "30.10.2023", obwohl nur "30.10." vorgegeben ist.
+<br><br>
+Das Schema erlaubt für studiengang und frist einen String oder null.
+"null" ist auch ein gültiger String. Ob eine Frist wirklich in der Mail steht
+und ob ein Studiengang stimmt, wird dabei nicht geprüft.
+
+</div>
+
 4. Die letzte Mail in `mails.json` versucht, das Modell umzulenken. Was passiert? (Darum geht es in VL 3.)
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+llama3.2 bleibt bei der Einordnung und gibt sonstiges aus.
+studiengang und frist werden aber wieder als Text "null" ausgegeben.
+<br><br>
+qwen2.5 gibt ebenfalls eine JSON-Antwort aus, ordnet die Mail aber als Prüfung
+ein und setzt AIN als Studiengang.
+<br><br>
+Keines der beiden Modelle schreibt in diesem Durchlauf das verlangte Gedicht.
+Die Umlenkung hat hier also nicht zum Gedicht geführt, trotzdem ist die
+inhaltliche Einordnung bei qwen falsch. Ein einzelner Test zeigt nicht,
+dass solche Umlenkungsversuche grundsätzlich abgefangen werden.
+
+</div>
+
 5. Entfernt testweise `response_format` und verlasst euch nur auf den System-Prompt. Gebt die Rohantwort des Modells mit `print` aus. Was geht schief? Warum bringt euer erneuter Versuch bei Temperature 0 nichts, und was könntet ihr ändern? Stellt `response_format` danach wieder her.
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Getestet wurde mit der eigenen Mail:
+"Ich studiere AIN und möchte mich bis 20.10. von einer Prüfung abmelden."
+<br><br>
+Ohne response_format geben beide Modelle die Antwort in einem Markdown-Codeblock
+aus. Pydantic erwartet direkt JSON und kann das so nicht einlesen.
+llama3.2 schreibt außerdem "prüfung" statt "pruefung" und "studienengang"
+statt "studiengang". qwen2.5 verwendet andere Felder wie "status" und "antwort"
+und ergänzt bei der Frist wieder das Jahr 2023.
+<br><br>
+Bei Temperature 0 kommt bei allen drei Versuchen je Modell dieselbe falsche
+Antwort zurück. Nur die gleiche Anfrage zu wiederholen behebt den Fehler hier nicht.
+Man könnte den Prompt genauer machen oder beim nächsten Versuch den
+Validierungsfehler mitgeben. Eine höhere Temperature könnte die Antwort ändern,
+garantiert aber keine richtige Struktur.
+<br><br>
+Mit Schema wird die eigene Mail als pruefung, AIN und 20.10. erkannt
+(getestet mit llama3.2). response_format ist im Code wieder eingeschaltet.
+
+</div>
+
 
 ---
 
 ## Teil 5 · README (Kern)
 
-Euer README ist die Abgabe. Es enthält:
-
-1. **Namen** und Matrikelnummern
-2. **Start:** den einen Befehl, mit dem man euer System startet, und welche `.env` es braucht
-3. **Ergebnisse** aus Teil 1 bis 4: Beschreibung der Container, Tabelle aus Teil 2, Messwerte aus Teil 3, Trefferquote aus Teil 4
 4. **Reflexion**, je zwei bis vier Sätze:
     1. Warum steht das Modell in `.env` und nicht im Code?
+
+        <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+        So können wir das Modell wechseln, ohne den Code zu ändern.
+        Es wird nur LLM_MODEL in der .env angepasst. Auch URL und API-Key lassen sich
+        dadurch passend zum verwendeten Dienst einstellen.
+
+        </div>
+
     2. Welche Temperature habt ihr in `einordnen.py` gewählt, und warum?
+
+        <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+        Wir verwenden Temperature 0. Bei der Einordnung brauchen wir keine kreativen
+        Antworten, sondern möglichst wenig Streuung bei den gleichen Eingaben.
+        Das macht die Antworten aber nicht automatisch inhaltlich richtig.
+
+        </div>
+
     3. Was garantiert `response_format` mit Schema, und was nicht?
+
+        <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+        Das Schema gibt die JSON-Struktur, die Feldtypen und die erlaubten Anliegen vor.
+        Die erhaltene Antwort wird zusätzlich mit Pydantic geprüft.
+        Ob die Inhalte stimmen, ist damit nicht garantiert: "null" als Text oder eine
+        erfundene Frist sind als String trotzdem erlaubt.
+
+        </div>
+
     4. Wann würdet ihr ein lokales Modell, wann einen Cloud-Dienst wählen? Nennt je zwei Gründe.
+
+        <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+        Ein lokales Modell würden wir nehmen, wenn die Mails nicht an einen externen
+        Modelldienst übertragen werden sollen und wir nach dem Download unabhängig
+        von dessen Verfügbarkeit arbeiten möchten.
+        <br><br>
+        Einen Cloud-Dienst würden wir nehmen, wenn wir ein leistungsfähigeres Modell
+        benötigen oder die eigene Hardware für das gewünschte Modell nicht ausreicht.
+
+        </div>
+
 
 ---
 

@@ -1,15 +1,4 @@
-"""Teil D: Anfragen an den Campus-Assistenten strukturiert einordnen.
-
-Das Modell soll aus einer Mail drei Dinge herauslesen: das Anliegen,
-den Studiengang und eine Frist. Das Ergebnis verarbeitet ein Programm
-weiter, es muss also immer die gleiche Form haben.
-
-Aufruf:
-    docker compose run --rm app einordnen.py
-    docker compose run --rm app einordnen.py "Eure eigene Mail"
-
-Eure Aufgaben stehen bei den TODO-Kommentaren.
-"""
+"""Ordnet Studierenden-Mails ein und prüft die strukturierte Antwort."""
 
 import json
 import sys
@@ -35,7 +24,7 @@ class Anfrage(BaseModel):
 
 
 def schema_von(modell: type[BaseModel]) -> dict:
-    """Verpackt das JSON-Schema einer Pydantic-Klasse für response_format."""
+    """Verpackt das JSON-Schema für response_format."""
     return {
         "type": "json_schema",
         "json_schema": {
@@ -45,32 +34,36 @@ def schema_von(modell: type[BaseModel]) -> dict:
     }
 
 
-def einordnen(mail: str, versuche: int = 3) -> Anfrage:
-    """Fragt das Modell und gibt eine geprüfte Anfrage zurück."""
-    nachricht = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": mail},
-    ]
-    # TODO 1: Ruft das Modell auf. Wählt eine passende temperature
-    #         und übergebt response_format=schema_von(Anfrage).
-    # TODO 2: Prüft die Antwort mit Anfrage.model_validate_json(...).
-    # TODO 3: Schlägt die Prüfung fehl (ValidationError), versucht es
-    #         erneut, höchstens `versuche`-mal. Gebt bei jedem
-    #         Fehlversuch eine kurze Meldung aus. Klappt es gar
-    #         nicht, werft einen RuntimeError.
-    raise NotImplementedError("TODO: einordnen() umsetzen")
+def einordnen(mail: str) -> Anfrage:
+    for versuch in range(1, 4):
+        antwort = client.chat.completions.create(
+            model=MODEL,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": mail},
+            ],
+            # Für die Einordnung wollen wir wenig Streuung statt Kreativität.
+            temperature=0,
+            response_format=schema_von(Anfrage),
+        )
+        try:
+            return Anfrage.model_validate_json(antwort.choices[0].message.content or "")
+        except ValidationError as fehler:
+            print(f"Ungültige Antwort (Versuch {versuch}/3): {fehler}")
+    raise RuntimeError("Nach drei Versuchen keine gültige Einordnung erhalten.")
 
 
 def auswerten() -> None:
-    """Ordnet alle Test-Mails ein und vergleicht mit dem Erwarteten."""
-    with open("mails.json", encoding="utf-8") as f:
-        faelle = json.load(f)
+    with open("mails.json", encoding="utf-8") as datei:
+        faelle = json.load(datei)
     richtig = 0
     for fall in faelle:
         ergebnis = einordnen(fall["mail"])
-        # TODO 4: Vergleicht ergebnis mit fall["erwartet"]. Zählt einen
-        #         Fall als richtig, wenn das Anliegen stimmt. Gebt für
-        #         jeden Fall Mail, Ergebnis und ✓ oder ✗ aus.
+        stimmt = ergebnis.anliegen == fall["erwartet"]["anliegen"]
+        richtig += int(stimmt)
+        print(f"\n{fall['mail']}")
+        print(ergebnis.model_dump_json(indent=2))
+        print("Richtig" if stimmt else "Falsch")
     print(f"\n{richtig} von {len(faelle)} Anliegen richtig ({MODEL})")
 
 
