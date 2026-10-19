@@ -4,8 +4,8 @@
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Luis Zink<br>
-Robert Heffel 307485<br>
+Luis<br>
+Robert<br>
 
 </div>
 
