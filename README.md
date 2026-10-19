@@ -4,7 +4,7 @@
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Luis Zink (305101)<br>
+Luis Zink<br>
 Robert
 
 </div>
