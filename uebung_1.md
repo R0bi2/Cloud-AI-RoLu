@@ -261,9 +261,7 @@ Modell: llama3.2:3b<br>
 Modell: qwen2.5:0.5b<br>
 2 von 8 Anliegen richtig (25 %).
 <br><br>
-Die Ergebnisse stammen aus dem Durchlauf am 19.10.2026 auf diesem Laptop.
 Hier wird erstmal nur das Anliegen verglichen, nicht Studiengang und Frist.
-Die einzelnen Antworten stehen in MESSUNGEN.md.
 
 </div>
 

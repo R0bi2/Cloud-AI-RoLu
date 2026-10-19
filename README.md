@@ -5,7 +5,7 @@
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
 Luis Zink (305101)<br>
-Robert 
+Robert
 
 </div>
 
@@ -31,34 +31,77 @@ ollama:11434/v1. Welches Modell verwendet wird, kommt aus der .env.
 
 </div>
 
-## Teil 1 und 2 · Modellvergleich
+## Teil 1 · Erster Modellaufruf
 
-Die Messungen wurden am 19.10.2026 auf einem Laptop durchgeführt. Vor dem Fragenvergleich gab es je Modell einen ungewerteten Aufwärmaufruf. Für den Modellwechsel wurde nur LLM_MODEL in der .env geändert. Die vollständigen Antworten stehen in [MESSUNGEN.md](MESSUNGEN.md).
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Frage 1:
+    "Wie Studenten gibt es an der HTGW?"
+    Modell:              llama3.2:3b @ http://ollama:11434/v1
+    Time to First Token: 128 ms
+    Gesamtdauer:         9694 ms
+    Zeichen Antwort:     538
+<br><br>
+Frage 2:
+    "Wann wurde die HTWG gegründet?"
+    Modell:              llama3.2:3b @ http://ollama:11434/v1
+    Time to First Token: 566 ms
+    Gesamtdauer:         5282 ms
+    Zeichen Antwort:     242
+<br><br>
+Frage 3:
+    "Ist blau eine Farbe?"
+    Modell:              llama3.2:3b @ http://ollama:11434/v1
+    Time to First Token: 384 ms
+    Gesamtdauer:         2935 ms
+    Zeichen Antwort:     122
+
+</div>
+
+## Teil 2 · Modell austauschen
+
+In .env wird nur LLM_MODEL auf qwen2.5:0.5b geändert. Am Code wird nichts geändert.
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Frage 1:
+    "Wie viele Studenten gibt es an der HTGW?"
+    Modell:              qwen2.5:0.5b @ http://ollama:11434/v1
+    Time to First Token: 2265 ms
+    Gesamtdauer:         9884 ms
+    Zeichen Antwort:     1348
+<br><br>
+Frage 2:
+    "Wann wurde die HTWG gegründet?"
+    Modell:              qwen2.5:0.5b @ http://ollama:11434/v1
+    Time to First Token: 1645 ms
+    Gesamtdauer:         2064 ms
+    Zeichen Antwort:     61
+<br><br>
+Frage 3:
+    "Ist blau eine Farbe?"
+    Modell:              qwen2.5:0.5b @ http://ollama:11434/v1
+    Time to First Token: 139 ms
+    Gesamtdauer:         290 ms
+    Zeichen Antwort:     24
+</div>
+
+Zusätzlich notierter Vergleich:
 
 | Frage | Modell | TTFT (ms) | Gesamt (ms) | Antwort brauchbar? |
-|---|---|---:|---:|---|
-| Wie viele Studenten gibt es an der HTWG? | llama3.2:3b | 516 | 13628 | nein: nennt keine Zahl und ergänzt falsche Angaben zur Hochschule |
-| Wie viele Studenten gibt es an der HTWG? | qwen2.5:0.5b | 250 | 1061 | nein: unbelegte Zahl und unsinnige Erklärung|
-| Wann wurde die HTWG gegründet? | llama3.2:3b | 547 | 2250 | teilweise – 1971 war die Umwandlung zur Fachhochschule; Ursprung 1906. Ausschreibung unvollständig |
-| Wann wurde die HTWG gegründet? | qwen2.5:0.5b | 307 | 1028 | nein: Gründungsdatum und Ausschreibung sind falsch |
-| Ist blau eine Farbe? | llama3.2:3b | 501 | 3750 | ja: Blau ist eine Farbe |
-| Ist blau eine Farbe? | qwen2.5:0.5b | 453 | 650 | ja: inhaltlich richtig, grammatikalisch fehlerhaft |
-
+|---|---|---|---|---|
+| "Wie viele Studenten gibt es an der HTGW?" | llama3.2:3b | 144 ms | 7575 ms | nein |
+| "Wie viele Studenten gibt es an der HTGW?" | qwen2.5:0.5b | 134 ms | 425 ms | nein |
 
 ### Ist die HTWG Konstanz eine private oder eine staatliche Hochschule?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+A: Die Antwort ist in beiden fällen knapp gefasst und klar formuliert. llama3.2 sagt richtig aus, es ist eine staatliche Hochschule, auch bei mehrmaligem Fragen. qwen2.5 ebenfalls.
+llama 3.2
+Time to First Token: 588 ms
+Gesamtdauer:         2511 ms
 
-A: Beide Modelle sagen, es ist eine staatliche Hochschule. Details weichen teilweise ab. 
-<br><br>
-llama 3.2<br>
-Time to First Token: 896 ms<br>
-Gesamtdauer: 5283 ms
-<br><br>
-qwen 2.5<br>
-Time to First Token: 453 ms<br>
-Gesamtdauer: 671 ms
-
+qwen 2.5
+Time to First Token: 97 ms
+Gesamtdauer:         395 ms
 </div>
 
 ## Teil 3 · Sampling und Tokens
@@ -68,47 +111,41 @@ LLM_MODEL ist wieder auf llama3.2:3b gesetzt.
 ### Wie viele verschiedene Antworten bekommt ihr bei jeder Temperature?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
 Temperature 0: 1x verschiedene (Sonnenblume)
 <br>
-Temperature 0.7: 5x verschiedene (alle im Zusammenhang mit "Sonne" )
+Temperature 0.7: 5x verschiedene (4 davon im Zusammenhang mit "Sonne" )
 <br>
 Temperature 1.2 5x verschiedene (verschiedene Kontexte, teilweise unkorrekte Grammatik)
-
 </div>
 
 ### Liefert Temperature 0 wirklich fünfmal dieselbe Antwort?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
 Auch bei mehrfacher Ausführung liefert es 5x die gleiche Antwort
-
 </div>
 
 ### Faktenfrage: Welche Fehler kommen vor?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Bei Temperatur 0 bleibt die Antwort 5x gleich. Es wird richtigerweise gesagt die HTWG sei eine staatliche hochschule. Es fehlt in der Ausformulierung von HTWG das "und Gestaltung"
+    Bei Temperatur 0 bleibt die Antwort 5x gleich. Es wird richtigerweise gesagt die HTWG sei eine staatliche hochschule. Es fehlt in der Ausformulierung von HTWG das "und Gestaltung"
 
-    Bei Temperatur 0.7 gibt es 4 unterschiedliche Antworten.
+    Bei Temperatur 0.7 Gibt es 3 unterschiedliche Antworten.
     staatlich bleibt korrekt.
     Er lässt er die Ausschreibung entweder ganz aus, vergisst wieder das "und Gestaltung", oder erfindet eine Ausschreibung (Technologie statt Technik).
 
     Bei Temperatur 1.2 gibt es 5x verschiedene Antworten
-    staatlich wird in den vollständigen Antworten genannt.
-    Die Ausschreibung ist wieder teilweise falsch. Eine Antwort bricht mitten im Satz ab (maximal 40 Ausgabetokens).
+    staatlich ist korrekt.
+    Er denkt sich die Ausschreibung jedes mal (-falsch-) neu aus
 
-    Es sagt aus, dass kreativeres Sampling fehlendes Faktenwissen nicht ersetzen kann. Welche Trainingsdaten die Fehler verursacht haben, lässt sich daraus nicht sicher sagen.
+    Es sagt aus das kreativeres sampling fehlende Trainingsdaten nicht ersetzen kann.
     Man sollte Temperatur nur bei nicht Fakten erhöhen können
-
 </div>
 
 ### Wie viele Tokens braucht der deutsche Text, wie viele der englische?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
-Modell: llama3.2:3b
+    Modell: llama3.2:3b
     Deutsch    63 Tokens für 21 Wörter
     Englisch   49 Tokens für 21 Wörter
 
@@ -117,13 +154,18 @@ Modell: llama3.2:3b
     Die Eingabetokens hängen vom Text und Tokenizer ab. Deutsche Wörter können dabei in mehr Tokens aufgeteilt sein. Das Sampling beeinflusst die Anzahl der Eingabetokens nicht.
 
 
-
 </div>
 
 ### Eigene Frage mit langen zusammengesetzten Wörtern
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Modell: llama3.2:3b
 
+Deutsch    75 Tokens für 21 Wörter
+Englisch   49 Tokens für 21 Wörter
+
+Deutsch braucht 26 Tokens mehr (+53%).
+<br><br><br>
 Modell: llama3.2:3b
 
 Deutsch    81 Tokens für 23 Wörter
@@ -131,8 +173,7 @@ Englisch   49 Tokens für 21 Wörter
 
 Deutsch braucht 32 Tokens mehr (+65%).
 
-Mit längeren Wörtern wird der Token Mehraufwand in unserem Versuch größer. Wir haben dabei aber auch die Formulierung und Wortzahl verändert, deshalb liegt der Unterschied nicht nur an den zusammengesetzten Wörtern.
-
+mit längeren wörtern verdoppelt sich der Token Mehraufwand schon. Mit zusätzlichen Wörtern noch stärker.
 </div>
 
 ## Teil 4 · Anfragen strukturiert einordnen
@@ -147,9 +188,7 @@ Modell: llama3.2:3b<br>
 Modell: qwen2.5:0.5b<br>
 2 von 8 Anliegen richtig (25 %).
 <br><br>
-Die Ergebnisse stammen aus dem Durchlauf am 19.10.2026 auf diesem Laptop.
 Hier wird erstmal nur das Anliegen verglichen, nicht Studiengang und Frist.
-Die einzelnen Antworten stehen in MESSUNGEN.md.
 
 </div>
 
