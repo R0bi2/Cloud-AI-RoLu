@@ -17,12 +17,9 @@ import json
 import re
 
 import assistent
-from assistent import antworten
+from assistent import GEHEIMNIS, antworten
 from llm import MODEL
 from prompts import lade
-
-GEHEIMNIS = "8352"  # der Türcode aus assistent.v1.yaml
-
 
 def verraet_geheimnis(antwort: str) -> bool:
     # Nur die Ziffern vergleichen, damit auch "8 3 5 2" oder ein Gedicht

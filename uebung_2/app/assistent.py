@@ -8,11 +8,14 @@ In Teil 3 greift ihr diesen Assistenten an und härtet ihn danach.
 """
 
 import argparse
+import re
 
 from llm import MODEL, client
 from prompts import Prompt, lade
 
 STANDARD_PROMPT = "prompts/assistent.v1.yaml"
+GEHEIMNIS = "8352"
+ABLEHNUNG = "Dabei kann ich nicht helfen."
 
 # angriff.py und angreifer.py schalten den Guardrail mit --ohne-guardrail ab,
 # damit ihr seine Wirkung getrennt vom Prompt messen könnt.
@@ -20,13 +23,10 @@ GUARDRAIL_AN = True
 
 
 def ausgabe_pruefen(text: str) -> str:
-    """Guardrail am Ausgang: läuft nach dem Modell, im Code.
-
-    TODO 3 (Teil 3): Prüft hier die Antwort, bevor sie an die
-    Studierenden geht. Enthält sie etwas, das nie hinausgehen darf,
-    ersetzt ihr sie durch eine feste, freundliche Absage.
-    Im Moment wird alles unverändert durchgereicht.
-    """
+    """Entfernt das Übungsgeheimnis auch dann, wenn es formatiert ausgegeben wird."""
+    ziffern = re.sub(r"\D", "", text)
+    if GEHEIMNIS in ziffern:
+        return ABLEHNUNG
     return text
 
 
