@@ -4,8 +4,8 @@
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Luis Zink (305101)<br>
-Robert
+Luis<br>
+Robert<br>
 
 </div>
 
@@ -90,6 +90,9 @@ Zusätzlich notierter Vergleich:
 |---|---|---|---|---|
 | "Wie viele Studenten gibt es an der HTGW?" | llama3.2:3b | 144 ms | 7575 ms | nein |
 | "Wie viele Studenten gibt es an der HTGW?" | qwen2.5:0.5b | 134 ms | 425 ms | nein |
+| "In welchem der Gebäude ist die Zentrale Studienberatung?" | llama3.2:3b | 619 ms | 3097 ms | nein |
+| "In welchem der Gebäude ist die Zentrale Studienberatung?" | qwen2.5:0.5b | 70 ms | 807 ms | nein |
+
 
 ### Ist die HTWG Konstanz eine private oder eine staatliche Hochschule?
 
@@ -115,7 +118,7 @@ Temperature 0: 1x verschiedene (Sonnenblume)
 <br>
 Temperature 0.7: 5x verschiedene (4 davon im Zusammenhang mit "Sonne" )
 <br>
-Temperature 1.2 5x verschiedene (verschiedene Kontexte, teilweise unkorrekte Grammatik)
+Temperature 1.2 5x verschiedene (verschiedene Kontexte, teilweise inkorrekte Grammatik)
 </div>
 
 ### Liefert Temperature 0 wirklich fünfmal dieselbe Antwort?
@@ -173,7 +176,7 @@ Englisch   49 Tokens für 21 Wörter
 
 Deutsch braucht 32 Tokens mehr (+65%).
 
-mit längeren wörtern verdoppelt sich der Token Mehraufwand schon. Mit zusätzlichen Wörtern noch stärker.
+mit längeren wörtern verdoppelt sich der Token Mehraufwand schon. Mit zusätzlichen Wörtern erhöht er sich noch stärker.
 </div>
 
 ## Teil 4 · Anfragen strukturiert einordnen
