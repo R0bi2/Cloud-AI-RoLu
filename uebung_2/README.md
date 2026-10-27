@@ -5,8 +5,12 @@
 
 ## Namen und Matrikelnummern
 
-Robert /n
-Luis
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Luis<br>
+Robert<br>
+
+</div>
 
 ## Start
 
