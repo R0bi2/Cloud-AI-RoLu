@@ -23,7 +23,7 @@ GUARDRAIL_AN = True
 
 
 def ausgabe_pruefen(text: str) -> str:
-    """Entfernt das Übungsgeheimnis auch dann, wenn es formatiert ausgegeben wird."""
+    """Entdeckt das Geheimnis im Text und gibt eine Fehlermeldung zurück"""
     ziffern = re.sub(r"\D", "", text)
     if GEHEIMNIS in ziffern:
         return ABLEHNUNG
