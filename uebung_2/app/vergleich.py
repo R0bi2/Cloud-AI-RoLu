@@ -36,8 +36,9 @@ def vergleiche(pfade: list[str]) -> None:
                 print(f"  ✗ {falsch:<22} {fall['mail'][:55]}")
                 print(f"      erhalten:  {ergebnis.model_dump()}")
                 print(f"      erwartet:  {fall['erwartet']}")
-        tokens = sum(t for t, _ in protokoll) / len(protokoll)
-        sekunden = sum(s for _, s in protokoll) / len(protokoll)
+        # Wiederholungsversuche gehören zum Aufwand der jeweiligen Mail.
+        tokens = sum(t for t, _ in protokoll) / n
+        sekunden = sum(s for _, s in protokoll) / n
         zeilen.append((prompt.kennung, anliegen_ok, alles_ok, tokens, sekunden))
 
     print(f"\nModell: {MODEL}, {n} Test-Mails\n")
