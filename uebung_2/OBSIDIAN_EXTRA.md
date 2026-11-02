@@ -18,7 +18,7 @@ Stand: 02.11.2026 · gleicher Laptop · Obsidian 1.13.7 · Ollama `llama3.2:3b`.
 ## Was gehört zur ursprünglichen Aufgabe?
 
 - **Originalcode:** je Frage `suche()` → `dokumente()` → alle Dateien mit `read_text()` erneut einlesen. Kein eigener Textcache oder Linkindex; Betriebssystem-Caching bleibt möglich.
-- **Historischer Originalwert:** Die [Aufgaben-README](README.md) dokumentiert für `datei` **22,1 s Ø insgesamt** (Suche + Modellantwort). Frühere Messreihe, nicht direkt mit den neuen Zeiten vergleichbar.
+- **Historischer Originalwert:** Die [Aufgaben-README](../README.md) dokumentiert für `datei` **22,1 s Ø insgesamt** (Suche + Modellantwort). Frühere Messreihe, nicht direkt mit den neuen Zeiten vergleichbar.
 - **File-based-Zeile unten:** ursprünglicher Suchalgorithmus auf vorgeladenen Texten, keine vollständige Originalausführung. **3,69 s** = Suchbegriff-Erzeugung + Textsuche ohne erneutes Laden; **10,89 s** = Modellantwort. Zusammen **rund 14,6 s**, aus dem kontrollierten FAQ-Zusatztest.
 - **Querverweistest:** neue Aufgabe ohne Sprachmodell. „Neu einlesen“ übernimmt das ursprüngliche Ladeprinzip; seine Millisekunden sind keine ursprünglichen FAQ-Zeiten.
 - **Neue Kontrollen:** Texte im Speicher und Rückverweisindex. Letzterer speichert vorab Zuordnungen wie `campuskarte.md → [bibliothek.md, drucken.md, …]`, statt sie je Abfrage neu zu suchen.
