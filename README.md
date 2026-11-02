@@ -281,7 +281,7 @@ docker compose run --rm app alles.py "Ich bin am Tag meiner Klausur krank. Was m
 docker compose run --rm app alles.py "Wo kann ich mein Auto abstellen?"
 ```
 
-### 1. Notiert Eingabe-Tokens und Dauer beider Aufrufe.
+### 4.1.1 Notiert Eingabe-Tokens und Dauer beider Aufrufe.
 ### Warum ist der zweite Text bei gleich vielen Tokens schneller?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
@@ -296,7 +296,16 @@ Das System-prompt kommt aus wissen.v1.yaml und bleibt beim zweiten aufruf gleich
 
 </div>
 
-### 1. Welche Dateien findet die Suche mit den Wörtern der Frage, und warum gerade diese? Schaut     euch an, welche Wortteile treffen.
+## 4.1.2 Schätzt: Was passiert mit Tokens, Kosten und Antwortqualität, wenn die Wissensbasis statt 21 Dateien 2.000 hat?
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Die Anzahl Tokens steigt stark an. Dementsprechend auch die Kosten. Bei vielen Dateien kann das Prompt an die Token Obergrenze geraten und wird durch zusätzliche Information nicht besser. Es kann zu 
+Kontext-Rot / Lost-in-the-middle Effekten kommen, wodurch Informationen für die Antwort verloren gehen.
+
+</div>
+
+
+### 4.2.1 Welche Dateien findet die Suche mit den Wörtern der Frage, und warum gerade diese? Schaut euch an, welche Wortteile treffen.
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
@@ -320,8 +329,8 @@ Das System-prompt kommt aus wissen.v1.yaml und bleibt beim zweiten aufruf gleich
     Suchbegriffe: ['Krankheit', 'Arzt', 'Medikamente', 'Krankenakte', 'Schulabsenz', 'Arztbescheinigung']
     1  praxissemester.md
 
-    Es gibt nur einen treffer mit krank in 'krankheitstage'
-    nicht wirklich der kontext den man sucht, die antwort st auch halluziniert.
+    Es gibt nur einen treffer mit krank in 'krankheitstage' praxissemester.md
+    Das ist nicht der Kontext den man sucht. Die antwort ist auch halluziniert.
 
     ```powershell
     docker compose run --rm app datei_suche.py --woerter "Wer sitzt in Raum F-201?"
@@ -335,25 +344,27 @@ Das System-prompt kommt aus wissen.v1.yaml und bleibt beim zweiten aufruf gleich
 
 </div>
 
-### 2. Welche Suchbegriffe schlägt das Modell vor? Welche Begriffe hätte es wählen müssen, um die richtige Datei zu finden?
+### 4.2.2 Welche Suchbegriffe schlägt das Modell vor? Welche Begriffe hätte es wählen müssen, um die richtige Datei zu finden?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
     Suchbegriffe: ['Krankheit', 'Arzt', 'Medikamente', 'Krankenakte', 'Schulabsenz', 'Arztbescheinigung']
 
-    Die Suchbegriffe sollten keine Sinnverwandten wörter mit krank sein sondern den Kontext von krank in Verbindung mit der Klausur haben. Beispielsweise etwas wie Rücktritt oder Entschuldigung. Die wissens Markdowns enthalten allerdings auch keine antwort auf die Frage.
+    Die Suchbegriffe sollten keine Sinnverwandten wörter mit krank sein sondern den Kontext von krank in Verbindung mit der Klausur haben. 
+    in diesem konkreten Fall hätten "Prüfung" "Attest" und "Unfähig" zum richtigen markdown geführt.
+
 
 </div>
 
-### 3. Bei „Raum F-201“ steht die Zeichenkette wörtlich in einer Datei, und trotzdem landet die Datei nicht unter den ersten drei. Warum nicht? Was müsste die Bewertung anders machen?
+### 4.2.3 Bei „Raum F-201“ steht die Zeichenkette wörtlich in einer Datei, und trotzdem landet die Datei nicht unter den ersten drei. Warum nicht? Was müsste die Bewertung anders machen?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-    Weil Wörter wie 'raum' mehr Suchergebnisse liefern.
+    Weil Wörter wie 'Raum' mehr Suchergebnisse liefern.
     Man müsste Raum als Füllwort erkennen oder die Suchbegriffe gewichten können.
 
 </div>
 
-### 4. Claude Code arbeitet genau so, ohne Index, und findet trotzdem fast immer die richtige Stelle. Was hat Claude Code, was unser Aufbau nicht hat? Nennt zwei Unterschiede
+### 4.2.4 Claude Code arbeitet genau so, ohne Index, und findet trotzdem fast immer die richtige Stelle. Was hat Claude Code, was unser Aufbau nicht hat? Nennt zwei Unterschiede
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
@@ -399,30 +410,35 @@ Das System-prompt kommt aus wissen.v1.yaml und bleibt beim zweiten aufruf gleich
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
 
-| Frage | Typ | Kontext richtig (K) | Antwort richtig (A) |
-|---|---|:---:|:---:|
-| Bis wann hat die Bibliothek am Samstag offen? | direkt | ✓ | ✓ |
-| Was zahlt ein Gast in der Mensa für ein Hauptgericht? | direkt | ✓ | ✓ |
-| Wie viel kostet eine Ersatz-Campuskarte? | direkt | ✓ | ✓ |
-| Was regelt Paragraph 17 der Prüfungsordnung? | kennung | ✓ | ✓ |
-| Wofür brauche ich das Formular PA-12? | kennung | ✓ | ✓ |
-| Wer sitzt in Raum F-201? | kennung | ✗ | ✗ |
-| Ich bin am Tag meiner Klausur krank. Was muss ich tun? | umschrieben | ✓ | ✓ |
-| Wo kann ich mein Auto abstellen und was kostet das? | umschrieben | ✓ | ✓ |
-| Wo kann ich nachts noch lernen? | umschrieben | ✓ | ✓ |
-| Ich bin total gestresst und komme nicht mehr klar. | umschrieben | ✓ | ✓ |
-| Was passiert, wenn ich das Geld fürs nächste Semester nicht bezahle? | umschrieben | ✓ | ✓ |
-| Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist? | umschrieben | ✓ | ✓ |
-| Kann ich mit dem Semesterticket ICE fahren? | direkt | ✓ | ✓ |
-| Wann ist die nächste Party der Fachschaft Informatik? | fehlt | – | ✓ |
+
+| Frage | Typ | RAG |
+|---|---|:---:|
+| Bis wann hat die Bibliothek am Samstag offen? | direkt | K A |
+| Was zahlt ein Gast in der Mensa für ein Hauptgericht? | direkt | K A |
+| Wie viel kostet eine Ersatz-Campuskarte? | direkt | K A |
+| Was regelt Paragraph 17 der Prüfungsordnung? | kennung | K A |
+| Wofür brauche ich das Formular PA-12? | kennung | K A |
+| Wer sitzt in Raum F-201? | kennung | · · |
+| Ich bin am Tag meiner Klausur krank. Was muss ich tun? | umschrieben | K A |
+| Wo kann ich mein Auto abstellen und was kostet das? | umschrieben | K A |
+| Wo kann ich nachts noch lernen? | umschrieben | K A |
+| Ich bin total gestresst und komme nicht mehr klar. | umschrieben | K A |
+| Was passiert, wenn ich das Geld fürs nächste Semester nicht bezahle? | umschrieben | K A |
+| Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist? | umschrieben | K A |
+| Kann ich mit dem Semesterticket ICE fahren? | direkt | K A |
+| Wann ist die nächste Party der Fachschaft Informatik? | fehlt | - A |
+
+**Legende:** K = richtige Datei im Kontext, A = Antwort enthält ein erwartetes Stichwort, · = nicht erfüllt, – = keine Datei vorhanden.
 
 | Variante | Kontext richtig | Antwort richtig | Eingabe-Tokens (Ø) | Dauer (Ø) |
 |---|---|---|---|---|
-| rag | 12/13 | 13/14 | 551 | 15.6 s |
+| RAG | 12/13 | 13/14 | 548 | 20,5 s |
 
-Die Anzahl Kontext richtig und Anzahl richtiger Antworten ist um eins gestiegen. Die eingabe Tokens haben sich um 38% reduziert. die zeit um ein viertel.
 
-Das liegt daran dass, wenn man es in Abschnitte unterteilt es erstens weniger Nebeninfos als bei ganzen seiten gibt die die Relevanz verwässern und zweitens nur noch einzelne abschnitte ins Prompt übergeben werden, die weniger TOkens erfordern.
+
+Die Anzahl Kontext richtig blieb gleich. Die Anzahl richtiger Antworten ist um eins gestiegen. Die eingabe Tokens haben sich um 38% reduziert. die zeit um ein viertel.
+
+Das liegt daran dass, wenn man es in Abschnitte unterteilt es erstens weniger Nebeninfos als bei ganzen seiten gibt die die Relevanz verwässern und zweitens nur noch einzelne abschnitte ins Prompt übergeben werden, die weniger Tokens erfordern.
 
 </div>
 
@@ -461,10 +477,11 @@ docker compose run --rm app rag.py -k 8 "Wann hat die Mensa offen?"
 | 1 | 250 | 0.11 s | 5.1 s | llama3.2:3b |
 | 8 | 859 | 0,31 s | 18,6 s | llama3.2:3b |
 
-Wir gewinnen bei k1 eine kürzere Antwort- und Suchzeit. Die Antwort hatte den gleichen Informationsgehalt allerdings könnten wir in anderen Fällen weniger umfangreiche Antworten bekommen.
+Wir gewinnen bei k1 eine kürzere Antwort- und Suchzeit. Die Antwort hatte den gleichen Informationsgehalt. Allerdings könnten wir in anderen Fällen weniger umfangreiche Antworten bekommen.
 </div>
 
-### Welche Variante gewinnt bei welchem Typ, und warum?
+## 4.4 Vergleichen
+### 4.4.1 Welche Variante gewinnt bei welchem Typ, und warum?
 
 ```powershell
 docker compose run --rm app vergleich_wissen.py"
@@ -497,6 +514,8 @@ docker compose run --rm app vergleich_wissen.py"
 | woerter | 7/13 | 9/14 | 682 | 20.5 s |
 | datei | 8/13 | 10/14 | 602 | 22.1 s |
 | rag | 12/13 | 13/14 | 551 | 18.8 s |
+|---|---|---|---|---|
+| alles | 13/13 | 14/14 | 3904 | 23.1 s |
 
 <br>
 Beim Typ "umschrieben" gewinnt variante rag
@@ -504,22 +523,22 @@ in einem Fall von Typ "direkt" ist Variante Datei der wort Variante voraus
 
 </div>
 
-### 2. Wo stand die richtige Datei im Kontext und die Antwort war trotzdem falsch? Was sagt das über die Fehlerquelle?
+### 4.4.2 Wo stand die richtige Datei im Kontext und die Antwort war trotzdem falsch? Was sagt das über die Fehlerquelle?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Bei den Messungen gab es keinen nachgewiesenen Fehler bei der Antwortgenerierung trotz richtigem Kontext
+Bei der aktuellen Messung gab es keinen nachgewiesenen Fehler bei der Antwortgenerierung bei richtigem Kontext
 
 </div>
 
-### 3. Welche Variante würdet ihr für diese Wissensbasis in Produktion nehmen? Ab welcher Größe würdet ihr umsteigen, und worauf?
+### 4.4.3 Welche Variante würdet ihr für diese Wissensbasis in Produktion nehmen? Ab welcher Größe würdet ihr umsteigen, und worauf?
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
     rag ergab sich als schneller, brauchte weniger tokens und war am zuverlässigstem
 
-    Umsteigen lohnt sich wenn es deutlich mehr als 62 abschnitte sind angenommen >1000. und dann
-    dokumente nicht mehr gefunden werden oder für Fälle wenn sihc der Index schnell ändert also Dateien laufend verändert werden.
+    Umsteigen lohnt sich wenn es deutlich mehr als 68 abschnitte sind angenommen >1000 und dann
+    dokumente nicht mehr gefunden werden oder für Fälle wenn sich der Index schnell ändert also Dateien laufend verändert werden.
 
 </div>
 
@@ -535,7 +554,7 @@ docker compose run --rm app vergleich_wissen.py rag hybrid
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
 Wir haben eine hybride Suche ergänzt: Kennungen wie F-201, PA-12 und § 17 werden wörtlich gesucht, alle anderen Fragen laufen weiter über RAG.
-Im zusätzlichen lokalen Lauf mit 62 Abschnitten steigen die richtigen Quellen von 12/13 auf 13/13 und die Antworttreffer von 13/14 auf 14/14.
+Im zusätzlichen lokalen Lauf mit 68 Abschnitten steigen die richtigen Quellen von 12/13 auf 13/13 und die Antworttreffer von 13/14 auf 14/14.
 Die durchschnittlichen Eingabe-Tokens sinken von 551 auf 518; die gemessene Dauer liegt bei 4,9 statt 11,7 Sekunden, wobei Cacheeffekte mitspielen.
 F-201 wird jetzt richtig mit dem Praktikantenamt beantwortet, während die sechs umschriebenen Fragen unverändert sechs Antworttreffer erreichen.
 

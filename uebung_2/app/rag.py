@@ -52,7 +52,7 @@ def zerlege(datei: str, text: str) -> list[Treffer]:
     # Ein Abschnitt beginnt bei jeder Zwischenüberschrift "## ".
     if re.search(r"(?m)^## ", text):
         teile = re.split(r"(?m)(?=^## )", text)
-        teile = [teil.strip() for teil in teile if teil.strip().startswith("## ")]
+        teile = [teil.strip() for teil in teile if teil.strip()]
     else:
         # Dokumente ohne Zwischenüberschrift teilt ihr an Leerzeilen in Absätze.
         teile = [
