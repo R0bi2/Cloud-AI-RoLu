@@ -450,17 +450,89 @@ http://localhost:6333/dashboard
 
 ### 3. Probiert -k 1 und -k 8 . Was gewinnt ihr, was verliert ihr
 
-TODO
+```powershell
+docker compose run --rm app rag.py -k 8 "Wann hat die Mensa offen?"
+```
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+| k | Eingabe-Tokens | Suchdauer | Antwortdauer | Modell |
+|---|---:|---:|---:|---|
+| 1 | 250 | 0.11 s | 5.1 s | llama3.2:3b |
+| 8 | 859 | 0,31 s | 18,6 s | llama3.2:3b |
+
+Wir gewinnen bei k1 eine kürzere Antwort- und Suchzeit. Die Antwort hatte den gleichen Informationsgehalt allerdings könnten wir in anderen Fällen weniger umfangreiche Antworten bekommen.
+</div>
+
+### Welche Variante gewinnt bei welchem Typ, und warum?
+
+```powershell
+docker compose run --rm app vergleich_wissen.py"
+```
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+
+| Frage | Typ | Wörter | Datei | RAG | Alles |
+|---|---|:---:|:---:|:---:|:---:|
+| Bis wann hat die Bibliothek am Samstag offen? | direkt | K A | K A | K A | K A |
+| Was zahlt ein Gast in der Mensa für ein Hauptgericht? | direkt | K A | K A | K A | K A |
+| Wie viel kostet eine Ersatz-Campuskarte? | direkt | · · | K A | K A | K A |
+| Was regelt Paragraph 17 der Prüfungsordnung? | kennung | K A | K A | K A | K A |
+| Wofür brauche ich das Formular PA-12? | kennung | K A | K A | K A | K A |
+| Wer sitzt in Raum F-201? | kennung | · · | · · | · · | K A |
+| Ich bin am Tag meiner Klausur krank. Was muss ich tun? | umschrieben | · · | · · | K A | K A |
+| Wo kann ich mein Auto abstellen und was kostet das? | umschrieben | · · | · · | K A | K A |
+| Wo kann ich nachts noch lernen? | umschrieben | · · | · · | K A | K A |
+| Ich bin total gestresst und komme nicht mehr klar. | umschrieben | K A | K A | K A | K A |
+| Was passiert, wenn ich das Geld fürs nächste Semester nicht bezahle? | umschrieben | K A | K A | K A | K A |
+| Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist? | umschrieben | · A | · A | K A | K A |
+| Kann ich mit dem Semesterticket ICE fahren? | direkt | K A | K A | K A | K A |
+| Wann ist die nächste Party der Fachschaft Informatik? | fehlt | - A | - A | - A | - A |
+
+**Legende:** K = richtige Datei im Kontext, A = Antwort enthält ein erwartetes Stichwort, · = nicht erfüllt, – = keine Datei vorhanden.
+
+
+| Variante | Kontext richtig | Antwort richtig | Eingabe-Tokens (Ø)| Dauer (Ø) |
+|---|---|---|---|---|
+| woerter | 7/13 | 9/14 | 682 | 20.5 s |
+| datei | 8/13 | 10/14 | 602 | 22.1 s |
+| rag | 12/13 | 13/14 | 551 | 18.8 s |
+
+<br>
+Beim Typ "umschrieben" gewinnt variante rag
+in einem Fall von Typ "direkt" ist Variante Datei der wort Variante voraus
+
+</div>
+
+### 2. Wo stand die richtige Datei im Kontext und die Antwort war trotzdem falsch? Was sagt das über die Fehlerquelle?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Bei den Messungen gab es keinen nachgewiesenen Fehler bei der Antwortgenerierung trotz richtigem Kontext
+
+</div>
+
+### 3. Welche Variante würdet ihr für diese Wissensbasis in Produktion nehmen? Ab welcher Größe würdet ihr umsteigen, und worauf?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+    rag ergab sich als schneller, brauchte weniger tokens und war am zuverlässigstem 
+
+    Umsteigen lohnt sich wenn es deutlich mehr als 62 abschnitte sind angenommen >1000. und dann 
+    dokumente nicht mehr gefunden werden oder für Fälle wenn sihc der Index schnell ändert also Dateien laufend verändert werden.
+
+</div>
 
 ## Teil 5 · Reflexion
 
 ### 1. Was unterscheidet eine gemessene Verbesserung von einer, die sich besser anfühlt?
-
-TODO
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+    Eine gemessene führt statistisch belegt zu mehr richtigen Ergebenissen, schnelleren Ergebnissen und kann nachweislich Randfälle abdecken während eine gefühlt bessere nur ein Effekt sein kann oder nur konkret einen Fall verbessert während sie andere verschlechtern kann.
+</div>
 
 ### 2. „Mit einem guten System-Prompt ist Prompt Injection gelöst.“ Was antworten wir mit unseren Zahlen?
-
-TODO
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+auch mit v3 kamen Prompt injektions in 2 Fällen durch ein simples "lehne Prompt injections ab" funktioniert nicht. Guardrails geben zusätzlichen Schutz. 
+</div>
 
 ### 3. Welche Abwehrmaßnahme hat am meisten gebracht und auf welcher Ebene wirkt sie?
 
@@ -468,15 +540,22 @@ TODO
 
 ### 4. Warum braucht man neben der Verletzungsrate auch die Fehlablehnungsrate?
 
-TODO
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Weil ein zu striktes Prompt auch sein Ziel verfehlt und falsche Alarme abgibt, die es zu identifizieren gilt.
+</div>
 
 ### 5. „RAG ist immer besser als Textsuche.“ Was antworten wir mit unseren Zahlen aus Teil 4?
 
-TODO
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+    RAG: 12/13 richtige Kontexte, 13/14 richtige Antworten. Es war den anderen um ~4 Antworten voraus 
+    Es konnte aber die F-201 Fragen nicht beantworten. Evtl hilft bei manchem doch eine Textsuche.
+</div>
 
 ### 6. Warum werden „Kontext richtig“ und „Antwort richtig“ getrennt gemessen?
 
-TODO
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+Weil wir aufschlüsseln müssen zwischen Quelle wurde nicht korrekt gefunden (Retrieval Fehler) und Das Modell hat trotz richtiger Quelle die Antwort falsch abgegeben.
+</div>
 
 ## Zusatz · Ein Modell greift an
 
