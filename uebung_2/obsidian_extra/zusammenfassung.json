@@ -1,0 +1,212 @@
+[
+  {
+    "variante": "datei",
+    "K": 9,
+    "A": 11,
+    "tokens": 613,
+    "suche_s": 3.687,
+    "antwort_s": 10.886,
+    "typen": {
+      "direkt": {
+        "K": 4,
+        "A": 4,
+        "n": 4
+      },
+      "kennung": {
+        "K": 2,
+        "A": 2,
+        "n": 3
+      },
+      "umschrieben": {
+        "K": 3,
+        "A": 4,
+        "n": 6
+      },
+      "fehlt": {
+        "K": 0,
+        "A": 1,
+        "n": 1
+      }
+    }
+  },
+  {
+    "variante": "obsidian",
+    "K": 9,
+    "A": 11,
+    "tokens": 613,
+    "suche_s": 3.781,
+    "antwort_s": 3.656,
+    "typen": {
+      "direkt": {
+        "K": 4,
+        "A": 4,
+        "n": 4
+      },
+      "kennung": {
+        "K": 2,
+        "A": 2,
+        "n": 3
+      },
+      "umschrieben": {
+        "K": 3,
+        "A": 4,
+        "n": 6
+      },
+      "fehlt": {
+        "K": 0,
+        "A": 1,
+        "n": 1
+      }
+    }
+  },
+  {
+    "variante": "rag",
+    "K": 12,
+    "A": 13,
+    "tokens": 551,
+    "suche_s": 0.09,
+    "antwort_s": 11.135,
+    "typen": {
+      "direkt": {
+        "K": 4,
+        "A": 4,
+        "n": 4
+      },
+      "kennung": {
+        "K": 2,
+        "A": 2,
+        "n": 3
+      },
+      "umschrieben": {
+        "K": 6,
+        "A": 6,
+        "n": 6
+      },
+      "fehlt": {
+        "K": 0,
+        "A": 1,
+        "n": 1
+      }
+    }
+  },
+  {
+    "variante": "datei_meta",
+    "K": 11,
+    "A": 12,
+    "tokens": 903,
+    "suche_s": 3.686,
+    "antwort_s": 14.477,
+    "typen": {
+      "direkt": {
+        "K": 4,
+        "A": 4,
+        "n": 4
+      },
+      "kennung": {
+        "K": 2,
+        "A": 2,
+        "n": 3
+      },
+      "umschrieben": {
+        "K": 5,
+        "A": 5,
+        "n": 6
+      },
+      "fehlt": {
+        "K": 0,
+        "A": 1,
+        "n": 1
+      }
+    }
+  },
+  {
+    "variante": "obsidian_meta",
+    "K": 12,
+    "A": 13,
+    "tokens": 765,
+    "suche_s": 3.89,
+    "antwort_s": 4.258,
+    "typen": {
+      "direkt": {
+        "K": 4,
+        "A": 4,
+        "n": 4
+      },
+      "kennung": {
+        "K": 3,
+        "A": 3,
+        "n": 3
+      },
+      "umschrieben": {
+        "K": 5,
+        "A": 5,
+        "n": 6
+      },
+      "fehlt": {
+        "K": 0,
+        "A": 1,
+        "n": 1
+      }
+    }
+  },
+  {
+    "variante": "obsidian_links",
+    "K": 12,
+    "A": 13,
+    "tokens": 854,
+    "suche_s": 4.168,
+    "antwort_s": 7.743,
+    "typen": {
+      "direkt": {
+        "K": 4,
+        "A": 4,
+        "n": 4
+      },
+      "kennung": {
+        "K": 3,
+        "A": 3,
+        "n": 3
+      },
+      "umschrieben": {
+        "K": 5,
+        "A": 5,
+        "n": 6
+      },
+      "fehlt": {
+        "K": 0,
+        "A": 1,
+        "n": 1
+      }
+    }
+  },
+  {
+    "variante": "rag_meta",
+    "K": 13,
+    "A": 13,
+    "tokens": 970,
+    "suche_s": 0.075,
+    "antwort_s": 20.048,
+    "typen": {
+      "direkt": {
+        "K": 4,
+        "A": 4,
+        "n": 4
+      },
+      "kennung": {
+        "K": 3,
+        "A": 2,
+        "n": 3
+      },
+      "umschrieben": {
+        "K": 6,
+        "A": 6,
+        "n": 6
+      },
+      "fehlt": {
+        "K": 0,
+        "A": 1,
+        "n": 1
+      }
+    }
+  }
+]

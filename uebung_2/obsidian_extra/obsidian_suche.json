@@ -1,0 +1,1103 @@
+{
+  "original_hashes": {
+    "abschlussarbeit.md": "3926b1cf9d1e5cbc6ed4d4382efe13cd434563795b86fa04b304984a847d8cae",
+    "auslandssemester.md": "83c89a911224a5c1e5718adb4fe7d5682d6a8d4918c020cd240304ce6aa1ae62",
+    "beratung.md": "a85b1ca088ea4050ccebbee9ab28bed6efcde2217b422dbd9602d19a6d3ee1da",
+    "bibliothek.md": "d879b698f7aae8372c11cccc2fac26565f7a370dbf01a7e3aa91c2e0eb251783",
+    "campuskarte.md": "b337565bd3e73cbb713634288fb78eb9c2cebe706567df4946a23a5fa62bd930",
+    "drucken.md": "1363fd25a06c455eb0c39df5591dad5dd74ac9430b844a5107eb62ca28b42168",
+    "fundbuero.md": "0973f5790e45e665e309a2a92fdbf7b1621f29162eb0d83e44ff896fcdaa71bd",
+    "lernraeume.md": "8681b56489aa92d331c7d2354eb16bae522cc15ec5082beba8adbe8cad34543e",
+    "mensa.md": "22940e513891aa6f6fecfc3589c98eff85e126c266a0a08e8fbe2e8ed712dcdc",
+    "nachteilsausgleich.md": "f4f36528a2d7105d4ea22469ebc996e48420787ceb6134ded6b66cf5275a06c7",
+    "parken.md": "423e1f04157df29d438303d8a42460cafdead30573fee2835070aad35a338f23",
+    "praxissemester.md": "e02f840b43a88985cbf9720c6bbf638170dd0b0386e37984f1422b2ad7026948",
+    "pruefungsanmeldung.md": "bce0005c519cc612c4a0caf6d3fec9c0f41469362b0411ddbca0298c292c4ed5",
+    "pruefungsordnung.md": "ac29406bcd88f07cdc38c0d37c674eae63f3f1e4ac4888a13bc8af6a921af499",
+    "pruefungsunfaehigkeit.md": "b3d96a0488d168061e22bd84e83f85b887d0ddbb57d0cd0152457786aafc7273",
+    "raeume.md": "32653a45d84b41961d44d26adc6a3d1d3695e73d49aeb34c2692387cb9dcc1b9",
+    "rueckmeldung.md": "5b40f45ad614ddcfd4e61fd7e267c37c6a4d00e65fe5d347f782192ade50b4c1",
+    "semesterticket.md": "165dce8a8d891da94e2e25055279f7508113e2c39ef2277bb8d24c54135c8a5d",
+    "sport.md": "2e4e31001747d68e5b4117615a385839932f986f5baee99a72b19be91c6dac66",
+    "wiederholungspruefung.md": "2d167857d375156ece23402abdac18e767f59b29577534ca002a1708b2e1fc3e",
+    "wlan.md": "4a9b994d0cdd949fd79a8d247cc2db29e79752e51fb1e0e31f0581e90c4de61f"
+  },
+  "graph": {
+    "abschlussarbeit.md": [
+      "bibliothek.md",
+      "pruefungsanmeldung.md",
+      "pruefungsordnung.md"
+    ],
+    "auslandssemester.md": [
+      "beratung.md",
+      "praxissemester.md",
+      "rueckmeldung.md"
+    ],
+    "beratung.md": [
+      "nachteilsausgleich.md",
+      "pruefungsunfaehigkeit.md",
+      "wiederholungspruefung.md",
+      "auslandssemester.md",
+      "praxissemester.md",
+      "rueckmeldung.md",
+      "sport.md"
+    ],
+    "bibliothek.md": [
+      "campuskarte.md",
+      "drucken.md",
+      "lernraeume.md",
+      "abschlussarbeit.md",
+      "raeume.md",
+      "wlan.md"
+    ],
+    "campuskarte.md": [
+      "bibliothek.md",
+      "drucken.md",
+      "mensa.md",
+      "fundbuero.md",
+      "lernraeume.md",
+      "rueckmeldung.md",
+      "semesterticket.md"
+    ],
+    "drucken.md": [
+      "bibliothek.md",
+      "campuskarte.md",
+      "raeume.md"
+    ],
+    "fundbuero.md": [
+      "campuskarte.md",
+      "raeume.md"
+    ],
+    "lernraeume.md": [
+      "bibliothek.md",
+      "campuskarte.md",
+      "raeume.md",
+      "wlan.md"
+    ],
+    "mensa.md": [
+      "campuskarte.md",
+      "raeume.md"
+    ],
+    "nachteilsausgleich.md": [
+      "beratung.md",
+      "pruefungsordnung.md",
+      "pruefungsunfaehigkeit.md"
+    ],
+    "parken.md": [
+      "raeume.md",
+      "semesterticket.md"
+    ],
+    "praxissemester.md": [
+      "auslandssemester.md",
+      "beratung.md",
+      "raeume.md"
+    ],
+    "pruefungsanmeldung.md": [
+      "pruefungsordnung.md",
+      "pruefungsunfaehigkeit.md",
+      "wiederholungspruefung.md",
+      "abschlussarbeit.md"
+    ],
+    "pruefungsordnung.md": [
+      "nachteilsausgleich.md",
+      "pruefungsanmeldung.md",
+      "pruefungsunfaehigkeit.md",
+      "wiederholungspruefung.md",
+      "abschlussarbeit.md"
+    ],
+    "pruefungsunfaehigkeit.md": [
+      "beratung.md",
+      "pruefungsanmeldung.md",
+      "pruefungsordnung.md",
+      "nachteilsausgleich.md"
+    ],
+    "raeume.md": [
+      "bibliothek.md",
+      "drucken.md",
+      "lernraeume.md",
+      "mensa.md",
+      "praxissemester.md",
+      "fundbuero.md",
+      "parken.md",
+      "sport.md",
+      "wlan.md"
+    ],
+    "rueckmeldung.md": [
+      "beratung.md",
+      "campuskarte.md",
+      "semesterticket.md",
+      "auslandssemester.md"
+    ],
+    "semesterticket.md": [
+      "campuskarte.md",
+      "parken.md",
+      "rueckmeldung.md"
+    ],
+    "sport.md": [
+      "beratung.md",
+      "raeume.md"
+    ],
+    "wiederholungspruefung.md": [
+      "beratung.md",
+      "pruefungsanmeldung.md",
+      "pruefungsordnung.md"
+    ],
+    "wlan.md": [
+      "bibliothek.md",
+      "lernraeume.md",
+      "raeume.md"
+    ]
+  },
+  "graph_cache_s": 3.8997165000000003,
+  "fragen": [
+    {
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "begriffe": [
+        "Bibliothek",
+        "Öffnungszeiten",
+        "Samstag",
+        "Öffnungszeiten der Bibliothek",
+        "Öffnungszeiten der Hochschulbibliothek",
+        "Öffnungszeiten der Bibliothek der Hochschule"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "raeume.md",
+          "mensa.md",
+          "lernraeume.md",
+          "drucken.md",
+          "campuskarte.md",
+          "bibliothek.md"
+        ],
+        "suche": 0.1076232
+      },
+      "meta": {
+        "dateien": [
+          "mensa.md",
+          "bibliothek.md",
+          "wlan.md",
+          "raeume.md",
+          "lernraeume.md",
+          "drucken.md",
+          "campuskarte.md",
+          "abschlussarbeit.md"
+        ],
+        "bevorzugt": [
+          "mensa.md",
+          "bibliothek.md"
+        ],
+        "suche": 0.18817469999999958
+      },
+      "links": {
+        "dateien": [
+          "mensa.md",
+          "bibliothek.md",
+          "wlan.md",
+          "raeume.md",
+          "lernraeume.md",
+          "drucken.md",
+          "campuskarte.md",
+          "abschlussarbeit.md"
+        ],
+        "bevorzugt": [
+          "mensa.md",
+          "bibliothek.md"
+        ],
+        "suche": 0.46672587857142817
+      },
+      "native": {
+        "query": "/Bibliothek|Öffnungszeiten|Samstag|Öffnungszeiten der Bibliothek|Öffnungszeiten der Hochschulbibliothek|Öffnungszeiten der Bibliothek der Hochschule/i",
+        "metadataQuery": "[aliases:\"Bibliothek\"] OR [thema:\"Bibliothek\"] OR [tags:\"Bibliothek\"] OR [aliases:\"Öffnungszeiten\"] OR [thema:\"Öffnungszeiten\"] OR [tags:\"Öffnungszeiten\"] OR [aliases:\"Samstag\"] OR [thema:\"Samstag\"] OR [tags:\"Samstag\"] OR [aliases:\"Öffnungszeiten der Bibliothek\"] OR [thema:\"Öffnungszeiten der Bibliothek\"] OR [tags:\"Öffnungszeiten der Bibliothek\"] OR [aliases:\"Öffnungszeiten der Hochschulbibliothek\"] OR [thema:\"Öffnungszeiten der Hochschulbibliothek\"] OR [tags:\"Öffnungszeiten der Hochschulbibliothek\"] OR [aliases:\"Öffnungszeiten der Bibliothek der Hochschule\"] OR [thema:\"Öffnungszeiten der Bibliothek der Hochschule\"] OR [tags:\"Öffnungszeiten der Bibliothek der Hochschule\"]",
+        "basis": [
+          "raeume.md",
+          "mensa.md",
+          "lernraeume.md",
+          "drucken.md",
+          "campuskarte.md",
+          "bibliothek.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wlan.md",
+          "_obsidian_extra/raeume.md",
+          "_obsidian_extra/mensa.md",
+          "_obsidian_extra/lernraeume.md",
+          "_obsidian_extra/drucken.md",
+          "_obsidian_extra/campuskarte.md",
+          "_obsidian_extra/bibliothek.md",
+          "_obsidian_extra/abschlussarbeit.md"
+        ],
+        "properties": [
+          "_obsidian_extra/mensa.md",
+          "_obsidian_extra/bibliothek.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "begriffe": [
+        "Mensa",
+        "Hauptgericht",
+        "Gast",
+        "Preis"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "wlan.md",
+          "raeume.md",
+          "mensa.md",
+          "campuskarte.md"
+        ],
+        "suche": 0.09230259999999998
+      },
+      "meta": {
+        "dateien": [
+          "mensa.md",
+          "wlan.md",
+          "raeume.md",
+          "campuskarte.md"
+        ],
+        "bevorzugt": [
+          "mensa.md"
+        ],
+        "suche": 0.1883733000000002
+      },
+      "links": {
+        "dateien": [
+          "mensa.md",
+          "wlan.md",
+          "raeume.md",
+          "campuskarte.md"
+        ],
+        "bevorzugt": [
+          "mensa.md"
+        ],
+        "suche": 0.46692447857142877
+      },
+      "native": {
+        "query": "/Mensa|Hauptgericht|Gast|Preis/i",
+        "metadataQuery": "[aliases:\"Mensa\"] OR [thema:\"Mensa\"] OR [tags:\"Mensa\"] OR [aliases:\"Hauptgericht\"] OR [thema:\"Hauptgericht\"] OR [tags:\"Hauptgericht\"] OR [aliases:\"Gast\"] OR [thema:\"Gast\"] OR [tags:\"Gast\"] OR [aliases:\"Preis\"] OR [thema:\"Preis\"] OR [tags:\"Preis\"]",
+        "basis": [
+          "wlan.md",
+          "raeume.md",
+          "mensa.md",
+          "campuskarte.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wlan.md",
+          "_obsidian_extra/raeume.md",
+          "_obsidian_extra/mensa.md",
+          "_obsidian_extra/campuskarte.md"
+        ],
+        "properties": [
+          "_obsidian_extra/mensa.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "begriffe": [
+        "Ersatz",
+        "Campuskarte",
+        "Karte",
+        "Einzelkarte",
+        "Studierendenausweis",
+        "Studierkarte"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "sport.md",
+          "semesterticket.md",
+          "mensa.md",
+          "lernraeume.md",
+          "drucken.md",
+          "campuskarte.md",
+          "bibliothek.md"
+        ],
+        "suche": 0.09745510000000013
+      },
+      "meta": {
+        "dateien": [
+          "campuskarte.md",
+          "sport.md",
+          "semesterticket.md",
+          "rueckmeldung.md",
+          "mensa.md",
+          "lernraeume.md",
+          "fundbuero.md",
+          "drucken.md",
+          "bibliothek.md"
+        ],
+        "bevorzugt": [
+          "campuskarte.md"
+        ],
+        "suche": 0.2030586000000012
+      },
+      "links": {
+        "dateien": [
+          "campuskarte.md",
+          "sport.md",
+          "semesterticket.md",
+          "rueckmeldung.md",
+          "mensa.md",
+          "lernraeume.md",
+          "fundbuero.md",
+          "drucken.md",
+          "bibliothek.md"
+        ],
+        "bevorzugt": [
+          "campuskarte.md"
+        ],
+        "suche": 0.4816097785714298
+      },
+      "native": {
+        "query": "/Ersatz|Campuskarte|Karte|Einzelkarte|Studierendenausweis|Studierkarte/i",
+        "metadataQuery": "[aliases:\"Ersatz\"] OR [thema:\"Ersatz\"] OR [tags:\"Ersatz\"] OR [aliases:\"Campuskarte\"] OR [thema:\"Campuskarte\"] OR [tags:\"Campuskarte\"] OR [aliases:\"Karte\"] OR [thema:\"Karte\"] OR [tags:\"Karte\"] OR [aliases:\"Einzelkarte\"] OR [thema:\"Einzelkarte\"] OR [tags:\"Einzelkarte\"] OR [aliases:\"Studierendenausweis\"] OR [thema:\"Studierendenausweis\"] OR [tags:\"Studierendenausweis\"] OR [aliases:\"Studierkarte\"] OR [thema:\"Studierkarte\"] OR [tags:\"Studierkarte\"]",
+        "basis": [
+          "sport.md",
+          "semesterticket.md",
+          "mensa.md",
+          "lernraeume.md",
+          "drucken.md",
+          "campuskarte.md",
+          "bibliothek.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/sport.md",
+          "_obsidian_extra/semesterticket.md",
+          "_obsidian_extra/rueckmeldung.md",
+          "_obsidian_extra/mensa.md",
+          "_obsidian_extra/lernraeume.md",
+          "_obsidian_extra/fundbuero.md",
+          "_obsidian_extra/drucken.md",
+          "_obsidian_extra/campuskarte.md",
+          "_obsidian_extra/bibliothek.md"
+        ],
+        "properties": [
+          "_obsidian_extra/campuskarte.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "begriffe": [
+        "Prüfungsordnung",
+        "Prüfung",
+        "Leistung",
+        "Punktesystem",
+        "Note",
+        "Abschlussprüfung"
+      ],
+      "kennung": true,
+      "basis": {
+        "dateien": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md",
+          "auslandssemester.md",
+          "beratung.md",
+          "abschlussarbeit.md"
+        ],
+        "suche": 0.09410840000000008
+      },
+      "meta": {
+        "dateien": [
+          "pruefungsordnung.md"
+        ],
+        "bevorzugt": [
+          "pruefungsordnung.md"
+        ],
+        "suche": 0.27063559999999964
+      },
+      "links": {
+        "dateien": [
+          "pruefungsordnung.md"
+        ],
+        "bevorzugt": [
+          "pruefungsordnung.md"
+        ],
+        "suche": 0.5491867785714282
+      },
+      "native": {
+        "query": "/Prüfungsordnung|Prüfung|Leistung|Punktesystem|Note|Abschlussprüfung/i",
+        "metadataQuery": "[aliases:\"Prüfungsordnung\"] OR [thema:\"Prüfungsordnung\"] OR [tags:\"Prüfungsordnung\"] OR [aliases:\"Prüfung\"] OR [thema:\"Prüfung\"] OR [tags:\"Prüfung\"] OR [aliases:\"Leistung\"] OR [thema:\"Leistung\"] OR [tags:\"Leistung\"] OR [aliases:\"Punktesystem\"] OR [thema:\"Punktesystem\"] OR [tags:\"Punktesystem\"] OR [aliases:\"Note\"] OR [thema:\"Note\"] OR [tags:\"Note\"] OR [aliases:\"Abschlussprüfung\"] OR [thema:\"Abschlussprüfung\"] OR [tags:\"Abschlussprüfung\"]",
+        "basis": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md",
+          "auslandssemester.md",
+          "beratung.md",
+          "abschlussarbeit.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wiederholungspruefung.md",
+          "_obsidian_extra/pruefungsunfaehigkeit.md",
+          "_obsidian_extra/pruefungsordnung.md",
+          "_obsidian_extra/pruefungsanmeldung.md",
+          "_obsidian_extra/nachteilsausgleich.md",
+          "_obsidian_extra/auslandssemester.md",
+          "_obsidian_extra/beratung.md",
+          "_obsidian_extra/abschlussarbeit.md"
+        ],
+        "properties": [
+          "_obsidian_extra/wiederholungspruefung.md",
+          "_obsidian_extra/pruefungsunfaehigkeit.md",
+          "_obsidian_extra/pruefungsordnung.md",
+          "_obsidian_extra/pruefungsanmeldung.md",
+          "_obsidian_extra/nachteilsausgleich.md"
+        ],
+        "kennungen": [
+          "_obsidian_extra/pruefungsordnung.md"
+        ]
+      }
+    },
+    {
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "begriffe": [
+        "PA-12",
+        "Studienplan",
+        "Fachbereich",
+        "Studienordnung",
+        "Prüfungsordnung",
+        "Lehramtsstudiengang"
+      ],
+      "kennung": true,
+      "basis": {
+        "dateien": [
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "abschlussarbeit.md"
+        ],
+        "suche": 0.09965200000000005
+      },
+      "meta": {
+        "dateien": [
+          "abschlussarbeit.md"
+        ],
+        "bevorzugt": [
+          "abschlussarbeit.md"
+        ],
+        "suche": 0.2692743
+      },
+      "links": {
+        "dateien": [
+          "abschlussarbeit.md"
+        ],
+        "bevorzugt": [
+          "abschlussarbeit.md"
+        ],
+        "suche": 0.5478254785714286
+      },
+      "native": {
+        "query": "/PA-12|Studienplan|Fachbereich|Studienordnung|Prüfungsordnung|Lehramtsstudiengang/i",
+        "metadataQuery": "[aliases:\"PA-12\"] OR [thema:\"PA-12\"] OR [tags:\"PA-12\"] OR [aliases:\"Studienplan\"] OR [thema:\"Studienplan\"] OR [tags:\"Studienplan\"] OR [aliases:\"Fachbereich\"] OR [thema:\"Fachbereich\"] OR [tags:\"Fachbereich\"] OR [aliases:\"Studienordnung\"] OR [thema:\"Studienordnung\"] OR [tags:\"Studienordnung\"] OR [aliases:\"Prüfungsordnung\"] OR [thema:\"Prüfungsordnung\"] OR [tags:\"Prüfungsordnung\"] OR [aliases:\"Lehramtsstudiengang\"] OR [thema:\"Lehramtsstudiengang\"] OR [tags:\"Lehramtsstudiengang\"]",
+        "basis": [
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "abschlussarbeit.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/pruefungsordnung.md",
+          "_obsidian_extra/pruefungsanmeldung.md",
+          "_obsidian_extra/abschlussarbeit.md"
+        ],
+        "properties": [
+          "_obsidian_extra/pruefungsordnung.md"
+        ],
+        "kennungen": [
+          "_obsidian_extra/abschlussarbeit.md"
+        ]
+      }
+    },
+    {
+      "frage": "Wer sitzt in Raum F-201?",
+      "begriffe": [
+        "Sitzung",
+        "Rat",
+        "Vorstand",
+        "Fakultät",
+        "Sitzungssaal",
+        "Ratsstuhl"
+      ],
+      "kennung": true,
+      "basis": {
+        "dateien": [
+          "wiederholungspruefung.md",
+          "beratung.md"
+        ],
+        "suche": 0.09905069999999978
+      },
+      "meta": {
+        "dateien": [
+          "praxissemester.md"
+        ],
+        "bevorzugt": [
+          "praxissemester.md"
+        ],
+        "suche": 0.2821297000000013
+      },
+      "links": {
+        "dateien": [
+          "praxissemester.md"
+        ],
+        "bevorzugt": [
+          "praxissemester.md"
+        ],
+        "suche": 0.5606808785714299
+      },
+      "native": {
+        "query": "/Sitzung|Rat|Vorstand|Fakultät|Sitzungssaal|Ratsstuhl/i",
+        "metadataQuery": "[aliases:\"Sitzung\"] OR [thema:\"Sitzung\"] OR [tags:\"Sitzung\"] OR [aliases:\"Rat\"] OR [thema:\"Rat\"] OR [tags:\"Rat\"] OR [aliases:\"Vorstand\"] OR [thema:\"Vorstand\"] OR [tags:\"Vorstand\"] OR [aliases:\"Fakultät\"] OR [thema:\"Fakultät\"] OR [tags:\"Fakultät\"] OR [aliases:\"Sitzungssaal\"] OR [thema:\"Sitzungssaal\"] OR [tags:\"Sitzungssaal\"] OR [aliases:\"Ratsstuhl\"] OR [thema:\"Ratsstuhl\"] OR [tags:\"Ratsstuhl\"]",
+        "basis": [
+          "wiederholungspruefung.md",
+          "beratung.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wiederholungspruefung.md",
+          "_obsidian_extra/sport.md",
+          "_obsidian_extra/rueckmeldung.md",
+          "_obsidian_extra/pruefungsunfaehigkeit.md",
+          "_obsidian_extra/praxissemester.md",
+          "_obsidian_extra/nachteilsausgleich.md",
+          "_obsidian_extra/auslandssemester.md",
+          "_obsidian_extra/beratung.md"
+        ],
+        "properties": [],
+        "kennungen": [
+          "_obsidian_extra/praxissemester.md"
+        ]
+      }
+    },
+    {
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "begriffe": [
+        "Krankheit",
+        "Arzt",
+        "Medikamente",
+        "Krankenakte",
+        "Schulabsenz",
+        "Arztbescheinigung"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "praxissemester.md"
+        ],
+        "suche": 0.09642190000000028
+      },
+      "meta": {
+        "dateien": [
+          "pruefungsunfaehigkeit.md",
+          "praxissemester.md"
+        ],
+        "bevorzugt": [
+          "pruefungsunfaehigkeit.md"
+        ],
+        "suche": 0.18640849999999953
+      },
+      "links": {
+        "dateien": [
+          "pruefungsunfaehigkeit.md",
+          "praxissemester.md"
+        ],
+        "bevorzugt": [
+          "pruefungsunfaehigkeit.md"
+        ],
+        "suche": 0.4649596785714281
+      },
+      "native": {
+        "query": "/Krankheit|Arzt|Medikamente|Krankenakte|Schulabsenz|Arztbescheinigung/i",
+        "metadataQuery": "[aliases:\"Krankheit\"] OR [thema:\"Krankheit\"] OR [tags:\"Krankheit\"] OR [aliases:\"Arzt\"] OR [thema:\"Arzt\"] OR [tags:\"Arzt\"] OR [aliases:\"Medikamente\"] OR [thema:\"Medikamente\"] OR [tags:\"Medikamente\"] OR [aliases:\"Krankenakte\"] OR [thema:\"Krankenakte\"] OR [tags:\"Krankenakte\"] OR [aliases:\"Schulabsenz\"] OR [thema:\"Schulabsenz\"] OR [tags:\"Schulabsenz\"] OR [aliases:\"Arztbescheinigung\"] OR [thema:\"Arztbescheinigung\"] OR [tags:\"Arztbescheinigung\"]",
+        "basis": [
+          "praxissemester.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/pruefungsunfaehigkeit.md",
+          "_obsidian_extra/praxissemester.md"
+        ],
+        "properties": [
+          "_obsidian_extra/pruefungsunfaehigkeit.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "begriffe": [
+        "Abstellplatz",
+        "Parkhaus",
+        "Parkgebühr",
+        "Parkzeit",
+        "Autopark"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "parken.md"
+        ],
+        "suche": 0.09585699999999997
+      },
+      "meta": {
+        "dateien": [
+          "parken.md"
+        ],
+        "bevorzugt": [
+          "parken.md"
+        ],
+        "suche": 0.1863067000000001
+      },
+      "links": {
+        "dateien": [
+          "parken.md"
+        ],
+        "bevorzugt": [
+          "parken.md"
+        ],
+        "suche": 0.4648578785714287
+      },
+      "native": {
+        "query": "/Abstellplatz|Parkhaus|Parkgebühr|Parkzeit|Autopark/i",
+        "metadataQuery": "[aliases:\"Abstellplatz\"] OR [thema:\"Abstellplatz\"] OR [tags:\"Abstellplatz\"] OR [aliases:\"Parkhaus\"] OR [thema:\"Parkhaus\"] OR [tags:\"Parkhaus\"] OR [aliases:\"Parkgebühr\"] OR [thema:\"Parkgebühr\"] OR [tags:\"Parkgebühr\"] OR [aliases:\"Parkzeit\"] OR [thema:\"Parkzeit\"] OR [tags:\"Parkzeit\"] OR [aliases:\"Autopark\"] OR [thema:\"Autopark\"] OR [tags:\"Autopark\"]",
+        "basis": [
+          "parken.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/parken.md"
+        ],
+        "properties": [
+          "_obsidian_extra/parken.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Wo kann ich nachts noch lernen?",
+      "begriffe": [
+        "Lernraum",
+        "Studienort",
+        "Nachtstudiengang",
+        "Lernzentrum",
+        "Studienhalle",
+        "Lernbereich"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [],
+        "suche": 0.08651929999999992
+      },
+      "meta": {
+        "dateien": [],
+        "bevorzugt": [],
+        "suche": 0.19583690000000026
+      },
+      "links": {
+        "dateien": [],
+        "bevorzugt": [],
+        "suche": 0.47438807857142884
+      },
+      "native": {
+        "query": "/Lernraum|Studienort|Nachtstudiengang|Lernzentrum|Studienhalle|Lernbereich/i",
+        "metadataQuery": "[aliases:\"Lernraum\"] OR [thema:\"Lernraum\"] OR [tags:\"Lernraum\"] OR [aliases:\"Studienort\"] OR [thema:\"Studienort\"] OR [tags:\"Studienort\"] OR [aliases:\"Nachtstudiengang\"] OR [thema:\"Nachtstudiengang\"] OR [tags:\"Nachtstudiengang\"] OR [aliases:\"Lernzentrum\"] OR [thema:\"Lernzentrum\"] OR [tags:\"Lernzentrum\"] OR [aliases:\"Studienhalle\"] OR [thema:\"Studienhalle\"] OR [tags:\"Studienhalle\"] OR [aliases:\"Lernbereich\"] OR [thema:\"Lernbereich\"] OR [tags:\"Lernbereich\"]",
+        "basis": [],
+        "text_meta": [],
+        "properties": [],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "begriffe": [
+        "Hilfe",
+        "Beratung",
+        "Psychologe",
+        "Therapie",
+        "Selbsthilfe",
+        "Unterstützung"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "wiederholungspruefung.md",
+          "beratung.md"
+        ],
+        "suche": 0.09996479999999974
+      },
+      "meta": {
+        "dateien": [
+          "beratung.md",
+          "wiederholungspruefung.md",
+          "sport.md",
+          "rueckmeldung.md",
+          "pruefungsunfaehigkeit.md",
+          "praxissemester.md",
+          "nachteilsausgleich.md",
+          "auslandssemester.md"
+        ],
+        "bevorzugt": [
+          "beratung.md"
+        ],
+        "suche": 0.18320959999999922
+      },
+      "links": {
+        "dateien": [
+          "beratung.md",
+          "wiederholungspruefung.md",
+          "sport.md",
+          "rueckmeldung.md",
+          "pruefungsunfaehigkeit.md",
+          "praxissemester.md",
+          "nachteilsausgleich.md",
+          "auslandssemester.md"
+        ],
+        "bevorzugt": [
+          "beratung.md"
+        ],
+        "suche": 0.46176077857142783
+      },
+      "native": {
+        "query": "/Hilfe|Beratung|Psychologe|Therapie|Selbsthilfe|Unterstützung/i",
+        "metadataQuery": "[aliases:\"Hilfe\"] OR [thema:\"Hilfe\"] OR [tags:\"Hilfe\"] OR [aliases:\"Beratung\"] OR [thema:\"Beratung\"] OR [tags:\"Beratung\"] OR [aliases:\"Psychologe\"] OR [thema:\"Psychologe\"] OR [tags:\"Psychologe\"] OR [aliases:\"Therapie\"] OR [thema:\"Therapie\"] OR [tags:\"Therapie\"] OR [aliases:\"Selbsthilfe\"] OR [thema:\"Selbsthilfe\"] OR [tags:\"Selbsthilfe\"] OR [aliases:\"Unterstützung\"] OR [thema:\"Unterstützung\"] OR [tags:\"Unterstützung\"]",
+        "basis": [
+          "wiederholungspruefung.md",
+          "beratung.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wiederholungspruefung.md",
+          "_obsidian_extra/sport.md",
+          "_obsidian_extra/rueckmeldung.md",
+          "_obsidian_extra/pruefungsunfaehigkeit.md",
+          "_obsidian_extra/praxissemester.md",
+          "_obsidian_extra/nachteilsausgleich.md",
+          "_obsidian_extra/auslandssemester.md",
+          "_obsidian_extra/beratung.md"
+        ],
+        "properties": [
+          "_obsidian_extra/beratung.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "begriffe": [
+        "Überweisung",
+        "Frist",
+        "Strafe",
+        "Satzung",
+        "Semester",
+        "Honorar"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "wiederholungspruefung.md",
+          "sport.md",
+          "semesterticket.md",
+          "rueckmeldung.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "praxissemester.md",
+          "parken.md",
+          "campuskarte.md",
+          "bibliothek.md",
+          "auslandssemester.md"
+        ],
+        "suche": 0.10070730000000003
+      },
+      "meta": {
+        "dateien": [
+          "rueckmeldung.md",
+          "wiederholungspruefung.md",
+          "sport.md",
+          "semesterticket.md",
+          "raeume.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "praxissemester.md",
+          "parken.md",
+          "auslandssemester.md",
+          "campuskarte.md",
+          "bibliothek.md"
+        ],
+        "bevorzugt": [
+          "rueckmeldung.md"
+        ],
+        "suche": 0.16523019999999997
+      },
+      "links": {
+        "dateien": [
+          "rueckmeldung.md",
+          "wiederholungspruefung.md",
+          "sport.md",
+          "semesterticket.md",
+          "raeume.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "praxissemester.md",
+          "parken.md",
+          "auslandssemester.md",
+          "campuskarte.md",
+          "bibliothek.md"
+        ],
+        "bevorzugt": [
+          "rueckmeldung.md"
+        ],
+        "suche": 0.4437813785714285
+      },
+      "native": {
+        "query": "/Überweisung|Frist|Strafe|Satzung|Semester|Honorar/i",
+        "metadataQuery": "[aliases:\"Überweisung\"] OR [thema:\"Überweisung\"] OR [tags:\"Überweisung\"] OR [aliases:\"Frist\"] OR [thema:\"Frist\"] OR [tags:\"Frist\"] OR [aliases:\"Strafe\"] OR [thema:\"Strafe\"] OR [tags:\"Strafe\"] OR [aliases:\"Satzung\"] OR [thema:\"Satzung\"] OR [tags:\"Satzung\"] OR [aliases:\"Semester\"] OR [thema:\"Semester\"] OR [tags:\"Semester\"] OR [aliases:\"Honorar\"] OR [thema:\"Honorar\"] OR [tags:\"Honorar\"]",
+        "basis": [
+          "wiederholungspruefung.md",
+          "sport.md",
+          "semesterticket.md",
+          "rueckmeldung.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "praxissemester.md",
+          "parken.md",
+          "campuskarte.md",
+          "bibliothek.md",
+          "auslandssemester.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wiederholungspruefung.md",
+          "_obsidian_extra/sport.md",
+          "_obsidian_extra/semesterticket.md",
+          "_obsidian_extra/rueckmeldung.md",
+          "_obsidian_extra/raeume.md",
+          "_obsidian_extra/pruefungsordnung.md",
+          "_obsidian_extra/pruefungsanmeldung.md",
+          "_obsidian_extra/praxissemester.md",
+          "_obsidian_extra/parken.md",
+          "_obsidian_extra/auslandssemester.md",
+          "_obsidian_extra/campuskarte.md",
+          "_obsidian_extra/bibliothek.md"
+        ],
+        "properties": [
+          "_obsidian_extra/rueckmeldung.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "begriffe": [
+        "Prüfung",
+        "Wiederholung",
+        "Sitzung",
+        "Prüfungsleistung",
+        "Prüfungsbeteiligung",
+        "Sitzungsdatum"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md",
+          "beratung.md",
+          "abschlussarbeit.md"
+        ],
+        "suche": 0.09615160000000014
+      },
+      "meta": {
+        "dateien": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md",
+          "beratung.md",
+          "abschlussarbeit.md"
+        ],
+        "bevorzugt": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md"
+        ],
+        "suche": 0.18501690000000054
+      },
+      "links": {
+        "dateien": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md",
+          "beratung.md",
+          "abschlussarbeit.md"
+        ],
+        "bevorzugt": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md"
+        ],
+        "suche": 0.4635680785714291
+      },
+      "native": {
+        "query": "/Prüfung|Wiederholung|Sitzung|Prüfungsleistung|Prüfungsbeteiligung|Sitzungsdatum/i",
+        "metadataQuery": "[aliases:\"Prüfung\"] OR [thema:\"Prüfung\"] OR [tags:\"Prüfung\"] OR [aliases:\"Wiederholung\"] OR [thema:\"Wiederholung\"] OR [tags:\"Wiederholung\"] OR [aliases:\"Sitzung\"] OR [thema:\"Sitzung\"] OR [tags:\"Sitzung\"] OR [aliases:\"Prüfungsleistung\"] OR [thema:\"Prüfungsleistung\"] OR [tags:\"Prüfungsleistung\"] OR [aliases:\"Prüfungsbeteiligung\"] OR [thema:\"Prüfungsbeteiligung\"] OR [tags:\"Prüfungsbeteiligung\"] OR [aliases:\"Sitzungsdatum\"] OR [thema:\"Sitzungsdatum\"] OR [tags:\"Sitzungsdatum\"]",
+        "basis": [
+          "wiederholungspruefung.md",
+          "pruefungsunfaehigkeit.md",
+          "pruefungsordnung.md",
+          "pruefungsanmeldung.md",
+          "nachteilsausgleich.md",
+          "beratung.md",
+          "abschlussarbeit.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wiederholungspruefung.md",
+          "_obsidian_extra/pruefungsunfaehigkeit.md",
+          "_obsidian_extra/pruefungsordnung.md",
+          "_obsidian_extra/pruefungsanmeldung.md",
+          "_obsidian_extra/nachteilsausgleich.md",
+          "_obsidian_extra/beratung.md",
+          "_obsidian_extra/abschlussarbeit.md"
+        ],
+        "properties": [
+          "_obsidian_extra/wiederholungspruefung.md",
+          "_obsidian_extra/pruefungsunfaehigkeit.md",
+          "_obsidian_extra/pruefungsordnung.md",
+          "_obsidian_extra/pruefungsanmeldung.md",
+          "_obsidian_extra/nachteilsausgleich.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "begriffe": [
+        "Semesterticket",
+        "ICE",
+        "Vereinbarung",
+        "Tarif",
+        "Verkehr",
+        "Fahrkarte"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "wlan.md",
+          "semesterticket.md",
+          "auslandssemester.md"
+        ],
+        "suche": 0.08218800000000011
+      },
+      "meta": {
+        "dateien": [
+          "semesterticket.md",
+          "wlan.md",
+          "rueckmeldung.md",
+          "parken.md",
+          "fundbuero.md",
+          "auslandssemester.md"
+        ],
+        "bevorzugt": [
+          "semesterticket.md"
+        ],
+        "suche": 0.18322519999999987
+      },
+      "links": {
+        "dateien": [
+          "semesterticket.md",
+          "wlan.md",
+          "rueckmeldung.md",
+          "parken.md",
+          "fundbuero.md",
+          "auslandssemester.md"
+        ],
+        "bevorzugt": [
+          "semesterticket.md"
+        ],
+        "suche": 0.46177637857142845
+      },
+      "native": {
+        "query": "/Semesterticket|ICE|Vereinbarung|Tarif|Verkehr|Fahrkarte/i",
+        "metadataQuery": "[aliases:\"Semesterticket\"] OR [thema:\"Semesterticket\"] OR [tags:\"Semesterticket\"] OR [aliases:\"ICE\"] OR [thema:\"ICE\"] OR [tags:\"ICE\"] OR [aliases:\"Vereinbarung\"] OR [thema:\"Vereinbarung\"] OR [tags:\"Vereinbarung\"] OR [aliases:\"Tarif\"] OR [thema:\"Tarif\"] OR [tags:\"Tarif\"] OR [aliases:\"Verkehr\"] OR [thema:\"Verkehr\"] OR [tags:\"Verkehr\"] OR [aliases:\"Fahrkarte\"] OR [thema:\"Fahrkarte\"] OR [tags:\"Fahrkarte\"]",
+        "basis": [
+          "wlan.md",
+          "semesterticket.md",
+          "auslandssemester.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/wlan.md",
+          "_obsidian_extra/semesterticket.md",
+          "_obsidian_extra/rueckmeldung.md",
+          "_obsidian_extra/parken.md",
+          "_obsidian_extra/fundbuero.md",
+          "_obsidian_extra/auslandssemester.md"
+        ],
+        "properties": [
+          "_obsidian_extra/semesterticket.md"
+        ],
+        "kennungen": []
+      }
+    },
+    {
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "begriffe": [
+        "Fachschaft",
+        "Informatik",
+        "Party",
+        "Veranstaltung",
+        "Fachschaftsveranstaltung",
+        "Informatik-Party"
+      ],
+      "kennung": false,
+      "basis": {
+        "dateien": [
+          "raeume.md",
+          "lernraeume.md"
+        ],
+        "suche": 0.10051450000000023
+      },
+      "meta": {
+        "dateien": [
+          "raeume.md",
+          "lernraeume.md"
+        ],
+        "bevorzugt": [],
+        "suche": 0.1835733999999993
+      },
+      "links": {
+        "dateien": [
+          "raeume.md",
+          "lernraeume.md"
+        ],
+        "bevorzugt": [],
+        "suche": 0.46212457857142786
+      },
+      "native": {
+        "query": "/Fachschaft|Informatik|Party|Veranstaltung|Fachschaftsveranstaltung|Informatik-Party/i",
+        "metadataQuery": "[aliases:\"Fachschaft\"] OR [thema:\"Fachschaft\"] OR [tags:\"Fachschaft\"] OR [aliases:\"Informatik\"] OR [thema:\"Informatik\"] OR [tags:\"Informatik\"] OR [aliases:\"Party\"] OR [thema:\"Party\"] OR [tags:\"Party\"] OR [aliases:\"Veranstaltung\"] OR [thema:\"Veranstaltung\"] OR [tags:\"Veranstaltung\"] OR [aliases:\"Fachschaftsveranstaltung\"] OR [thema:\"Fachschaftsveranstaltung\"] OR [tags:\"Fachschaftsveranstaltung\"] OR [aliases:\"Informatik-Party\"] OR [thema:\"Informatik-Party\"] OR [tags:\"Informatik-Party\"]",
+        "basis": [
+          "raeume.md",
+          "lernraeume.md"
+        ],
+        "text_meta": [
+          "_obsidian_extra/raeume.md",
+          "_obsidian_extra/lernraeume.md"
+        ],
+        "properties": [],
+        "kennungen": []
+      }
+    }
+  ]
+}

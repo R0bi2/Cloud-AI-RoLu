@@ -1,0 +1,1533 @@
+{
+  "konfiguration": {
+    "modell": "llama3.2:3b",
+    "embedding": "granite-embedding:278m",
+    "rag_k": 4,
+    "original_hashes": {
+      "abschlussarbeit.md": "3926b1cf9d1e5cbc6ed4d4382efe13cd434563795b86fa04b304984a847d8cae",
+      "auslandssemester.md": "83c89a911224a5c1e5718adb4fe7d5682d6a8d4918c020cd240304ce6aa1ae62",
+      "beratung.md": "a85b1ca088ea4050ccebbee9ab28bed6efcde2217b422dbd9602d19a6d3ee1da",
+      "bibliothek.md": "d879b698f7aae8372c11cccc2fac26565f7a370dbf01a7e3aa91c2e0eb251783",
+      "campuskarte.md": "b337565bd3e73cbb713634288fb78eb9c2cebe706567df4946a23a5fa62bd930",
+      "drucken.md": "1363fd25a06c455eb0c39df5591dad5dd74ac9430b844a5107eb62ca28b42168",
+      "fundbuero.md": "0973f5790e45e665e309a2a92fdbf7b1621f29162eb0d83e44ff896fcdaa71bd",
+      "lernraeume.md": "8681b56489aa92d331c7d2354eb16bae522cc15ec5082beba8adbe8cad34543e",
+      "mensa.md": "22940e513891aa6f6fecfc3589c98eff85e126c266a0a08e8fbe2e8ed712dcdc",
+      "nachteilsausgleich.md": "f4f36528a2d7105d4ea22469ebc996e48420787ceb6134ded6b66cf5275a06c7",
+      "parken.md": "423e1f04157df29d438303d8a42460cafdead30573fee2835070aad35a338f23",
+      "praxissemester.md": "e02f840b43a88985cbf9720c6bbf638170dd0b0386e37984f1422b2ad7026948",
+      "pruefungsanmeldung.md": "bce0005c519cc612c4a0caf6d3fec9c0f41469362b0411ddbca0298c292c4ed5",
+      "pruefungsordnung.md": "ac29406bcd88f07cdc38c0d37c674eae63f3f1e4ac4888a13bc8af6a921af499",
+      "pruefungsunfaehigkeit.md": "b3d96a0488d168061e22bd84e83f85b887d0ddbb57d0cd0152457786aafc7273",
+      "raeume.md": "32653a45d84b41961d44d26adc6a3d1d3695e73d49aeb34c2692387cb9dcc1b9",
+      "rueckmeldung.md": "5b40f45ad614ddcfd4e61fd7e267c37c6a4d00e65fe5d347f782192ade50b4c1",
+      "semesterticket.md": "165dce8a8d891da94e2e25055279f7508113e2c39ef2277bb8d24c54135c8a5d",
+      "sport.md": "2e4e31001747d68e5b4117615a385839932f986f5baee99a72b19be91c6dac66",
+      "wiederholungspruefung.md": "2d167857d375156ece23402abdac18e767f59b29577534ca002a1708b2e1fc3e",
+      "wlan.md": "4a9b994d0cdd949fd79a8d247cc2db29e79752e51fb1e0e31f0581e90c4de61f"
+    },
+    "antwortprompt_hash": "51f0a445889605fc8fc09e4816923a49d8396d1c93730f03653d52a6cefdf95a"
+  },
+  "ergebnisse": [
+    {
+      "variante": "datei",
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Die Bibliothek ist am Samstag von 9 bis 16 Uhr geöffnet.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 801,
+      "sekunden_suche": 16.729724473996612,
+      "sekunden_antwort": 6.876886318001198
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Die Bibliothek ist am Samstag von 9 bis 16 Uhr geöffnet.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 801,
+      "sekunden_suche": 16.825673517998858,
+      "sekunden_antwort": 1.3222964989981847
+    },
+    {
+      "variante": "rag",
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Die Bibliothek im Gebäude L ist am Samstag von 9 bis 16 Uhr geöffnet.",
+      "quellen": [
+        "bibliothek.md",
+        "lernraeume.md"
+      ],
+      "eingabe_tokens": 571,
+      "sekunden_suche": 0.4170232800024678,
+      "sekunden_antwort": 1.6712668439940899
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Die Bibliothek im Gebäude L ist am Samstag von 9 bis 16 Uhr geöffnet.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 1084,
+      "sekunden_suche": 16.719808740002918,
+      "sekunden_antwort": 1.7572540510009276
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Die Bibliothek im Gebäude L ist am Samstag von 9 bis 16 Uhr geöffnet.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "mensa.md"
+      ],
+      "eingabe_tokens": 1121,
+      "sekunden_suche": 16.90622501799886,
+      "sekunden_antwort": 1.9062396539957263
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Die Bibliothek im Gebäude L ist am Samstag von 9 bis 16 Uhr geöffnet.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 1084,
+      "sekunden_suche": 17.184776196570287,
+      "sekunden_antwort": 1.873169250000501
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Die Bibliothek ist am Samstag von 9 bis 16 Uhr geöffnet.",
+      "quellen": [
+        "bibliothek.md",
+        "lernraeume.md"
+      ],
+      "eingabe_tokens": 1019,
+      "sekunden_suche": 0.08443891299975803,
+      "sekunden_antwort": 1.459893588005798
+    },
+    {
+      "variante": "datei",
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa.",
+      "quellen": [
+        "campuskarte.md",
+        "mensa.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 749,
+      "sekunden_suche": 2.0904118150065187,
+      "sekunden_antwort": 1.3782942540055956
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa.",
+      "quellen": [
+        "campuskarte.md",
+        "mensa.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 749,
+      "sekunden_suche": 2.1819696069996617,
+      "sekunden_antwort": 1.3337945669991313
+    },
+    {
+      "variante": "rag",
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa.",
+      "quellen": [
+        "mensa.md",
+        "sport.md"
+      ],
+      "eingabe_tokens": 484,
+      "sekunden_suche": 0.07760178599710343,
+      "sekunden_antwort": 1.2743007209937787
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa. (Quelle: mensa.md)",
+      "quellen": [
+        "campuskarte.md",
+        "mensa.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 1032,
+      "sekunden_suche": 2.090328955993755,
+      "sekunden_antwort": 1.9827452219979023
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa. (Quelle: mensa.md)",
+      "quellen": [
+        "campuskarte.md",
+        "mensa.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 1032,
+      "sekunden_suche": 2.278040306999662,
+      "sekunden_antwort": 1.9773457489936845
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa. (Quelle: mensa.md)",
+      "quellen": [
+        "campuskarte.md",
+        "mensa.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 1032,
+      "sekunden_suche": 2.5565914855710905,
+      "sekunden_antwort": 1.9377899920000345
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa.",
+      "quellen": [
+        "mensa.md",
+        "sport.md"
+      ],
+      "eingabe_tokens": 855,
+      "sekunden_suche": 0.08279590500023915,
+      "sekunden_antwort": 14.546526514001016
+    },
+    {
+      "variante": "datei",
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Eine Ersatzkarte kostet 15 Euro.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 802,
+      "sekunden_suche": 3.044948807997571,
+      "sekunden_antwort": 12.151466299997992
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Eine Ersatzkarte kostet 15 Euro.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 802,
+      "sekunden_suche": 3.1409268999960416,
+      "sekunden_antwort": 0.9583691419975366
+    },
+    {
+      "variante": "rag",
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Eine Ersatzkarte kostet 15 Euro. Sie kann nach zwei Werktagen im Studierendensekretariat, Raum A-010, abgeholt werden.",
+      "quellen": [
+        "campuskarte.md",
+        "mensa.md",
+        "semesterticket.md",
+        "sport.md"
+      ],
+      "eingabe_tokens": 569,
+      "sekunden_suche": 0.1138196350002545,
+      "sekunden_antwort": 9.518456262005202
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Eine Ersatzkarte kostet 15 Euro.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 1085,
+      "sekunden_suche": 3.04472094499215,
+      "sekunden_antwort": 17.743605313000444
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Eine Ersatzkarte kostet 15 Euro.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 1085,
+      "sekunden_suche": 3.2465303999960424,
+      "sekunden_antwort": 0.9222233940017759
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Eine Ersatzkarte kostet 15 Euro.",
+      "quellen": [
+        "bibliothek.md",
+        "campuskarte.md",
+        "drucken.md"
+      ],
+      "eingabe_tokens": 1085,
+      "sekunden_suche": 3.525081578567471,
+      "sekunden_antwort": 1.0133322959954967
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Eine Ersatzkarte kostet 15 Euro. Sie kann nach zwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereitgestellt werden.",
+      "quellen": [
+        "campuskarte.md",
+        "mensa.md",
+        "parken.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 1008,
+      "sekunden_suche": 0.07760249599959934,
+      "sekunden_antwort": 19.18643718099338
+    },
+    {
+      "variante": "datei",
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 906,
+      "sekunden_suche": 2.542744340003992,
+      "sekunden_antwort": 19.330501774005825
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 906,
+      "sekunden_suche": 2.636061855001931,
+      "sekunden_antwort": 4.887764373001119
+    },
+    {
+      "variante": "rag",
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 472,
+      "sekunden_suche": 0.08619899699988309,
+      "sekunden_antwort": 10.289590050997504
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 1264,
+      "sekunden_suche": 2.542939827006194,
+      "sekunden_antwort": 27.193961424003646
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 598,
+      "sekunden_suche": 2.81258905500193,
+      "sekunden_antwort": 6.406751922004332
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 598,
+      "sekunden_suche": 3.091140233573359,
+      "sekunden_antwort": 4.701452681998489
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 1060,
+      "sekunden_suche": 0.07397816300363047,
+      "sekunden_antwort": 22.790442253994115
+    },
+    {
+      "variante": "datei",
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Um die Bachelorarbeit abzugeben, benötigst du das Formular PA-12, das du beim Prüfungsamt anmeldest und unterschreibst.",
+      "quellen": [
+        "abschlussarbeit.md",
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 823,
+      "sekunden_suche": 3.0504546590018435,
+      "sekunden_antwort": 16.992405188000703
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Um die Bachelorarbeit abzugeben, benötigst du das Formular PA-12, das du beim Prüfungsamt beantragen musst, um die Bearbeitungszeit zu melden.",
+      "quellen": [
+        "abschlussarbeit.md",
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 823,
+      "sekunden_suche": 3.1489101900034564,
+      "sekunden_antwort": 3.3497062689930317
+    },
+    {
+      "variante": "rag",
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Die Bachelorarbeit muss mit dem Formular PA-12 beim Prüfungsamt angemeldet werden, unterschrieben von der betreuenden Professorin oder dem betreuenden Professor. Voraussetzung ist mindestens 150 ECTS.",
+      "quellen": [
+        "abschlussarbeit.md",
+        "praxissemester.md",
+        "pruefungsordnung.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 530,
+      "sekunden_suche": 0.037196678000327665,
+      "sekunden_antwort": 11.237136315998214
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Mit dem Formular PA-12 meldet ihr eure Bachelorarbeit beim Prüfungsamt an.",
+      "quellen": [
+        "abschlussarbeit.md",
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 1157,
+      "sekunden_suche": 3.051552274999267,
+      "sekunden_antwort": 23.221393678999448
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Um die Anmeldung deiner Bachelorarbeit abzugeben, benötigst du das Formular PA-12, das du beim Prüfungsamt unterschreiben musst.",
+      "quellen": [
+        "abschlussarbeit.md"
+      ],
+      "eingabe_tokens": 420,
+      "sekunden_suche": 3.3185324900034567,
+      "sekunden_antwort": 4.30001069100399
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Um die Anmeldung deiner Bachelorarbeit abzugeben, benötigst du das Formular PA-12, das du beim Prüfungsamt unterschreiben musst.",
+      "quellen": [
+        "abschlussarbeit.md"
+      ],
+      "eingabe_tokens": 420,
+      "sekunden_suche": 3.5970836685748853,
+      "sekunden_antwort": 3.0008654499979457
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Wofür brauche ich das Formular PA-12?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Um die Anmeldung deiner Bachelorarbeit abzugeben, musst du das Formular PA-12 beim Prüfungsamt unterzeichnen.",
+      "quellen": [
+        "abschlussarbeit.md",
+        "pruefungsordnung.md"
+      ],
+      "eingabe_tokens": 897,
+      "sekunden_suche": 0.03976792100002058,
+      "sekunden_antwort": 19.371088637002686
+    },
+    {
+      "variante": "datei",
+      "frage": "Wer sitzt in Raum F-201?",
+      "typ": "kennung",
+      "K": false,
+      "A": false,
+      "text": "Es gibt keine Informationen über einen bestimmten Personen, der in Raum F-201 sitzt. Dazu habe ich keine Information.",
+      "quellen": [
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 518,
+      "sekunden_suche": 2.62195877799968,
+      "sekunden_antwort": 11.110579864005558
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Wer sitzt in Raum F-201?",
+      "typ": "kennung",
+      "K": false,
+      "A": false,
+      "text": "Es gibt keine Informationen über einen bestimmten Personen, der in Raum F-201 sitzt. Dazu habe ich keine Information. (Quelle: beratung.md)",
+      "quellen": [
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 518,
+      "sekunden_suche": 2.719874177001977,
+      "sekunden_antwort": 2.7505402929964475
+    },
+    {
+      "variante": "rag",
+      "frage": "Wer sitzt in Raum F-201?",
+      "typ": "kennung",
+      "K": false,
+      "A": false,
+      "text": "In Raum F-201 sitzt eine Person. Die Raumnummer F-201 liegt im Erdgeschoss von Gebäude F.",
+      "quellen": [
+        "bibliothek.md",
+        "mensa.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 569,
+      "sekunden_suche": 0.08046645099966554,
+      "sekunden_antwort": 12.110659411999222
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Wer sitzt in Raum F-201?",
+      "typ": "kennung",
+      "K": false,
+      "A": false,
+      "text": "Es gibt keine Informationen über Personen, die in einem bestimmten Raum sitzen.",
+      "quellen": [
+        "auslandssemester.md",
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 989,
+      "sekunden_suche": 2.622119091996865,
+      "sekunden_antwort": 21.353621076996205
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Wer sitzt in Raum F-201?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Das Praktikantenamt sitzt in Raum F-201. Es ist das zuständige Büro für die Praktikanten.",
+      "quellen": [
+        "praxissemester.md"
+      ],
+      "eingabe_tokens": 421,
+      "sekunden_suche": 2.9029531770019785,
+      "sekunden_antwort": 8.904671132993826
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Wer sitzt in Raum F-201?",
+      "typ": "kennung",
+      "K": true,
+      "A": true,
+      "text": "Das Praktikantenamt sitzt in Raum F-201. Es ist das zuständige Stellenamt für die Praktika. Es prüft, ob die Stelle zum Studiengang passt.",
+      "quellen": [
+        "praxissemester.md"
+      ],
+      "eingabe_tokens": 421,
+      "sekunden_suche": 3.181504355573407,
+      "sekunden_antwort": 3.4487618729981477
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Wer sitzt in Raum F-201?",
+      "typ": "kennung",
+      "K": true,
+      "A": false,
+      "text": "Es ist nicht möglich, mit Sicherheit zu bestimmen, wer in Raum F-201 sitzt, da die Dokumente keine Informationen über die aktuellen Besucher oder Nutzer von Raum F-201 enthalten.",
+      "quellen": [
+        "praxissemester.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 992,
+      "sekunden_suche": 0.14257913100300357,
+      "sekunden_antwort": 22.517790514997614
+    },
+    {
+      "variante": "datei",
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": false,
+      "text": "Wenn du am Tag deiner Klausur krank bist, solltest du dich an das Praktikantenamt wenden und deine Krankheitstage nachholen. Denke daran, dass Krankheitstage über fünf Tage hinaus nachgeholt werden müssen. Informiere dich über den Ausbildungsvertrag, um sicherzustellen, dass du alle Anforderungen erfüllst. (Quelle: praxissemester.md)",
+      "quellen": [
+        "praxissemester.md"
+      ],
+      "eingabe_tokens": 323,
+      "sekunden_suche": 2.729453359002946,
+      "sekunden_antwort": 11.368514626003162
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": false,
+      "text": "Wenn du am Tag deiner Klausur krank bist, solltest du dich an das Praktikantenamt wenden und deine Krankheitstage nachholen. Denke daran, dass Krankheitstage über fünf Tage hinaus nachgeholt werden müssen. Informiere dich über den Ausbildungsvertrag, um sicherzustellen, dass du alle Anforderungen erfüllst. (Quelle: praxissemester.md)",
+      "quellen": [
+        "praxissemester.md"
+      ],
+      "eingabe_tokens": 323,
+      "sekunden_suche": 2.8249687910049532,
+      "sekunden_antwort": 7.065418065998529
+    },
+    {
+      "variante": "rag",
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du am Tag deiner Klausur krank bist, solltest du dich an die Psychosoziale Beratung des Studierendenwerks wenden, um Unterstützung zu erhalten. Wenn du dann ein ärztliches Attest hast, das deine Prüfungsunfähigkeit bestätigt, solltest du es innerhalb von drei Werktagen nach dem Prüfungstermin beim Prüfungsamt einreichen, um deine Prüfungsunfähigkeit anzuerkennen. (Quelle: pruefungsunfaehigkeit.md)",
+      "quellen": [
+        "beratung.md",
+        "praxissemester.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 627,
+      "sekunden_suche": 0.08686066200607456,
+      "sekunden_antwort": 20.37895246900007
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du am Tag deiner Klausur krank bist, solltest du ein ärztliches Attest einholen, das die Prüfungsunfähigkeit bestätigt. Das Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim Prüfungsamt eingehen.",
+      "quellen": [
+        "praxissemester.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 778,
+      "sekunden_suche": 2.7296846410099533,
+      "sekunden_antwort": 20.438994632000686
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du am Tag deiner Klausur krank bist, musst du ein ärztliches Attest einreichen, das die Prüfungsunfähigkeit bestätigt. Das Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim Prüfungsamt eingehen.",
+      "quellen": [
+        "praxissemester.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 778,
+      "sekunden_suche": 2.914955391004953,
+      "sekunden_antwort": 5.55763242199464
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Um die Prüfung abzusagen, weil du krank bist, musst du ein ärztliches Attest vorlegen, das die Prüfungsunfähigkeit am Prüfungstag bestätigt. Das Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim Prüfungsamt eingehen.",
+      "quellen": [
+        "beratung.md",
+        "nachteilsausgleich.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 1134,
+      "sekunden_suche": 3.1935065695763813,
+      "sekunden_antwort": 23.33715251099784
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du am Tag deiner Klausur krank bist, solltest du dich bei der Prüfungsstelle melden und ein ärztliches Attest einholen, das deine Prüfungsunfähigkeit bestätigt. Danach solltest du das Attest innerhalb von drei Werktagen beim Prüfungsamt einreichen, um deine Prüfungsunfähigkeit anzuerkennen. (Quelle: pruefungsunfaehigkeit.md)",
+      "quellen": [
+        "praxissemester.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 1034,
+      "sekunden_suche": 0.07410730000265175,
+      "sekunden_antwort": 30.053372800000943
+    },
+    {
+      "variante": "datei",
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide benötigt man einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+      "quellen": [
+        "parken.md"
+      ],
+      "eingabe_tokens": 323,
+      "sekunden_suche": 2.139681972999824,
+      "sekunden_antwort": 10.209129294999002
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide benötigt man einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+      "quellen": [
+        "parken.md"
+      ],
+      "eingabe_tokens": 323,
+      "sekunden_suche": 2.2343464339935273,
+      "sekunden_antwort": 5.933694888997707
+    },
+    {
+      "variante": "rag",
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+      "quellen": [
+        "campuskarte.md",
+        "fundbuero.md",
+        "parken.md"
+      ],
+      "eingabe_tokens": 564,
+      "sekunden_suche": 0.06294571000034921,
+      "sekunden_antwort": 13.277799734001746
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+      "quellen": [
+        "parken.md"
+      ],
+      "eingabe_tokens": 411,
+      "sekunden_suche": 2.139412437994906,
+      "sekunden_antwort": 12.059612409000692
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+      "quellen": [
+        "parken.md"
+      ],
+      "eingabe_tokens": 411,
+      "sekunden_suche": 2.3247961339935275,
+      "sekunden_antwort": 5.895866489001492
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+      "quellen": [
+        "parken.md",
+        "raeume.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 907,
+      "sekunden_suche": 2.603347312564956,
+      "sekunden_antwort": 18.534006759000476
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+      "quellen": [
+        "parken.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 884,
+      "sekunden_suche": 0.04838260100223124,
+      "sekunden_antwort": 24.074999570002547
+    },
+    {
+      "variante": "datei",
+      "frage": "Wo kann ich nachts noch lernen?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": false,
+      "text": "Am besten kannst du nachts im Bibliotheksbereich lernen, wo es ruhig und gut beleuchtet ist. Es gibt auch einige Lerngruppen, die nachts stattfinden. Die Bibliothek ist auch nachts geöffnet. (Quelle: bibliothek.md)",
+      "quellen": [],
+      "eingabe_tokens": 172,
+      "sekunden_suche": 2.8838913139989018,
+      "sekunden_antwort": 5.850557572004618
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Wo kann ich nachts noch lernen?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": false,
+      "text": "Am besten kannst du nachts im Bibliotheksbereich lernen, wo es ruhig und gut beleuchtet ist. Dort kannst du auch die Notenbücher und Lernmaterialien ausleihen. Die Bibliothek ist auch nachts geöffnet. (Quelle: bibliothek.md)",
+      "quellen": [],
+      "eingabe_tokens": 172,
+      "sekunden_suche": 2.9693828749960085,
+      "sekunden_antwort": 4.695240989996819
+    },
+    {
+      "variante": "rag",
+      "frage": "Wo kann ich nachts noch lernen?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch am Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.",
+      "quellen": [
+        "bibliothek.md",
+        "lernraeume.md"
+      ],
+      "eingabe_tokens": 522,
+      "sekunden_suche": 0.03353543300181627,
+      "sekunden_antwort": 11.631181415003084
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Wo kann ich nachts noch lernen?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": false,
+      "text": "Am besten kannst du nachts im Bibliotheksbereich lernen, wo es ruhig und gut beleuchtet ist. Es gibt auch einige Lerngruppen, die nachts stattfinden. Die Bibliothek ist auch nachts geöffnet. (Quelle: bibliothek.md)",
+      "quellen": [],
+      "eingabe_tokens": 172,
+      "sekunden_suche": 2.883965504996013,
+      "sekunden_antwort": 5.399724869996135
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Wo kann ich nachts noch lernen?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": false,
+      "text": "Am besten kannst du nachts im Bibliotheksbereich lernen, wo es ruhig und gut beleuchtet ist. Dort kannst du auch die Notenbücher und Lernmaterialien ausleihen. Die Bibliothek ist auch nachts geöffnet. (Quelle: bibliothek.md)",
+      "quellen": [],
+      "eingabe_tokens": 172,
+      "sekunden_suche": 3.0787004749960087,
+      "sekunden_antwort": 4.78540466800041
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Wo kann ich nachts noch lernen?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": false,
+      "text": "Am besten kannst du nachts im Bibliotheksbereich lernen, wo es ruhig und gut beleuchtet ist. Dort kannst du auch die Notenbücher und Lernmaterialien ausleihen. Die Bibliothek ist auch nachts geöffnet. (Quelle: bibliothek.md)",
+      "quellen": [],
+      "eingabe_tokens": 172,
+      "sekunden_suche": 3.3572516535674373,
+      "sekunden_antwort": 4.793647133003105
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Wo kann ich nachts noch lernen?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch am Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.",
+      "quellen": [
+        "bibliothek.md",
+        "lernraeume.md"
+      ],
+      "eingabe_tokens": 962,
+      "sekunden_suche": 0.07341512299899478,
+      "sekunden_antwort": 22.804823310005304
+    },
+    {
+      "variante": "datei",
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Psychosoziale Beratung des Studierendenwerks bietet dir kostenlose und vertrauliche Gespräche an, um mit deinen Problemen umzugehen. Du kannst auch die Telefonseelsorge unter 0800 111 0 111 in akuten Notlagen kontaktieren. Es lohnt sich, einen Termin bei der Studienberatung zu vereinbaren, um deine Situation besser zu besprechen. (Quelle: beratung.md)",
+      "quellen": [
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 527,
+      "sekunden_suche": 2.835454339001444,
+      "sekunden_antwort": 16.70446228700166
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Psychosoziale Beratung des Studierendenwerks bietet kostenlose und vertrauliche Gespräche an, um dir in schwierigen Zeiten zu helfen. Du kannst auch die Telefonseelsorge unter 0800 111 0 111 kontaktieren, wenn du in einer Notlage bist. Es lohnt sich, einen Termin bei der Studienberatung zu vereinbaren, um deine Situation zu besprechen. (Quelle: beratung.md)",
+      "quellen": [
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 527,
+      "sekunden_suche": 2.9345692310019347,
+      "sekunden_antwort": 8.006358118997014
+    },
+    {
+      "variante": "rag",
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Bei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu viel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose und vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche über das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um die Uhr unter 0800 111 0 111 erreichbar. (Quelle: beratung.md)",
+      "quellen": [
+        "beratung.md",
+        "praxissemester.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 528,
+      "sekunden_suche": 0.044369226998242084,
+      "sekunden_antwort": 16.99526959299692
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Psychosoziale Beratung des Studierendenwerks bietet dir kostenlose und vertrauliche Gespräche an, um mit deinen Problemen und Überlastung umzugehen. Du kannst Termine über das Online-Formular buchen. In akuten Notlagen ist die Telefonseelsorge rund um die Uhr unter 0800 111 0 111 erreichbar. (Quelle: beratung.md)",
+      "quellen": [
+        "auslandssemester.md",
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 998,
+      "sekunden_suche": 2.8355291610059794,
+      "sekunden_antwort": 9.400753046997124
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Psychosoziale Beratung des Studierendenwerks bietet dir kostenlose und vertrauliche Gespräche an, um mit deinen Problemen und Überlastung umzugehen. Du kannst Termine über das Online-Formular vereinbaren. In akuten Notlagen ist die Telefonseelsorge rund um die Uhr unter 0800 111 0 111 erreichbar. (Quelle: beratung.md)",
+      "quellen": [
+        "auslandssemester.md",
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 998,
+      "sekunden_suche": 3.0178140310019343,
+      "sekunden_antwort": 8.181750597002974
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Psychosoziale Beratung des Studierendenwerks bietet dir kostenlose und vertrauliche Gespräche an, um mit deinen Problemen und Überlastung umzugehen. Du kannst Termine über das Online-Formular vereinbaren. In akuten Notlagen ist die Telefonseelsorge rund um die Uhr unter 0800 111 0 111 erreichbar. (Quelle: beratung.md)",
+      "quellen": [
+        "auslandssemester.md",
+        "beratung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 998,
+      "sekunden_suche": 3.296365209573363,
+      "sekunden_antwort": 8.64565593899897
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Die Psychosoziale Beratung des Studierendenwerks bietet kostenlose und vertrauliche Gespräche an, um dir bei Prüfungsangst, Überlastung oder persönlichen Krisen zu helfen. Termine kannst du über das Online-Formular buchen.",
+      "quellen": [
+        "beratung.md",
+        "nachteilsausgleich.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 1096,
+      "sekunden_suche": 0.0831257679965347,
+      "sekunden_antwort": 28.267339985002764
+    },
+    {
+      "variante": "datei",
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen.",
+      "quellen": [
+        "rueckmeldung.md",
+        "semesterticket.md",
+        "sport.md"
+      ],
+      "eingabe_tokens": 607,
+      "sekunden_suche": 2.4913647930079605,
+      "sekunden_antwort": 14.386465224997664
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen.",
+      "quellen": [
+        "rueckmeldung.md",
+        "semesterticket.md",
+        "sport.md"
+      ],
+      "eingabe_tokens": 607,
+      "sekunden_suche": 2.5906040440021805,
+      "sekunden_antwort": 2.8130238779995125
+    },
+    {
+      "variante": "rag",
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen. Wenn du dich gar nicht zurückmeldest, wirst du exmatrikuliert. Der Semesterbeitrag beträgt 168,40 Euro, der sich aus drei verschiedenen Beiträgen zusammensetzt. (Quelle: rückmeldung.md)",
+      "quellen": [
+        "campuskarte.md",
+        "rueckmeldung.md"
+      ],
+      "eingabe_tokens": 532,
+      "sekunden_suche": 0.0630951439961791,
+      "sekunden_antwort": 15.883897230000002
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen.",
+      "quellen": [
+        "praxissemester.md",
+        "rueckmeldung.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 919,
+      "sekunden_suche": 2.491304510003829,
+      "sekunden_antwort": 21.079413759005547
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen.",
+      "quellen": [
+        "praxissemester.md",
+        "rueckmeldung.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 919,
+      "sekunden_suche": 2.6551269440021805,
+      "sekunden_antwort": 3.3980387629999314
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen.",
+      "quellen": [
+        "auslandssemester.md",
+        "rueckmeldung.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 904,
+      "sekunden_suche": 2.933678122573609,
+      "sekunden_antwort": 9.80788696899981
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen.",
+      "quellen": [
+        "rueckmeldung.md"
+      ],
+      "eingabe_tokens": 906,
+      "sekunden_suche": 0.09526430000551045,
+      "sekunden_antwort": 20.129228161000356
+    },
+    {
+      "variante": "datei",
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": true,
+      "text": "Eine nicht bestandene Prüfung darf zweimal wiederholt werden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung. Bestandene Prüfungen können nicht wiederholt werden. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 914,
+      "sekunden_suche": 3.1794751990018995,
+      "sekunden_antwort": 6.725491744997271
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "typ": "umschrieben",
+      "K": false,
+      "A": true,
+      "text": "Eine nicht bestandene Prüfung darf zweimal wiederholt werden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung. Bestandene Prüfungen können nicht wiederholt werden. (Quelle: pruefungsordnung.md)",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "pruefungsunfaehigkeit.md"
+      ],
+      "eingabe_tokens": 914,
+      "sekunden_suche": 3.27434267700052,
+      "sekunden_antwort": 4.774503640997864
+    },
+    {
+      "variante": "rag",
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Ihr dürft eine Prüfung höchstens drei Mal schreiben, bevor es endgültig vorbei ist.",
+      "quellen": [
+        "pruefungsordnung.md",
+        "pruefungsunfaehigkeit.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 664,
+      "sekunden_suche": 0.044546862998686265,
+      "sekunden_antwort": 13.441388870000083
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Du kannst eine Prüfung höchstens zweimal schreiben, bevor es endgültig vorbei ist.",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 1173,
+      "sekunden_suche": 3.1793972290033707,
+      "sekunden_antwort": 9.298165588996198
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Du kannst eine Prüfung höchstens zweimal schreiben, bevor es endgültig vorbei ist.",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 1173,
+      "sekunden_suche": 3.36320797700052,
+      "sekunden_antwort": 2.2599586169963004
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Du kannst eine Prüfung höchstens zweimal schreiben, bevor es endgültig vorbei ist.",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 1173,
+      "sekunden_suche": 3.6417591555719486,
+      "sekunden_antwort": 2.140125421996345
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+      "typ": "umschrieben",
+      "K": true,
+      "A": true,
+      "text": "Im Studiengang habt ihr drei Versuche, um die Prüfung zu bestehen.",
+      "quellen": [
+        "pruefungsanmeldung.md",
+        "pruefungsordnung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 1084,
+      "sekunden_suche": 0.07127346099878196,
+      "sekunden_antwort": 22.734252857000683
+    },
+    {
+      "variante": "datei",
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Nein, das Deutschlandsemesterticket ist nicht gültig im ICE oder IC.",
+      "quellen": [
+        "auslandssemester.md",
+        "semesterticket.md",
+        "wlan.md"
+      ],
+      "eingabe_tokens": 575,
+      "sekunden_suche": 2.4548028120043455,
+      "sekunden_antwort": 10.900134496994724
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Nein, das Deutschlandsemesterticket ist nicht gültig im ICE oder IC.",
+      "quellen": [
+        "auslandssemester.md",
+        "semesterticket.md",
+        "wlan.md"
+      ],
+      "eingabe_tokens": 575,
+      "sekunden_suche": 2.5361326210037567,
+      "sekunden_antwort": 1.4674138489936013
+    },
+    {
+      "variante": "rag",
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Nein, das Deutschlandsemesterticket ist nicht gültig für den ICE oder IC. Es gilt jedoch deutschlandweit im Nahverkehr, also in Bussen, Straßenbahnen und Regionalzügen.",
+      "quellen": [
+        "parken.md",
+        "rueckmeldung.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 507,
+      "sekunden_suche": 0.041079444003116805,
+      "sekunden_antwort": 8.667201869000564
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Nein, das Deutschlandsemesterticket ist nicht gültig für den ICE oder IC. Es gilt jedoch für den Nahverkehr, also Bussen, Straßenbahnen und Regionalzügen.",
+      "quellen": [
+        "auslandssemester.md",
+        "semesterticket.md",
+        "wlan.md"
+      ],
+      "eingabe_tokens": 839,
+      "sekunden_suche": 2.4548824910016265,
+      "sekunden_antwort": 18.413536783999007
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Nein, das Deutschlandsemesterticket ist nicht gültig für den ICE oder IC. Es gilt jedoch für den Nahverkehr, also Bussen, Straßenbahnen und Regionalzügen.",
+      "quellen": [
+        "auslandssemester.md",
+        "semesterticket.md",
+        "wlan.md"
+      ],
+      "eingabe_tokens": 839,
+      "sekunden_suche": 2.6371698210037566,
+      "sekunden_antwort": 3.31316249199881
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Nein, das Deutschlandsemesterticket ist nicht gültig für den ICE oder IC.",
+      "quellen": [
+        "parken.md",
+        "rueckmeldung.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 898,
+      "sekunden_suche": 2.915720999575185,
+      "sekunden_antwort": 14.647635970999545
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+      "typ": "direkt",
+      "K": true,
+      "A": true,
+      "text": "Nein, das Deutschlandsemesterticket ist nicht gültig für den ICE oder IC.",
+      "quellen": [
+        "parken.md",
+        "rueckmeldung.md",
+        "semesterticket.md"
+      ],
+      "eingabe_tokens": 924,
+      "sekunden_suche": 0.07113136599946301,
+      "sekunden_antwort": 19.175535753005533
+    },
+    {
+      "variante": "datei",
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "typ": "fehlt",
+      "K": null,
+      "A": true,
+      "text": "Es gibt keine Informationen über eine Party der Fachschaft Informatik. Dazu habe ich keine Information.",
+      "quellen": [
+        "lernraeume.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 542,
+      "sekunden_suche": 2.8177585969970096,
+      "sekunden_antwort": 8.422097662005399
+    },
+    {
+      "variante": "obsidian",
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "typ": "fehlt",
+      "K": null,
+      "A": true,
+      "text": "Es gibt keine Informationen über eine Party der Fachschaft Informatik. Dazu habe ich keine Information.",
+      "quellen": [
+        "lernraeume.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 542,
+      "sekunden_suche": 2.917207992997729,
+      "sekunden_antwort": 1.826827119999507
+    },
+    {
+      "variante": "rag",
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "typ": "fehlt",
+      "K": null,
+      "A": true,
+      "text": "Es gibt keine Informationen über eine Party der Fachschaft Informatik. \n(Dazu habe ich keine Information.)",
+      "quellen": [
+        "mensa.md",
+        "rueckmeldung.md",
+        "wiederholungspruefung.md"
+      ],
+      "eingabe_tokens": 574,
+      "sekunden_suche": 0.06577062699943781,
+      "sekunden_antwort": 9.51970087900554
+    },
+    {
+      "variante": "datei_meta",
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "typ": "fehlt",
+      "K": null,
+      "A": true,
+      "text": "Dazu habe ich keine Information.",
+      "quellen": [
+        "lernraeume.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 744,
+      "sekunden_suche": 2.8180369139954564,
+      "sekunden_antwort": 13.332813644999987
+    },
+    {
+      "variante": "obsidian_meta",
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "typ": "fehlt",
+      "K": null,
+      "A": true,
+      "text": "Es gibt keine Informationen über eine Party der Fachschaft Informatik. \n(Dazu habe ich keine Information.)",
+      "quellen": [
+        "lernraeume.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 744,
+      "sekunden_suche": 3.000266892997728,
+      "sekunden_antwort": 1.8022230749993469
+    },
+    {
+      "variante": "obsidian_links",
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "typ": "fehlt",
+      "K": null,
+      "A": true,
+      "text": "Dazu habe ich keine Information.",
+      "quellen": [
+        "bibliothek.md",
+        "lernraeume.md",
+        "raeume.md"
+      ],
+      "eingabe_tokens": 1131,
+      "sekunden_suche": 3.2788180715691566,
+      "sekunden_antwort": 10.527166592000867
+    },
+    {
+      "variante": "rag_meta",
+      "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+      "typ": "fehlt",
+      "K": null,
+      "A": true,
+      "text": "Dazu habe ich keine Information.",
+      "quellen": [
+        "mensa.md",
+        "rueckmeldung.md",
+        "sport.md"
+      ],
+      "eingabe_tokens": 862,
+      "sekunden_suche": 0.0322553199948743,
+      "sekunden_antwort": 13.56496845199581
+    }
+  ]
+}

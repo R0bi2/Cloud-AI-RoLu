@@ -1,0 +1,1558 @@
+{
+  "original_hashes": {
+    "abschlussarbeit.md": "3926b1cf9d1e5cbc6ed4d4382efe13cd434563795b86fa04b304984a847d8cae",
+    "auslandssemester.md": "83c89a911224a5c1e5718adb4fe7d5682d6a8d4918c020cd240304ce6aa1ae62",
+    "beratung.md": "a85b1ca088ea4050ccebbee9ab28bed6efcde2217b422dbd9602d19a6d3ee1da",
+    "bibliothek.md": "d879b698f7aae8372c11cccc2fac26565f7a370dbf01a7e3aa91c2e0eb251783",
+    "campuskarte.md": "b337565bd3e73cbb713634288fb78eb9c2cebe706567df4946a23a5fa62bd930",
+    "drucken.md": "1363fd25a06c455eb0c39df5591dad5dd74ac9430b844a5107eb62ca28b42168",
+    "fundbuero.md": "0973f5790e45e665e309a2a92fdbf7b1621f29162eb0d83e44ff896fcdaa71bd",
+    "lernraeume.md": "8681b56489aa92d331c7d2354eb16bae522cc15ec5082beba8adbe8cad34543e",
+    "mensa.md": "22940e513891aa6f6fecfc3589c98eff85e126c266a0a08e8fbe2e8ed712dcdc",
+    "nachteilsausgleich.md": "f4f36528a2d7105d4ea22469ebc996e48420787ceb6134ded6b66cf5275a06c7",
+    "parken.md": "423e1f04157df29d438303d8a42460cafdead30573fee2835070aad35a338f23",
+    "praxissemester.md": "e02f840b43a88985cbf9720c6bbf638170dd0b0386e37984f1422b2ad7026948",
+    "pruefungsanmeldung.md": "bce0005c519cc612c4a0caf6d3fec9c0f41469362b0411ddbca0298c292c4ed5",
+    "pruefungsordnung.md": "ac29406bcd88f07cdc38c0d37c674eae63f3f1e4ac4888a13bc8af6a921af499",
+    "pruefungsunfaehigkeit.md": "b3d96a0488d168061e22bd84e83f85b887d0ddbb57d0cd0152457786aafc7273",
+    "raeume.md": "32653a45d84b41961d44d26adc6a3d1d3695e73d49aeb34c2692387cb9dcc1b9",
+    "rueckmeldung.md": "5b40f45ad614ddcfd4e61fd7e267c37c6a4d00e65fe5d347f782192ade50b4c1",
+    "semesterticket.md": "165dce8a8d891da94e2e25055279f7508113e2c39ef2277bb8d24c54135c8a5d",
+    "sport.md": "2e4e31001747d68e5b4117615a385839932f986f5baee99a72b19be91c6dac66",
+    "wiederholungspruefung.md": "2d167857d375156ece23402abdac18e767f59b29577534ca002a1708b2e1fc3e",
+    "wlan.md": "4a9b994d0cdd949fd79a8d247cc2db29e79752e51fb1e0e31f0581e90c4de61f"
+  },
+  "modell": "llama3.2:3b",
+  "embedding": "granite-embedding:278m",
+  "rag_k": 4,
+  "antwortprompt_hash": "51f0a445889605fc8fc09e4816923a49d8396d1c93730f03653d52a6cefdf95a",
+  "originals": {
+    "abschlussarbeit.md": "# Bachelorarbeit\n\nDie Bachelorarbeit meldet ihr mit dem Formular PA-12 beim Prüfungsamt an,\nunterschrieben von der betreuenden Professorin oder dem betreuenden Professor.\nVoraussetzung sind mindestens 150 ECTS.\n\nDie Bearbeitungszeit beträgt drei Monate. Auf begründeten Antrag kann sie\neinmal um bis zu sechs Wochen verlängert werden. Abgegeben wird digital als\nPDF über das Prüfungsportal, zusammen mit der unterschriebenen Erklärung zur\nselbstständigen Anfertigung und zur Nutzung von KI-Werkzeugen.\n",
+    "auslandssemester.md": "# Auslandssemester\n\nDas International Office in Gebäude A, Raum A-301, berät zu Partnerhochschulen,\nErasmus-Förderung und Anerkennung von Leistungen. Die Bewerbung für ein\nAuslandssemester im folgenden Studienjahr läuft bis zum 15. Januar.\n\nVor der Abreise schließt ihr ein Learning Agreement mit eurer\nStudiengangsleitung ab. Darin steht, welche Module im Ausland euch zu Hause\nangerechnet werden. Ohne Learning Agreement gibt es keine Garantie auf\nAnerkennung.\n",
+    "beratung.md": "# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.\n",
+    "bibliothek.md": "# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.\n\n## Gruppenräume\nIm ersten Stock gibt es sechs Gruppenräume (L-104 bis L-109) für zwei bis\nacht Personen. Sie werden über das Buchungsportal für höchstens drei Stunden\nam Stück reserviert.\n",
+    "campuskarte.md": "# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n",
+    "drucken.md": "# Drucken und Kopieren\n\nDrucker stehen in der Bibliothek und im Kopierraum F-012 im Erdgeschoss von\nGebäude F. Gedruckt wird mit der Campuskarte. Eine Seite schwarzweiß kostet\n5 Cent, in Farbe 20 Cent. Scannen ist kostenlos und landet als PDF in eurem\nHochschulpostfach.\n\nDruckaufträge schickt ihr über das Portal print.campus an die Warteschlange\nund gebt sie dann am Gerät mit der Karte frei. Nicht abgeholte Aufträge\nwerden nach 24 Stunden gelöscht.\n",
+    "fundbuero.md": "# Fundsachen\n\nLiegen gebliebene Gegenstände wie Schlüssel, Brillen, Jacken oder Ladekabel\nbringt der Hausdienst zur Pforte in Gebäude A. Dort könnt ihr sie Montag bis\nFreitag von 7 bis 18 Uhr abholen. Nach drei Monaten gehen nicht abgeholte\nSachen an das städtische Fundbüro. Wertsachen wie Handys und Geldbörsen gibt\ndie Pforte sofort an das städtische Fundbüro weiter.\n",
+    "lernraeume.md": "# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.\n\nTagsüber sind außerdem freie Seminarräume nutzbar, solange dort keine\nVeranstaltung stattfindet. Welche Räume frei sind, zeigt die Raumbelegung im\nStudierendenportal.\n",
+    "mensa.md": "# Mensa\n\n## Öffnungszeiten\nDie Mensa im Gebäude M gibt Essen Montag bis Freitag von 11:15 bis 14:00 Uhr\naus. Die Cafeteria daneben öffnet schon um 7:45 Uhr und schließt um 16 Uhr.\n\n## Angebot\nJeden Tag gibt es drei Hauptgerichte, davon mindestens eines vegan.\nAllergene stehen auf dem Speiseplan online und an der Ausgabe.\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.\n",
+    "nachteilsausgleich.md": "# Nachteilsausgleich\n\nStudierende mit einer Behinderung oder einer chronischen Erkrankung können\nfür Prüfungen einen Nachteilsausgleich beantragen. Möglich sind zum Beispiel\nmehr Bearbeitungszeit, ein eigener Raum oder Pausen.\n\nDen Antrag stellt ihr formlos beim Prüfungsausschuss, mindestens sechs Wochen\nvor der Prüfung. Bei der Begründung hilft die Beauftragte für Studierende mit\nBehinderung im Gebäude A, Raum A-115. Ein fachärztliches Gutachten ist\nin der Regel nötig.\n",
+    "parken.md": "# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.\n\nFahrradstellplätze gibt es vor jedem Gebäude, überdacht vor F und O.\nMit Bus und Bahn erreicht ihr den Campus über die Haltestelle Hochschule.\n",
+    "praxissemester.md": "# Praktisches Studiensemester\n\nIm fünften Semester arbeitet ihr mindestens 95 Präsenztage in einem\nUnternehmen. Den Ausbildungsvertrag schickt ihr spätestens vier Wochen vor\nBeginn an das Praktikantenamt, Raum F-201. Das Praktikantenamt prüft, ob die\nStelle zum Studiengang passt.\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.\n",
+    "pruefungsanmeldung.md": "# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n",
+    "pruefungsordnung.md": "# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n",
+    "pruefungsunfaehigkeit.md": "# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.\n",
+    "raeume.md": "# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.\n",
+    "rueckmeldung.md": "# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.\n\nDer Semesterbeitrag beträgt 168,40 Euro. Er setzt sich zusammen aus dem\nVerwaltungskostenbeitrag (70 Euro), dem Beitrag für das Studierendenwerk\n(83,40 Euro) und dem Beitrag für die Verfasste Studierendenschaft (15 Euro).\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.\n",
+    "semesterticket.md": "# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.\n",
+    "sport.md": "# Hochschulsport\n\nDer Hochschulsport bietet jedes Semester rund 50 Kurse an, von Volleyball\nüber Yoga bis Klettern. Die Anmeldung öffnet zwei Wochen nach\nVorlesungsbeginn um 12 Uhr im Sportportal und ist meist schnell voll.\n\nDie meisten Kurse kosten 15 Euro pro Semester. Der Kraftraum im Untergeschoss\nvon Gebäude S ist mit einer Fitnesskarte für 30 Euro pro Semester nutzbar,\nnach einer Einweisung.\n",
+    "wiederholungspruefung.md": "# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.\n",
+    "wlan.md": "# WLAN\n\nAuf dem ganzen Campus funkt eduroam. Ihr meldet euch mit eurer\nHochschul-Mailadresse und dem Passwort eures Hochschulkontos an.\nDie Einrichtung übernimmt am einfachsten die App geteduroam.\n\nFür Besucherinnen und Besucher gibt es das Netz HTWG-Gast. Ein Tagesticket\ndafür bekommt man am Infopoint im Gebäude A gegen Vorlage eines Ausweises.\nBei Problemen hilft der IT-Service, Raum F-105, Telefon 07531 206-555.\n"
+  },
+  "enriched": {
+    "abschlussarbeit.md": "---\naliases:\n- Abschlussarbeit\n- Bachelorarbeit\n- Bachelor\n- Thesis\n- Anmeldung der Abschlussarbeit\nthema: Studium\ntags:\n- studium/abschluss\nkennungen:\n- PA-12\n---\n\n# Bachelorarbeit\n\nDie Bachelorarbeit meldet ihr mit dem Formular PA-12 beim Prüfungsamt an,\nunterschrieben von der betreuenden Professorin oder dem betreuenden Professor.\nVoraussetzung sind mindestens 150 ECTS.\n\nDie Bearbeitungszeit beträgt drei Monate. Auf begründeten Antrag kann sie\neinmal um bis zu sechs Wochen verlängert werden. Abgegeben wird digital als\nPDF über das Prüfungsportal, zusammen mit der unterschriebenen Erklärung zur\nselbstständigen Anfertigung und zur Nutzung von KI-Werkzeugen.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/bibliothek]]\n",
+    "auslandssemester.md": "---\naliases:\n- Ausland\n- Austausch\n- Erasmus\n- International Office\n- Learning Agreement\nthema: Studium\ntags:\n- studium/ausland\nkennungen:\n- A-301\n---\n\n# Auslandssemester\n\nDas International Office in Gebäude A, Raum A-301, berät zu Partnerhochschulen,\nErasmus-Förderung und Anerkennung von Leistungen. Die Bewerbung für ein\nAuslandssemester im folgenden Studienjahr läuft bis zum 15. Januar.\n\nVor der Abreise schließt ihr ein Learning Agreement mit eurer\nStudiengangsleitung ab. Darin steht, welche Module im Ausland euch zu Hause\nangerechnet werden. Ohne Learning Agreement gibt es keine Garantie auf\nAnerkennung.\n\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/praxissemester]], [[_obsidian_extra/rueckmeldung]]\n",
+    "beratung.md": "---\naliases:\n- Beratung\n- Studienberatung\n- Psychosoziale Beratung\n- Stress\n- gestresst\n- Überlastung\n- Hilfe\n- Probleme\n- Prüfungsangst\nthema: Unterstützung\ntags:\n- studium/beratung\n- gesundheit\nkennungen:\n- A-201\n---\n\n# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.\n\nVerwandte Themen: [[_obsidian_extra/nachteilsausgleich]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n",
+    "bibliothek.md": "---\naliases:\n- Bibliothek\n- Bib\n- Bücher\n- Ausleihe\n- Verlängerung\n- Öffnungszeiten\n- Lernplatz\nthema: Lernen\ntags:\n- campus/lernen\nkennungen:\n- L-104\n- L-109\n---\n\n# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.\n\n## Gruppenräume\nIm ersten Stock gibt es sechs Gruppenräume (L-104 bis L-109) für zwei bis\nacht Personen. Sie werden über das Buchungsportal für höchstens drei Stunden\nam Stück reserviert.\n\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/drucken]]\n",
+    "campuskarte.md": "---\naliases:\n- Campuskarte\n- Studierendenausweis\n- Ersatzkarte\n- Ersatz-Campuskarte\n- Kartenverlust\n- Guthaben\nthema: Campus\ntags:\n- campus/karte\nkennungen:\n- A-010\n---\n\n# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n\nVerwandte Themen: [[_obsidian_extra/mensa]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/drucken]]\n",
+    "drucken.md": "---\naliases:\n- Drucken\n- Kopieren\n- Scannen\n- Drucker\n- Kopierraum\nthema: Campus\ntags:\n- campus/technik\nkennungen:\n- F-012\n---\n\n# Drucken und Kopieren\n\nDrucker stehen in der Bibliothek und im Kopierraum F-012 im Erdgeschoss von\nGebäude F. Gedruckt wird mit der Campuskarte. Eine Seite schwarzweiß kostet\n5 Cent, in Farbe 20 Cent. Scannen ist kostenlos und landet als PDF in eurem\nHochschulpostfach.\n\nDruckaufträge schickt ihr über das Portal print.campus an die Warteschlange\nund gebt sie dann am Gerät mit der Karte frei. Nicht abgeholte Aufträge\nwerden nach 24 Stunden gelöscht.\n\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/raeume]]\n",
+    "fundbuero.md": "---\naliases:\n- Fundbüro\n- Fundsachen\n- Verloren\n- Pforte\n- Hausdienst\nthema: Campus\ntags:\n- campus/service\nkennungen: []\n---\n\n# Fundsachen\n\nLiegen gebliebene Gegenstände wie Schlüssel, Brillen, Jacken oder Ladekabel\nbringt der Hausdienst zur Pforte in Gebäude A. Dort könnt ihr sie Montag bis\nFreitag von 7 bis 18 Uhr abholen. Nach drei Monaten gehen nicht abgeholte\nSachen an das städtische Fundbüro. Wertsachen wie Handys und Geldbörsen gibt\ndie Pforte sofort an das städtische Fundbüro weiter.\n\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n",
+    "lernraeume.md": "---\naliases:\n- Lernräume\n- Lernplätze\n- Lernzone\n- Lernen\n- Nacht\n- nachts\n- Wochenende\n- Seminarräume\nthema: Lernen\ntags:\n- campus/lernen\nkennungen: []\n---\n\n# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.\n\nTagsüber sind außerdem freie Seminarräume nutzbar, solange dort keine\nVeranstaltung stattfindet. Welche Räume frei sind, zeigt die Raumbelegung im\nStudierendenportal.\n\nVerwandte Themen: [[_obsidian_extra/bibliothek]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n",
+    "mensa.md": "---\naliases:\n- Mensa\n- Cafeteria\n- Essen\n- Speiseplan\n- Gäste\n- Hauptgericht\n- Öffnungszeiten\nthema: Verpflegung\ntags:\n- campus/essen\nkennungen: []\n---\n\n# Mensa\n\n## Öffnungszeiten\nDie Mensa im Gebäude M gibt Essen Montag bis Freitag von 11:15 bis 14:00 Uhr\naus. Die Cafeteria daneben öffnet schon um 7:45 Uhr und schließt um 16 Uhr.\n\n## Angebot\nJeden Tag gibt es drei Hauptgerichte, davon mindestens eines vegan.\nAllergene stehen auf dem Speiseplan online und an der Ausgabe.\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.\n\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n",
+    "nachteilsausgleich.md": "---\naliases:\n- Nachteilsausgleich\n- Behinderung\n- Chronische Erkrankung\n- Bearbeitungszeit\n- Prüfungsausschuss\nthema: Prüfung\ntags:\n- studium/pruefung\n- gesundheit\nkennungen:\n- A-115\n---\n\n# Nachteilsausgleich\n\nStudierende mit einer Behinderung oder einer chronischen Erkrankung können\nfür Prüfungen einen Nachteilsausgleich beantragen. Möglich sind zum Beispiel\nmehr Bearbeitungszeit, ein eigener Raum oder Pausen.\n\nDen Antrag stellt ihr formlos beim Prüfungsausschuss, mindestens sechs Wochen\nvor der Prüfung. Bei der Begründung hilft die Beauftragte für Studierende mit\nBehinderung im Gebäude A, Raum A-115. Ein fachärztliches Gutachten ist\nin der Regel nötig.\n\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsunfaehigkeit]]\n",
+    "parken.md": "---\naliases:\n- Parken\n- Auto\n- Kfz\n- Parkplatz\n- Parkhaus\n- Parkausweis\n- Anreise\n- Fahrrad\nthema: Mobilität\ntags:\n- campus/mobilitaet\nkennungen: []\n---\n\n# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.\n\nFahrradstellplätze gibt es vor jedem Gebäude, überdacht vor F und O.\nMit Bus und Bahn erreicht ihr den Campus über die Haltestelle Hochschule.\n\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/raeume]]\n",
+    "praxissemester.md": "---\naliases:\n- Praxissemester\n- Praktikum\n- Praktisches Studiensemester\n- Praktikantenamt\n- Ausbildungsvertrag\n- Praktikumsbericht\nthema: Studium\ntags:\n- studium/praxis\nkennungen:\n- F-201\n---\n\n# Praktisches Studiensemester\n\nIm fünften Semester arbeitet ihr mindestens 95 Präsenztage in einem\nUnternehmen. Den Ausbildungsvertrag schickt ihr spätestens vier Wochen vor\nBeginn an das Praktikantenamt, Raum F-201. Das Praktikantenamt prüft, ob die\nStelle zum Studiengang passt.\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.\n\nVerwandte Themen: [[_obsidian_extra/auslandssemester]], [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n",
+    "pruefungsanmeldung.md": "---\naliases:\n- Prüfungsanmeldung\n- Klausur\n- Anmeldung\n- Abmeldung\n- Prüfungsplan\n- HISinOne\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n---\n\n# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n",
+    "pruefungsordnung.md": "---\naliases:\n- Prüfungsordnung\n- Paragraph\n- Paragraf\n- Täuschung\n- Rücktritt\n- Prüfungsformen\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n- § 14\n- § 17\n- § 21\n- § 9\n---\n\n# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n",
+    "pruefungsunfaehigkeit.md": "---\naliases:\n- Prüfungsunfähigkeit\n- Krankheit\n- krank\n- Attest\n- Arzt\n- Arztbescheinigung\n- Rücktritt\n- Krankmeldung\nthema: Prüfung\ntags:\n- studium/pruefung\n- gesundheit\nkennungen:\n- PA-07\n---\n\n# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/beratung]]\n",
+    "raeume.md": "---\naliases:\n- Raum\n- Räume\n- Gebäude\n- Lageplan\n- Orientierung\nthema: Campus\ntags:\n- campus/orientierung\nkennungen:\n- F-012\n- O-201\n---\n\n# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.\n\nVerwandte Themen: [[_obsidian_extra/praxissemester]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/mensa]], [[_obsidian_extra/drucken]], [[_obsidian_extra/lernraeume]]\n",
+    "rueckmeldung.md": "---\naliases:\n- Rückmeldung\n- Semesterbeitrag\n- Geld\n- Bezahlen\n- Überweisung\n- überweise\n- Säumnisgebühr\n- Semester\nthema: Studium\ntags:\n- studium/verwaltung\nkennungen: []\n---\n\n# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.\n\nDer Semesterbeitrag beträgt 168,40 Euro. Er setzt sich zusammen aus dem\nVerwaltungskostenbeitrag (70 Euro), dem Beitrag für das Studierendenwerk\n(83,40 Euro) und dem Beitrag für die Verfasste Studierendenschaft (15 Euro).\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.\n\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n",
+    "semesterticket.md": "---\naliases:\n- Semesterticket\n- Deutschlandsemesterticket\n- Bus\n- Bahn\n- ICE\n- IC\n- Nahverkehr\nthema: Mobilität\ntags:\n- campus/mobilitaet\nkennungen: []\n---\n\n# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.\n\nVerwandte Themen: [[_obsidian_extra/parken]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/rueckmeldung]]\n",
+    "sport.md": "---\naliases:\n- Sport\n- Hochschulsport\n- Kurse\n- Fitness\n- Kraftraum\nthema: Freizeit\ntags:\n- campus/freizeit\nkennungen: []\n---\n\n# Hochschulsport\n\nDer Hochschulsport bietet jedes Semester rund 50 Kurse an, von Volleyball\nüber Yoga bis Klettern. Die Anmeldung öffnet zwei Wochen nach\nVorlesungsbeginn um 12 Uhr im Sportportal und ist meist schnell voll.\n\nDie meisten Kurse kosten 15 Euro pro Semester. Der Kraftraum im Untergeschoss\nvon Gebäude S ist mit einer Fitnesskarte für 30 Euro pro Semester nutzbar,\nnach einer Einweisung.\n\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n",
+    "wiederholungspruefung.md": "---\naliases:\n- Wiederholungsprüfung\n- Wiederholung\n- Versuche\n- Prüfungsversuche\n- Durchgefallen\n- Prüfungsanspruch\n- Nachprüfung\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen: []\n---\n\n# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/beratung]]\n",
+    "wlan.md": "---\naliases:\n- WLAN\n- Internet\n- eduroam\n- Gastnetz\n- IT-Service\n- Verbindung\nthema: Technik\ntags:\n- campus/technik\nkennungen:\n- F-105\n---\n\n# WLAN\n\nAuf dem ganzen Campus funkt eduroam. Ihr meldet euch mit eurer\nHochschul-Mailadresse und dem Passwort eures Hochschulkontos an.\nDie Einrichtung übernimmt am einfachsten die App geteduroam.\n\nFür Besucherinnen und Besucher gibt es das Netz HTWG-Gast. Ein Tagesticket\ndafür bekommt man am Infopoint im Gebäude A gegen Vorlage eines Ausweises.\nBei Problemen hilft der IT-Service, Raum F-105, Telefon 07531 206-555.\n\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/raeume]]\n"
+  },
+  "fragen": [
+    {
+      "fall": {
+        "frage": "Bis wann hat die Bibliothek am Samstag offen?",
+        "quelle": "bibliothek.md",
+        "erwartet": [
+          "16"
+        ],
+        "typ": "direkt"
+      },
+      "begriffe": [
+        "Bibliothek",
+        "Öffnungszeiten",
+        "Samstag",
+        "Öffnungszeiten der Bibliothek",
+        "Öffnungszeiten der Hochschulbibliothek",
+        "Öffnungszeiten der Bibliothek der Hochschule"
+      ],
+      "begriffe_s": 16.71805031799886,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "bibliothek.md",
+              "text": "# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.\n\n## Gruppenräume\nIm ersten Stock gibt es sechs Gruppenräume (L-104 bis L-109) für zwei bis\nacht Personen. Sie werden über das Buchungsportal für höchstens drei Stunden\nam Stück reserviert.\n",
+              "wert": 5
+            },
+            {
+              "datei": "campuskarte.md",
+              "text": "# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n",
+              "wert": 1
+            },
+            {
+              "datei": "drucken.md",
+              "text": "# Drucken und Kopieren\n\nDrucker stehen in der Bibliothek und im Kopierraum F-012 im Erdgeschoss von\nGebäude F. Gedruckt wird mit der Campuskarte. Eine Seite schwarzweiß kostet\n5 Cent, in Farbe 20 Cent. Scannen ist kostenlos und landet als PDF in eurem\nHochschulpostfach.\n\nDruckaufträge schickt ihr über das Portal print.campus an die Warteschlange\nund gebt sie dann am Gerät mit der Karte frei. Nicht abgeholte Aufträge\nwerden nach 24 Stunden gelöscht.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 16.729724473996612
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "bibliothek.md",
+              "text": "---\naliases:\n- Bibliothek\n- Bib\n- Bücher\n- Ausleihe\n- Verlängerung\n- Öffnungszeiten\n- Lernplatz\nthema: Lernen\ntags:\n- campus/lernen\nkennungen:\n- L-104\n- L-109\n---\n\n# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.\n\n## Gruppenräume\nIm ersten Stock gibt es sechs Gruppenräume (L-104 bis L-109) für zwei bis\nacht Personen. Sie werden über das Buchungsportal für höchstens drei Stunden\nam Stück reserviert.\n\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/drucken]]\n",
+              "wert": 7
+            },
+            {
+              "datei": "campuskarte.md",
+              "text": "---\naliases:\n- Campuskarte\n- Studierendenausweis\n- Ersatzkarte\n- Ersatz-Campuskarte\n- Kartenverlust\n- Guthaben\nthema: Campus\ntags:\n- campus/karte\nkennungen:\n- A-010\n---\n\n# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n\nVerwandte Themen: [[_obsidian_extra/mensa]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/drucken]]\n",
+              "wert": 2
+            },
+            {
+              "datei": "drucken.md",
+              "text": "---\naliases:\n- Drucken\n- Kopieren\n- Scannen\n- Drucker\n- Kopierraum\nthema: Campus\ntags:\n- campus/technik\nkennungen:\n- F-012\n---\n\n# Drucken und Kopieren\n\nDrucker stehen in der Bibliothek und im Kopierraum F-012 im Erdgeschoss von\nGebäude F. Gedruckt wird mit der Campuskarte. Eine Seite schwarzweiß kostet\n5 Cent, in Farbe 20 Cent. Scannen ist kostenlos und landet als PDF in eurem\nHochschulpostfach.\n\nDruckaufträge schickt ihr über das Portal print.campus an die Warteschlange\nund gebt sie dann am Gerät mit der Karte frei. Nicht abgeholte Aufträge\nwerden nach 24 Stunden gelöscht.\n\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/raeume]]\n",
+              "wert": 2
+            }
+          ],
+          "suche": 16.719808740002918
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "bibliothek.md",
+              "text": "# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.",
+              "wert": 0.86550856
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "# Bibliothek\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.",
+              "wert": 0.75127435
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "# Bibliothek\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.",
+              "wert": 0.7500655
+            },
+            {
+              "datei": "lernraeume.md",
+              "text": "# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.",
+              "wert": 0.74226665
+            }
+          ],
+          "suche": 0.4170232800024678
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "bibliothek.md",
+              "text": "Metadaten: {\"aliases\": [\"Bibliothek\", \"Bib\", \"Bücher\", \"Ausleihe\", \"Verlängerung\", \"Öffnungszeiten\", \"Lernplatz\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": [\"L-104\", \"L-109\"]}\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/drucken]]\n\n# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.",
+              "wert": 0.7856066
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "Metadaten: {\"aliases\": [\"Bibliothek\", \"Bib\", \"Bücher\", \"Ausleihe\", \"Verlängerung\", \"Öffnungszeiten\", \"Lernplatz\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": [\"L-104\", \"L-109\"]}\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/drucken]]\n\n# Bibliothek\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.",
+              "wert": 0.71162844
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "Metadaten: {\"aliases\": [\"Bibliothek\", \"Bib\", \"Bücher\", \"Ausleihe\", \"Verlängerung\", \"Öffnungszeiten\", \"Lernplatz\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": [\"L-104\", \"L-109\"]}\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/drucken]]\n\n# Bibliothek\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.",
+              "wert": 0.69451916
+            },
+            {
+              "datei": "lernraeume.md",
+              "text": "Metadaten: {\"aliases\": [\"Lernräume\", \"Lernplätze\", \"Lernzone\", \"Lernen\", \"Nacht\", \"nachts\", \"Wochenende\", \"Seminarräume\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/bibliothek]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.",
+              "wert": 0.69060516
+            }
+          ],
+          "suche": 0.08443891299975803
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Was zahlt ein Gast in der Mensa für ein Hauptgericht?",
+        "quelle": "mensa.md",
+        "erwartet": [
+          "7,50",
+          "7.50"
+        ],
+        "typ": "direkt"
+      },
+      "begriffe": [
+        "Mensa",
+        "Hauptgericht",
+        "Gast",
+        "Preis"
+      ],
+      "begriffe_s": 2.0896670069996617,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "mensa.md",
+              "text": "# Mensa\n\n## Öffnungszeiten\nDie Mensa im Gebäude M gibt Essen Montag bis Freitag von 11:15 bis 14:00 Uhr\naus. Die Cafeteria daneben öffnet schon um 7:45 Uhr und schließt um 16 Uhr.\n\n## Angebot\nJeden Tag gibt es drei Hauptgerichte, davon mindestens eines vegan.\nAllergene stehen auf dem Speiseplan online und an der Ausgabe.\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.\n",
+              "wert": 5
+            },
+            {
+              "datei": "campuskarte.md",
+              "text": "# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n",
+              "wert": 1
+            },
+            {
+              "datei": "raeume.md",
+              "text": "# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.0904118150065187
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "mensa.md",
+              "text": "---\naliases:\n- Mensa\n- Cafeteria\n- Essen\n- Speiseplan\n- Gäste\n- Hauptgericht\n- Öffnungszeiten\nthema: Verpflegung\ntags:\n- campus/essen\nkennungen: []\n---\n\n# Mensa\n\n## Öffnungszeiten\nDie Mensa im Gebäude M gibt Essen Montag bis Freitag von 11:15 bis 14:00 Uhr\naus. Die Cafeteria daneben öffnet schon um 7:45 Uhr und schließt um 16 Uhr.\n\n## Angebot\nJeden Tag gibt es drei Hauptgerichte, davon mindestens eines vegan.\nAllergene stehen auf dem Speiseplan online und an der Ausgabe.\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.\n\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n",
+              "wert": 7
+            },
+            {
+              "datei": "campuskarte.md",
+              "text": "---\naliases:\n- Campuskarte\n- Studierendenausweis\n- Ersatzkarte\n- Ersatz-Campuskarte\n- Kartenverlust\n- Guthaben\nthema: Campus\ntags:\n- campus/karte\nkennungen:\n- A-010\n---\n\n# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n\nVerwandte Themen: [[_obsidian_extra/mensa]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/drucken]]\n",
+              "wert": 2
+            },
+            {
+              "datei": "raeume.md",
+              "text": "---\naliases:\n- Raum\n- Räume\n- Gebäude\n- Lageplan\n- Orientierung\nthema: Campus\ntags:\n- campus/orientierung\nkennungen:\n- F-012\n- O-201\n---\n\n# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.\n\nVerwandte Themen: [[_obsidian_extra/praxissemester]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/mensa]], [[_obsidian_extra/drucken]], [[_obsidian_extra/lernraeume]]\n",
+              "wert": 2
+            }
+          ],
+          "suche": 2.090328955993755
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "mensa.md",
+              "text": "# Mensa\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.",
+              "wert": 0.84082484
+            },
+            {
+              "datei": "mensa.md",
+              "text": "# Mensa\n\n## Öffnungszeiten\nDie Mensa im Gebäude M gibt Essen Montag bis Freitag von 11:15 bis 14:00 Uhr\naus. Die Cafeteria daneben öffnet schon um 7:45 Uhr und schließt um 16 Uhr.",
+              "wert": 0.70909035
+            },
+            {
+              "datei": "mensa.md",
+              "text": "# Mensa\n\n## Angebot\nJeden Tag gibt es drei Hauptgerichte, davon mindestens eines vegan.\nAllergene stehen auf dem Speiseplan online und an der Ausgabe.",
+              "wert": 0.69275475
+            },
+            {
+              "datei": "sport.md",
+              "text": "# Hochschulsport\n\nDie meisten Kurse kosten 15 Euro pro Semester. Der Kraftraum im Untergeschoss\nvon Gebäude S ist mit einer Fitnesskarte für 30 Euro pro Semester nutzbar,\nnach einer Einweisung.",
+              "wert": 0.6442505
+            }
+          ],
+          "suche": 0.07760178599710343
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "mensa.md",
+              "text": "Metadaten: {\"aliases\": [\"Mensa\", \"Cafeteria\", \"Essen\", \"Speiseplan\", \"Gäste\", \"Hauptgericht\", \"Öffnungszeiten\"], \"thema\": \"Verpflegung\", \"tags\": [\"campus/essen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Mensa\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.",
+              "wert": 0.80947244
+            },
+            {
+              "datei": "mensa.md",
+              "text": "Metadaten: {\"aliases\": [\"Mensa\", \"Cafeteria\", \"Essen\", \"Speiseplan\", \"Gäste\", \"Hauptgericht\", \"Öffnungszeiten\"], \"thema\": \"Verpflegung\", \"tags\": [\"campus/essen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Mensa\n\n## Öffnungszeiten\nDie Mensa im Gebäude M gibt Essen Montag bis Freitag von 11:15 bis 14:00 Uhr\naus. Die Cafeteria daneben öffnet schon um 7:45 Uhr und schließt um 16 Uhr.",
+              "wert": 0.7177599
+            },
+            {
+              "datei": "mensa.md",
+              "text": "Metadaten: {\"aliases\": [\"Mensa\", \"Cafeteria\", \"Essen\", \"Speiseplan\", \"Gäste\", \"Hauptgericht\", \"Öffnungszeiten\"], \"thema\": \"Verpflegung\", \"tags\": [\"campus/essen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Mensa\n\n## Angebot\nJeden Tag gibt es drei Hauptgerichte, davon mindestens eines vegan.\nAllergene stehen auf dem Speiseplan online und an der Ausgabe.",
+              "wert": 0.6855939
+            },
+            {
+              "datei": "sport.md",
+              "text": "Metadaten: {\"aliases\": [\"Sport\", \"Hochschulsport\", \"Kurse\", \"Fitness\", \"Kraftraum\"], \"thema\": \"Freizeit\", \"tags\": [\"campus/freizeit\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n\n# Hochschulsport\n\nDie meisten Kurse kosten 15 Euro pro Semester. Der Kraftraum im Untergeschoss\nvon Gebäude S ist mit einer Fitnesskarte für 30 Euro pro Semester nutzbar,\nnach einer Einweisung.",
+              "wert": 0.6293506
+            }
+          ],
+          "suche": 0.08279590500023915
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Wie viel kostet eine Ersatz-Campuskarte?",
+        "quelle": "campuskarte.md",
+        "erwartet": [
+          "15"
+        ],
+        "typ": "direkt"
+      },
+      "begriffe": [
+        "Ersatz",
+        "Campuskarte",
+        "Karte",
+        "Einzelkarte",
+        "Studierendenausweis",
+        "Studierkarte"
+      ],
+      "begriffe_s": 3.0434717999960412,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "campuskarte.md",
+              "text": "# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n",
+              "wert": 10
+            },
+            {
+              "datei": "drucken.md",
+              "text": "# Drucken und Kopieren\n\nDrucker stehen in der Bibliothek und im Kopierraum F-012 im Erdgeschoss von\nGebäude F. Gedruckt wird mit der Campuskarte. Eine Seite schwarzweiß kostet\n5 Cent, in Farbe 20 Cent. Scannen ist kostenlos und landet als PDF in eurem\nHochschulpostfach.\n\nDruckaufträge schickt ihr über das Portal print.campus an die Warteschlange\nund gebt sie dann am Gerät mit der Karte frei. Nicht abgeholte Aufträge\nwerden nach 24 Stunden gelöscht.\n",
+              "wert": 3
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.\n\n## Gruppenräume\nIm ersten Stock gibt es sechs Gruppenräume (L-104 bis L-109) für zwei bis\nacht Personen. Sie werden über das Buchungsportal für höchstens drei Stunden\nam Stück reserviert.\n",
+              "wert": 2
+            }
+          ],
+          "suche": 3.044948807997571
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "campuskarte.md",
+              "text": "---\naliases:\n- Campuskarte\n- Studierendenausweis\n- Ersatzkarte\n- Ersatz-Campuskarte\n- Kartenverlust\n- Guthaben\nthema: Campus\ntags:\n- campus/karte\nkennungen:\n- A-010\n---\n\n# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n\nVerwandte Themen: [[_obsidian_extra/mensa]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/drucken]]\n",
+              "wert": 20
+            },
+            {
+              "datei": "drucken.md",
+              "text": "---\naliases:\n- Drucken\n- Kopieren\n- Scannen\n- Drucker\n- Kopierraum\nthema: Campus\ntags:\n- campus/technik\nkennungen:\n- F-012\n---\n\n# Drucken und Kopieren\n\nDrucker stehen in der Bibliothek und im Kopierraum F-012 im Erdgeschoss von\nGebäude F. Gedruckt wird mit der Campuskarte. Eine Seite schwarzweiß kostet\n5 Cent, in Farbe 20 Cent. Scannen ist kostenlos und landet als PDF in eurem\nHochschulpostfach.\n\nDruckaufträge schickt ihr über das Portal print.campus an die Warteschlange\nund gebt sie dann am Gerät mit der Karte frei. Nicht abgeholte Aufträge\nwerden nach 24 Stunden gelöscht.\n\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/raeume]]\n",
+              "wert": 5
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "---\naliases:\n- Bibliothek\n- Bib\n- Bücher\n- Ausleihe\n- Verlängerung\n- Öffnungszeiten\n- Lernplatz\nthema: Lernen\ntags:\n- campus/lernen\nkennungen:\n- L-104\n- L-109\n---\n\n# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.\n\n## Ausleihe und Verlängerung\nAusleihen könnt ihr mit der Campuskarte an den Selbstverbuchern im Eingang.\nDie Leihfrist beträgt vier Wochen. Im Bibliothekskonto lässt sich ein Medium\nbis zu dreimal online verlängern, solange niemand es vorgemerkt hat.\n\n## Mahngebühren\nWer ein Medium zu spät zurückgibt, zahlt 50 Cent pro Tag und Medium.\nAb 10 Euro offener Gebühren ist das Konto für weitere Ausleihen gesperrt.\n\n## Gruppenräume\nIm ersten Stock gibt es sechs Gruppenräume (L-104 bis L-109) für zwei bis\nacht Personen. Sie werden über das Buchungsportal für höchstens drei Stunden\nam Stück reserviert.\n\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/drucken]]\n",
+              "wert": 4
+            }
+          ],
+          "suche": 3.04472094499215
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "campuskarte.md",
+              "text": "# Campuskarte\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.",
+              "wert": 0.8579996
+            },
+            {
+              "datei": "semesterticket.md",
+              "text": "# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.",
+              "wert": 0.7469367
+            },
+            {
+              "datei": "mensa.md",
+              "text": "# Mensa\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.",
+              "wert": 0.7384151
+            },
+            {
+              "datei": "sport.md",
+              "text": "# Hochschulsport\n\nDie meisten Kurse kosten 15 Euro pro Semester. Der Kraftraum im Untergeschoss\nvon Gebäude S ist mit einer Fitnesskarte für 30 Euro pro Semester nutzbar,\nnach einer Einweisung.",
+              "wert": 0.72937286
+            }
+          ],
+          "suche": 0.1138196350002545
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "campuskarte.md",
+              "text": "Metadaten: {\"aliases\": [\"Campuskarte\", \"Studierendenausweis\", \"Ersatzkarte\", \"Ersatz-Campuskarte\", \"Kartenverlust\", \"Guthaben\"], \"thema\": \"Campus\", \"tags\": [\"campus/karte\"], \"kennungen\": [\"A-010\"]}\nVerwandte Themen: [[_obsidian_extra/mensa]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/drucken]]\n\n# Campuskarte\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.",
+              "wert": 0.8449238
+            },
+            {
+              "datei": "mensa.md",
+              "text": "Metadaten: {\"aliases\": [\"Mensa\", \"Cafeteria\", \"Essen\", \"Speiseplan\", \"Gäste\", \"Hauptgericht\", \"Öffnungszeiten\"], \"thema\": \"Verpflegung\", \"tags\": [\"campus/essen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Mensa\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.",
+              "wert": 0.7702006
+            },
+            {
+              "datei": "semesterticket.md",
+              "text": "Metadaten: {\"aliases\": [\"Semesterticket\", \"Deutschlandsemesterticket\", \"Bus\", \"Bahn\", \"ICE\", \"IC\", \"Nahverkehr\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/parken]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/rueckmeldung]]\n\n# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.",
+              "wert": 0.76906097
+            },
+            {
+              "datei": "parken.md",
+              "text": "Metadaten: {\"aliases\": [\"Parken\", \"Auto\", \"Kfz\", \"Parkplatz\", \"Parkhaus\", \"Parkausweis\", \"Anreise\", \"Fahrrad\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/raeume]]\n\n# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+              "wert": 0.7404423
+            }
+          ],
+          "suche": 0.07760249599959934
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Was regelt Paragraph 17 der Prüfungsordnung?",
+        "quelle": "pruefungsordnung.md",
+        "erwartet": [
+          "Täuschung",
+          "täusch",
+          "5,0"
+        ],
+        "typ": "kennung"
+      },
+      "begriffe": [
+        "Prüfungsordnung",
+        "Prüfung",
+        "Leistung",
+        "Punktesystem",
+        "Note",
+        "Abschlussprüfung"
+      ],
+      "begriffe_s": 2.5419534550019307,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n",
+              "wert": 11
+            },
+            {
+              "datei": "pruefungsanmeldung.md",
+              "text": "# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n",
+              "wert": 10
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.\n",
+              "wert": 9
+            }
+          ],
+          "suche": 2.542744340003992
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "---\naliases:\n- Prüfungsordnung\n- Paragraph\n- Paragraf\n- Täuschung\n- Rücktritt\n- Prüfungsformen\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n- § 14\n- § 17\n- § 21\n- § 9\n---\n\n# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n",
+              "wert": 15
+            },
+            {
+              "datei": "pruefungsanmeldung.md",
+              "text": "---\naliases:\n- Prüfungsanmeldung\n- Klausur\n- Anmeldung\n- Abmeldung\n- Prüfungsplan\n- HISinOne\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n---\n\n# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n",
+              "wert": 13
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "---\naliases:\n- Prüfungsunfähigkeit\n- Krankheit\n- krank\n- Attest\n- Arzt\n- Arztbescheinigung\n- Rücktritt\n- Krankmeldung\nthema: Prüfung\ntags:\n- studium/pruefung\n- gesundheit\nkennungen:\n- PA-07\n---\n\n# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/beratung]]\n",
+              "wert": 11
+            }
+          ],
+          "suche": 2.542939827006194
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.",
+              "wert": 0.8208754
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n# Prüfungsordnung (Auszug)",
+              "wert": 0.7694007
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.",
+              "wert": 0.73339117
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.",
+              "wert": 0.72937953
+            }
+          ],
+          "suche": 0.08619899699988309
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsordnung\", \"Paragraph\", \"Paragraf\", \"Täuschung\", \"Rücktritt\", \"Prüfungsformen\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\", \"§ 14\", \"§ 17\", \"§ 21\", \"§ 9\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n\n# Prüfungsordnung (Auszug)\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.",
+              "wert": 0.8126695
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsordnung\", \"Paragraph\", \"Paragraf\", \"Täuschung\", \"Rücktritt\", \"Prüfungsformen\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\", \"§ 14\", \"§ 17\", \"§ 21\", \"§ 9\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n\n# Prüfungsordnung (Auszug)\n\n# Prüfungsordnung (Auszug)",
+              "wert": 0.7648678
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsordnung\", \"Paragraph\", \"Paragraf\", \"Täuschung\", \"Rücktritt\", \"Prüfungsformen\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\", \"§ 14\", \"§ 17\", \"§ 21\", \"§ 9\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n\n# Prüfungsordnung (Auszug)\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.",
+              "wert": 0.7576702
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsordnung\", \"Paragraph\", \"Paragraf\", \"Täuschung\", \"Rücktritt\", \"Prüfungsformen\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\", \"§ 14\", \"§ 17\", \"§ 21\", \"§ 9\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n\n# Prüfungsordnung (Auszug)\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.",
+              "wert": 0.7507901
+            }
+          ],
+          "suche": 0.07397816300363047
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Wofür brauche ich das Formular PA-12?",
+        "quelle": "abschlussarbeit.md",
+        "erwartet": [
+          "Bachelorarbeit"
+        ],
+        "typ": "kennung"
+      },
+      "begriffe": [
+        "PA-12",
+        "Studienplan",
+        "Fachbereich",
+        "Studienordnung",
+        "Prüfungsordnung",
+        "Lehramtsstudiengang"
+      ],
+      "begriffe_s": 3.0492581900034565,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "abschlussarbeit.md",
+              "text": "# Bachelorarbeit\n\nDie Bachelorarbeit meldet ihr mit dem Formular PA-12 beim Prüfungsamt an,\nunterschrieben von der betreuenden Professorin oder dem betreuenden Professor.\nVoraussetzung sind mindestens 150 ECTS.\n\nDie Bearbeitungszeit beträgt drei Monate. Auf begründeten Antrag kann sie\neinmal um bis zu sechs Wochen verlängert werden. Abgegeben wird digital als\nPDF über das Prüfungsportal, zusammen mit der unterschriebenen Erklärung zur\nselbstständigen Anfertigung und zur Nutzung von KI-Werkzeugen.\n",
+              "wert": 1
+            },
+            {
+              "datei": "pruefungsanmeldung.md",
+              "text": "# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n",
+              "wert": 1
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 3.0504546590018435
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "abschlussarbeit.md",
+              "text": "---\naliases:\n- Abschlussarbeit\n- Bachelorarbeit\n- Bachelor\n- Thesis\n- Anmeldung der Abschlussarbeit\nthema: Studium\ntags:\n- studium/abschluss\nkennungen:\n- PA-12\n---\n\n# Bachelorarbeit\n\nDie Bachelorarbeit meldet ihr mit dem Formular PA-12 beim Prüfungsamt an,\nunterschrieben von der betreuenden Professorin oder dem betreuenden Professor.\nVoraussetzung sind mindestens 150 ECTS.\n\nDie Bearbeitungszeit beträgt drei Monate. Auf begründeten Antrag kann sie\neinmal um bis zu sechs Wochen verlängert werden. Abgegeben wird digital als\nPDF über das Prüfungsportal, zusammen mit der unterschriebenen Erklärung zur\nselbstständigen Anfertigung und zur Nutzung von KI-Werkzeugen.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/bibliothek]]\n",
+              "wert": 2
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "---\naliases:\n- Prüfungsordnung\n- Paragraph\n- Paragraf\n- Täuschung\n- Rücktritt\n- Prüfungsformen\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n- § 14\n- § 17\n- § 21\n- § 9\n---\n\n# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n",
+              "wert": 2
+            },
+            {
+              "datei": "pruefungsanmeldung.md",
+              "text": "---\naliases:\n- Prüfungsanmeldung\n- Klausur\n- Anmeldung\n- Abmeldung\n- Prüfungsplan\n- HISinOne\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n---\n\n# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n",
+              "wert": 1
+            }
+          ],
+          "suche": 3.051552274999267
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "abschlussarbeit.md",
+              "text": "# Bachelorarbeit\n\nDie Bachelorarbeit meldet ihr mit dem Formular PA-12 beim Prüfungsamt an,\nunterschrieben von der betreuenden Professorin oder dem betreuenden Professor.\nVoraussetzung sind mindestens 150 ECTS.",
+              "wert": 0.73797953
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.",
+              "wert": 0.65965605
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.",
+              "wert": 0.65060866
+            },
+            {
+              "datei": "praxissemester.md",
+              "text": "# Praktisches Studiensemester\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.",
+              "wert": 0.6466205
+            }
+          ],
+          "suche": 0.037196678000327665
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "abschlussarbeit.md",
+              "text": "Metadaten: {\"aliases\": [\"Abschlussarbeit\", \"Bachelorarbeit\", \"Bachelor\", \"Thesis\", \"Anmeldung der Abschlussarbeit\"], \"thema\": \"Studium\", \"tags\": [\"studium/abschluss\"], \"kennungen\": [\"PA-12\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/bibliothek]]\n\n# Bachelorarbeit\n\nDie Bachelorarbeit meldet ihr mit dem Formular PA-12 beim Prüfungsamt an,\nunterschrieben von der betreuenden Professorin oder dem betreuenden Professor.\nVoraussetzung sind mindestens 150 ECTS.",
+              "wert": 0.7544054
+            },
+            {
+              "datei": "abschlussarbeit.md",
+              "text": "Metadaten: {\"aliases\": [\"Abschlussarbeit\", \"Bachelorarbeit\", \"Bachelor\", \"Thesis\", \"Anmeldung der Abschlussarbeit\"], \"thema\": \"Studium\", \"tags\": [\"studium/abschluss\"], \"kennungen\": [\"PA-12\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/bibliothek]]\n\n# Bachelorarbeit\n\nDie Bearbeitungszeit beträgt drei Monate. Auf begründeten Antrag kann sie\neinmal um bis zu sechs Wochen verlängert werden. Abgegeben wird digital als\nPDF über das Prüfungsportal, zusammen mit der unterschriebenen Erklärung zur\nselbstständigen Anfertigung und zur Nutzung von KI-Werkzeugen.",
+              "wert": 0.6903686
+            },
+            {
+              "datei": "abschlussarbeit.md",
+              "text": "Metadaten: {\"aliases\": [\"Abschlussarbeit\", \"Bachelorarbeit\", \"Bachelor\", \"Thesis\", \"Anmeldung der Abschlussarbeit\"], \"thema\": \"Studium\", \"tags\": [\"studium/abschluss\"], \"kennungen\": [\"PA-12\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/bibliothek]]\n\n# Bachelorarbeit\n\n# Bachelorarbeit",
+              "wert": 0.68753636
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsordnung\", \"Paragraph\", \"Paragraf\", \"Täuschung\", \"Rücktritt\", \"Prüfungsformen\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\", \"§ 14\", \"§ 17\", \"§ 21\", \"§ 9\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n\n# Prüfungsordnung (Auszug)\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.",
+              "wert": 0.663646
+            }
+          ],
+          "suche": 0.03976792100002058
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Wer sitzt in Raum F-201?",
+        "quelle": "praxissemester.md",
+        "erwartet": [
+          "Praktikantenamt"
+        ],
+        "typ": "kennung"
+      },
+      "begriffe": [
+        "Sitzung",
+        "Rat",
+        "Vorstand",
+        "Fakultät",
+        "Sitzungssaal",
+        "Ratsstuhl"
+      ],
+      "begriffe_s": 2.620823477001977,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "beratung.md",
+              "text": "# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.\n",
+              "wert": 5
+            },
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.62195877799968
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "beratung.md",
+              "text": "---\naliases:\n- Beratung\n- Studienberatung\n- Psychosoziale Beratung\n- Stress\n- gestresst\n- Überlastung\n- Hilfe\n- Probleme\n- Prüfungsangst\nthema: Unterstützung\ntags:\n- studium/beratung\n- gesundheit\nkennungen:\n- A-201\n---\n\n# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.\n\nVerwandte Themen: [[_obsidian_extra/nachteilsausgleich]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n",
+              "wert": 9
+            },
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "---\naliases:\n- Wiederholungsprüfung\n- Wiederholung\n- Versuche\n- Prüfungsversuche\n- Durchgefallen\n- Prüfungsanspruch\n- Nachprüfung\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen: []\n---\n\n# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/beratung]]\n",
+              "wert": 2
+            },
+            {
+              "datei": "auslandssemester.md",
+              "text": "---\naliases:\n- Ausland\n- Austausch\n- Erasmus\n- International Office\n- Learning Agreement\nthema: Studium\ntags:\n- studium/ausland\nkennungen:\n- A-301\n---\n\n# Auslandssemester\n\nDas International Office in Gebäude A, Raum A-301, berät zu Partnerhochschulen,\nErasmus-Förderung und Anerkennung von Leistungen. Die Bewerbung für ein\nAuslandssemester im folgenden Studienjahr läuft bis zum 15. Januar.\n\nVor der Abreise schließt ihr ein Learning Agreement mit eurer\nStudiengangsleitung ab. Darin steht, welche Module im Ausland euch zu Hause\nangerechnet werden. Ohne Learning Agreement gibt es keine Garantie auf\nAnerkennung.\n\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/praxissemester]], [[_obsidian_extra/rueckmeldung]]\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.622119091996865
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "raeume.md",
+              "text": "# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.",
+              "wert": 0.7010646
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "# Bibliothek\n\n## Gruppenräume\nIm ersten Stock gibt es sechs Gruppenräume (L-104 bis L-109) für zwei bis\nacht Personen. Sie werden über das Buchungsportal für höchstens drei Stunden\nam Stück reserviert.",
+              "wert": 0.6947619
+            },
+            {
+              "datei": "raeume.md",
+              "text": "# Räume und Gebäude finden\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.",
+              "wert": 0.670733
+            },
+            {
+              "datei": "mensa.md",
+              "text": "# Mensa\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.",
+              "wert": 0.66525924
+            }
+          ],
+          "suche": 0.08046645099966554
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "raeume.md",
+              "text": "Metadaten: {\"aliases\": [\"Raum\", \"Räume\", \"Gebäude\", \"Lageplan\", \"Orientierung\"], \"thema\": \"Campus\", \"tags\": [\"campus/orientierung\"], \"kennungen\": [\"F-012\", \"O-201\"]}\nVerwandte Themen: [[_obsidian_extra/praxissemester]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/mensa]], [[_obsidian_extra/drucken]], [[_obsidian_extra/lernraeume]]\n\n# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.",
+              "wert": 0.72022754
+            },
+            {
+              "datei": "raeume.md",
+              "text": "Metadaten: {\"aliases\": [\"Raum\", \"Räume\", \"Gebäude\", \"Lageplan\", \"Orientierung\"], \"thema\": \"Campus\", \"tags\": [\"campus/orientierung\"], \"kennungen\": [\"F-012\", \"O-201\"]}\nVerwandte Themen: [[_obsidian_extra/praxissemester]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/mensa]], [[_obsidian_extra/drucken]], [[_obsidian_extra/lernraeume]]\n\n# Räume und Gebäude finden\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.",
+              "wert": 0.6775456
+            },
+            {
+              "datei": "raeume.md",
+              "text": "Metadaten: {\"aliases\": [\"Raum\", \"Räume\", \"Gebäude\", \"Lageplan\", \"Orientierung\"], \"thema\": \"Campus\", \"tags\": [\"campus/orientierung\"], \"kennungen\": [\"F-012\", \"O-201\"]}\nVerwandte Themen: [[_obsidian_extra/praxissemester]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/mensa]], [[_obsidian_extra/drucken]], [[_obsidian_extra/lernraeume]]\n\n# Räume und Gebäude finden\n\n# Räume und Gebäude finden",
+              "wert": 0.6667093
+            },
+            {
+              "datei": "praxissemester.md",
+              "text": "Metadaten: {\"aliases\": [\"Praxissemester\", \"Praktikum\", \"Praktisches Studiensemester\", \"Praktikantenamt\", \"Ausbildungsvertrag\", \"Praktikumsbericht\"], \"thema\": \"Studium\", \"tags\": [\"studium/praxis\"], \"kennungen\": [\"F-201\"]}\nVerwandte Themen: [[_obsidian_extra/auslandssemester]], [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n\n# Praktisches Studiensemester\n\nIm fünften Semester arbeitet ihr mindestens 95 Präsenztage in einem\nUnternehmen. Den Ausbildungsvertrag schickt ihr spätestens vier Wochen vor\nBeginn an das Praktikantenamt, Raum F-201. Das Praktikantenamt prüft, ob die\nStelle zum Studiengang passt.",
+              "wert": 0.63497937
+            }
+          ],
+          "suche": 0.14257913100300357
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+        "quelle": "pruefungsunfaehigkeit.md",
+        "erwartet": [
+          "Attest"
+        ],
+        "typ": "umschrieben"
+      },
+      "begriffe": [
+        "Krankheit",
+        "Arzt",
+        "Medikamente",
+        "Krankenakte",
+        "Schulabsenz",
+        "Arztbescheinigung"
+      ],
+      "begriffe_s": 2.728546891004953,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "praxissemester.md",
+              "text": "# Praktisches Studiensemester\n\nIm fünften Semester arbeitet ihr mindestens 95 Präsenztage in einem\nUnternehmen. Den Ausbildungsvertrag schickt ihr spätestens vier Wochen vor\nBeginn an das Praktikantenamt, Raum F-201. Das Praktikantenamt prüft, ob die\nStelle zum Studiengang passt.\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.729453359002946
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "---\naliases:\n- Prüfungsunfähigkeit\n- Krankheit\n- krank\n- Attest\n- Arzt\n- Arztbescheinigung\n- Rücktritt\n- Krankmeldung\nthema: Prüfung\ntags:\n- studium/pruefung\n- gesundheit\nkennungen:\n- PA-07\n---\n\n# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/beratung]]\n",
+              "wert": 4
+            },
+            {
+              "datei": "praxissemester.md",
+              "text": "---\naliases:\n- Praxissemester\n- Praktikum\n- Praktisches Studiensemester\n- Praktikantenamt\n- Ausbildungsvertrag\n- Praktikumsbericht\nthema: Studium\ntags:\n- studium/praxis\nkennungen:\n- F-201\n---\n\n# Praktisches Studiensemester\n\nIm fünften Semester arbeitet ihr mindestens 95 Präsenztage in einem\nUnternehmen. Den Ausbildungsvertrag schickt ihr spätestens vier Wochen vor\nBeginn an das Praktikantenamt, Raum F-201. Das Praktikantenamt prüft, ob die\nStelle zum Studiengang passt.\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.\n\nVerwandte Themen: [[_obsidian_extra/auslandssemester]], [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.7296846410099533
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "praxissemester.md",
+              "text": "# Praktisches Studiensemester\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.",
+              "wert": 0.7190424
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.",
+              "wert": 0.66905504
+            },
+            {
+              "datei": "beratung.md",
+              "text": "# Beratung und Unterstützung\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.",
+              "wert": 0.66640675
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.",
+              "wert": 0.660412
+            }
+          ],
+          "suche": 0.08686066200607456
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "praxissemester.md",
+              "text": "Metadaten: {\"aliases\": [\"Praxissemester\", \"Praktikum\", \"Praktisches Studiensemester\", \"Praktikantenamt\", \"Ausbildungsvertrag\", \"Praktikumsbericht\"], \"thema\": \"Studium\", \"tags\": [\"studium/praxis\"], \"kennungen\": [\"F-201\"]}\nVerwandte Themen: [[_obsidian_extra/auslandssemester]], [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n\n# Praktisches Studiensemester\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.",
+              "wert": 0.66343325
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsunfähigkeit\", \"Krankheit\", \"krank\", \"Attest\", \"Arzt\", \"Arztbescheinigung\", \"Rücktritt\", \"Krankmeldung\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\", \"gesundheit\"], \"kennungen\": [\"PA-07\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/beratung]]\n\n# Rücktritt aus gesundheitlichen Gründen\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.",
+              "wert": 0.6282555
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsunfähigkeit\", \"Krankheit\", \"krank\", \"Attest\", \"Arzt\", \"Arztbescheinigung\", \"Rücktritt\", \"Krankmeldung\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\", \"gesundheit\"], \"kennungen\": [\"PA-07\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/beratung]]\n\n# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.",
+              "wert": 0.6277441
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsunfähigkeit\", \"Krankheit\", \"krank\", \"Attest\", \"Arzt\", \"Arztbescheinigung\", \"Rücktritt\", \"Krankmeldung\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\", \"gesundheit\"], \"kennungen\": [\"PA-07\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/beratung]]\n\n# Rücktritt aus gesundheitlichen Gründen\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.",
+              "wert": 0.6243081
+            }
+          ],
+          "suche": 0.07410730000265175
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Wo kann ich mein Auto abstellen und was kostet das?",
+        "quelle": "parken.md",
+        "erwartet": [
+          "45",
+          "Parkausweis"
+        ],
+        "typ": "umschrieben"
+      },
+      "begriffe": [
+        "Abstellplatz",
+        "Parkhaus",
+        "Parkgebühr",
+        "Parkzeit",
+        "Autopark"
+      ],
+      "begriffe_s": 2.138489433993527,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "parken.md",
+              "text": "# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.\n\nFahrradstellplätze gibt es vor jedem Gebäude, überdacht vor F und O.\nMit Bus und Bahn erreicht ihr den Campus über die Haltestelle Hochschule.\n",
+              "wert": 2
+            }
+          ],
+          "suche": 2.139681972999824
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "parken.md",
+              "text": "---\naliases:\n- Parken\n- Auto\n- Kfz\n- Parkplatz\n- Parkhaus\n- Parkausweis\n- Anreise\n- Fahrrad\nthema: Mobilität\ntags:\n- campus/mobilitaet\nkennungen: []\n---\n\n# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.\n\nFahrradstellplätze gibt es vor jedem Gebäude, überdacht vor F und O.\nMit Bus und Bahn erreicht ihr den Campus über die Haltestelle Hochschule.\n\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/raeume]]\n",
+              "wert": 3
+            }
+          ],
+          "suche": 2.139412437994906
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "parken.md",
+              "text": "# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+              "wert": 0.66963816
+            },
+            {
+              "datei": "fundbuero.md",
+              "text": "# Fundsachen\n\nLiegen gebliebene Gegenstände wie Schlüssel, Brillen, Jacken oder Ladekabel\nbringt der Hausdienst zur Pforte in Gebäude A. Dort könnt ihr sie Montag bis\nFreitag von 7 bis 18 Uhr abholen. Nach drei Monaten gehen nicht abgeholte\nSachen an das städtische Fundbüro. Wertsachen wie Handys und Geldbörsen gibt\ndie Pforte sofort an das städtische Fundbüro weiter.",
+              "wert": 0.6449667
+            },
+            {
+              "datei": "parken.md",
+              "text": "# Parken und Anreise\n\n# Parken und Anreise",
+              "wert": 0.6406127
+            },
+            {
+              "datei": "campuskarte.md",
+              "text": "# Campuskarte\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.",
+              "wert": 0.63030803
+            }
+          ],
+          "suche": 0.06294571000034921
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "parken.md",
+              "text": "Metadaten: {\"aliases\": [\"Parken\", \"Auto\", \"Kfz\", \"Parkplatz\", \"Parkhaus\", \"Parkausweis\", \"Anreise\", \"Fahrrad\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/raeume]]\n\n# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+              "wert": 0.6775253
+            },
+            {
+              "datei": "parken.md",
+              "text": "Metadaten: {\"aliases\": [\"Parken\", \"Auto\", \"Kfz\", \"Parkplatz\", \"Parkhaus\", \"Parkausweis\", \"Anreise\", \"Fahrrad\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/raeume]]\n\n# Parken und Anreise\n\n# Parken und Anreise",
+              "wert": 0.65919775
+            },
+            {
+              "datei": "semesterticket.md",
+              "text": "Metadaten: {\"aliases\": [\"Semesterticket\", \"Deutschlandsemesterticket\", \"Bus\", \"Bahn\", \"ICE\", \"IC\", \"Nahverkehr\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/parken]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/rueckmeldung]]\n\n# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.",
+              "wert": 0.6486751
+            },
+            {
+              "datei": "parken.md",
+              "text": "Metadaten: {\"aliases\": [\"Parken\", \"Auto\", \"Kfz\", \"Parkplatz\", \"Parkhaus\", \"Parkausweis\", \"Anreise\", \"Fahrrad\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/raeume]]\n\n# Parken und Anreise\n\nFahrradstellplätze gibt es vor jedem Gebäude, überdacht vor F und O.\nMit Bus und Bahn erreicht ihr den Campus über die Haltestelle Hochschule.",
+              "wert": 0.6393651
+            }
+          ],
+          "suche": 0.04838260100223124
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Wo kann ich nachts noch lernen?",
+        "quelle": "lernraeume.md",
+        "erwartet": [
+          "Gebäude O",
+          "Lernzone",
+          "rund um die Uhr"
+        ],
+        "typ": "umschrieben"
+      },
+      "begriffe": [
+        "Lernraum",
+        "Studienort",
+        "Nachtstudiengang",
+        "Lernzentrum",
+        "Studienhalle",
+        "Lernbereich"
+      ],
+      "begriffe_s": 2.8828635749960085,
+      "kandidaten": {
+        "datei": {
+          "treffer": [],
+          "suche": 2.8838913139989018
+        },
+        "datei_meta": {
+          "treffer": [],
+          "suche": 2.883965504996013
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "lernraeume.md",
+              "text": "# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.",
+              "wert": 0.73046017
+            },
+            {
+              "datei": "lernraeume.md",
+              "text": "# Lernplätze außerhalb der Bibliothek\n\nTagsüber sind außerdem freie Seminarräume nutzbar, solange dort keine\nVeranstaltung stattfindet. Welche Räume frei sind, zeigt die Raumbelegung im\nStudierendenportal.",
+              "wert": 0.69135094
+            },
+            {
+              "datei": "lernraeume.md",
+              "text": "# Lernplätze außerhalb der Bibliothek\n\n# Lernplätze außerhalb der Bibliothek",
+              "wert": 0.68407625
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.",
+              "wert": 0.6374643
+            }
+          ],
+          "suche": 0.03353543300181627
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "lernraeume.md",
+              "text": "Metadaten: {\"aliases\": [\"Lernräume\", \"Lernplätze\", \"Lernzone\", \"Lernen\", \"Nacht\", \"nachts\", \"Wochenende\", \"Seminarräume\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/bibliothek]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.",
+              "wert": 0.70970833
+            },
+            {
+              "datei": "lernraeume.md",
+              "text": "Metadaten: {\"aliases\": [\"Lernräume\", \"Lernplätze\", \"Lernzone\", \"Lernen\", \"Nacht\", \"nachts\", \"Wochenende\", \"Seminarräume\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/bibliothek]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Lernplätze außerhalb der Bibliothek\n\n# Lernplätze außerhalb der Bibliothek",
+              "wert": 0.6916741
+            },
+            {
+              "datei": "lernraeume.md",
+              "text": "Metadaten: {\"aliases\": [\"Lernräume\", \"Lernplätze\", \"Lernzone\", \"Lernen\", \"Nacht\", \"nachts\", \"Wochenende\", \"Seminarräume\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/bibliothek]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Lernplätze außerhalb der Bibliothek\n\nTagsüber sind außerdem freie Seminarräume nutzbar, solange dort keine\nVeranstaltung stattfindet. Welche Räume frei sind, zeigt die Raumbelegung im\nStudierendenportal.",
+              "wert": 0.6884906
+            },
+            {
+              "datei": "bibliothek.md",
+              "text": "Metadaten: {\"aliases\": [\"Bibliothek\", \"Bib\", \"Bücher\", \"Ausleihe\", \"Verlängerung\", \"Öffnungszeiten\", \"Lernplatz\"], \"thema\": \"Lernen\", \"tags\": [\"campus/lernen\"], \"kennungen\": [\"L-104\", \"L-109\"]}\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/drucken]]\n\n# Bibliothek\n\n## Öffnungszeiten\nDie Bibliothek im Gebäude L hat Montag bis Freitag von 8 bis 22 Uhr geöffnet,\nam Samstag von 9 bis 16 Uhr. An Sonn- und Feiertagen bleibt sie geschlossen.\nIn der vorlesungsfreien Zeit schließt sie werktags schon um 18 Uhr.",
+              "wert": 0.64862835
+            }
+          ],
+          "suche": 0.07341512299899478
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?",
+        "quelle": "beratung.md",
+        "erwartet": [
+          "Psychosoziale",
+          "psychosoziale"
+        ],
+        "typ": "umschrieben"
+      },
+      "begriffe": [
+        "Hilfe",
+        "Beratung",
+        "Psychologe",
+        "Therapie",
+        "Selbsthilfe",
+        "Unterstützung"
+      ],
+      "begriffe_s": 2.834604431001935,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "beratung.md",
+              "text": "# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.\n",
+              "wert": 6
+            },
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.835454339001444
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "beratung.md",
+              "text": "---\naliases:\n- Beratung\n- Studienberatung\n- Psychosoziale Beratung\n- Stress\n- gestresst\n- Überlastung\n- Hilfe\n- Probleme\n- Prüfungsangst\nthema: Unterstützung\ntags:\n- studium/beratung\n- gesundheit\nkennungen:\n- A-201\n---\n\n# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.\n\nVerwandte Themen: [[_obsidian_extra/nachteilsausgleich]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n",
+              "wert": 12
+            },
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "---\naliases:\n- Wiederholungsprüfung\n- Wiederholung\n- Versuche\n- Prüfungsversuche\n- Durchgefallen\n- Prüfungsanspruch\n- Nachprüfung\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen: []\n---\n\n# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/beratung]]\n",
+              "wert": 2
+            },
+            {
+              "datei": "auslandssemester.md",
+              "text": "---\naliases:\n- Ausland\n- Austausch\n- Erasmus\n- International Office\n- Learning Agreement\nthema: Studium\ntags:\n- studium/ausland\nkennungen:\n- A-301\n---\n\n# Auslandssemester\n\nDas International Office in Gebäude A, Raum A-301, berät zu Partnerhochschulen,\nErasmus-Förderung und Anerkennung von Leistungen. Die Bewerbung für ein\nAuslandssemester im folgenden Studienjahr läuft bis zum 15. Januar.\n\nVor der Abreise schließt ihr ein Learning Agreement mit eurer\nStudiengangsleitung ab. Darin steht, welche Module im Ausland euch zu Hause\nangerechnet werden. Ohne Learning Agreement gibt es keine Garantie auf\nAnerkennung.\n\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/praxissemester]], [[_obsidian_extra/rueckmeldung]]\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.8355291610059794
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "beratung.md",
+              "text": "# Beratung und Unterstützung\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.",
+              "wert": 0.67589235
+            },
+            {
+              "datei": "praxissemester.md",
+              "text": "# Praktisches Studiensemester\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.",
+              "wert": 0.5781322
+            },
+            {
+              "datei": "beratung.md",
+              "text": "# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.",
+              "wert": 0.5759069
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.",
+              "wert": 0.56096643
+            }
+          ],
+          "suche": 0.044369226998242084
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "beratung.md",
+              "text": "Metadaten: {\"aliases\": [\"Beratung\", \"Studienberatung\", \"Psychosoziale Beratung\", \"Stress\", \"gestresst\", \"Überlastung\", \"Hilfe\", \"Probleme\", \"Prüfungsangst\"], \"thema\": \"Unterstützung\", \"tags\": [\"studium/beratung\", \"gesundheit\"], \"kennungen\": [\"A-201\"]}\nVerwandte Themen: [[_obsidian_extra/nachteilsausgleich]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n\n# Beratung und Unterstützung\n\n## Psychosoziale Beratung\nBei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu\nviel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose\nund vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche\nüber das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um\ndie Uhr unter 0800 111 0 111 erreichbar.",
+              "wert": 0.6444583
+            },
+            {
+              "datei": "beratung.md",
+              "text": "Metadaten: {\"aliases\": [\"Beratung\", \"Studienberatung\", \"Psychosoziale Beratung\", \"Stress\", \"gestresst\", \"Überlastung\", \"Hilfe\", \"Probleme\", \"Prüfungsangst\"], \"thema\": \"Unterstützung\", \"tags\": [\"studium/beratung\", \"gesundheit\"], \"kennungen\": [\"A-201\"]}\nVerwandte Themen: [[_obsidian_extra/nachteilsausgleich]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n\n# Beratung und Unterstützung\n\n## Studienberatung\nDie Zentrale Studienberatung hilft bei Fragen zur Studienwahl, bei Zweifeln\nam Studium und bei Problemen mit der Studienorganisation. Offene Sprechstunde\nDienstag und Donnerstag 10 bis 12 Uhr, Raum A-201.",
+              "wert": 0.5934731
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsunfähigkeit\", \"Krankheit\", \"krank\", \"Attest\", \"Arzt\", \"Arztbescheinigung\", \"Rücktritt\", \"Krankmeldung\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\", \"gesundheit\"], \"kennungen\": [\"PA-07\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/beratung]]\n\n# Rücktritt aus gesundheitlichen Gründen\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.",
+              "wert": 0.5485859
+            },
+            {
+              "datei": "nachteilsausgleich.md",
+              "text": "Metadaten: {\"aliases\": [\"Nachteilsausgleich\", \"Behinderung\", \"Chronische Erkrankung\", \"Bearbeitungszeit\", \"Prüfungsausschuss\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\", \"gesundheit\"], \"kennungen\": [\"A-115\"]}\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsunfaehigkeit]]\n\n# Nachteilsausgleich\n\nDen Antrag stellt ihr formlos beim Prüfungsausschuss, mindestens sechs Wochen\nvor der Prüfung. Bei der Begründung hilft die Beauftragte für Studierende mit\nBehinderung im Gebäude A, Raum A-115. Ein fachärztliches Gutachten ist\nin der Regel nötig.",
+              "wert": 0.53923196
+            }
+          ],
+          "suche": 0.0831257679965347
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?",
+        "quelle": "rueckmeldung.md",
+        "erwartet": [
+          "25",
+          "Säumnis"
+        ],
+        "typ": "umschrieben"
+      },
+      "begriffe": [
+        "Überweisung",
+        "Frist",
+        "Strafe",
+        "Satzung",
+        "Semester",
+        "Honorar"
+      ],
+      "begriffe_s": 2.4898967440021806,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "rueckmeldung.md",
+              "text": "# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.\n\nDer Semesterbeitrag beträgt 168,40 Euro. Er setzt sich zusammen aus dem\nVerwaltungskostenbeitrag (70 Euro), dem Beitrag für das Studierendenwerk\n(83,40 Euro) und dem Beitrag für die Verfasste Studierendenschaft (15 Euro).\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.\n",
+              "wert": 8
+            },
+            {
+              "datei": "semesterticket.md",
+              "text": "# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.\n",
+              "wert": 4
+            },
+            {
+              "datei": "sport.md",
+              "text": "# Hochschulsport\n\nDer Hochschulsport bietet jedes Semester rund 50 Kurse an, von Volleyball\nüber Yoga bis Klettern. Die Anmeldung öffnet zwei Wochen nach\nVorlesungsbeginn um 12 Uhr im Sportportal und ist meist schnell voll.\n\nDie meisten Kurse kosten 15 Euro pro Semester. Der Kraftraum im Untergeschoss\nvon Gebäude S ist mit einer Fitnesskarte für 30 Euro pro Semester nutzbar,\nnach einer Einweisung.\n",
+              "wert": 3
+            }
+          ],
+          "suche": 2.4913647930079605
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "rueckmeldung.md",
+              "text": "---\naliases:\n- Rückmeldung\n- Semesterbeitrag\n- Geld\n- Bezahlen\n- Überweisung\n- überweise\n- Säumnisgebühr\n- Semester\nthema: Studium\ntags:\n- studium/verwaltung\nkennungen: []\n---\n\n# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.\n\nDer Semesterbeitrag beträgt 168,40 Euro. Er setzt sich zusammen aus dem\nVerwaltungskostenbeitrag (70 Euro), dem Beitrag für das Studierendenwerk\n(83,40 Euro) und dem Beitrag für die Verfasste Studierendenschaft (15 Euro).\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.\n\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n",
+              "wert": 12
+            },
+            {
+              "datei": "semesterticket.md",
+              "text": "---\naliases:\n- Semesterticket\n- Deutschlandsemesterticket\n- Bus\n- Bahn\n- ICE\n- IC\n- Nahverkehr\nthema: Mobilität\ntags:\n- campus/mobilitaet\nkennungen: []\n---\n\n# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.\n\nVerwandte Themen: [[_obsidian_extra/parken]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/rueckmeldung]]\n",
+              "wert": 6
+            },
+            {
+              "datei": "praxissemester.md",
+              "text": "---\naliases:\n- Praxissemester\n- Praktikum\n- Praktisches Studiensemester\n- Praktikantenamt\n- Ausbildungsvertrag\n- Praktikumsbericht\nthema: Studium\ntags:\n- studium/praxis\nkennungen:\n- F-201\n---\n\n# Praktisches Studiensemester\n\nIm fünften Semester arbeitet ihr mindestens 95 Präsenztage in einem\nUnternehmen. Den Ausbildungsvertrag schickt ihr spätestens vier Wochen vor\nBeginn an das Praktikantenamt, Raum F-201. Das Praktikantenamt prüft, ob die\nStelle zum Studiengang passt.\n\nAm Ende gebt ihr einen Bericht von etwa 15 Seiten und ein Zeugnis des\nUnternehmens ab. Krankheitstage über fünf Tage hinaus müssen nachgeholt werden.\n\nVerwandte Themen: [[_obsidian_extra/auslandssemester]], [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n",
+              "wert": 5
+            }
+          ],
+          "suche": 2.491304510003829
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "rueckmeldung.md",
+              "text": "# Rückmeldung und Semesterbeitrag\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.",
+              "wert": 0.7794677
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.",
+              "wert": 0.7348021
+            },
+            {
+              "datei": "campuskarte.md",
+              "text": "# Campuskarte\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.",
+              "wert": 0.69901013
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "# Rückmeldung und Semesterbeitrag\n\nDer Semesterbeitrag beträgt 168,40 Euro. Er setzt sich zusammen aus dem\nVerwaltungskostenbeitrag (70 Euro), dem Beitrag für das Studierendenwerk\n(83,40 Euro) und dem Beitrag für die Verfasste Studierendenschaft (15 Euro).",
+              "wert": 0.6921431
+            }
+          ],
+          "suche": 0.0630951439961791
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "rueckmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Rückmeldung\", \"Semesterbeitrag\", \"Geld\", \"Bezahlen\", \"Überweisung\", \"überweise\", \"Säumnisgebühr\", \"Semester\"], \"thema\": \"Studium\", \"tags\": [\"studium/verwaltung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n\n# Rückmeldung und Semesterbeitrag\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.",
+              "wert": 0.731995
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Rückmeldung\", \"Semesterbeitrag\", \"Geld\", \"Bezahlen\", \"Überweisung\", \"überweise\", \"Säumnisgebühr\", \"Semester\"], \"thema\": \"Studium\", \"tags\": [\"studium/verwaltung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n\n# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.",
+              "wert": 0.71701014
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Rückmeldung\", \"Semesterbeitrag\", \"Geld\", \"Bezahlen\", \"Überweisung\", \"überweise\", \"Säumnisgebühr\", \"Semester\"], \"thema\": \"Studium\", \"tags\": [\"studium/verwaltung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n\n# Rückmeldung und Semesterbeitrag\n\nDer Semesterbeitrag beträgt 168,40 Euro. Er setzt sich zusammen aus dem\nVerwaltungskostenbeitrag (70 Euro), dem Beitrag für das Studierendenwerk\n(83,40 Euro) und dem Beitrag für die Verfasste Studierendenschaft (15 Euro).",
+              "wert": 0.7063955
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Rückmeldung\", \"Semesterbeitrag\", \"Geld\", \"Bezahlen\", \"Überweisung\", \"überweise\", \"Säumnisgebühr\", \"Semester\"], \"thema\": \"Studium\", \"tags\": [\"studium/verwaltung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n\n# Rückmeldung und Semesterbeitrag\n\n# Rückmeldung und Semesterbeitrag",
+              "wert": 0.6580448
+            }
+          ],
+          "suche": 0.09526430000551045
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?",
+        "quelle": "wiederholungspruefung.md",
+        "erwartet": [
+          "drei",
+          "3",
+          "zweimal"
+        ],
+        "typ": "umschrieben"
+      },
+      "begriffe": [
+        "Prüfung",
+        "Wiederholung",
+        "Sitzung",
+        "Prüfungsleistung",
+        "Prüfungsbeteiligung",
+        "Sitzungsdatum"
+      ],
+      "begriffe_s": 3.1781910770005197,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n",
+              "wert": 11
+            },
+            {
+              "datei": "pruefungsanmeldung.md",
+              "text": "# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n",
+              "wert": 9
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.\n\n## Danach\nIhr werdet automatisch zum nächsten regulären Termin angemeldet.\n",
+              "wert": 9
+            }
+          ],
+          "suche": 3.1794751990018995
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "---\naliases:\n- Prüfungsordnung\n- Paragraph\n- Paragraf\n- Täuschung\n- Rücktritt\n- Prüfungsformen\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n- § 14\n- § 17\n- § 21\n- § 9\n---\n\n# Prüfungsordnung (Auszug)\n\n§ 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,\nHausarbeiten oder Projektarbeiten. Die Form steht im Modulhandbuch.\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.\n\n§ 17 Täuschung. Wer täuscht oder nicht zugelassene Hilfsmittel benutzt,\nerhält für die Prüfung die Note 5,0. In schweren Fällen kann der\nPrüfungsausschuss die Exmatrikulation beschließen.\n\n§ 21 Nachteilsausgleich. Studierende mit Behinderung oder chronischer\nErkrankung können einen Ausgleich beantragen, etwa mehr Bearbeitungszeit.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n",
+              "wert": 15
+            },
+            {
+              "datei": "pruefungsanmeldung.md",
+              "text": "---\naliases:\n- Prüfungsanmeldung\n- Klausur\n- Anmeldung\n- Abmeldung\n- Prüfungsplan\n- HISinOne\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen:\n- § 12\n---\n\n# Prüfungsanmeldung\n\n## Anmeldezeitraum\nPrüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das\nWintersemester läuft vom 1. bis 20. November, für das Sommersemester vom\n1. bis 20. Mai. Ohne Anmeldung dürft ihr nicht an der Prüfung teilnehmen.\n\n## Abmeldung\nAbmelden könnt ihr euch ohne Angabe von Gründen bis sieben Tage vor dem\nPrüfungstermin, ebenfalls in HISinOne. Danach ist eine Abmeldung nur noch\nüber einen Rücktritt mit triftigem Grund möglich (siehe Prüfungsordnung § 12).\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n",
+              "wert": 13
+            },
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "---\naliases:\n- Wiederholungsprüfung\n- Wiederholung\n- Versuche\n- Prüfungsversuche\n- Durchgefallen\n- Prüfungsanspruch\n- Nachprüfung\nthema: Prüfung\ntags:\n- studium/pruefung\nkennungen: []\n---\n\n# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.\n\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/beratung]]\n",
+              "wert": 12
+            }
+          ],
+          "suche": 3.1793972290033707
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.",
+              "wert": 0.68914735
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Nachweis\nNötig ist ein ärztliches Attest, das die Prüfungsunfähigkeit am Prüfungstag\nbestätigt. Eine einfache Arbeitsunfähigkeitsbescheinigung reicht nicht.\nDas Attest muss innerhalb von drei Werktagen nach dem Prüfungstermin beim\nPrüfungsamt eingehen, zusammen mit dem Formular PA-07\n„Antrag auf Anerkennung der Prüfungsunfähigkeit“.",
+              "wert": 0.6839725
+            },
+            {
+              "datei": "pruefungsunfaehigkeit.md",
+              "text": "# Rücktritt aus gesundheitlichen Gründen\n\n## Wann gilt das?\nWer an einem Prüfungstag aus gesundheitlichen Gründen nicht antreten kann\noder eine Prüfung deshalb abbricht, gilt als prüfungsunfähig. Die Prüfung\nwird dann nicht als Fehlversuch gewertet, wenn der Grund rechtzeitig\nnachgewiesen wird.",
+              "wert": 0.68127334
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "# Prüfungsordnung (Auszug)\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.",
+              "wert": 0.673202
+            }
+          ],
+          "suche": 0.044546862998686265
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "Metadaten: {\"aliases\": [\"Wiederholungsprüfung\", \"Wiederholung\", \"Versuche\", \"Prüfungsversuche\", \"Durchgefallen\", \"Prüfungsanspruch\", \"Nachprüfung\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/beratung]]\n\n# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.",
+              "wert": 0.69339734
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsordnung\", \"Paragraph\", \"Paragraf\", \"Täuschung\", \"Rücktritt\", \"Prüfungsformen\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\", \"§ 14\", \"§ 17\", \"§ 21\", \"§ 9\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n\n# Prüfungsordnung (Auszug)\n\n§ 14 Wiederholung. Eine nicht bestandene Prüfung darf zweimal wiederholt\nwerden. Die zweite Wiederholung ist in der Regel eine mündliche Prüfung.\nBestandene Prüfungen können nicht wiederholt werden.",
+              "wert": 0.68417305
+            },
+            {
+              "datei": "pruefungsordnung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsordnung\", \"Paragraph\", \"Paragraf\", \"Täuschung\", \"Rücktritt\", \"Prüfungsformen\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\", \"§ 14\", \"§ 17\", \"§ 21\", \"§ 9\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsanmeldung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]], [[_obsidian_extra/nachteilsausgleich]]\n\n# Prüfungsordnung (Auszug)\n\n§ 12 Rücktritt. Ein Rücktritt nach Ablauf der Abmeldefrist ist nur mit\ntriftigem Grund möglich. Der Grund ist unverzüglich schriftlich nachzuweisen.",
+              "wert": 0.6606159
+            },
+            {
+              "datei": "pruefungsanmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Prüfungsanmeldung\", \"Klausur\", \"Anmeldung\", \"Abmeldung\", \"Prüfungsplan\", \"HISinOne\"], \"thema\": \"Prüfung\", \"tags\": [\"studium/pruefung\"], \"kennungen\": [\"§ 12\"]}\nVerwandte Themen: [[_obsidian_extra/pruefungsordnung]], [[_obsidian_extra/pruefungsunfaehigkeit]], [[_obsidian_extra/wiederholungspruefung]]\n\n# Prüfungsanmeldung\n\n## Prüfungsplan\nDer Prüfungsplan erscheint spätestens vier Wochen vor Beginn des\nPrüfungszeitraums auf der Website des Prüfungsamts.",
+              "wert": 0.6603646
+            }
+          ],
+          "suche": 0.07127346099878196
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Kann ich mit dem Semesterticket ICE fahren?",
+        "quelle": "semesterticket.md",
+        "erwartet": [
+          "nicht",
+          "Nein",
+          "nein"
+        ],
+        "typ": "direkt"
+      },
+      "begriffe": [
+        "Semesterticket",
+        "ICE",
+        "Vereinbarung",
+        "Tarif",
+        "Verkehr",
+        "Fahrkarte"
+      ],
+      "begriffe_s": 2.4539446210037568,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "semesterticket.md",
+              "text": "# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.\n",
+              "wert": 5
+            },
+            {
+              "datei": "auslandssemester.md",
+              "text": "# Auslandssemester\n\nDas International Office in Gebäude A, Raum A-301, berät zu Partnerhochschulen,\nErasmus-Förderung und Anerkennung von Leistungen. Die Bewerbung für ein\nAuslandssemester im folgenden Studienjahr läuft bis zum 15. Januar.\n\nVor der Abreise schließt ihr ein Learning Agreement mit eurer\nStudiengangsleitung ab. Darin steht, welche Module im Ausland euch zu Hause\nangerechnet werden. Ohne Learning Agreement gibt es keine Garantie auf\nAnerkennung.\n",
+              "wert": 1
+            },
+            {
+              "datei": "wlan.md",
+              "text": "# WLAN\n\nAuf dem ganzen Campus funkt eduroam. Ihr meldet euch mit eurer\nHochschul-Mailadresse und dem Passwort eures Hochschulkontos an.\nDie Einrichtung übernimmt am einfachsten die App geteduroam.\n\nFür Besucherinnen und Besucher gibt es das Netz HTWG-Gast. Ein Tagesticket\ndafür bekommt man am Infopoint im Gebäude A gegen Vorlage eines Ausweises.\nBei Problemen hilft der IT-Service, Raum F-105, Telefon 07531 206-555.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.4548028120043455
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "semesterticket.md",
+              "text": "---\naliases:\n- Semesterticket\n- Deutschlandsemesterticket\n- Bus\n- Bahn\n- ICE\n- IC\n- Nahverkehr\nthema: Mobilität\ntags:\n- campus/mobilitaet\nkennungen: []\n---\n\n# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.\n\nVerwandte Themen: [[_obsidian_extra/parken]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/rueckmeldung]]\n",
+              "wert": 9
+            },
+            {
+              "datei": "auslandssemester.md",
+              "text": "---\naliases:\n- Ausland\n- Austausch\n- Erasmus\n- International Office\n- Learning Agreement\nthema: Studium\ntags:\n- studium/ausland\nkennungen:\n- A-301\n---\n\n# Auslandssemester\n\nDas International Office in Gebäude A, Raum A-301, berät zu Partnerhochschulen,\nErasmus-Förderung und Anerkennung von Leistungen. Die Bewerbung für ein\nAuslandssemester im folgenden Studienjahr läuft bis zum 15. Januar.\n\nVor der Abreise schließt ihr ein Learning Agreement mit eurer\nStudiengangsleitung ab. Darin steht, welche Module im Ausland euch zu Hause\nangerechnet werden. Ohne Learning Agreement gibt es keine Garantie auf\nAnerkennung.\n\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/praxissemester]], [[_obsidian_extra/rueckmeldung]]\n",
+              "wert": 2
+            },
+            {
+              "datei": "wlan.md",
+              "text": "---\naliases:\n- WLAN\n- Internet\n- eduroam\n- Gastnetz\n- IT-Service\n- Verbindung\nthema: Technik\ntags:\n- campus/technik\nkennungen:\n- F-105\n---\n\n# WLAN\n\nAuf dem ganzen Campus funkt eduroam. Ihr meldet euch mit eurer\nHochschul-Mailadresse und dem Passwort eures Hochschulkontos an.\nDie Einrichtung übernimmt am einfachsten die App geteduroam.\n\nFür Besucherinnen und Besucher gibt es das Netz HTWG-Gast. Ein Tagesticket\ndafür bekommt man am Infopoint im Gebäude A gegen Vorlage eines Ausweises.\nBei Problemen hilft der IT-Service, Raum F-105, Telefon 07531 206-555.\n\nVerwandte Themen: [[_obsidian_extra/lernraeume]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/raeume]]\n",
+              "wert": 2
+            }
+          ],
+          "suche": 2.4548824910016265
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "semesterticket.md",
+              "text": "# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.",
+              "wert": 0.7968309
+            },
+            {
+              "datei": "semesterticket.md",
+              "text": "# Semesterticket\n\n# Semesterticket",
+              "wert": 0.7452667
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "# Rückmeldung und Semesterbeitrag\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.",
+              "wert": 0.69531524
+            },
+            {
+              "datei": "parken.md",
+              "text": "# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+              "wert": 0.69119287
+            }
+          ],
+          "suche": 0.041079444003116805
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "semesterticket.md",
+              "text": "Metadaten: {\"aliases\": [\"Semesterticket\", \"Deutschlandsemesterticket\", \"Bus\", \"Bahn\", \"ICE\", \"IC\", \"Nahverkehr\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/parken]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/rueckmeldung]]\n\n# Semesterticket\n\nDas Deutschlandsemesterticket kostet 176,40 Euro pro Semester und ist nicht\nim Semesterbeitrag enthalten. Ihr kauft es freiwillig im Portal des\nVerkehrsverbunds. Es gilt deutschlandweit im Nahverkehr, also in Bussen,\nStraßenbahnen und Regionalzügen, aber nicht im ICE oder IC.\nDas Ticket ist digital und an die Campuskarte gebunden.",
+              "wert": 0.77867204
+            },
+            {
+              "datei": "semesterticket.md",
+              "text": "Metadaten: {\"aliases\": [\"Semesterticket\", \"Deutschlandsemesterticket\", \"Bus\", \"Bahn\", \"ICE\", \"IC\", \"Nahverkehr\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/parken]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/rueckmeldung]]\n\n# Semesterticket\n\n# Semesterticket",
+              "wert": 0.7385223
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Rückmeldung\", \"Semesterbeitrag\", \"Geld\", \"Bezahlen\", \"Überweisung\", \"überweise\", \"Säumnisgebühr\", \"Semester\"], \"thema\": \"Studium\", \"tags\": [\"studium/verwaltung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n\n# Rückmeldung und Semesterbeitrag\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.",
+              "wert": 0.70100856
+            },
+            {
+              "datei": "parken.md",
+              "text": "Metadaten: {\"aliases\": [\"Parken\", \"Auto\", \"Kfz\", \"Parkplatz\", \"Parkhaus\", \"Parkausweis\", \"Anreise\", \"Fahrrad\"], \"thema\": \"Mobilität\", \"tags\": [\"campus/mobilitaet\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/raeume]]\n\n# Parken und Anreise\n\nAuf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das\nParkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen\nParkausweis, der 45 Euro pro Semester kostet und im Studierendenportal\nbeantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.",
+              "wert": 0.6897176
+            }
+          ],
+          "suche": 0.07113136599946301
+        }
+      }
+    },
+    {
+      "fall": {
+        "frage": "Wann ist die nächste Party der Fachschaft Informatik?",
+        "quelle": null,
+        "erwartet": [
+          "keine Information",
+          "keine Informationen",
+          "nicht bekannt",
+          "weiß ich nicht",
+          "nicht in den Dokumenten",
+          "keine Angabe"
+        ],
+        "typ": "fehlt"
+      },
+      "begriffe": [
+        "Fachschaft",
+        "Informatik",
+        "Party",
+        "Veranstaltung",
+        "Fachschaftsveranstaltung",
+        "Informatik-Party"
+      ],
+      "begriffe_s": 2.8166934929977288,
+      "kandidaten": {
+        "datei": {
+          "treffer": [
+            {
+              "datei": "lernraeume.md",
+              "text": "# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.\n\nTagsüber sind außerdem freie Seminarräume nutzbar, solange dort keine\nVeranstaltung stattfindet. Welche Räume frei sind, zeigt die Raumbelegung im\nStudierendenportal.\n",
+              "wert": 1
+            },
+            {
+              "datei": "raeume.md",
+              "text": "# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.8177585969970096
+        },
+        "datei_meta": {
+          "treffer": [
+            {
+              "datei": "lernraeume.md",
+              "text": "---\naliases:\n- Lernräume\n- Lernplätze\n- Lernzone\n- Lernen\n- Nacht\n- nachts\n- Wochenende\n- Seminarräume\nthema: Lernen\ntags:\n- campus/lernen\nkennungen: []\n---\n\n# Lernplätze außerhalb der Bibliothek\n\nDie Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch\nam Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\nEs gibt 60 Plätze mit Steckdosen, eine Teeküche und zwei Telefonboxen für\nVideocalls. Reservieren kann man dort nichts, wer zuerst kommt, lernt zuerst.\n\nTagsüber sind außerdem freie Seminarräume nutzbar, solange dort keine\nVeranstaltung stattfindet. Welche Räume frei sind, zeigt die Raumbelegung im\nStudierendenportal.\n\nVerwandte Themen: [[_obsidian_extra/bibliothek]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n",
+              "wert": 1
+            },
+            {
+              "datei": "raeume.md",
+              "text": "---\naliases:\n- Raum\n- Räume\n- Gebäude\n- Lageplan\n- Orientierung\nthema: Campus\ntags:\n- campus/orientierung\nkennungen:\n- F-012\n- O-201\n---\n\n# Räume und Gebäude finden\n\nJede Raumnummer besteht aus dem Gebäudebuchstaben, dem Stockwerk und der\nRaumnummer im Stockwerk. O-201 liegt also in Gebäude O, im zweiten\nObergeschoss, Raum 01. Das Erdgeschoss hat die Ziffer 0, F-012 liegt also im\nErdgeschoss von Gebäude F.\n\nGebäude A beherbergt Verwaltung, Studierendensekretariat und Infopoint.\nIn Gebäude L ist die Bibliothek, in M die Mensa. Die Hörsäle der Informatik\nliegen in den Gebäuden F und O. Einen Lageplan gibt es als PDF auf der\nWebsite und als Tafel an jedem Eingang.\n\nVerwandte Themen: [[_obsidian_extra/praxissemester]], [[_obsidian_extra/bibliothek]], [[_obsidian_extra/mensa]], [[_obsidian_extra/drucken]], [[_obsidian_extra/lernraeume]]\n",
+              "wert": 1
+            }
+          ],
+          "suche": 2.8180369139954564
+        },
+        "rag": {
+          "treffer": [
+            {
+              "datei": "rueckmeldung.md",
+              "text": "# Rückmeldung und Semesterbeitrag\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.",
+              "wert": 0.6686709
+            },
+            {
+              "datei": "wiederholungspruefung.md",
+              "text": "# Wiederholungsprüfung\n\nHabt ihr eine Prüfung nicht bestanden, werdet ihr im folgenden Semester\nautomatisch zur Wiederholung angemeldet. Insgesamt habt ihr drei Versuche.\nDer dritte Versuch findet meistens mündlich statt, die Prüfenden legen den\nTermin mit euch fest. Wer auch den dritten Versuch nicht besteht, verliert\nden Prüfungsanspruch im Studiengang. Vorher lohnt sich ein Termin bei der\nStudienberatung.",
+              "wert": 0.6499376
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.",
+              "wert": 0.6442703
+            },
+            {
+              "datei": "mensa.md",
+              "text": "# Mensa\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.",
+              "wert": 0.641525
+            }
+          ],
+          "suche": 0.06577062699943781
+        },
+        "rag_meta": {
+          "treffer": [
+            {
+              "datei": "rueckmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Rückmeldung\", \"Semesterbeitrag\", \"Geld\", \"Bezahlen\", \"Überweisung\", \"überweise\", \"Säumnisgebühr\", \"Semester\"], \"thema\": \"Studium\", \"tags\": [\"studium/verwaltung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n\n# Rückmeldung und Semesterbeitrag\n\nDamit ihr im nächsten Semester eingeschrieben bleibt, müsst ihr euch\nzurückmelden. Das geschieht durch die Überweisung des Semesterbeitrags.",
+              "wert": 0.6405045
+            },
+            {
+              "datei": "rueckmeldung.md",
+              "text": "Metadaten: {\"aliases\": [\"Rückmeldung\", \"Semesterbeitrag\", \"Geld\", \"Bezahlen\", \"Überweisung\", \"überweise\", \"Säumnisgebühr\", \"Semester\"], \"thema\": \"Studium\", \"tags\": [\"studium/verwaltung\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/semesterticket]], [[_obsidian_extra/campuskarte]], [[_obsidian_extra/beratung]]\n\n# Rückmeldung und Semesterbeitrag\n\nFristen: bis 15. Januar für das Sommersemester, bis 15. Juli für das\nWintersemester. Wer zu spät überweist, zahlt eine Säumnisgebühr von 25 Euro.\nWer sich gar nicht zurückmeldet, wird exmatrikuliert.",
+              "wert": 0.63558847
+            },
+            {
+              "datei": "mensa.md",
+              "text": "Metadaten: {\"aliases\": [\"Mensa\", \"Cafeteria\", \"Essen\", \"Speiseplan\", \"Gäste\", \"Hauptgericht\", \"Öffnungszeiten\"], \"thema\": \"Verpflegung\", \"tags\": [\"campus/essen\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/campuskarte]], [[_obsidian_extra/raeume]]\n\n# Mensa\n\n## Preise und Bezahlung\nStudierende zahlen 3,40 Euro für ein Hauptgericht, Beschäftigte 5,20 Euro,\nGäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nBargeld nimmt die Kasse nicht an. Guthaben ladet ihr am Automaten im Foyer auf.",
+              "wert": 0.6274767
+            },
+            {
+              "datei": "sport.md",
+              "text": "Metadaten: {\"aliases\": [\"Sport\", \"Hochschulsport\", \"Kurse\", \"Fitness\", \"Kraftraum\"], \"thema\": \"Freizeit\", \"tags\": [\"campus/freizeit\"], \"kennungen\": []}\nVerwandte Themen: [[_obsidian_extra/beratung]], [[_obsidian_extra/raeume]]\n\n# Hochschulsport\n\n# Hochschulsport",
+              "wert": 0.62213886
+            }
+          ],
+          "suche": 0.0322553199948743
+        }
+      }
+    }
+  ]
+}
