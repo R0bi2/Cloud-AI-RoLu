@@ -528,7 +528,7 @@ Bei den Messungen gab es keinen nachgewiesenen Fehler bei der Antwortgenerierung
 
 Wir haben eine hybride Suche ergänzt: Kennungen wie F-201, PA-12 und § 17 werden wörtlich gesucht, alle anderen Fragen laufen weiter über RAG.
 Im zusätzlichen lokalen Lauf mit 62 Abschnitten steigen die richtigen Quellen von 12/13 auf 13/13 und die Antworttreffer von 13/14 auf 14/14.
-Die durchschnittlichen Eingabe-Tokens sinken von 551 auf 518; die gemessene Dauer liegt bei 11,7 statt 4,9 Sekunden, wobei Cacheeffekte mitspielen.
+Die durchschnittlichen Eingabe-Tokens sinken von 551 auf 518; die gemessene Dauer liegt bei 4,9 statt 11,7 Sekunden, wobei Cacheeffekte mitspielen.
 F-201 wird jetzt richtig mit dem Praktikantenamt beantwortet, während die sechs umschriebenen Fragen unverändert sechs Antworttreffer erreichen.
 
 [Messprotokoll des lokalen Vergleichs](messungen/teil4_5_originalindex_2026-11-02.txt)
