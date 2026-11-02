@@ -401,7 +401,64 @@ Das System-prompt kommt aus wissen.v1.yaml und bleibt beim zweiten aufruf gleich
 | rag | 12/13 | 12/14 | 891 | 21.0 s |
 
 
+### Baut den Index neu und messt noch einmal. Was hat sich bei „Kontext richtig“, „Antwort richtig“ und den Eingabe-Tokens geändert?
 
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+
+| Frage | Typ | Kontext richtig (K) | Antwort richtig (A) |
+|---|---|:---:|:---:|
+| Bis wann hat die Bibliothek am Samstag offen? | direkt | ✓ | ✓ |
+| Was zahlt ein Gast in der Mensa für ein Hauptgericht? | direkt | ✓ | ✓ |
+| Wie viel kostet eine Ersatz-Campuskarte? | direkt | ✓ | ✓ |
+| Was regelt Paragraph 17 der Prüfungsordnung? | kennung | ✓ | ✓ |
+| Wofür brauche ich das Formular PA-12? | kennung | ✓ | ✓ |
+| Wer sitzt in Raum F-201? | kennung | ✗ | ✗ |
+| Ich bin am Tag meiner Klausur krank. Was muss ich tun? | umschrieben | ✓ | ✓ |
+| Wo kann ich mein Auto abstellen und was kostet das? | umschrieben | ✓ | ✓ |
+| Wo kann ich nachts noch lernen? | umschrieben | ✓ | ✓ |
+| Ich bin total gestresst und komme nicht mehr klar. | umschrieben | ✓ | ✓ |
+| Was passiert, wenn ich das Geld fürs nächste Semester nicht bezahle? | umschrieben | ✓ | ✓ |
+| Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist? | umschrieben | ✓ | ✓ |
+| Kann ich mit dem Semesterticket ICE fahren? | direkt | ✓ | ✓ |
+| Wann ist die nächste Party der Fachschaft Informatik? | fehlt | – | ✓ |
+
+| Variante | Kontext richtig | Antwort richtig | Eingabe-Tokens (Ø) | Dauer (Ø) |
+|---|---|---|---|---|
+| rag | 12/13 | 13/14 | 551 | 15.6 s |
+
+Die Anzahl Kontext richtig und Anzahl richtiger Antworten ist um eins gestiegen. Die eingabe Tokens haben sich um 38% reduziert. die zeit um ein viertel.
+
+Das liegt daran dass, wenn man es in Abschnitte unterteilt es erstens weniger Nebeninfos als bei ganzen seiten gibt die die Relevanz verwässern und zweitens nur noch einzelne abschnitte ins Prompt übergeben werden, die weniger TOkens erfordern.
+
+</div>
+
+### Wie viele Punkte liegen in der Sammlung campus , und was steht neben dem Vektor in jedem Punkt? Wozu braucht wissen.py diese Angaben?
+
+```powershell
+docker compose up -d qdrant
+```
+
+http://localhost:6333/dashboard
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+    points_count":62
+
+    neben den Punkten befinden sich Payload-Daten 
+    datei: Name der Quelldatei des Punktes
+    text: bei einem Suchtreffer, wird dieser in den Text mit übergeben
+
+
+    in rag.py werden die treffer gesammelt 
+    in wissen.py werden die texte konkateniert und ins Prompt übergeben.
+
+</div>
+
+
+### 3. Probiert -k 1 und -k 8 . Was gewinnt ihr, was verliert ihr
+
+TODO
 
 ## Teil 5 · Reflexion
 

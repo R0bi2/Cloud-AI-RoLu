@@ -40,17 +40,30 @@ qdrant = QdrantClient(url=QDRANT_URL)
 def zerlege(datei: str, text: str) -> list[Treffer]:
     """Zerlegt ein Dokument in Abschnitte (Chunks).
 
-    Im Moment ist jedes Dokument genau ein Abschnitt. Das läuft, aber ein
-    Abschnitt über drei Themen bekommt einen Vektor, der zu keinem der
-    Themen richtig passt.
+    Abschnitte werden an Zwischenüberschriften oder, falls diese fehlen, an
+    Leerzeilen getrennt.
     """
-    # TODO 4b (Teil 4.3): Zerlegt sinnvoller, zum Beispiel so:
-    #   - Ein Abschnitt beginnt bei jeder Zwischenüberschrift "## ".
-    #   - Dokumente ohne Zwischenüberschrift teilt ihr an Leerzeilen in Absätze.
-    #   - Stellt jedem Abschnitt den Titel des Dokuments voran (erste Zeile,
-    #     beginnt mit "# "), damit er auch allein verständlich bleibt.
-    # Danach den Index neu bauen: rag.py --index
-    return [Treffer(datei, text.strip())]
+    titel = next(
+        (zeile for zeile in text.splitlines() if zeile.startswith("# ")),
+        f"# {datei}",
+    )
+    text = text.strip()
+
+    # Ein Abschnitt beginnt bei jeder Zwischenüberschrift "## ".
+    if re.search(r"(?m)^## ", text):
+        teile = re.split(r"(?m)(?=^## )", text)
+        teile = [teil.strip() for teil in teile if teil.strip().startswith("## ")]
+    else:
+        # Dokumente ohne Zwischenüberschrift teilt ihr an Leerzeilen in Absätze.
+        teile = [
+            teil.strip()
+            for teil in re.split(r"\n\s*\n", text)
+            if teil.strip()
+        ]
+
+    # Stellt jedem Abschnitt den Titel des Dokuments voran (erste Zeile,
+    # beginnt mit "# "), damit er auch allein verständlich bleibt.
+    return [Treffer(datei, f"{titel}\n\n{teil}") for teil in teile]
 
 
 def einbetten(texte: list[str]) -> list[list[float]]:
@@ -59,6 +72,7 @@ def einbetten(texte: list[str]) -> list[list[float]]:
     return [d.embedding for d in antwort.data]
 
 
+# Danach den Index neu bauen: rag.py --index
 def index_bauen() -> None:
     abschnitte = [a for datei, text in dokumente().items() for a in zerlege(datei, text)]
     start = time.perf_counter()
