@@ -269,6 +269,187 @@ der Guardrail die Werte nicht. Bei Wiederholungen können die Zahlen etwas schwa
 
 ## Teil 4 · Wissen abrufen
 
+Der erste Aufruf lädt das Qdrant-Image und das Embedding-Modell herunter.
+
+```powershell
+docker compose run --rm --build app alles.py "Wann hat die Mensa offen?"
+```
+
+```powershell
+docker compose run --rm app alles.py "Ich bin am Tag meiner Klausur krank. Was muss ich tun?"
+docker compose run --rm app alles.py "Wo kann ich mein Auto abstellen?"
+```
+
+### 1. Notiert Eingabe-Tokens und Dauer beider Aufrufe.
+### Warum ist der zweite Text bei gleich vielen Tokens schneller?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+| Aufruf | Eingabe-Tokens | Suchdauer | Antwortdauer |
+|---|---:|---:|---:|
+| "Ich bin am Tag meiner Klausur krank. Was muss ich tun?" | 3905 | 0,00 s | 21,8 s |
+| "Wo kann ich mein Auto abstellen?" | 3898 | 0,00 s | 16,1 s |
+
+Die zweite Antwort kommt wegen prompt caching schneller
+Das System-prompt kommt aus wissen.v1.yaml und bleibt beim zweiten aufruf gleich. Das modell behält die Gewichtung bei.
+
+</div>
+
+### 1. Welche Dateien findet die Suche mit den Wörtern der Frage, und warum gerade diese? Schaut     euch an, welche Wortteile treffen.
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+    ```powershell
+    docker compose run --rm app datei_suche.py --woerter "Ich bin am Tag meiner Klausur krank. Was muss ich tun?"
+    ```
+
+    Suchbegriffe: ['tag', 'meiner', 'klausur', 'krank', 'tun']
+     9  beratung.md
+     7  bibliothek.md
+     4  praxissemester.md
+
+     beratung.md liefert 9 treffer weil 'tun' in 'Beratung' vorkommt
+     bibliothek.md hat 6 treffer in denen 'tag' in den Wochentagen vorkommt
+     praxissemester.md 3 treffer mit 'krank'
+
+    ```powershell
+    docker compose run --rm app datei_suche.py "Ich bin am Tag meiner Klausur krank. Was muss ich tun?"
+    ```
+
+    Suchbegriffe: ['Krankheit', 'Arzt', 'Medikamente', 'Krankenakte', 'Schulabsenz', 'Arztbescheinigung']
+    1  praxissemester.md
+
+    Es gibt nur einen treffer mit krank in 'krankheitstage'
+    nicht wirklich der kontext den man sucht, die antwort st auch halluziniert.
+
+    ```powershell
+    docker compose run --rm app datei_suche.py --woerter "Wer sitzt in Raum F-201?"
+    ```
+    Suchbegriffe: ['sitzt', 'raum', 'f-201']
+     3  pruefungsanmeldung.md
+     3  raeume.md
+     2  nachteilsausgleich.md
+
+     die Treffer entstehen meist bei der Suche nach 'raum'
+
+</div>
+
+### 2. Welche Suchbegriffe schlägt das Modell vor? Welche Begriffe hätte es wählen müssen, um die richtige Datei zu finden?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+    Suchbegriffe: ['Krankheit', 'Arzt', 'Medikamente', 'Krankenakte', 'Schulabsenz', 'Arztbescheinigung']
+
+    Die Suchbegriffe sollten keine Sinnverwandten wörter mit krank sein sondern den Kontext von krank in Verbindung mit der Klausur haben. Beispielsweise etwas wie Rücktritt oder Entschuldigung. Die wissens Markdowns enthalten allerdings auch keine antwort auf die Frage.
+
+</div>
+
+### 3. Bei „Raum F-201“ steht die Zeichenkette wörtlich in einer Datei, und trotzdem landet die Datei nicht unter den ersten drei. Warum nicht? Was müsste die Bewertung anders machen?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+    Weil Wörter wie 'raum' mehr Suchergebnisse liefern.
+    Man müsste Raum als Füllwort erkennen oder die Suchbegriffe gewichten können.
+
+</div>
+
+### 4. Claude Code arbeitet genau so, ohne Index, und findet trotzdem fast immer die richtige Stelle. Was hat Claude Code, was unser Aufbau nicht hat? Nennt zwei Unterschiede
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+1. Unser Modell zählt Suchtreffer der Begriffe. Das hat wenig Kontext. Claude dagegen kann die gefundenen Wörter auf einen logischen Zusammenhang hin interpretieren (wahrscheinlich mit gutem Prompt engineering)
+
+2. Es kann die Suche mit neuen Wörtern neu einleiten, wenn es nichts Sinnvolles findet.
+
+</div>
+
+## 4.3 RAG
+
+    ```powershell
+    docker compose run --rm app rag.py --index
+    docker compose run --rm app rag.py "Ich bin am Tag meiner Klausur krank. Was muss ich tun?"
+    docker compose run --rm app vergleich_wissen.py rag
+    ```
+
+
+| Frage | Typ | Kontext richtig (K) | Antwort richtig (A) |
+|---|---|:---:|:---:|
+| Bis wann hat die Bibliothek am Samstag offen? | direkt | ✓ | ✓ |
+| Was zahlt ein Gast in der Mensa für ein Hauptgericht? | direkt | ✓ | ✓ |
+| Wie viel kostet eine Ersatz-Campuskarte? | direkt | ✓ | ✓ |
+| Was regelt Paragraph 17 der Prüfungsordnung? | kennung | ✓ | ✓ |
+| Wofür brauche ich das Formular PA-12? | kennung | ✓ | ✓ |
+| Wer sitzt in Raum F-201? | kennung | ✗ | ✗ |
+| Ich bin am Tag meiner Klausur krank. Was muss ich tun? | umschrieben | ✓ | ✓ |
+| Wo kann ich mein Auto abstellen und was kostet das? | umschrieben | ✓ | ✓ |
+| Wo kann ich nachts noch lernen? | umschrieben | ✓ | ✓ |
+| Ich bin total gestresst und komme nicht mehr klar. | umschrieben | ✓ | ✗ |
+| Was passiert, wenn ich das Geld fürs nächste Semester nicht bezahle? | umschrieben | ✓ | ✓ |
+| Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist? | umschrieben | ✓ | ✓ |
+| Kann ich mit dem Semesterticket ICE fahren? | direkt | ✓ | ✓ |
+| Wann ist die nächste Party der Fachschaft Informatik? | fehlt | – | ✓ |
+
+| Variante | Kontext richtig | Antwort richtig | Eingabe-Tokens (Ø) | Dauer (Ø) |
+|---|---|---|---|---|
+| rag | 12/13 | 12/14 | 891 | 21.0 s |
+
+
+### Baut den Index neu und messt noch einmal. Was hat sich bei „Kontext richtig“, „Antwort richtig“ und den Eingabe-Tokens geändert?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+
+| Frage | Typ | Kontext richtig (K) | Antwort richtig (A) |
+|---|---|:---:|:---:|
+| Bis wann hat die Bibliothek am Samstag offen? | direkt | ✓ | ✓ |
+| Was zahlt ein Gast in der Mensa für ein Hauptgericht? | direkt | ✓ | ✓ |
+| Wie viel kostet eine Ersatz-Campuskarte? | direkt | ✓ | ✓ |
+| Was regelt Paragraph 17 der Prüfungsordnung? | kennung | ✓ | ✓ |
+| Wofür brauche ich das Formular PA-12? | kennung | ✓ | ✓ |
+| Wer sitzt in Raum F-201? | kennung | ✗ | ✗ |
+| Ich bin am Tag meiner Klausur krank. Was muss ich tun? | umschrieben | ✓ | ✓ |
+| Wo kann ich mein Auto abstellen und was kostet das? | umschrieben | ✓ | ✓ |
+| Wo kann ich nachts noch lernen? | umschrieben | ✓ | ✓ |
+| Ich bin total gestresst und komme nicht mehr klar. | umschrieben | ✓ | ✓ |
+| Was passiert, wenn ich das Geld fürs nächste Semester nicht bezahle? | umschrieben | ✓ | ✓ |
+| Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist? | umschrieben | ✓ | ✓ |
+| Kann ich mit dem Semesterticket ICE fahren? | direkt | ✓ | ✓ |
+| Wann ist die nächste Party der Fachschaft Informatik? | fehlt | – | ✓ |
+
+| Variante | Kontext richtig | Antwort richtig | Eingabe-Tokens (Ø) | Dauer (Ø) |
+|---|---|---|---|---|
+| rag | 12/13 | 13/14 | 551 | 15.6 s |
+
+Die Anzahl Kontext richtig und Anzahl richtiger Antworten ist um eins gestiegen. Die eingabe Tokens haben sich um 38% reduziert. die zeit um ein viertel.
+
+Das liegt daran dass, wenn man es in Abschnitte unterteilt es erstens weniger Nebeninfos als bei ganzen seiten gibt die die Relevanz verwässern und zweitens nur noch einzelne abschnitte ins Prompt übergeben werden, die weniger TOkens erfordern.
+
+</div>
+
+### Wie viele Punkte liegen in der Sammlung campus , und was steht neben dem Vektor in jedem Punkt? Wozu braucht wissen.py diese Angaben?
+
+```powershell
+docker compose up -d qdrant
+```
+
+http://localhost:6333/dashboard
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+    points_count":62
+
+    neben den Punkten befinden sich Payload-Daten
+    datei: Name der Quelldatei des Punktes
+    text: bei einem Suchtreffer, wird dieser in den Text mit übergeben
+
+
+    in rag.py werden die treffer gesammelt
+    in wissen.py werden die texte konkateniert und ins Prompt übergeben.
+
+</div>
+
+
+### 3. Probiert -k 1 und -k 8 . Was gewinnt ihr, was verliert ihr
+
 TODO
 
 ## Teil 5 · Reflexion
