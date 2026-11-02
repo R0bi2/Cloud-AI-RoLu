@@ -1,0 +1,172 @@
+Teil 4.5 | 02.11.2026 | unveraenderter Kollegen-Stand fuer 4.1-4.3 (262ec09) | 62 Chunks aus 21 Dateien | k=4 | Temperatur 0
+ Container uebung_2-app-run-b7fe4ab325a1 Creating
+ Container uebung_2-app-run-b7fe4ab325a1 Created
+Chatmodell vorwaermen.
+Modell: llama3.2:3b · Embedding: granite-embedding:278m · 14 Fragen
+
+Frage                                                Typ                rag    hybrid
+
+[rag] Bis wann hat die Bibliothek am Samstag offen?
+  Kontext: bibliothek.md, lernraeume.md
+  Antwort: Die Bibliothek im Gebäude L ist am Samstag von 9 bis 16 Uhr geöffnet.
+  Tokens: 571 · Suche: 0.21 s · Antwort: 10.51 s
+
+[hybrid] Bis wann hat die Bibliothek am Samstag offen?
+  Kontext: bibliothek.md, lernraeume.md
+  Antwort: Die Bibliothek im Gebäude L ist am Samstag von 9 bis 16 Uhr geöffnet.
+  Tokens: 571 · Suche: 0.06 s · Antwort: 1.44 s
+Bis wann hat die Bibliothek am Samstag offen?        direkt             K A       K A
+
+[rag] Was zahlt ein Gast in der Mensa für ein Hauptgericht?
+  Kontext: mensa.md, sport.md
+  Antwort: Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa.
+  Tokens: 484 · Suche: 0.10 s · Antwort: 6.90 s
+
+[hybrid] Was zahlt ein Gast in der Mensa für ein Hauptgericht?
+  Kontext: mensa.md, sport.md
+  Antwort: Ein Gast zahlt 7,50 Euro für ein Hauptgericht in der Mensa.
+  Tokens: 484 · Suche: 0.10 s · Antwort: 1.13 s
+Was zahlt ein Gast in der Mensa für ein Hauptgerich  direkt             K A       K A
+
+[rag] Wie viel kostet eine Ersatz-Campuskarte?
+  Kontext: campuskarte.md, mensa.md, semesterticket.md, sport.md
+  Antwort: Eine Ersatzkarte kostet 15 Euro. Sie kann nach zwei Werktagen im Studierendensekretariat, Raum A-010, abgeholt werden.
+  Tokens: 569 · Suche: 0.04 s · Antwort: 9.43 s
+
+[hybrid] Wie viel kostet eine Ersatz-Campuskarte?
+  Kontext: campuskarte.md, mensa.md, semesterticket.md, sport.md
+  Antwort: Eine Ersatzkarte kostet 15 Euro. Sie kann nach zwei Werktagen im Studierendensekretariat, Raum A-010, abgeholt werden.
+  Tokens: 569 · Suche: 0.10 s · Antwort: 2.41 s
+Wie viel kostet eine Ersatz-Campuskarte?             direkt             K A       K A
+
+[rag] Was regelt Paragraph 17 der Prüfungsordnung?
+  Kontext: pruefungsordnung.md
+  Antwort: Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)
+  Tokens: 472 · Suche: 0.07 s · Antwort: 9.62 s
+
+[hybrid] Was regelt Paragraph 17 der Prüfungsordnung?
+  Kontext: pruefungsordnung.md
+  Antwort: Wer täuscht oder nicht zugelassene Hilfsmittel benutzt, erhält für die Prüfung die Note 5,0. In schweren Fällen kann der Prüfungsausschuss die Exmatrikulation beschließen. (Quelle: pruefungsordnung.md)
+  Tokens: 459 · Suche: 0.08 s · Antwort: 9.52 s
+Was regelt Paragraph 17 der Prüfungsordnung?         kennung            K A       K A
+
+[rag] Wofür brauche ich das Formular PA-12?
+  Kontext: abschlussarbeit.md, praxissemester.md, pruefungsordnung.md, pruefungsunfaehigkeit.md
+  Antwort: Die Bachelorarbeit muss mit dem Formular PA-12 beim Prüfungsamt angemeldet werden, unterschrieben von der betreuenden Professorin oder dem betreuenden Professor. Die Voraussetzung ist mindestens 150 ECTS.
+
+(Quelle: abschlussarbeit.md)
+  Tokens: 530 · Suche: 0.12 s · Antwort: 11.50 s
+
+[hybrid] Wofür brauche ich das Formular PA-12?
+  Kontext: abschlussarbeit.md
+  Antwort: Um die Bachelorarbeit abzugeben, benötigst du das Formular PA-12, um deine Arbeit anzumelden und unterschrieben zu machen. Es ist wichtig, dass du es mit der Prüfungsbehörde einreicht, um deine Arbeit gültig abzugeben.
+  Tokens: 329 · Suche: 0.07 s · Antwort: 6.43 s
+Wofür brauche ich das Formular PA-12?                kennung            K A       K A
+
+[rag] Wer sitzt in Raum F-201?
+  Kontext: bibliothek.md, mensa.md, raeume.md
+  Antwort: Da die Raumnummer F-201 im Erdgeschoss von Gebäude F liegt, ist die genaue Position nicht bekannt.
+  Tokens: 569 · Suche: 0.09 s · Antwort: 9.91 s
+
+[hybrid] Wer sitzt in Raum F-201?
+  Kontext: praxissemester.md
+  Antwort: Das Praktikantenamt sitzt in Raum F-201. Es ist das zuständige Amt für die Überprüfung des Ausbildungsvertrags und die Abgabe des Berichts und Zeugnisses. Es ist also der Ort, an dem die Praktikanten ihre Ausbildung planen und durchführen. (Quelle: praxissemester.md)
+  Tokens: 317 · Suche: 0.10 s · Antwort: 8.90 s
+Wer sitzt in Raum F-201?                             kennung            · ·       K A
+
+[rag] Ich bin am Tag meiner Klausur krank. Was muss ich tun?
+  Kontext: beratung.md, praxissemester.md, pruefungsunfaehigkeit.md
+  Antwort: Wenn du am Tag deiner Klausur krank bist, solltest du dich an die Psychosoziale Beratung des Studierendenwerks wenden, um Unterstützung zu erhalten. Danach solltest du ein ärztliches Attest einholen, das deine Prüfungsunfähigkeit bestätigt, und innerhalb von drei Werktagen nach dem Prüfungstermin beim Prüfungsamt nachweisen, dass du dich nicht an der Prüfung teilnehmen konntest. (Quelle: pruefungsunfaehigkeit.md)
+  Tokens: 627 · Suche: 0.18 s · Antwort: 17.86 s
+
+[hybrid] Ich bin am Tag meiner Klausur krank. Was muss ich tun?
+  Kontext: beratung.md, praxissemester.md, pruefungsunfaehigkeit.md
+  Antwort: Wenn du am Tag deiner Klausur krank bist, solltest du dich an die Psychosoziale Beratung des Studierendenwerks wenden, um Unterstützung zu erhalten. Wenn du dann ein ärztliches Attest hast, das deine Prüfungsunfähigkeit bestätigt, solltest du es innerhalb von drei Werktagen nach dem Prüfungstermin beim Prüfungsamt einreichen, um deine Prüfungsunfähigkeit anzuerkennen. (Quelle: pruefungsunfaehigkeit.md)
+  Tokens: 627 · Suche: 0.12 s · Antwort: 8.22 s
+Ich bin am Tag meiner Klausur krank. Was muss ich t  umschrieben        K A       K A
+
+[rag] Wo kann ich mein Auto abstellen und was kostet das?
+  Kontext: campuskarte.md, fundbuero.md, parken.md
+  Antwort: Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.
+  Tokens: 564 · Suche: 0.11 s · Antwort: 13.58 s
+
+[hybrid] Wo kann ich mein Auto abstellen und was kostet das?
+  Kontext: campuskarte.md, fundbuero.md, parken.md
+  Antwort: Auf dem Campus gibt es zwei Parkplätze für Kfz: P1 hinter Gebäude A und das Parkhaus P2 an der Brauneggerstraße. Für beide braucht ihr einen Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal beantragt wird. Ohne Ausweis kostet ein Tag im Parkhaus 6 Euro.
+  Tokens: 564 · Suche: 0.11 s · Antwort: 5.51 s
+Wo kann ich mein Auto abstellen und was kostet das?  umschrieben        K A       K A
+
+[rag] Wo kann ich nachts noch lernen?
+  Kontext: bibliothek.md, lernraeume.md
+  Antwort: Die Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch am Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.
+  Tokens: 522 · Suche: 0.10 s · Antwort: 11.22 s
+
+[hybrid] Wo kann ich nachts noch lernen?
+  Kontext: bibliothek.md, lernraeume.md
+  Antwort: Die Lernzone im Erdgeschoss von Gebäude O ist rund um die Uhr geöffnet, auch am Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.
+  Tokens: 522 · Suche: 0.11 s · Antwort: 3.08 s
+Wo kann ich nachts noch lernen?                      umschrieben        K A       K A
+
+[rag] Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?
+  Kontext: beratung.md, praxissemester.md, pruefungsunfaehigkeit.md
+  Antwort: Bei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu viel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose und vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche über das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um die Uhr unter 0800 111 0 111 erreichbar. (Quelle: beratung.md)
+  Tokens: 528 · Suche: 0.11 s · Antwort: 15.34 s
+
+[hybrid] Ich bin total gestresst und komme nicht mehr klar. Wer hilft mir?
+  Kontext: beratung.md, praxissemester.md, pruefungsunfaehigkeit.md
+  Antwort: Bei Prüfungsangst, Überlastung, persönlichen Krisen oder wenn euch alles zu viel wird, bietet die Psychosoziale Beratung des Studierendenwerks kostenlose und vertrauliche Gespräche an. Termine gibt es meist innerhalb einer Woche über das Online-Formular. In akuten Notlagen ist die Telefonseelsorge rund um die Uhr unter 0800 111 0 111 erreichbar. (Quelle: beratung.md)
+  Tokens: 528 · Suche: 0.12 s · Antwort: 7.39 s
+Ich bin total gestresst und komme nicht mehr klar.   umschrieben        K A       K A
+
+[rag] Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?
+  Kontext: campuskarte.md, rueckmeldung.md
+  Antwort: Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen. Wenn du dich gar nicht zurückmeldest, wirst du exmatrikuliert. Der Semesterbeitrag beträgt 168,40 Euro, der sich aus drei verschiedenen Beiträgen zusammensetzt. (Quelle: rückmeldung.md)
+  Tokens: 532 · Suche: 0.12 s · Antwort: 14.32 s
+
+[hybrid] Was passiert, wenn ich das Geld fürs nächste Semester zu spät überweise?
+  Kontext: campuskarte.md, rueckmeldung.md
+  Antwort: Wenn du das Geld für das nächste Semester zu spät überweist, musst du eine Säumnisgebühr von 25 Euro zahlen. Wenn du dich gar nicht zurückmeldest, wirst du exmatrikuliert. Der Semesterbeitrag beträgt 168,40 Euro, der sich aus drei verschiedenen Beiträgen zusammensetzt. (Quelle: rückmeldung.md)
+  Tokens: 532 · Suche: 0.13 s · Antwort: 6.20 s
+Was passiert, wenn ich das Geld fürs nächste Semest  umschrieben        K A       K A
+
+[rag] Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?
+  Kontext: pruefungsordnung.md, pruefungsunfaehigkeit.md, wiederholungspruefung.md
+  Antwort: Ihr habt drei Versuche, um die Prüfung zu bestehen.
+  Tokens: 664 · Suche: 0.10 s · Antwort: 11.93 s
+
+[hybrid] Wie oft darf ich eine Prüfung schreiben, bevor es endgültig vorbei ist?
+  Kontext: pruefungsordnung.md, pruefungsunfaehigkeit.md, wiederholungspruefung.md
+  Antwort: Ihr habt drei Versuche, um die Prüfung zu bestehen.
+  Tokens: 664 · Suche: 0.16 s · Antwort: 1.53 s
+Wie oft darf ich eine Prüfung schreiben, bevor es e  umschrieben        K A       K A
+
+[rag] Kann ich mit dem Semesterticket ICE fahren?
+  Kontext: parken.md, rueckmeldung.md, semesterticket.md
+  Antwort: Nein, das Deutschlandsemesterticket ist nicht gültig für den ICE oder IC. Es gilt jedoch deutschlandweit im Nahverkehr, also in Bussen, Straßenbahnen und Regionalzügen.
+  Tokens: 507 · Suche: 0.09 s · Antwort: 11.05 s
+
+[hybrid] Kann ich mit dem Semesterticket ICE fahren?
+  Kontext: parken.md, rueckmeldung.md, semesterticket.md
+  Antwort: Nein, das Deutschlandsemesterticket ist nicht gültig für den ICE oder IC. Es gilt jedoch deutschlandweit im Nahverkehr, also in Bussen, Straßenbahnen und Regionalzügen.
+  Tokens: 507 · Suche: 0.07 s · Antwort: 3.38 s
+Kann ich mit dem Semesterticket ICE fahren?          direkt             K A       K A
+
+[rag] Wann ist die nächste Party der Fachschaft Informatik?
+  Kontext: mensa.md, rueckmeldung.md, wiederholungspruefung.md
+  Antwort: Es gibt keine Informationen über eine Party der Fachschaft Informatik.
+(Dazu habe ich keine Information.)
+  Tokens: 574 · Suche: 0.08 s · Antwort: 9.09 s
+
+[hybrid] Wann ist die nächste Party der Fachschaft Informatik?
+  Kontext: mensa.md, rueckmeldung.md, wiederholungspruefung.md
+  Antwort: Es gibt keine Informationen über eine Party der Fachschaft Informatik.
+(Dazu habe ich keine Information.)
+  Tokens: 574 · Suche: 0.06 s · Antwort: 1.85 s
+Wann ist die nächste Party der Fachschaft Informati  fehlt              - A       - A
+
+K = richtige Datei im Kontext, A = Antwort enthält ein erwartetes Stichwort
+
+| Variante | Kontext richtig | Antwort richtig | Eingabe-Tokens (Ø) | Dauer (Ø) |
+|---|---|---|---|---|
+| rag | 12/13 | 13/14 | 551 | 11.7 s |
+| hybrid | 13/13 | 14/14 | 518 | 4.9 s |

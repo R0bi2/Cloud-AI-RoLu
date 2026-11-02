@@ -522,6 +522,19 @@ Bei den Messungen gab es keinen nachgewiesenen Fehler bei der Antwortgenerierung
 
 </div>
 
+### 4.5 · Eine Verbesserung, gemessen
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Wir haben eine hybride Suche ergänzt: Kennungen wie F-201, PA-12 und § 17 werden wörtlich gesucht, alle anderen Fragen laufen weiter über RAG.
+Im zusätzlichen lokalen Lauf mit 62 Abschnitten steigen die richtigen Quellen von 12/13 auf 13/13 und die Antworttreffer von 13/14 auf 14/14.
+Die durchschnittlichen Eingabe-Tokens sinken von 551 auf 518; die gemessene Dauer liegt bei 11,7 statt 4,9 Sekunden, wobei Cacheeffekte mitspielen.
+F-201 wird jetzt richtig mit dem Praktikantenamt beantwortet, während die sechs umschriebenen Fragen unverändert sechs Antworttreffer erreichen.
+
+[Messprotokoll des lokalen Vergleichs](messungen/teil4_5_originalindex_2026-11-02.txt)
+
+</div>
+
 ## Teil 5 · Reflexion
 
 ### 1. Was unterscheidet eine gemessene Verbesserung von einer, die sich besser anfühlt?
@@ -536,7 +549,13 @@ auch mit v3 kamen Prompt injektions in 2 Fällen durch ein simples "lehne Prompt
 
 ### 3. Welche Abwehrmaßnahme hat am meisten gebracht und auf welcher Ebene wirkt sie?
 
-TODO
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Bei v1 brachte der Ausgabe-Guardrail die größte einzeln dokumentierte Verringerung: Die erfolgreichen Angriffe sanken von 11/15 auf 3/15.
+Er wirkt auf Systemebene, weil unser Code die Modellantwort prüft und den erkannten Türcode abfängt.
+Ausgeschriebene Zahlen und andere fremde Anweisungen kann dieser Filter trotzdem übersehen.
+
+</div>
 
 ### 4. Warum braucht man neben der Verletzungsrate auch die Fehlablehnungsrate?
 

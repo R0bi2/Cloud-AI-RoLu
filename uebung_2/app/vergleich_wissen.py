@@ -3,6 +3,7 @@
 Aufruf:
     docker compose run --rm app vergleich_wissen.py               # woerter, datei, rag
     docker compose run --rm app vergleich_wissen.py alles rag     # beliebige Auswahl
+    docker compose run --rm app vergleich_wissen.py rag hybrid    # vor/nach Teil 4.5
 
 Die Variante alles läuft nur, wenn ihr sie nennt: Der erste Aufruf dauert
 auf dem Laptop gut eine Minute.
@@ -20,6 +21,7 @@ import json
 import sys
 
 import datei_suche
+import hybrid
 import rag
 from alles import alles
 from llm import MODEL
@@ -37,6 +39,8 @@ def abrufen(variante: str, frage: str):
         return treffer, sekunden
     if variante == "rag":
         return rag.abrufen(frage)
+    if variante == "hybrid":
+        return hybrid.abrufen(frage)
     raise ValueError(f"Unbekannte Variante: {variante}")
 
 
