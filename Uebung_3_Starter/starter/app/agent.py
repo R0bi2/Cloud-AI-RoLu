@@ -106,22 +106,36 @@ def agent(
     ergebnis = Ergebnis(antwort="")
     start = time.perf_counter()
 
-    # TODO 1: die Agent-Schleife
-    #
-    # Wiederholt höchstens max_schritte Mal:
-    #  1. Modell aufrufen: client.chat.completions.create(model=MODEL,
-    #     messages=nachrichten, tools=tools, temperature=prompt.temperature,
-    #     max_tokens=500). Zählt modellaufrufe, eingabe_tokens (usage.prompt_tokens)
-    #     und ausgabe_tokens (usage.completion_tokens) in `ergebnis` mit.
-    #  2. Hat die Antwort keine tool_calls, ist ihr Text die Antwort:
-    #     ergebnis.antwort und ergebnis.sekunden setzen, ergebnis zurückgeben.
-    #  3. Sonst: die Nachricht des Modells an den Verlauf anhängen
-    #     (nachricht.model_dump(exclude_none=True)), dann jeden Aufruf mit
-    #     werkzeug_ausfuehren() ausführen, den Schritt in ergebnis.schritte
-    #     speichern, bei zeigen=True mit zeige_schritt() ausgeben und das
-    #     Ergebnis als {"role": "tool", "tool_call_id": aufruf.id,
-    #     "content": schritt.ergebnis} anhängen.
-    # Wer hier ankommt, hat das Limit erreicht: der Code darunter bricht ab.
+    for _ in range(max_schritte):
+        antwort = client.chat.completions.create(
+            model=MODEL,
+            messages=nachrichten,
+            tools=tools,
+            temperature=prompt.temperature,
+            max_tokens=500,
+        )
+        ergebnis.modellaufrufe += 1
+        if antwort.usage is not None:
+            ergebnis.eingabe_tokens += antwort.usage.prompt_tokens
+            ergebnis.ausgabe_tokens += antwort.usage.completion_tokens
+
+        nachricht = antwort.choices[0].message
+        if not nachricht.tool_calls:
+            ergebnis.antwort = nachricht.content or ""
+            ergebnis.sekunden = time.perf_counter() - start
+            return ergebnis
+
+        nachrichten.append(nachricht.model_dump(exclude_none=True))
+        for aufruf in nachricht.tool_calls:
+            schritt = werkzeug_ausfuehren(aufruf, verzeichnis, bestaetigen)
+            ergebnis.schritte.append(schritt)
+            if zeigen:
+                zeige_schritt(schritt)
+            nachrichten.append({
+                "role": "tool",
+                "tool_call_id": aufruf.id,
+                "content": schritt.ergebnis,
+            })
 
     ergebnis.antwort = f"Abgebrochen nach {max_schritte} Modellaufrufen ohne Antwort."
     ergebnis.abgebrochen = True

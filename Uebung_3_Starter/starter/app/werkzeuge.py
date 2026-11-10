@@ -18,7 +18,8 @@ from pathlib import Path
 from typing import Callable
 
 WISSEN = Path("wissen")
-WOCHENTAGE = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
+WOCHENTAGE = ["Montag", "Dienstag", "Mittwoch",
+              "Donnerstag", "Freitag", "Samstag", "Sonntag"]
 
 
 @dataclass
@@ -56,13 +57,15 @@ def suche_wissen(begriff: str) -> str:
     for pfad in sorted(WISSEN.glob("*.md")):
         if pfad.name == "README.md":
             continue
-        zeilen = [z.strip() for z in pfad.read_text(encoding="utf-8").splitlines() if muster.search(z)]
+        zeilen = [z.strip() for z in pfad.read_text(
+            encoding="utf-8").splitlines() if muster.search(z)]
         if zeilen:
             treffer.append((len(zeilen), pfad.name, zeilen[:2]))
     if not treffer:
         return f"Keine Datei enthält '{begriff}'. Versuche einen anderen, einfacheren Begriff."
     treffer.sort(reverse=True)
-    teile = [f"{name} ({n} Treffer): " + " | ".join(z) for n, name, z in treffer[:5]]
+    teile = [f"{name} ({n} Treffer): " + " | ".join(z)
+             for n, name, z in treffer[:5]]
     return "\n".join(teile)
 
 
@@ -77,22 +80,25 @@ def lies_datei(datei: str) -> str:
 
 def heute() -> str:
     """Heutiges Datum mit Wochentag. HEUTE in .env fixiert es für Messungen."""
-    tag = date.fromisoformat(os.environ["HEUTE"]) if os.environ.get("HEUTE") else date.today()
+    tag = date.fromisoformat(os.environ["HEUTE"]) if os.environ.get(
+        "HEUTE") else date.today()
     return f"Heute ist {WOCHENTAGE[tag.weekday()]}, der {tag.isoformat()}."
 
 
-# TODO 2: ein eigenes Werkzeug tage_bis(datum)
-#
-# Sprachmodelle rechnen schlecht mit Datumsangaben. Schreibt eine Funktion
-# tage_bis(datum: str) -> str, die zurückgibt, wie viele Tage von heute
-# (siehe heute(), also auch HEUTE aus .env beachten) bis zu einem Datum im
-# Format JJJJ-MM-TT sind. Liegt das Datum in der Vergangenheit, sagt sie das.
-# Ein ungültiges Datum beantwortet sie mit einer Fehlermeldung, nicht mit
-# einer Exception.
-#
-# Tragt das Werkzeug danach in LOKALE_WERKZEUGE ein, mit Beschreibung und
-# JSON-Schema. Testet es mit:
-#   docker compose run --rm app agent.py "Wie viele Tage habe ich noch, bis die Prüfungsanmeldung endet?"
+def tage_bis(datum: str) -> str:
+    """Berechnet die Tage bis zu einem Datum im Format JJJJ-MM-TT."""
+    if not isinstance(datum, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", datum):
+        return "Fehler: Bitte ein g?ltiges Datum im Format JJJJ-MM-TT angeben."
+    try:
+        ziel = date.fromisoformat(datum)
+    except ValueError:
+        return "Fehler: Bitte ein g?ltiges Datum im Format JJJJ-MM-TT angeben."
+    tag = date.fromisoformat(os.environ["HEUTE"]) if os.environ.get(
+        "HEUTE") else date.today()
+    tage = (ziel - tag).days
+    if tage < 0:
+        return f"Das Datum {datum} liegt {-tage} Tage in der Vergangenheit."
+    return f"Bis zum {datum} sind es {tage} Tage."
 
 
 LOKALE_WERKZEUGE = [
@@ -129,6 +135,21 @@ LOKALE_WERKZEUGE = [
         beschreibung="Gibt das heutige Datum und den Wochentag zurück.",
         parameter={"type": "object", "properties": {}},
         funktion=heute,
+    ),
+    Werkzeug(
+        name="tage_bis",
+        beschreibung="Berechnet die Tage von heute(welches aus dem tool heute() kommt)bis zu einem datum"
+        "wenn die anzahl der Tage von heute bis zu einem datum berrechnet werden soll"
+        "Die eingabe hat ist ein datum in JJJJ-MM-TT"
+        "das ergbniss soll im Format JJJJ-MM-TT ausgegeben werden",
+        parameter={
+            "type": "object",
+            "properties": {
+                "datum": {"type": "string", "description": "Zieldatum im Format JJJJ-MM-TT"},
+            },
+            "required": ["datum"],
+        },
+        funktion=tage_bis,
     ),
 ]
 
