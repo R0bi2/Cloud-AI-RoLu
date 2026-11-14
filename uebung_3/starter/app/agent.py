@@ -77,11 +77,10 @@ def werkzeug_ausfuehren(aufruf, verzeichnis: dict[str, Werkzeug], bestaetigen=fr
 
     werkzeug = verzeichnis[name]
 
-    # TODO 3b: Schreibende Werkzeuge nur nach Bestätigung ausführen
-    #
-    # Ist werkzeug.schreibend gesetzt, fragt zuerst bestaetigen(werkzeug, argumente).
-    # Sagt die Person nein, führt das Werkzeug NICHT aus und gebt einen Schritt
-    # mit fehler="abgelehnt" und einer klaren Nachricht an das Modell zurück.
+    if werkzeug.schreibend and not bestaetigen(werkzeug, argumente):
+        return Schritt(name, argumente,
+                       f"Abgelehnt: {name} wurde nicht ausgeführt. Die Zustimmung fehlt.",
+                       "abgelehnt")
 
     try:
         ergebnis = str(werkzeug.funktion(**argumente))
@@ -118,6 +117,10 @@ def agent(
         if antwort.usage is not None:
             ergebnis.eingabe_tokens += antwort.usage.prompt_tokens
             ergebnis.ausgabe_tokens += antwort.usage.completion_tokens
+            if zeigen:
+                print(f"  Modellaufruf {ergebnis.modellaufrufe}: "
+                      f"{antwort.usage.prompt_tokens} Eingabe-Tokens · "
+                      f"{len(nachrichten)} Nachrichten im Verlauf", flush=True)
 
         nachricht = antwort.choices[0].message
         if not nachricht.tool_calls:

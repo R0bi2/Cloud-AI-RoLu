@@ -88,11 +88,11 @@ def heute() -> str:
 def tage_bis(datum: str) -> str:
     """Berechnet die Tage bis zu einem Datum im Format JJJJ-MM-TT."""
     if not isinstance(datum, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", datum):
-        return "Fehler: Bitte ein g?ltiges Datum im Format JJJJ-MM-TT angeben."
+        return "Fehler: Bitte ein gültiges Datum im Format JJJJ-MM-TT angeben."
     try:
         ziel = date.fromisoformat(datum)
     except ValueError:
-        return "Fehler: Bitte ein g?ltiges Datum im Format JJJJ-MM-TT angeben."
+        return "Fehler: Bitte ein gültiges Datum im Format JJJJ-MM-TT angeben."
     tag = date.fromisoformat(os.environ["HEUTE"]) if os.environ.get(
         "HEUTE") else date.today()
     tage = (ziel - tag).days
@@ -138,10 +138,11 @@ LOKALE_WERKZEUGE = [
     ),
     Werkzeug(
         name="tage_bis",
-        beschreibung="Berechnet die Tage von heute(welches aus dem tool heute() kommt)bis zu einem datum"
-        "wenn die anzahl der Tage von heute bis zu einem datum berrechnet werden soll"
-        "Die eingabe hat ist ein datum in JJJJ-MM-TT"
-        "das ergbniss soll im Format JJJJ-MM-TT ausgegeben werden",
+        beschreibung=(
+            "Berechnet die Anzahl der Tage von heute bis zum angegebenen Datum. "
+            "Eingabe: Zieldatum im Format JJJJ-MM-TT. "
+            "Gibt die verbleibenden Tage oder einen Hinweis auf ein vergangenes Datum zurück."
+        ),
         parameter={
             "type": "object",
             "properties": {

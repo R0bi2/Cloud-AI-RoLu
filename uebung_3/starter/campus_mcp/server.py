@@ -77,17 +77,38 @@ def raum_frei(raum: str, datum: str) -> str:
             f"Belegt: {', '.join(f'{s} ({g})' for s, g in sorted(belegt.items())) or 'nichts'}.")
 
 
-# TODO 3a: Werkzeug raum_buchen
-#
-# Schreibt ein Werkzeug raum_buchen(raum, datum, uhrzeit, name), das einen
-# freien Slot für eine Person bucht und in `buchungen` einträgt.
-#  - Prüft wie raum_frei, ob Raum und Datum gültig sind.
-#  - uhrzeit muss einer der SLOTS sein, sonst Fehlermeldung mit den gültigen Slots.
-#  - Ist der Slot belegt, gebt eine Fehlermeldung zurück, die sagt, was frei ist.
-#  - Sonst eintragen und eine Bestätigung zurückgeben.
-# Fehler gebt ihr als Text zurück, der mit "Fehler:" beginnt, statt eine
-# Exception zu werfen. Das Modell liest den Text und kann sich korrigieren.
-# Der Docstring ist die Beschreibung, die das Modell sieht. Schreibt ihn sorgfältig.
+@mcp.tool()
+def raum_buchen(raum: str, datum: str, uhrzeit: str, name: str) -> str:
+    """Bucht einen freien Seminarraum für eine Person in einem Zeitfenster.
+
+    raum: Raumnummer wie O-108; verfügbare Räume zeigt raeume_auflisten.
+    datum: Datum im Format JJJJ-MM-TT, zum Beispiel 2026-11-06.
+    uhrzeit: Beginn des Zeitfensters: 08:00, 09:45, 11:30, 14:00, 15:45 oder 17:30.
+    name: Name der Person oder Lerngruppe, für die gebucht wird.
+    Verändert die Raumbelegung. Belegte Slots werden nicht überschrieben.
+    """
+    raum = raum.strip().upper()
+    if raum not in BELEGUNG["raeume"]:
+        return f"Fehler: Raum {raum} gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten."
+    try:
+        datum = date.fromisoformat(datum).isoformat()
+        tag = _wochentag(datum)
+    except ValueError:
+        return f"Fehler: '{datum}' ist kein Datum im Format JJJJ-MM-TT."
+    if tag in ("samstag", "sonntag"):
+        return f"Fehler: {raum} ist am {tag} geschlossen."
+    if uhrzeit not in SLOTS:
+        return f"Fehler: Ungültige Uhrzeit. Gültige Zeitfenster: {', '.join(SLOTS)}."
+    name = name.strip()
+    if not name:
+        return "Fehler: Bitte einen Namen für die Buchung angeben."
+    belegt = _belegt(raum, datum)
+    if uhrzeit in belegt:
+        frei = [s for s in SLOTS if s not in belegt]
+        return (f"Fehler: {raum} ist am {datum} um {uhrzeit} belegt ({belegt[uhrzeit]}). "
+                f"Freie Zeitfenster: {', '.join(frei) or 'keine'}.")
+    buchungen[(raum, datum, uhrzeit)] = name
+    return f"Gebucht: {raum} am {datum} um {uhrzeit} für {name}."
 
 
 @mcp.tool()
