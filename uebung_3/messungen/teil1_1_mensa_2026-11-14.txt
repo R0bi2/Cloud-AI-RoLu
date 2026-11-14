@@ -1,0 +1,12 @@
+ Container starter-app-run-4d95fe66f917 Creating
+ Container starter-app-run-4d95fe66f917 Created
+Werkzeuge: suche_wissen, lies_datei, heute, tage_bis, raeume_auflisten, raum_frei, mensa_speiseplan
+
+  Modellaufruf 1: 831 Eingabe-Tokens
+  → mensa_speiseplan(datum='heute')  [wert]
+  ← Fehler: 'heute' ist kein Datum im Format JJJJ-MM-TT.
+  Modellaufruf 2: 213 Eingabe-Tokens
+
+Entschuldigung! Ich habe keine Informationen über das spezifische Datum "heute". Dazu habe ich keine Information.
+
+  1 Werkzeugaufrufe · 2 Modellaufrufe · 1044 Eingabe-Tokens · 26.2 s · llama3.2:3b

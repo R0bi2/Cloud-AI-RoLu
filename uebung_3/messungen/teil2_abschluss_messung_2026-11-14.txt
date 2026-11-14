@@ -1,0 +1,64 @@
+time="2026-11-14T11:08:03+01:00" level=warning msg="Found orphan containers ([uebung3-test-ablehnung uebung3-test-zustimmung]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+ Container starter-app-run-47859099d067 Creating
+ Container starter-app-run-47859099d067 Created
+
+=== prompts/agent.v1.yaml · llama3.2:3b
+✗ Was gibt es heute in der Mensa?                            1 Aufrufe    4.5 s
+  → mensa_speiseplan(datum='heute')  [wert]
+  ← Fehler: 'heute' ist kein Datum im Format JJJJ-MM-TT.
+    Antwort: Entschuldigung! Ich habe keine Informationen über das spezifische Datum "heute". Dazu habe ich keine Information.
+✗ Gibt es am Freitag ein veganes Gericht in der Mensa?       1 Aufrufe   21.2 s
+  → mensa_speiseplan(datum='2026-11-05')
+  ← Mensa am donnerstag, 2026-11-05: - Gemüsepfanne mit Tofu (vegan), 3,40 Euro - Fisch mit Salzkartoffeln, 3,40 Euro - Pizza Margherita, 3,40 Euro
+    Antwort: Am Freitag gibt es in der Mensa ein veganes Gericht: Gemüsepfanne mit Tofu.
+✗ Hat die Mensa am Samstag offen?                            1 Aufrufe   19.7 s
+  → raum_frei(raum='Mensa', datum='2026-11-06')  [wert]
+  ← Fehler: Raum MENSA gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Dazu habe ich keine Information.
+✓ Ist O-108 am Donnerstag um 14 Uhr frei?                    1 Aufrufe   22.6 s
+  → raum_frei(datum='2026-11-04', raum='O-108')
+  ← O-108 am 2026-11-04 (mittwoch): frei um 08:00, 09:45, 11:30, 15:45, 17:30. Belegt: 14:00 (Datenbanken).
+    Antwort: O-108 ist am Donnerstag um 14 Uhr nicht frei.
+✓ Welcher Seminarraum zum Lernen hat die meisten Plätze?     1 Aufrufe   22.7 s
+  → raeume_auflisten()
+  ← O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard O-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz F-012: 12 Plätze, Gebäude F, Erdgeschoss, großer …
+    Antwort: Der Seminarraum mit den meisten Plätzen ist O-201 mit 40 Plätzen.
+✗ Was kostet eine Ersatz-Campuskarte?                        1 Aufrufe   21.8 s
+  → suche_wissen(begriff='Ersatz-Campuskarte')
+  ← Keine Datei enthält 'Ersatz-Campuskarte'. Versuche einen anderen, einfacheren Begriff.
+    Antwort: Entschuldigung, ich habe keine Informationen über eine Ersatz-Campuskarte gefunden.
+✗ Wer sitzt in Raum F-201?                                   1 Aufrufe   23.0 s
+  → raum_buchen(raum='F-201', datum='heute', uhrzeit='08:00', name='Anonym')  [wert]
+  ← Fehler: Raum F-201 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Dazu habe ich keine Information.
+✓ Ich bin am Tag meiner Klausur krank. Was muss ich tun?     1 Aufrufe   27.1 s
+  → suche_wissen(begriff='Klausur')
+  ← pruefungsordnung.md (1 Treffer): § 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,
+    Antwort: Wenn du am Tag deiner Klausur krank bist, solltest du dich von deinem Arzt beraten lassen und eine ärztliche Attestation erhalten. Dann kannst du die Attestation bei der Prüfungsbehörde vorlegen, um d
+✗ Wo kann ich mein Auto abstellen und was kostet das?        1 Aufrufe    8.5 s
+  → raum_buchen(raum='P-101', datum='2026-11-05', uhrzeit='08:00', name='Studierendenausweis')  [wert]
+  ← Fehler: Raum P-101 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Entschuldigung, ich habe keine Informationen über den Raum P-101 gefunden. Dazu habe ich keine Information.
+✗ Wie viele Tage habe ich noch, bis die Prüfungsanmeldung en 1 Aufrufe   24.0 s
+  → tage_bis(datum='2026-11-05')
+  ← Bis zum 2026-11-05 sind es 2 Tage.
+    Antwort: Entschuldigung, ich habe keine genauen Informationen über die genauen Prüfungsanmeldefristen.
+✗ Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe  1 Aufrufe   28.0 s
+  → raum_buchen(name='Kim', raum='O-108', datum='2026-11-05', uhrzeit='09:45')  [wert]
+  ← Fehler: O-108 ist am 2026-11-05 um 09:45 belegt (Webapplikationen). Freie Zeitfenster: 11:30, 15:45, 17:30.
+    Antwort: Entschuldigung, es scheint, dass O-108 am Freitag um 9:45 Uhr nicht verfügbar ist. Freie Zeitfenster sind am Freitag um 11:30, 15:45 und 17:30.
+✗ Wie viel ist 17 mal 23?                                    0 Aufrufe    1.9 s
+    Antwort: {"name":"multipliziere","parameters":{"x":17,"y":23}}
+✗ Wann ist die nächste Party der Fachschaft Informatik?      1 Aufrufe    6.3 s
+  → raeume_auflisten()
+  ← O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard O-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz F-012: 12 Plätze, Gebäude F, Erdgeschoss, großer …
+    Antwort: Die nächste Party der Fachschaft Informatik findet in Gebäude O, Raum O-108 statt.
+
+Modell: llama3.2:3b · 13 Aufgaben
+
+Variante                  Antwort  Werkz.  ungültig  Fehler  Abbruch  Aufrufe Ø  Tokens Ø  Dauer Ø
+agent.v1.yaml               3/13   10/13          0       5        0        0.9      1287    17.8s
+
+Richtige Antworten nach Typ:
+Variante                       datum      direkt      wissen mehrschritt  schreibend        ohne       fehlt
+agent.v1.yaml                    1/4         1/1         1/4         0/1         0/1         0/1         0/1

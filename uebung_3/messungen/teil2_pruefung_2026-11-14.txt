@@ -1,0 +1,13 @@
+ Container starter-app-run-94777cdbc66f Creating
+ Container starter-app-run-94777cdbc66f Created
+test_ablehnung_fuehrt_nichts_aus (__main__.BestaetigungTest.test_ablehnung_fuehrt_nichts_aus) ... ok
+test_lesendes_werkzeug_fragt_nicht (__main__.BestaetigungTest.test_lesendes_werkzeug_fragt_nicht) ... ok
+test_ohne_terminal_keine_zustimmung (__main__.BestaetigungTest.test_ohne_terminal_keine_zustimmung) ... ok
+test_zustimmung_fuehrt_einmal_aus (__main__.BestaetigungTest.test_zustimmung_fuehrt_einmal_aus) ... ok
+test_belegter_slot_und_ungueltige_eingaben (__main__.BuchungMCPTest.test_belegter_slot_und_ungueltige_eingaben) ... /usr/local/lib/python3.12/contextlib.py:105: DeprecationWarning: Use `streamable_http_client` instead.
+  self.gen = func(*args, **kwds)
+ok
+test_buchung_sichtbar_und_nicht_ueberschreibbar (__main__.BuchungMCPTest.test_buchung_sichtbar_und_nicht_ueberschreibbar) ... ok
+----------------------------------------------------------------------
+Ran 6 tests in 0.357s
+OK

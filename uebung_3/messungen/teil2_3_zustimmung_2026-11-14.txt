@@ -1,0 +1,11 @@
+Werkzeuge: suche_wissen, lies_datei, heute, tage_bis, raeume_auflisten, raum_frei, raum_buchen, mensa_speiseplan
+
+  Modellaufruf 1: 1068 Eingabe-Tokens · 2 Nachrichten im Verlauf
+  ? Soll ich raum_buchen(uhrzeit='09:45', name='Kim', raum='O-108', datum='2026-11-05') ausführen? [j/N] j
+  → raum_buchen(uhrzeit='09:45', name='Kim', raum='O-108', datum='2026-11-05')  [wert]
+  ← Fehler: O-108 ist am 2026-11-05 um 09:45 belegt (Webapplikationen). Freie Zeitfenster: 11:30, 15:45, 17:30.
+  Modellaufruf 2: 279 Eingabe-Tokens · 4 Nachrichten im Verlauf
+
+Entschuldigung, es scheint, dass O-108 am Freitag um 9:45 Uhr nicht verfügbar ist. Freie Zeitfenster sind am Freitag um 11:30, 15:45 und 17:30.
+
+  1 Werkzeugaufrufe · 2 Modellaufrufe · 1347 Eingabe-Tokens · 50.9 s · llama3.2:3b

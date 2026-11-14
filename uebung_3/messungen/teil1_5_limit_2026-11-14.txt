@@ -1,0 +1,15 @@
+ Container starter-app-run-1b987656096a Creating
+ Container starter-app-run-1b987656096a Created
+Werkzeuge: suche_wissen, lies_datei, heute, tage_bis
+
+  Modellaufruf 1: 600 Eingabe-Tokens · 2 Nachrichten im Verlauf
+  → suche_wissen(begriff='pruefungsanmeldung')
+  ← Keine Datei enthält 'pruefungsanmeldung'. Versuche einen anderen, einfacheren Begriff.
+  → lies_datei(datei='pruefungsanmeldung.md')
+  ← # Prüfungsanmeldung  ## Anmeldezeitraum Prüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das Wintersemester läuft vom 1. bis 20. November, fü…
+  → tage_bis(datum='heute')  [wert]
+  ← Fehler: Bitte ein gültiges Datum im Format JJJJ-MM-TT angeben.
+
+Abgebrochen nach 1 Modellaufrufen ohne Antwort.
+
+  3 Werkzeugaufrufe · 1 Modellaufrufe · 600 Eingabe-Tokens · 4.8 s · llama3.2:3b

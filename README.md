@@ -1,30 +1,23 @@
-# Cloud-AI-RoLu – Übung 3 / P3
+﻿# Cloud-AI-RoLu – Übung 3 / P3
 
 **Ein Agent mit Werkzeugen · Cloud-native AI · WS 2026/27**
 
-Weitere Dokumentation: [Übung 1](uebung_1.md) · [Übung 2](uebung_2.md) · [Aufgabenblatt Übung 3](Uebung_3_Starter/uebung_3.md) · [Bisherige Notizen und Testausgaben](Uebung_3_Starter/Readme)
-
-Namen und Matrikelnummern werden wegen des öffentlichen Repositorys nur im Abgabetext in Moodle angegeben.
-
-Diese README ist als Vorlage vorbereitet. Antworten und Messtabellen sind noch offen.
-Die bisherigen Ergebnisse stehen in den verlinkten Notizen und werden vor dem Übernehmen geprüft.
-
 ## Start
 
-Docker Desktop muss laufen. Für die Ersteinrichtung im Hauptordner ausführen:
+Docker Desktop muss laufen. Einmalig im Hauptordner:
 
 ```powershell
-cd Uebung_3_Starter/starter
+cd uebung_3/starter
 cp .env.example .env
 ```
 
-Falls das gemeinsame Modell-Volume aus Übung 2 noch nicht existiert:
+Falls das Modell-Volume aus Übung 2 fehlt:
 
 ```powershell
 docker volume create cnai-ollama-modelle
 ```
 
-Die lokale `.env` enthält für die Messungen:
+Die lokale `.env`:
 
 ```dotenv
 LLM_BASE_URL=http://ollama:11434/v1
@@ -34,28 +27,21 @@ MCP_URL=http://campus-mcp:8000/mcp
 HEUTE=2026-11-03
 ```
 
-Die `.env` bleibt lokal. `HEUTE` legt das Datum für vergleichbare Tests fest.
-Alle folgenden Docker-Befehle laufen im Ordner `Uebung_3_Starter/starter`.
+Alle folgenden Befehle laufen in `uebung_3/starter`. `HEUTE` hält das Datum für die Messungen fest.
 
 ```powershell
 docker compose run --rm --build app werkzeuge.py
 docker compose run --rm app mcp_werkzeuge.py
 ```
 
-Der erste Start baut die Images und lädt `llama3.2:3b` und `qwen2.5:3b`.
-Ollama stellt das Modell bereit. Der eigene MCP-Server liefert die Werkzeuge
-für Raumbelegung und Mensa. Die Modelle bleiben im gemeinsamen Volume gespeichert.
+Ollama stellt die Modelle bereit; der MCP-Server liefert Raumbelegung und Speiseplan.
+Beim ersten Start werden `llama3.2:3b` und `qwen2.5:3b` geladen. Die `.env` bleibt lokal.
 
 ## Teil 1 · Die Agent-Schleife
 
-### 1.1 Agent-Schleife umsetzen und mit drei Fragen testen
+### 1.1 Agent-Schleife umsetzen und drei Fragen testen
 
-Lest `app/werkzeuge.py` und den oberen Teil von `app/agent.py`.
-Setzt TODO 1 in `agent.py` um: Das Modell wählt Werkzeuge, bekommt deren
-Ergebnisse zurück und arbeitet weiter, bis es antwortet oder das Schrittlimit erreicht.
-
-Beschreibt für jede Frage den Ablauf: Welche Werkzeuge werden mit welchen
-Argumenten aufgerufen? Was liefern sie zurück, und stimmt die abschließende Antwort?
+TODO 1 in `agent.py` umsetzen. Für jede Frage die Werkzeugaufrufe mit Argumenten und die Antwort bewerten.
 
 ```powershell
 docker compose run --rm app agent.py "Was gibt es heute in der Mensa?"
@@ -65,31 +51,50 @@ docker compose run --rm app agent.py "Ist O-108 am Donnerstag um 14 Uhr frei?"
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-| Frage | Werkzeuge und Argumente in Reihenfolge | Werkzeugergebnis und Antwort | Stimmt die Antwort? Warum? |
-|---|---|---|---|
-| Mensa heute | offen | offen | offen |
-| Krank am Klausurtag | offen | offen | offen |
-| O-108 am Donnerstag um 14 Uhr | offen | offen | offen |
+Die Schleife ist umgesetzt. Test am 14.11.2026 mit `llama3.2:3b`, `agent.v1` und `HEUTE=2026-11-03`; `tage_bis` ist verfügbar. Messstand: vor dem Ergänzen der Raumbuchung aus Teil 2.
+
+| Frage | Werkzeugaufrufe in Reihenfolge | Ergebnis und Bewertung |
+|---|---|---|
+| Mensa heute | `mensa_speiseplan(datum='heute')` | Datumsfehler. Der Agent meldet fehlende Information, statt den Wert zu korrigieren. Die Frage bleibt unbeantwortet. |
+| Krank am Klausurtag | `heute()` → `raeume_auflisten()` → `mensa_speiseplan(datum='2026-11-05')` | Keine passende Wissenssuche. Die Antwort verweist allgemein auf einen Arzt und mögliche Alternativen; das Vorgehen bei Prüfungsunfähigkeit fehlt. |
+| O-108 am Donnerstag, 14 Uhr | `raum_frei(raum='O-108', datum='2026-11-04')` | Mittwoch wird abgefragt, die Antwort nennt Donnerstag. „Nicht frei“ stimmt laut Belegungsdatei zufällig auch für Donnerstag; dort ist ein Tutorium. |
+
+| Frage | Werkzeugaufrufe | Modellaufrufe | Eingabe-Tokens gesamt | Dauer |
+|---|---:|---:|---:|---:|
+| Mensa | 1 | 2 | 1044 | 26,2 s |
+| Klausur | 3 | 2 | 1231 | 27,3 s |
+| Raum | 1 | 2 | 1102 | 5,9 s |
 
 </div>
 
 ### 1.2 Welche Fehlermodi nach Huyen sehen wir?
 
-Ordnet jeden beobachteten Fehler einem Fehlermodus aus dem Skript zu
-(Abschnitt „Wie Agenten scheitern“). Begründet die Zuordnung kurz am jeweiligen Ablauf.
+Die beobachteten Fehler den Fehlermodi aus der Vorlesung zuordnen.
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-| Frage oder Testfall | Beobachteter Fehler | Fehlermodus nach Huyen | Kurze Begründung |
-|---|---|---|---|
-| offen | offen | offen | offen |
+| Frage oder Testfall | Beobachteter Fehler | Fehlermodus nach Huyen |
+|---|---|---|
+| Mensa | `datum='heute'` statt eines Datums im Format `JJJJ-MM-TT`. | Falsche Werte |
+| Klausur | Raumliste und Speiseplan statt der nötigen Wissenssuche; keine brauchbare Antwort. | Ziel verfehlt; Ineffizienz |
+| Raum am Donnerstag | Mittwoch wird abgefragt und als Donnerstag ausgegeben. | Falsche Werte; Ziel verfehlt |
+| Prüfungsfrist | `tage_bis` rechnet mit einem geratenen Zieldatum; die Frist wird nicht nachgeschlagen. | Falsche Werte; Ziel verfehlt |
+| Kontext- und Limittest (1.4/1.5) | Suche mit `pruefungsanmeldung` findet den Umlauttext nicht; die Berechnung wird mit `datum='heute'` vor der Auswertung der Frist angefordert. | Falsche Werte; Ineffizienz; Ziel verfehlt |
+| Buchung | Das benötigte Werkzeug `raum_buchen` fehlt. | Werkzeugfehler |
+| Veganes Gericht am Freitag; Buchung | Donnerstag wird statt Freitag abgefragt. | Falsche Werte; Ziel verfehlt |
+| Mensa am Samstag; Parken | `raum_frei` wird mit erfundenen Räumen `M-101` bzw. `P-123` aufgerufen. | Falsche Werte; Ziel verfehlt |
+| Ersatz-Campuskarte | Nach erfolgloser Suche mit einem zu engen Begriff wird nicht weitergesucht. | Ziel verfehlt |
+| F-201; Fachschaftsparty | Aus der Raumliste werden unbelegte Angaben zu Ansprechpartner bzw. Party abgeleitet. | Falsche Reflexion; Ziel verfehlt |
+| 17 mal 23 | Ein erfundenes Werkzeug `multipliziere` wird als normaler Text ausgegeben, statt 391 zu antworten. | Ungültiges Werkzeug (nur als Text); Ziel verfehlt |
+| Buchungsbestätigung (2.3) | Der Agent gibt die Belegung vom Donnerstag als Freitag aus; nach Ablehnung erklärt er den Buchungsstatus unklar. | Falsche Werte; Ziel verfehlt |
+
+Beim Rechentest erfolgt kein tatsächlicher Werkzeugaufruf. Deshalb zählt die Messung dafür keinen ungültigen Aufruf.
 
 </div>
 
-### 1.3 Wie schneidet der Agent in der ersten Messung ab?
+### 1.3 Erste Messung über 13 Aufgaben
 
-Messt den Ausgangsstand mit den 13 Aufgaben und übernehmt beide Tabellen.
-Dass die Buchungsaufgabe vor Teil 2 noch scheitert, ist vorgesehen.
+Beide Tabellen aus `messen.py` übernehmen. Die Buchungsaufgabe darf vor Teil 2 noch scheitern.
 
 ```powershell
 docker compose run --rm app messen.py
@@ -97,80 +102,118 @@ docker compose run --rm app messen.py
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Messdatum, Modell und verwendeter Stand: offen.
+**Messung am 14.11.2026:** `llama3.2:3b`, `agent.v1`, Temperatur 0,
+`HEUTE=2026-11-03`, mit `tage_bis`, vor dem Ergänzen der Raumbuchung aus Teil 2.
 
 | Variante | Antwort | Werkz. | ungültig | Fehler | Abbruch | Aufrufe Ø | Tokens Ø | Dauer Ø |
 |---|---|---|---|---|---|---|---|---|
-| agent.v1.yaml | offen | offen | offen | offen | offen | offen | offen | offen |
+| agent.v1.yaml | 2/13 | 8/13 | 0 | 3 | 0 | 1,1 | 1077 | 15,4 s |
 
 | Variante | datum | direkt | wissen | mehrschritt | schreibend | ohne | fehlt |
 |---|---|---|---|---|---|---|---|
-| agent.v1.yaml | offen | offen | offen | offen | offen | offen | offen |
+| agent.v1.yaml | 1/4 | 1/1 | 0/4 | 0/1 | 0/1 | 0/1 | 0/1 |
+
+Die beiden gezählten Treffer sind Raumbelegung und größter Seminarraum.
+Bei der Raumfrage stimmt die Endaussage nur zufällig, weil der falsche Tag abgefragt wurde.
+
+[Messprotokoll mit allen 13 Aufgaben](uebung_3/messungen/teil1_3_messung_2026-11-14.txt)
 
 </div>
 
-„Antwort“ zählt Treffer der erwarteten Stichwörter. „Werkz.“ prüft, ob die
-erwarteten Werkzeuge verwendet wurden. Beides ersetzt keine inhaltliche Prüfung.
-„Aufrufe Ø“ zählt Werkzeugaufrufe; „Tokens Ø“ die summierten Eingabe-Tokens pro Aufgabe.
-„ungültig“ zählt unbekannte Werkzeuge oder falsche Parameter, „Fehler“ die
-Fehlerergebnisse und „Abbruch“ erreichte Schrittlimits.
+„Antwort“ prüft Stichwörter, „Werkz.“ die verwendeten Werkzeuge. Die Antwort muss zusätzlich inhaltlich geprüft werden. „Aufrufe Ø“ zählt Werkzeugaufrufe; „Tokens Ø“ summiert die gemeldeten Eingabe-Tokens pro Aufgabe.
 
 ### 1.4 Warum steigen die Eingabe-Tokens bei mehreren Modellaufrufen?
 
-Schaut euch eine Aufgabe mit mehreren Schritten an. Notiert den Ablauf und
-die verfügbaren Tokenwerte. Warum wächst der Kontext, obwohl die Frage gleich bleibt?
-Die normale Abschlussausgabe zeigt die Summe über alle Modellaufrufe.
-
-<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
-Testfrage, Ablauf, Tokenwerte und Erklärung: offen.
-
-</div>
-
-### 1.5 Was passiert mit einem Schrittlimit von 1, und warum brauchen wir ein Limit?
-
-Verwendet `--max-schritte 1` bei einer Frage, für die der Agent mindestens
-zwei Werkzeuge braucht. Beschreibt das Ergebnis und erklärt, warum das Limit trotzdem nötig ist.
+Eine Aufgabe mit mehreren Schritten betrachten und die Tokenwerte erklären.
 
 ```powershell
-docker compose run --rm app agent.py "Was gibt es heute in der Mensa?" --max-schritte 1
+$frage = "Lies zuerst pruefungsanmeldung.md. Wie viele Tage bleiben von heute bis zum Ende der Pruefungsanmeldung? Hole das heutige Datum und berechne die Tage mit tage_bis."
+docker compose run --rm app agent.py --ohne-mcp $frage
 ```
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Beobachteter Ablauf, Abbruch und Begründung: offen.
+- Die erste Modellantwort fordert **drei Werkzeuge gleichzeitig an**. Unser Code führt sie nacheinander aus: `suche_wissen(begriff='pruefungsanmeldung')`, `lies_datei(datei='pruefungsanmeldung.md')`, `tage_bis(datum='heute')`.
+- Die Suche findet nichts, weil sie im Dateiinhalt nach `pruefungsanmeldung` sucht; dort steht „Prüfungsanmeldung“. Das direkte Lesen der Datei liefert dagegen die Frist. Die Berechnung scheitert, weil `heute` kein gültiges Zieldatum ist. Der Agent korrigiert den Fehler nicht und antwortet „Keine Information.“
+- Der Verlauf wächst von **2 auf 6 Nachrichten**: Zu Systemnachricht und Frage kommen eine Modellnachricht mit drei Aufrufen und drei Werkzeugergebnisse hinzu.
+
+| Modellaufruf | Nachrichten im Verlauf | Gemeldete Eingabe-Tokens |
+|---|---:|---:|
+| 1 | 2 | 600 |
+| 2 | 6 | 528 |
+
+Gesamt: **1128 Eingabe-Tokens, 24,1 s**. Normalerweise vergrößern die zusätzlichen
+Nachrichten den Eingabekontext. Hier sinkt der Tokenwert trotzdem: Die verwendete
+Llama-Vorlage fügt die ausführliche Werkzeugliste nur bei einer abschließenden
+Nutzernachricht ein (`if and $.Tools $last`). Beim zweiten Aufruf endet der
+Verlauf mit einem Werkzeugergebnis; die Werkzeugliste entfällt in der Vorlage.
+Ein größerer Nachrichtenverlauf bedeutet deshalb in diesem Lauf keinen längeren
+fertig formatierten Prompt.
+
+[Testprotokoll](uebung_3/messungen/teil1_4_tokens_2026-11-14.txt) · [Ausgelesene Modellvorlage](uebung_3/messungen/llama3_2_vorlage_2026-11-14.txt)
+
+</div>
+
+### 1.5 Was passiert mit `--max-schritte 1`, und warum ist ein Limit nötig?
+
+Eine Frage mit mindestens zwei nötigen Werkzeugen mit einem Modellaufruf testen.
+
+Mit derselben Frage aus 1.4:
+
+```powershell
+docker compose run --rm app agent.py --ohne-mcp $frage --max-schritte 1
+```
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+- `--max-schritte 1` erlaubt **einen Modellaufruf**. Dessen Antwort enthält in diesem Test dieselben drei Werkzeuganforderungen wie in 1.4. Die innere Schleife führt alle drei aus; für Werkzeugaufrufe gibt es kein eigenes Limit.
+- Danach folgt „Abgebrochen nach 1 Modellaufrufen ohne Antwort.“ Der Agent kann die Ergebnisse nicht mehr auswerten oder den Datumsfehler korrigieren.
+- Gemessen: **1 Modellaufruf, 3 Werkzeugaufrufe, 600 Eingabe-Tokens, 4,8 s**. Das Limit zählt Modellaufrufe, nicht einzelne Werkzeuge.
+- Ein Schrittlimit verhindert endlose Schleifen und begrenzt Laufzeit und Tokenverbrauch.
+- Problem im Test: Das Modell fordert die Berechnung schon an, bevor es die gelesene Frist auswerten kann, und übergibt `heute` als Zieldatum. Nach dem Abbruch ist keine Korrektur mehr möglich.
+
+[Testprotokoll](uebung_3/messungen/teil1_5_limit_2026-11-14.txt)
 
 </div>
 
 ## Teil 2 · Eigene Werkzeuge, lokal und als MCP-Server
 
-### 2.1 Ein lokales Werkzeug: Wie viele Tage bleiben bis zur Prüfungsanmeldung?
+### 2.1 Ein lokales Werkzeug: Tage bis zur Prüfungsanmeldung
 
-Setzt TODO 2 in `app/werkzeuge.py` um: `tage_bis(datum)` berechnet die Tage
-vom heutigen Datum bis zum Zieldatum. Beachtet den festen Wert aus `HEUTE`.
-Vergangene und ungültige Daten sollen verständliche Meldungen liefern.
-Tragt das Werkzeug mit Beschreibung und JSON-Schema in `LOKALE_WERKZEUGE` ein.
+TODO 2 umsetzen: `tage_bis(datum)` mit Beschreibung und JSON-Schema registrieren. `HEUTE`, vergangene und ungültige Daten berücksichtigen. Werkzeugreihenfolge und Antwort prüfen.
 
 ```powershell
 docker compose run --rm app agent.py "Wie viele Tage habe ich noch, bis die Prüfungsanmeldung endet?"
 ```
 
-Holt sich der Agent das heutige Datum, die Frist aus der Wissensbasis und die
-Berechnung? Beschreibt die Reihenfolge und prüft die Antwort.
-
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Werkzeugaufrufe mit Argumenten, Ergebnis und Bewertung: offen.
+`tage_bis` ist umgesetzt und registriert; Beschreibung und Fehlermeldungen sind korrigiert.
+
+**Direkte Tests am 14.11.2026**, jeweils mit `HEUTE=2026-11-03`:
+
+| Eingabe | Ergebnis |
+|---|---|
+| `2026-11-20` | 17 Tage |
+| `2026-11-03` | 0 Tage |
+| `2026-11-01` | 2 Tage in der Vergangenheit |
+| `2026-02-30`, `heute`, `20.11.2026` | Jeweils verständliche Fehlermeldung zum Datumsformat |
+
+Alle sechs Tests bestanden.
+
+**Agententest:** Nur `tage_bis(datum='2026-11-05')` wird aufgerufen. Das Werkzeug liefert korrekt 2 Tage zu diesem Datum. Anschließend meldet der Agent, keine genauen Anmeldefristen zu kennen.
+
+- `heute` und die Wissenssuche fehlen; das Zieldatum ist geraten.
+- Laut Wissensbasis endet die Anmeldung am 20. November. Richtig wären **17 Tage**.
+- Das Werkzeug funktioniert; der Agent löst die mehrschrittige Aufgabe mit v1 noch nicht. Verbesserungen werden in Teil 3 untersucht.
+
+[Werkzeugtests](uebung_3/messungen/teil2_1_werkzeugtests_2026-11-14.txt) · [Agententest](uebung_3/messungen/teil2_1_frist_2026-11-14.txt)
 
 </div>
 
 ### 2.2 Ein Werkzeug im MCP-Server: Einen Raum buchen
 
-Setzt TODO 3a in `campus_mcp/server.py` um:
-`raum_buchen(raum, datum, uhrzeit, name)` soll einen Raum buchen.
-Der Docstring beschreibt dem Modell das Werkzeug. Die Buchung läuft im MCP-Server.
-
-Startet den Server nach Änderungen neu und prüft die angebotenen Werkzeuge:
+TODO 3a umsetzen: `raum_buchen(raum, datum, uhrzeit, name)` im MCP-Server ergänzen. Docstring und angebotene Werkzeuge prüfen.
 
 ```powershell
 docker compose restart campus-mcp
@@ -179,200 +222,147 @@ docker compose run --rm app mcp_werkzeuge.py
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Angezeigte Beschreibung von `raum_buchen` und Ergebnis des Werkzeugtests: offen.
+`raum_buchen` ist im MCP-Server umgesetzt und wird über MCP angeboten.
+
+- Beschreibung: Bucht einen freien Seminarraum für eine Person in einem Zeitfenster. Benötigt Raum, Datum, Uhrzeit und Name; belegte Slots werden nicht überschrieben.
+- `O-108`, `2026-11-06`, `09:45`, `Kim`: Buchung erfolgreich und über `raum_frei` sichtbar.
+- Eine zweite Buchung desselben Slots wird abgelehnt; freie Alternativen werden genannt.
+- Unbekannter Raum, ungültiges Datum, Wochenende, falscher Slot und leerer Name liefern `Fehler:`-Meldungen. Auch ein regulär belegter Slot wird abgelehnt.
+
+Die automatisierte Prüfung läuft mit:
+
+```powershell
+docker compose run --rm app pruefen_teil2.py
+```
+
+[Prüfprotokoll für Buchung und Bestätigung](uebung_3/messungen/teil2_pruefung_2026-11-14.txt)
 
 </div>
 
 ### 2.3 Schreibaktionen bestätigen
 
-Setzt TODO 3b in `app/agent.py` um. Schreibende Werkzeuge dürfen erst nach
-einer Bestätigung im Terminal ausgeführt werden.
+TODO 3b umsetzen: Schreibende Werkzeuge erst nach Bestätigung ausführen.
 
-#### 1. Was passiert bei Zustimmung und bei Ablehnung?
+#### 1. Was passiert bei Zustimmung und Ablehnung?
 
-Testet einmal mit `j` und einmal mit `n`. Beschreibt besonders, wie das Modell
-nach einer Ablehnung weiterarbeitet und ob es die Buchung tatsächlich unterlässt.
+Je einmal mit `j` und `n` testen. Nach Ablehnung darf keine Buchung ausgeführt werden.
 
 ```powershell
 docker compose run --rm app agent.py "Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe Kim."
 ```
 
-Für vergleichbare Tests kann `docker compose restart campus-mcp` die bisherigen
-Buchungen löschen. Sie liegen nur im Arbeitsspeicher des Servers.
-
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-| Bestätigung | Werkzeugaufrufe und Ergebnis | Abschließende Antwort und Bewertung |
+Die Bestätigung ist eingebaut. Getestet wurde die Frage aus dem Aufgabenblatt
+mit `HEUTE=2026-11-03`. Zwischen den Fällen wurde der MCP-Server neu gestartet.
+Das Modell wählt in beiden Fällen fälschlich Donnerstag, den 05.11., statt Freitag, den 06.11.
+
+| Eingabe | Werkzeugergebnis | Antwort des Modells |
 |---|---|---|
-| `j` | offen | offen |
-| `n` | offen | offen |
+| `j` | Der Aufruf wird ausgeführt, aber der gewählte Donnerstag um 09:45 ist belegt. Das Werkzeug lehnt die Buchung ab und nennt freie Slots. | Der Agent behauptet, Freitag sei belegt, und übernimmt die Alternativen vom Donnerstag. Falsches Datum, keine Buchung. |
+| `n` | Aufruf als `abgelehnt` zurückgegeben; keine Buchung. Die Nachkontrolle zeigt keine neue Belegung; Freitag ist frei. | „Entschuldigung, ich habe keine Informationen darüber, ob die Raumbuchung erfolgreich war.“ Kein erneuter Versuch, aber eine unklare Erklärung der Ablehnung. |
+
+Ohne interaktives Terminal wird keine Zustimmung angenommen. Lesende Werkzeuge benötigen keine Bestätigung.
+`messen.py` bestätigt Testbuchungen automatisch; `j` und `n` wurden deshalb zusätzlich im Terminal geprüft.
+
+Die sechs automatisierten Prüfungen für Buchung und Bestätigung bestehen.
+Die falsche Datumswahl ist ein Modellfehler. Die Bestätigung und die Belegungsprüfung verhindern die unerwünschte Buchung.
+
+[Test mit `j`](uebung_3/messungen/teil2_3_zustimmung_2026-11-14.txt) · [Test mit `n` und Nachkontrolle](uebung_3/messungen/teil2_3_ablehnung_2026-11-14.txt)
+
+`messen.py` läuft mit dem fertigen Stand aus Teil 2 über alle 13 Aufgaben durch.
+[Abschlussprotokoll als Ausgangspunkt für Teil 3](uebung_3/messungen/teil2_abschluss_messung_2026-11-14.txt)
 
 </div>
 
-#### 2. Wie wird ein schreibendes Werkzeug erkannt, und was ist daran schwach?
+#### 2. Wie werden schreibende Werkzeuge erkannt, und was ist daran schwach?
 
-Schaut in `mcp_werkzeuge.py`: Woran wird eine Schreibaktion erkannt?
-Warum ist diese Lösung schwach, und wo sollte die Information eigentlich herkommen?
-Bezieht MCP Tool Annotations in die Antwort ein.
+Erkennung in `mcp_werkzeuge.py` erklären und mit MCP Tool Annotations vergleichen.
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Antwort: offen.
+`mcp_werkzeuge.py` prüft den Anfang des Werkzeugnamens: `raum_buchen`, `buche`,
+`loesche` oder `sende` markieren ein Werkzeug als schreibend.
+
+Das ist fehleranfällig: Eine anders benannte Schreibaktion kann übersehen,
+ein lesendes Werkzeug versehentlich markiert werden. Die Information sollte
+vom MCP-Server als Tool Annotation kommen, insbesondere über `readOnlyHint`.
+Die Bestätigung muss weiterhin vor der Ausführung im Programm geprüft werden.
 
 </div>
 
-#### 3. Optional: Werkzeuge ohne Modell im MCP Inspector aufrufen
+#### 3. Optional: MCP Inspector
 
-Startet auf dem Rechner `npx @modelcontextprotocol/inspector`.
-Wählt den Transport **Streamable HTTP** und die URL `http://localhost:8000/mcp`.
-Alternativ kann der Server in Claude Desktop oder Cursor eingebunden werden.
-
-<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
-Durchgeführt oder ausgelassen; bei Durchführung getestete Werkzeuge und Ergebnis: offen.
-
-</div>
+Nicht bearbeitet.
 
 ## Teil 3 · Verbessern und messen
 
-Probiert mindestens zwei der folgenden Ansätze aus und messt jeden einzeln
-gegen den fertigen Stand aus Teil 2:
+Mindestens zwei Ansätze einzeln gegen den fertigen Stand aus Teil 2 messen:
 
-- **Prompt:** `prompts/agent.v2.yaml` mit klaren Werkzeugregeln und ein bis zwei Beispielabläufen schreiben. `agent.v1.yaml` bleibt unverändert.
-- **Werkzeug:** `raum_frei`, `raum_buchen` und `mensa_speiseplan` fehlertoleranter machen. Das Datum darf auch `heute`, `morgen` oder ein Wochentag sein; angehängte Uhrzeiten werden ignoriert. Die Beschreibungen anpassen.
-- **Workflow:** Den festen Routing-Workflow aus `workflow.py` mit dem Agenten vergleichen.
+- **Prompt:** `agent.v2.yaml` mit Werkzeugregeln und ein bis zwei Beispielabläufen; v1 unverändert lassen.
+- **Werkzeug:** Datumseingaben in `raum_frei`, `raum_buchen` und `mensa_speiseplan` fehlertoleranter machen (`heute`, `morgen`, Wochentag, angehängte Uhrzeit); Beschreibungen anpassen.
+- **Workflow:** Festes Routing aus `workflow.py` mit dem Agenten vergleichen.
 
-### 3.1 Welcher Ansatz bringt bei welchem Aufgabentyp am meisten?
+### 3.1 Welcher Ansatz hilft bei welchem Aufgabentyp?
 
-Übernehmt für beide Modelle die Gesamttabelle und die Ergebnisse nach Aufgabentyp.
-Notiert pro Messstand, was geändert wurde. Falls ihr die Werkzeuge verbessert,
-messt diesen Stand separat, damit seine Wirkung erkennbar bleibt.
+Gesamtergebnisse und Ergebnisse nach Typ für beide Modelle eintragen. Änderungen je Messstand nennen.
 
-Die folgenden Befehle setzen voraus, dass `agent.v2.yaml` angelegt wurde:
+Nach dem Anlegen von `agent.v2.yaml`:
 
 ```powershell
 docker compose run --rm -e LLM_MODEL=llama3.2:3b app messen.py prompts/agent.v1.yaml prompts/agent.v2.yaml workflow
 docker compose run --rm -e LLM_MODEL=qwen2.5:3b app messen.py prompts/agent.v1.yaml prompts/agent.v2.yaml workflow
 ```
 
-Schreibaktionen werden von `messen.py` automatisch bestätigt. Die interaktive
-Bestätigung wird deshalb zusätzlich in Teil 2.3 geprüft.
-
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Gewählte Ansätze, Messdatum und Änderungen je Messstand: offen.
-
-**Gesamtergebnisse** – je Modell und Messstand ausfüllen:
-
-| Modell | Messstand / Variante | Antwort | Werkz. | ungültig | Fehler | Abbruch | Aufrufe Ø | Tokens Ø | Dauer Ø |
-|---|---|---|---|---|---|---|---|---|---|
-| llama3.2:3b | offen | offen | offen | offen | offen | offen | offen | offen | offen |
-| qwen2.5:3b | offen | offen | offen | offen | offen | offen | offen | offen | offen |
-
-**Richtige Antworten nach Typ** – je Modell und Messstand ausfüllen:
-
-| Modell | Messstand / Variante | datum | direkt | wissen | mehrschritt | schreibend | ohne | fehlt |
-|---|---|---|---|---|---|---|---|---|
-| llama3.2:3b | offen | offen | offen | offen | offen | offen | offen | offen |
-| qwen2.5:3b | offen | offen | offen | offen | offen | offen | offen | offen |
-
-Kurze Auswertung je Aufgabentyp; auffällige Schwankungen bei Wiederholungen: offen.
+**TODO:** Zwei Ansätze umsetzen und einzeln messen. Beide Tabellen je Modell und Messstand einfügen; Wirkung nach Aufgabentyp kurz auswerten.
 
 </div>
 
 ### 3.2 Bei welchen Aufgaben gewinnt der Workflow, bei welchen der Agent?
 
-Begründet den Unterschied anhand eurer Ergebnisse und des Ablaufs:
-feste Pfade beim Workflow und eine Werkzeugschleife beim Agenten.
+Ergebnisse mit festen Pfaden und Werkzeugschleife erklären.
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Antwort mit Beispielen aus der Messung: offen.
+**TODO:** Mit Beispielen aus den Messungen beantworten.
 
 </div>
 
-### 3.3 Welches Modell würden wir für den Agenten und welches für den Workflow nehmen?
+### 3.3 Welches Modell wählen wir für Agent und Workflow?
 
-Begründet die Auswahl mit euren Zahlen zu Antwortqualität, Tokens und Dauer.
+Auswahl mit Antwortqualität, Tokens und Dauer begründen.
 
 <div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
 
-Auswahl und Begründung: offen.
+**TODO:** Nach den Messungen beantworten.
 
 </div>
 
-### 3.4 Mit Academic-Cloud-Zugang: Was verändert ein größeres Modell?
+### 3.4 Academic Cloud: größeres Modell
 
-Messt `qwen3-30b-a3b-instruct-2507` mit `agent.v1`, falls ihr Zugang habt.
-Was ändert sich an den beobachteten Fehlermodi? Zugangsdaten bleiben lokal.
-
-<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
-Durchgeführt oder mangels Zugang ausgelassen; Messwerte und Vergleich: offen.
-
-</div>
+Nicht bearbeitet (optionaler Vergleich).
 
 ## Teil 4 und 5 · Ergänzung aus VL 6
 
-Das vorhandene Aufgabenblatt kündigt Orchestrierung mit einem Framework,
-Memory, ein kleines Multi-Agent-Setup und weitere README-Anforderungen an.
-Die konkreten Aufgaben werden nachgetragen, sobald die Ergänzung vorliegt.
+**TODO:** Ergänztes Aufgabenblatt für Orchestrierung, Memory und Multi-Agent-Setup besorgen und Aufgaben nachtragen.
 
 ## Zusatz · ReAct ohne Function Calling
 
-Laut Aufgabenblatt entfällt der Zusatz bei mindestens 80 % nachgewiesener
-Anwesenheit am Semesterende. Wer nicht sicher ist, gibt ihn mit ab;
-Zusatzteile sind nicht nachreichbar.
+Nicht bearbeitet. Laut Aufgabenblatt entfällt der Zusatz bei mindestens 80 % nachgewiesener Anwesenheit.
 
-### Z.1 Eine ReAct-Schleife mit Textausgabe umsetzen
-
-Schreibt `react.py`. Beschreibt die Werkzeuge im System-Prompt und verlangt
-das Format `Thought: … Action: werkzeug({"param": "wert"})` oder `Final Answer: …`.
-Lest die Aktion mit einem regulären Ausdruck aus, führt sie aus und hängt das
-Ergebnis als `Observation: …` an.
-
-<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
-Entfällt mit Nachweis oder Umsetzung und Testablauf: offen.
-
-</div>
-
-### Z.2 ReAct mit denselben Aufgaben gegen den Agenten messen
-
-Ergänzt in `messen.py` eine Variante `react` und messt beide Ansätze mit denselben Aufgaben.
-
-<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
-Messtabellen je Modell: offen.
-
-</div>
-
-### Z.3 Was ist robuster, was ist billiger, und bei welchem Modell?
-
-Vergleicht die Ergebnisse und beschreibt zwei Fehler, die nur bei der Textvariante auftreten.
-
-<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
-
-Auswertung und zwei beobachtete Fehler: offen.
-
-</div>
+**TODO:** Anwesenheitsnachweis vor der Abgabe prüfen. Ohne ausreichenden Nachweis ist der Zusatz erforderlich: `react.py` umsetzen, mit denselben Aufgaben messen und Robustheit, Aufwand sowie zwei Fehler der Textvariante vergleichen.
 
 ## Abgabe
 
-In Moodle unter „Übung 3 (P3)“ werden der Repository-Link und der Commit-Hash
-des Abgabestands angegeben. Die Frist für Termin A oder B steht in Moodle.
-Das Repository muss öffentlich oder für den GitHub-Account `PascalLaube` freigegeben sein.
+In Moodle unter „Übung 3 (P3)“ Repository-Link und Commit-Hash angeben. Frist laut Moodle. Das Repository muss öffentlich oder für `PascalLaube` freigegeben sein.
 
-Vor der Abgabe prüfen:
+- [ ] Start mit dokumentierter `.env` geprüft; keine Secrets eingecheckt.
+- [x] Abhängigkeiten gepinnt.
+- [x] TODO 1, 2, 3a und 3b umgesetzt; `messen.py` läuft durch.
+- [x] `raum_buchen` läuft im MCP-Server; Zustimmung und Ablehnung getestet.
+- [ ] Abläufe, Fehlermodi und Messtabellen vollständig.
+- [ ] Aufgaben aus VL 6 und Anwesenheitsnachweis berücksichtigt.
 
-- [ ] Die Startbefehle funktionieren mit der beschriebenen `.env`.
-- [ ] Keine Secrets oder lokale `.env` sind eingecheckt.
-- [ ] Die Abhängigkeiten sind gepinnt.
-- [ ] TODO 1, 2, 3a und 3b sind umgesetzt; `messen.py` läuft durch.
-- [ ] `raum_buchen` läuft im MCP-Server.
-- [ ] Die drei Abläufe aus Teil 1 und die Messtabellen aus Teil 3 sind eingetragen und geprüft.
-- [ ] Alle Antwortfelder sind ausgefüllt oder begründet als entfallen markiert.
-- [ ] Die Ergänzungen aus VL 6 und die Entscheidung zum Zusatz sind berücksichtigt.
-- [ ] Wir können unseren Code und die Werkzeugbeschreibungen erklären.
-
-Bei Serverproblemen hilft `docker compose logs campus-mcp`.
+Buchungen sind flüchtig; `docker compose restart campus-mcp` setzt sie zurück. Bei Serverproblemen: `docker compose logs campus-mcp`.
