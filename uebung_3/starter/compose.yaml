@@ -40,6 +40,7 @@ services:
     env_file: .env
     volumes:
       - ./app:/app   # Code-Änderungen wirken sofort, ohne neuen Build
+      - ../messungen:/messungen   # vollständige Messprotokolle auf dem Host behalten
     depends_on:
       modell-laden:
         condition: service_completed_successfully

@@ -21,11 +21,14 @@ Schreibende Werkzeuge werden beim Messen automatisch bestätigt.
 """
 
 import argparse
+import hashlib
 import json
 import os
+from datetime import datetime, timezone
+from pathlib import Path
 
 import httpx
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 
 from agent import Ergebnis, agent, alle_werkzeuge, zeige_schritt
 from llm import MODEL
@@ -107,11 +110,35 @@ def tabelle(ergebnisse: dict[str, list[Messung]]) -> None:
         print(f"{name:<24} " + " ".join(f"{z:>11}" for z in zellen))
 
 
+def speichere_json(pfad: str, aufgaben: list[dict], ergebnisse: dict[str, list[Messung]]) -> None:
+    """Sichert vollständige Antworten und Trajektorien für die inhaltliche Prüfung."""
+    quellen = sorted([*Path(".").glob("*.py"), *Path("prompts").glob("*.yaml"), Path(AUFGABEN)])
+    daten = {
+        "zeitpunkt_utc": datetime.now(timezone.utc).isoformat(),
+        "modell": MODEL,
+        "heute": os.environ.get("HEUTE"),
+        "dateien_sha256": {
+            p.as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in quellen
+        },
+        "varianten": {
+            name: [dict(aufgabe=a["aufgabe"], erwartet=a["erwartet"],
+                        erwartete_werkzeuge=a["werkzeuge"], **asdict(m))
+                   for a, m in zip(aufgaben, ms, strict=True)]
+            for name, ms in ergebnisse.items()
+        },
+    }
+    ziel = Path(pfad)
+    ziel.parent.mkdir(parents=True, exist_ok=True)
+    ziel.write_text(json.dumps(daten, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"\nVollständige Messdaten: {ziel}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("varianten", nargs="*", default=["prompts/agent.v1.yaml"])
     parser.add_argument("--ohne-mcp", action="store_true")
     parser.add_argument("--zeigen", action="store_true", help="alle Schritte zeigen, nicht nur bei Fehlern")
+    parser.add_argument("--json", metavar="DATEI", help="vollständige Messdaten als JSON speichern")
     args = parser.parse_args()
 
     with open(AUFGABEN, encoding="utf-8") as f:
@@ -119,3 +146,5 @@ if __name__ == "__main__":
     werkzeuge = alle_werkzeuge(not args.ohne_mcp)
     ergebnisse = {v.removeprefix("prompts/"): messen(v, aufgaben, werkzeuge, args.zeigen) for v in args.varianten}
     tabelle(ergebnisse)
+    if args.json:
+        speichere_json(args.json, aufgaben, ergebnisse)

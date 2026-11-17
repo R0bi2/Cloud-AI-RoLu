@@ -1,0 +1,169 @@
+﻿ Container starter-app-run-4f0fb00c5d49 Creating 
+ Container starter-app-run-4f0fb00c5d49 Created 
+
+=== prompts/agent.v1.yaml · llama3.2:3b
+✗ Was gibt es heute in der Mensa?                            1 Aufrufe   26.7 s
+  → mensa_speiseplan(datum='heute')  [wert]
+  ← Fehler: 'heute' ist kein Datum im Format JJJJ-MM-TT.
+    Antwort: Entschuldigung! Ich habe keine Informationen über das spezifische Datum "heute". Dazu habe ich keine Information.
+✗ Gibt es am Freitag ein veganes Gericht in der Mensa?       1 Aufrufe   28.3 s
+  → mensa_speiseplan(datum='2026-11-05')
+  ← Mensa am donnerstag, 2026-11-05: - Gemüsepfanne mit Tofu (vegan), 3,40 Euro - Fisch mit Salzkartoffeln, 3,40 Euro - Pizza Margherita, 3,40 Euro
+    Antwort: Am Freitag gibt es in der Mensa ein veganes Gericht: Gemüsepfanne mit Tofu.
+✗ Hat die Mensa am Samstag offen?                            1 Aufrufe   28.7 s
+  → raum_frei(raum='Mensa', datum='2026-11-06')  [wert]
+  ← Fehler: Raum MENSA gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Dazu habe ich keine Information.
+✓ Ist O-108 am Donnerstag um 14 Uhr frei?                    1 Aufrufe   33.4 s
+  → raum_frei(raum='O-108', datum='2026-11-04')
+  ← O-108 am 2026-11-04 (mittwoch): frei um 08:00, 09:45, 11:30, 15:45, 17:30. Belegt: 14:00 (Datenbanken).
+    Antwort: O-108 ist am Donnerstag um 14 Uhr nicht frei.
+✓ Welcher Seminarraum zum Lernen hat die meisten Plätze?     1 Aufrufe   30.9 s
+  → raeume_auflisten()
+  ← O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard O-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz F-012: 12 Plätze, Gebäude F, Erdgeschoss, großer …
+    Antwort: Der Seminarraum mit den meisten Plätzen ist O-201 mit 40 Plätzen.
+✗ Was kostet eine Ersatz-Campuskarte?                        1 Aufrufe   32.0 s
+  → suche_wissen(begriff='Ersatz-Campuskarte')
+  ← Keine Datei enthält 'Ersatz-Campuskarte'. Versuche einen anderen, einfacheren Begriff.
+    Antwort: Entschuldigung, ich habe keine Informationen über eine Ersatz-Campuskarte gefunden.
+✗ Wer sitzt in Raum F-201?                                   1 Aufrufe   31.0 s
+  → raum_buchen(raum='F-201', datum='heute', uhrzeit='08:00', name='Anonym')  [wert]
+  ← Fehler: Raum F-201 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Dazu habe ich keine Information.
+✓ Ich bin am Tag meiner Klausur krank. Was muss ich tun?     1 Aufrufe   37.4 s
+  → suche_wissen(begriff='Klausur')
+  ← pruefungsordnung.md (1 Treffer): § 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,
+    Antwort: Wenn du am Tag deiner Klausur krank bist, solltest du dich von deinem Arzt beraten lassen und eine ärztliche Attestation erhalten. Dann kannst du die Attestation bei der Prüfungsbehörde vorlegen, um d
+✗ Wo kann ich mein Auto abstellen und was kostet das?        1 Aufrufe   11.5 s
+  → raum_buchen(raum='P-101', datum='2026-11-05', uhrzeit='08:00', name='Studierendenausweis')  [wert]
+  ← Fehler: Raum P-101 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Entschuldigung, ich habe keine Informationen über den Raum P-101 gefunden. Dazu habe ich keine Information.
+✗ Wie viele Tage habe ich noch, bis die Prüfungsanmeldung en 1 Aufrufe   33.5 s
+  → tage_bis(datum='2026-11-05')
+  ← Bis zum 2026-11-05 sind es 2 Tage.
+    Antwort: Entschuldigung, ich habe keine genauen Informationen über die genauen Prüfungsanmeldefristen.
+✗ Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe  1 Aufrufe   42.4 s
+  → raum_buchen(uhrzeit='09:45', name='Kim', raum='O-108', datum='2026-11-05')  [wert]
+  ← Fehler: O-108 ist am 2026-11-05 um 09:45 belegt (Webapplikationen). Freie Zeitfenster: 11:30, 15:45, 17:30.
+    Antwort: Entschuldigung, es scheint, dass O-108 am Freitag um 9:45 Uhr nicht verfügbar ist. Freie Zeitfenster sind am Freitag um 11:30, 15:45 und 17:30.
+✗ Wie viel ist 17 mal 23?                                    0 Aufrufe    3.3 s
+    Antwort: {"name":"multipliziere","parameters":{"x":17,"y":23}}
+✗ Wann ist die nächste Party der Fachschaft Informatik?      1 Aufrufe    9.7 s
+  → raeume_auflisten()
+  ← O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard O-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz F-012: 12 Plätze, Gebäude F, Erdgeschoss, großer …
+    Antwort: Die nächste Party der Fachschaft Informatik findet in Gebäude O, Raum O-108 statt.
+
+=== prompts/agent.v2.yaml · llama3.2:3b
+✗ Was gibt es heute in der Mensa?                            2 Aufrufe   18.7 s
+  → heute()
+  ← Heute ist Dienstag, der 2026-11-03.
+  → mensa_speiseplan(datum='heute')  [wert]
+  ← Fehler: 'heute' ist kein Datum im Format JJJJ-MM-TT.
+    Antwort: Entschuldigung! Ich habe mich geirrt. Heute ist Dienstag, der 03.11.2026.   Mensa-Speiseplan für heute:  - Frühstück: Müsli mit Früchten und Joghurt - Mittagessen: Hühnchenbrust mit Kartoffeln und Gem
+✓ Gibt es am Freitag ein veganes Gericht in der Mensa?       1 Aufrufe   50.3 s
+  → heute()
+  ← Heute ist Dienstag, der 2026-11-03.
+    Antwort: Morgiges Datum: 2026-11-04  Mensa-Speiseplan für 2026-11-04: - Veganes Gericht: Linsensalat
+✓ Hat die Mensa am Samstag offen?                            1 Aufrufe   45.0 s
+  → heute()
+  ← Heute ist Dienstag, der 2026-11-03.
+    Antwort: Die Mensa ist am Dienstag, dem 2026-11-03, geschlossen.
+✓ Ist O-108 am Donnerstag um 14 Uhr frei?                    1 Aufrufe   41.2 s
+  → raum_frei(raum='O-108', datum='2026-11-04')
+  ← O-108 am 2026-11-04 (mittwoch): frei um 08:00, 09:45, 11:30, 15:45, 17:30. Belegt: 14:00 (Datenbanken).
+    Antwort: O-108 ist am Donnerstag um 14 Uhr belegt.
+✓ Welcher Seminarraum zum Lernen hat die meisten Plätze?     1 Aufrufe   43.0 s
+  → raeume_auflisten()
+  ← O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard O-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz F-012: 12 Plätze, Gebäude F, Erdgeschoss, großer …
+    Antwort: Der Seminarraum mit den meisten Plätzen ist O-201 mit 40 Plätzen.
+✗ Was kostet eine Ersatz-Campuskarte?                        1 Aufrufe   43.0 s
+  → suche_wissen(begriff='Ersatz-Campuskarte')
+  ← Keine Datei enthält 'Ersatz-Campuskarte'. Versuche einen anderen, einfacheren Begriff.
+    Antwort: Es scheint, dass es keine Informationen über eine Ersatz-Campuskarte gibt. Ich habe nach Informationen gesucht, aber leider konnte ich keine relevanten Ergebnisse finden.
+✗ Wer sitzt in Raum F-201?                                   1 Aufrufe   48.3 s
+  → raum_frei(datum='heute', raum='F-201')  [wert]
+  ← Fehler: Raum F-201 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Leider gibt es keinen freien Raum F-201. Die aktuelle Raumübersicht zeigt, dass der Raum nicht verfügbar ist.
+✗ Ich bin am Tag meiner Klausur krank. Was muss ich tun?     1 Aufrufe   47.2 s
+  → heute()
+  ← Heute ist Dienstag, der 2026-11-03.
+    Antwort: Leider hast du keine Klausur heute, aber du kannst dich auf den nächsten Tag vorbereiten. Wenn du noch nicht deine Speisekarte für morgen ausgewählt hast, kannst du dies tun:  Mensa-Speiseplan für mor
+✗ Wo kann ich mein Auto abstellen und was kostet das?        1 Aufrufe   48.8 s
+  → suche_wissen(begriff='Auto abstellen')
+  ← Keine Datei enthält 'Auto abstellen'. Versuche einen anderen, einfacheren Begriff.
+    Antwort: Entschuldigung! Es scheint, dass es keine spezifische Anleitung für das Abstellen eines Autos gibt.   Um dir besser zu helfen, benötige ich jedoch mehr Informationen. Kannst du mir bitte sagen, um wel
+✗ Wie viele Tage habe ich noch, bis die Prüfungsanmeldung en 0 Aufrufe   36.3 s
+    Antwort: {"name":"tages_bis","parameters":{"datum":"2026-11-05"}}
+✗ Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe  1 Aufrufe   25.1 s
+  → raum_buchen(uhrzeit='09:45', name='Kim', raum='O-108', datum='2026-11-05')  [wert]
+  ← Fehler: O-108 ist am 2026-11-05 um 09:45 belegt (Webapplikationen). Freie Zeitfenster: 11:30, 15:45, 17:30.
+    Antwort: Es tut mir leid, aber O-108 ist am Freitag um 09:45 Uhr belegt. Hier sind einige alternative Zeitfenster, in denen du die Lerngruppe Kim buchen kannst:  * 11:30 Uhr * 15:45 Uhr * 17:30 Uhr  Bitte beac
+✓ Wie viel ist 17 mal 23?                                    1 Aufrufe   41.5 s
+  → tage_bis(datum='2026-11-05')
+  ← Bis zum 2026-11-05 sind es 2 Tage.
+    Antwort: Die Antwort ist 391.
+✗ Wann ist die nächste Party der Fachschaft Informatik?      1 Aufrufe   41.2 s
+  → raeume_auflisten()
+  ← O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard O-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz F-012: 12 Plätze, Gebäude F, Erdgeschoss, großer …
+    Antwort: Die nächste Party der Fachschaft Informatik findet in Gebäude O, Raum O-108 statt.
+
+=== workflow · llama3.2:3b
+✓ Was gibt es heute in der Mensa?                            1 Aufrufe   24.1 s
+  → mensa_speiseplan(datum='2026-11-03')
+  ← Mensa am dienstag, 2026-11-03: - Kürbissuppe mit Brot (vegan), 3,40 Euro - Maultaschen mit Kartoffelsalat, 3,40 Euro - Chili sin Carne (vegan), 3,40 Euro
+    Antwort: Heute gibt es in der Mensa folgende Gerichte: Kürbissuppe mit Brot (vegan), Maultaschen mit Kartoffelsalat und Chili sin Carne (vegan). Alle drei Gerichte kosten jeweils 3,40 Euro.
+✗ Gibt es am Freitag ein veganes Gericht in der Mensa?       1 Aufrufe   10.9 s
+  → mensa_speiseplan(datum='2026-11-05')
+  ← Mensa am donnerstag, 2026-11-05: - Gemüsepfanne mit Tofu (vegan), 3,40 Euro - Fisch mit Salzkartoffeln, 3,40 Euro - Pizza Margherita, 3,40 Euro
+    Antwort: Nein, es gibt am Freitag kein veganes Gericht in der Mensa. Die geplanten Gerichte am Freitag sind nicht angegeben.
+✓ Hat die Mensa am Samstag offen?                            1 Aufrufe   10.7 s
+  → mensa_speiseplan(datum='2026-11-06')
+  ← Mensa am freitag, 2026-11-06: - Bunter Salatteller (vegan), 3,40 Euro - Currywurst mit Pommes, 3,40 Euro - Pasta mit Tomatensoße (vegan), 3,40 Euro
+    Antwort: Nein, die Mensa ist am Samstag (heute) nicht offen. Sie ist erst am Freitag, dem 2026-11-06, geöffnet.
+✗ Ist O-108 am Donnerstag um 14 Uhr frei?                    1 Aufrufe   13.0 s
+  → raum_frei(raum='O-108', datum='2026-11-04T14:00:00')  [wert]
+  ← Fehler: '2026-11-04T14:00:00' ist kein Datum im Format JJJJ-MM-TT.
+    Antwort: Leider habe ich keine Informationen über die Verfügbarkeit von Räumen auf dem Campus. Die Verfügbarkeitsanfragen werden von der Verwaltung bearbeitet. Bitte wenden Sie sich an die Verwaltung oder die 
+✗ Welcher Seminarraum zum Lernen hat die meisten Plätze?     1 Aufrufe   10.0 s
+  → raum_frei(raum='O-108', datum='2026-11-03')
+  ← O-108 am 2026-11-03 (dienstag): frei um 08:00, 14:00, 15:45, 17:30. Belegt: 09:45 (Cloud-native AI), 11:30 (Cloud-native AI).
+    Antwort: Leider habe ich keine Informationen über die Plätze in den Seminarräumen.
+✓ Was kostet eine Ersatz-Campuskarte?                        2 Aufrufe   12.3 s
+  → suche_wissen(begriff='Campuskarte')
+  ← campuskarte.md (2 Treffer): # Campuskarte | Die Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure semesterticket.md (1 Treffer): Das Tick…
+  → lies_datei(datei='campuskarte.md')
+  ← # Campuskarte  Die Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure Geldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem Semester…
+    Antwort: Eine Ersatz-Campuskarte kostet 15 Euro.
+✗ Wer sitzt in Raum F-201?                                   1 Aufrufe   12.8 s
+  → raum_frei(raum='F-201', datum='2026-11-03')  [wert]
+  ← Fehler: Raum F-201 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.
+    Antwort: Leider habe ich keine Informationen über die Besucher oder Nutzer von Raum F-201. Ich kann dir jedoch die Liste der verfügbaren Räume anbieten:   * Raum 101 * Raum 102 * Raum 103 * ...  Wenn du nach e
+✗ Ich bin am Tag meiner Klausur krank. Was muss ich tun?     0 Aufrufe   11.3 s
+    Antwort: Leider hast du keine Klausur heute, da es Dienstag, der 2026-11-03, ist. Wenn du jedoch krank bist, solltest du dich von deinem Arzt beraten lassen und eine Nachklausur vereinbaren, falls möglich.
+✗ Wo kann ich mein Auto abstellen und was kostet das?        0 Aufrufe   13.4 s
+    Antwort: Leider habe ich keine Informationen über Parkmöglichkeiten und -kosten auf der Hochschulcampus. Ich empfehle dir, die offizielle Website der Hochschule zu besuchen oder direkt das Campus-Service-Team 
+✗ Wie viele Tage habe ich noch, bis die Prüfungsanmeldung en 0 Aufrufe    8.2 s
+    Antwort: Leider habe ich keine Informationen über die Prüfungsanmeldung für diese Hochschule. Dazu habe ich keine Information.
+✗ Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe  1 Aufrufe   14.0 s
+  → raum_frei(raum='O-108', datum='2026-11-05T09:45:00')  [wert]
+  ← Fehler: '2026-11-05T09:45:00' ist kein Datum im Format JJJJ-MM-TT.
+    Antwort: Leider habe ich keine Möglichkeit, Termine direkt zu buchen. Ich kann dir jedoch empfehlen, dich an das Sekretariat der Lerngruppe Kim oder den Lernplan-Verwaltungsdienst zu wenden, um ein Terminfenst
+✓ Wie viel ist 17 mal 23?                                    0 Aufrufe    7.7 s
+    Antwort: Das ist eine einfache Rechenaufgabe. 17 mal 23 ergibt 391.
+✓ Wann ist die nächste Party der Fachschaft Informatik?      0 Aufrufe    7.5 s
+    Antwort: Es tut mir leid, aber ich habe keine Informationen über bevorstehende Veranstaltungen der Fachschaft Informatik.
+
+Modell: llama3.2:3b · 13 Aufgaben
+
+Variante                  Antwort  Werkz.  ungültig  Fehler  Abbruch  Aufrufe Ø  Tokens Ø  Dauer Ø
+agent.v1.yaml               3/13   10/13          0       5        0        0.9      1287    26.8s
+agent.v2.yaml               5/13    9/13          0       3        0        1.0      2546    40.8s
+workflow                    5/13    7/13          0       3        0        0.7       447    12.0s
+
+Richtige Antworten nach Typ:
+Variante                       datum      direkt      wissen mehrschritt  schreibend        ohne       fehlt
+agent.v1.yaml                    1/4         1/1         1/4         0/1         0/1         0/1         0/1
+agent.v2.yaml                    3/4         1/1         0/4         0/1         0/1         1/1         0/1
+workflow                         2/4         0/1         1/4         0/1         0/1         1/1         1/1
+
+Vollständige Messdaten: /messungen/teil3_llama3_2_vergleich_2026-11-17.json
