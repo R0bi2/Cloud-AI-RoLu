@@ -5,9 +5,15 @@ Aufruf:
     docker compose run --rm app messen.py prompts/agent.v1.yaml prompts/agent.v2.yaml
     docker compose run --rm app messen.py workflow prompts/agent.v1.yaml
     docker compose run --rm app messen.py --zeigen prompts/agent.v1.yaml
+    docker compose run --rm app messen.py prompts/agent.v1.yaml supervisor
+    docker compose run --rm app messen.py --sitzungen               # Teil 4: Memory
 
-Jede Variante ist entweder eine Prompt-Datei (dann läuft der Agent) oder
-das Wort "workflow" (dann läuft der feste Routing-Workflow aus workflow.py).
+Jede Variante ist entweder eine Prompt-Datei (dann läuft der Agent), das
+Wort "workflow" (dann läuft der feste Routing-Workflow aus workflow.py) oder
+das Wort "supervisor" (Supervisor mit Spezialisten aus supervisor.py).
+
+Mit --sitzungen laufen stattdessen die Folgefragen aus aufgaben_sitzung.json
+durch den Orchestrator, einmal mit und einmal ohne Langzeit-Memory.
 
 Gemessen wird, was Huyen (AI Engineering, Kap. 6) für Agenten vorschlägt:
   - Antwort richtig: enthält die Antwort einen der erwarteten Begriffe?
@@ -21,20 +27,19 @@ Schreibende Werkzeuge werden beim Messen automatisch bestätigt.
 """
 
 import argparse
-import hashlib
 import json
 import os
-from datetime import datetime, timezone
-from pathlib import Path
+import time
 
 import httpx
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 
-from agent import Ergebnis, agent, alle_werkzeuge, zeige_schritt
+from agent import Ergebnis, Schritt, agent, alle_werkzeuge, zeige_schritt
 from llm import MODEL
 from prompts import lade
 
 AUFGABEN = "aufgaben.json"
+AUFGABEN_SITZUNG = "aufgaben_sitzung.json"
 
 
 @dataclass
@@ -53,6 +58,9 @@ def ausfuehren(variante: str, aufgabe: str, werkzeuge) -> Ergebnis:
     if variante == "workflow":
         from workflow import workflow
         return workflow(aufgabe, werkzeuge)
+    if variante == "supervisor":
+        from supervisor import supervisor
+        return supervisor(aufgabe, werkzeuge, bestaetigen=lambda *_: True)
     return agent(aufgabe, werkzeuge, lade(variante), bestaetigen=lambda *_: True)
 
 
@@ -87,7 +95,7 @@ def tabelle(ergebnisse: dict[str, list[Messung]]) -> None:
     n = len(next(iter(ergebnisse.values())))
     print(f"\nModell: {MODEL} · {n} Aufgaben\n")
     print(f"{'Variante':<24} {'Antwort':>8} {'Werkz.':>7} {'ungültig':>9} {'Fehler':>7} "
-          f"{'Abbruch':>8} {'Aufrufe Ø':>10} {'Tokens Ø':>9} {'Dauer Ø':>8}")
+          f"{'Abbruch':>8} {'Aufrufe Ø':>10} {'Modell Ø':>9} {'Tokens Ø':>9} {'Dauer Ø':>8}")
     for name, ms in ergebnisse.items():
         schritte = [s for m in ms for s in m.ergebnis.schritte]
         print(
@@ -96,6 +104,7 @@ def tabelle(ergebnisse: dict[str, list[Messung]]) -> None:
             f" {sum(s.fehler == 'wert' for s in schritte):>7}"
             f" {sum(m.ergebnis.abgebrochen for m in ms):>8}"
             f" {len(schritte) / n:>10.1f}"
+            f" {sum(m.ergebnis.modellaufrufe for m in ms) / n:>9.1f}"
             f" {sum(m.ergebnis.eingabe_tokens for m in ms) / n:>9.0f}"
             f" {sum(m.ergebnis.sekunden for m in ms) / n:>7.1f}s"
         )
@@ -110,27 +119,76 @@ def tabelle(ergebnisse: dict[str, list[Messung]]) -> None:
         print(f"{name:<24} " + " ".join(f"{z:>11}" for z in zellen))
 
 
-def speichere_json(pfad: str, aufgaben: list[dict], ergebnisse: dict[str, list[Messung]]) -> None:
-    """Sichert vollständige Antworten und Trajektorien für die inhaltliche Prüfung."""
-    quellen = sorted([*Path(".").glob("*.py"), *Path("prompts").glob("*.yaml"), Path(AUFGABEN)])
-    daten = {
-        "zeitpunkt_utc": datetime.now(timezone.utc).isoformat(),
-        "modell": MODEL,
-        "heute": os.environ.get("HEUTE"),
-        "dateien_sha256": {
-            p.as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in quellen
-        },
-        "varianten": {
-            name: [dict(aufgabe=a["aufgabe"], erwartet=a["erwartet"],
-                        erwartete_werkzeuge=a["werkzeuge"], **asdict(m))
-                   for a, m in zip(aufgaben, ms, strict=True)]
-            for name, ms in ergebnisse.items()
-        },
-    }
-    ziel = Path(pfad)
-    ziel.parent.mkdir(parents=True, exist_ok=True)
-    ziel.write_text(json.dumps(daten, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"\nVollständige Messdaten: {ziel}")
+# ---------------------------------------------------------------------------
+# Teil 4: Folgefragen über mehrere Runden und Sitzungen (aufgaben_sitzung.json)
+# ---------------------------------------------------------------------------
+
+def sitzung_messen(aufgabe: dict, werkzeuge, mit_memory: bool, fenster: int, zeigen: bool) -> dict:
+    """Spielt eine Aufgabe mit allen Sitzungen und Runden durch, Bestätigungen automatisch."""
+    import memory
+    from orchestrator import ausfuehren, entscheiden, frage_stellen
+    from sitzung import Sitzung
+
+    memory.speichern([])  # jede Aufgabe startet mit leerem Memory
+    prompt = lade("prompts/agent.v1.yaml")
+    wz = werkzeuge + (memory.MEMORY_WERKZEUGE if mit_memory else [])
+    z = {"runden": 0, "richtig": 0, "aufrufe": 0, "tokens": 0, "sekunden": 0.0, "werkzeuge_ok": 0}
+    for k, runden in enumerate(aufgabe["sitzungen"]):
+        s = Sitzung(id=f"_messen_{aufgabe['name']}_{k}")  # neue Sitzung: Kurzzeit-Memory leer
+        for r in runden:
+            start = time.perf_counter()
+            n_schritte, n_aufrufe, n_tokens = len(s.schritte), s.modellaufrufe, s.eingabe_tokens
+            frage_stellen(s, r["frage"], prompt, mit_memory)
+            ausfuehren(s, wz, fenster=fenster, temperature=prompt.temperature)
+            while s.status == "wartet_auf_bestaetigung":  # beim Messen immer ja
+                entscheiden(s, True, wz)
+                ausfuehren(s, wz, fenster=fenster, temperature=prompt.temperature)
+            benutzt = {x["werkzeug"] for x in s.schritte[n_schritte:]}
+            # Gezählt wird die Antwort plus die Argumente der Werkzeugaufrufe dieser Runde.
+            # So zählt auch eine Buchung "für Lerngruppe Mathe", die die Antwort nicht wiederholt.
+            argumente = " ".join(str(x["argumente"]) for x in s.schritte[n_schritte:])
+            ok = (not r["erwartet"] or pruefen(s.antwort + " " + argumente, r["erwartet"])) and \
+                not pruefen(s.antwort, r.get("nicht_erwartet", []))
+            if r["erwartet"]:  # Runden ohne Erwartung (nur merken) zählen nicht als Treffer
+                z["runden"] += 1
+                z["richtig"] += ok
+            z["werkzeuge_ok"] += set(r["werkzeuge"]) <= benutzt
+            z["aufrufe"] += s.modellaufrufe - n_aufrufe
+            z["tokens"] += s.eingabe_tokens - n_tokens
+            z["sekunden"] += time.perf_counter() - start
+            marke = "·" if not r["erwartet"] else ("✓" if ok else "✗")
+            print(f"  {marke} [{k + 1}] {r['frage'][:55]:<55} {s.modellaufrufe - n_aufrufe} Modellaufrufe", flush=True)
+            if zeigen or (r["erwartet"] and not ok) or not set(r["werkzeuge"]) <= benutzt:
+                for x in s.schritte[n_schritte:]:
+                    zeige_schritt(Schritt(**x))
+                print(f"      Antwort: {s.antwort[:200].replace(chr(10), ' ')}")
+    return z
+
+
+def sitzungen_messen(werkzeuge, fenster: int, zeigen: bool) -> None:
+    import memory
+    memory.DATEI = memory.Path("sitzungen/_messen_memory.json")  # euer memory.json bleibt unberührt
+    memory.DATEI.parent.mkdir(exist_ok=True)
+    with open(AUFGABEN_SITZUNG, encoding="utf-8") as f:
+        aufgaben = json.load(f)
+    zeilen = []
+    for mit_memory in (True, False):
+        name = "mit Memory" if mit_memory else "ohne Memory"
+        print(f"\n=== Orchestrator {name} · Fenster {fenster} · {MODEL}", flush=True)
+        buchungen_zuruecksetzen()
+        for a in aufgaben:
+            print(f"{a['name']} ({a['typ']})", flush=True)
+            zeilen.append((name, a["typ"], sitzung_messen(a, werkzeuge, mit_memory, fenster, zeigen)))
+    print(f"\nModell: {MODEL} · {len(aufgaben)} Aufgaben · Fenster {fenster} Nachrichten\n")
+    print(f"{'Variante':<14} {'Typ':<10} {'Treffer':>8} {'Werkz.':>7} {'Aufrufe Σ':>10} {'Tokens Σ':>9} {'Dauer Σ':>8}")
+    for name in ("mit Memory", "ohne Memory"):
+        for typ in dict.fromkeys(t for _, t, _ in zeilen):
+            zs = [z for n, t, z in zeilen if n == name and t == typ]
+            summe = {k: sum(z[k] for z in zs) for k in zs[0]}
+            runden_gesamt = sum(len(r) for a in aufgaben if a["typ"] == typ for r in a["sitzungen"])
+            print(f"{name:<14} {typ:<10} {summe['richtig']:>4}/{summe['runden']:<3} "
+                  f"{summe['werkzeuge_ok']:>3}/{runden_gesamt:<3} {summe['aufrufe']:>10} {summe['tokens']:>9} "
+                  f"{summe['sekunden']:>7.0f}s")
 
 
 if __name__ == "__main__":
@@ -138,13 +196,16 @@ if __name__ == "__main__":
     parser.add_argument("varianten", nargs="*", default=["prompts/agent.v1.yaml"])
     parser.add_argument("--ohne-mcp", action="store_true")
     parser.add_argument("--zeigen", action="store_true", help="alle Schritte zeigen, nicht nur bei Fehlern")
-    parser.add_argument("--json", metavar="DATEI", help="vollständige Messdaten als JSON speichern")
+    parser.add_argument("--sitzungen", action="store_true", help="Folgefragen aus aufgaben_sitzung.json messen")
+    parser.add_argument("--fenster", type=int, default=20, help="Kurzzeit-Fenster für --sitzungen")
     args = parser.parse_args()
+
+    if args.sitzungen:
+        sitzungen_messen(alle_werkzeuge(not args.ohne_mcp), args.fenster, args.zeigen)
+        raise SystemExit
 
     with open(AUFGABEN, encoding="utf-8") as f:
         aufgaben = json.load(f)
     werkzeuge = alle_werkzeuge(not args.ohne_mcp)
     ergebnisse = {v.removeprefix("prompts/"): messen(v, aufgaben, werkzeuge, args.zeigen) for v in args.varianten}
     tabelle(ergebnisse)
-    if args.json:
-        speichere_json(args.json, aufgaben, ergebnisse)
