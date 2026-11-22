@@ -337,7 +337,176 @@ Die Auswahl mit Antwortqualität, Tokens und Dauer begründen.
 
 ## Teil 4 · Orchestrierung, Memory und Supervisor
 
-Noch offen. Das Teil-4-ZIP aus Moodle unter `uebung_3/starter/` integrieren.
+### 4.1 Speichern und Laden umsetzen.
+
+```powershell
+docker compose run --rm app orchestrator.py --sitzung kim "Ist O-108 am Freitag um 14 Uhr frei?"
+docker compose run --rm app orchestrator.py --sitzung kim "Und um 9:45?"
+docker compose run --rm app orchestrator.py --sitzung kim --verlauf
+```
+
+    Sitzung Kim: /app/sitzungen/kim.json
+
+    Aufruf 1:
+    → raum_frei(datum='2026-11-05', raum='O-108')
+    ← O-108 am 2026-11-05 (donnerstag): frei um 11:30, 15:45, 17:30. Belegt: 08:00 (Webapplikationen), 09:45 (Webapplikationen), 14:00 (Tutorium).
+
+    Leider ist O-108 am Freitag um 14 Uhr nicht frei.
+
+    Sitzung kim · fertig · 9 Nachrichten · 4 Modellaufrufe · 3680 Eingabe-Tokens gesamt · llama3.2:3b
+
+    
+    Aufruf 2:
+    → raum_frei(raum='O-108', datum='2026-11-05')
+    ← O-108 am 2026-11-05 (donnerstag): frei um 11:30, 15:45, 17:30. Belegt: 08:00 (Webapplikationen), 09:45 (Webapplikationen), 14:00 (Tutorium).
+
+    O-108 ist am Freitag um 9:45 Uhr belegt.
+
+    Sitzung kim · fertig · 13 Nachrichten · 6 Modellaufrufe · 5947 Eingabe-Tokens gesamt · llama3.2:3b
+
+    Aufruf 3:
+    user      Ist O-108 am Freitag um 14 Uhr frei?
+    assistant → raum_frei({"raum":"O-108","datum":"2026-11-05"})
+    tool      O-108 am 2026-11-05 (donnerstag): frei um 11:30, 15:45, 17:30. Belegt: 08:00 (Webapplikationen), 09:45 (Webapplikationen), 14:00 (Tutorium).
+    assistant Leider ist O-108 am Freitag um 14 Uhr nicht frei.
+    user      Ist O-108 am Freitag um 14 Uhr frei?
+    assistant → raum_frei({"datum":"2026-11-05","raum":"O-108"})
+    tool      O-108 am 2026-11-05 (donnerstag): frei um 11:30, 15:45, 17:30. Belegt: 08:00 (Webapplikationen), 09:45 (Webapplikationen), 14:00 (Tutorium).
+    assistant Leider ist O-108 am Freitag um 14 Uhr nicht frei.
+    user      Und um 9:45?
+    assistant → raum_frei({"raum":"O-108","datum":"2026-11-05"})
+    tool      O-108 am 2026-11-05 (donnerstag): frei um 11:30, 15:45, 17:30. Belegt: 08:00 (Webapplikationen), 09:45 (Webapplikationen), 14:00 (Tutorium).
+    assistant O-108 ist am Freitag um 9:45 Uhr belegt.
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+    in orchestrator.py main:
+    sitzung = laden(args.sitzung)
+    
+    das holt den verlauf aus der JSON
+
+</div>
+
+
+### 4.1.1 Öffnet app/sitzungen/kim.json . Welche Rollen kommen in welcher Reihenfolge vor? Woran erkennt die API, welches Werkzeugergebnis zu welchem Aufruf gehört?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+Rollen (in Reihenfolge ) sytem, user, assistant, tool, assistant
+
+Die API erkennt zu welchem Aufruf das Werkzeugergebnis gehört anhand der id und der tool-call-id
+
+</div>
+
+### 4.1.2 Stellt dieselbe Folgefrage „Und um 9:45?“ an agent.py . Was antwortet er, und warum?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+```powershell
+docker compose run --rm app agent.py  "Und um 9:45?"
+```
+
+Werkzeuge: suche_wissen, lies_datei, heute, tage_bis, raeume_auflisten, raum_frei, raum_buchen, mensa_speiseplan
+
+  Modellaufruf 1: 1052 Eingabe-Tokens · 2 Nachrichten im Verlauf
+  ? Soll ich raum_buchen(name='um 9:45', datum='2026-11-05', uhrzeit='09:45') ausführen? [j/N] N
+  → raum_buchen(name='um 9:45', datum='2026-11-05', uhrzeit='09:45')  [abgelehnt]
+  ← Abgelehnt: raum_buchen wurde nicht ausgeführt. Die Zustimmung fehlt.
+
+agent.py ruft das Raum-buchen tool auf. Es rät welchen Zweck die Nachricht hat.
+Es hat keinen Zugang zu den in JSON gespeicherten Verläufen. agent.py legt eine nachrichten-Liste an die nur innerhalb eines Programmaufrufs bzw. innerhalb eines Ergebnis-Objektes besteht.
+
+</div>
+
+### 4.1.3. Vergleicht die Eingabe-Tokens der ersten und der zweiten Frage. Startet danach eine neue Sitzung mit -- fenster 2 und stellt beide Fragen noch einmal. Was passiert, und warum beginnt kuerzen() das Fenster immer bei einer Nachricht der Person?
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+  1. Aufruf
+  Frage 1: 3680 Eingabe-Tokens gesamt
+  Frage 2: Frage: 5947 Eingabe-Tokens gesamt
+
+  2. Aufruf
+  Frage 1:
+    → raum_frei(datum='2026-11-05', uhrzeit='14:00', raum='O-108')
+    ← O-108 am 2026-11-05 (donnerstag): frei um 11:30, 15:45, 17:30. Belegt: 08:00 (Webapplikationen), 09:45 (Webapplikationen), 14:00 (Tutorium).
+
+    O-108 ist am Freitag um 14 Uhr frei.
+
+    Sitzung kim · fertig · 17 Nachrichten · 8 Modellaufrufe · 8516 Eingabe-Tokens gesamt · llama3.2:3b
+  Frage 2:   → raum_frei(datum='2026-11-05', raum='O-108', uhrzeit='09:45')
+    ← O-108 am 2026-11-05 (donnerstag): frei um 11:30, 15:45, 17:30. Belegt: 08:00 (Webapplikationen), 09:45 (Webapplikationen), 14:00 (Tutorium).
+
+    O-108 ist am Freitag um 9:45 Uhr belegt.
+
+    Sitzung kim · fertig · 25 Nachrichten · 12 Modellaufrufe · 14258 Eingabe-Tokens gesamt · llama3.2:3b
+
+
+Die Token-Anzahl nimmt trotz gleicher Fragestellung zu. Das liegt daran dass alte Fragen mit in das Prompt übergeben werden
+In orchestrator.py wird die alte Sitzung geladen und in Zeile 88 die neue Frage an ihren Verlauf angehängt. Zeile 97 sendet diesen (durch kuerzen() begrenzten) Verlauf ans Modell, wodurch frühere Nachrichten weitere Eingabe-Tokens verursachen können.
+
+</div>
+
+### 4.1.4. Begründet, wo genau ihr in ausfuehren() speichert. Was geht verloren, wenn der Container zwischen zwei Übergängen abstürzt? 
+
+<div style="border: 2px solid green; padding: 12px; border-radius: 6px;">
+
+  Wir speichern während die Sitzung läuft, noch bevor der nächste Schritt ausgewählt wird. Verloren geht der nicht gespeicherte nächste Zustand (durch Schritt ausgewählt)
+
+</div>
+
+
+## 4.2
+
+  in kim.json gibt es jetzt Einträge status. um unvollendete Sitzungen zu finden und fort zu führen.
+
+  ```powershell
+  docker compose run --rm app orchestrator.py --sitzung kim "Dann buch mir den Raum von vorhin für
+  14 Uhr, für die Lerngruppe Kim."
+  docker compose run --rm app orchestrator.py --sitzung kim --bestaetigen
+  ```
+
+## 4.2.1 
+  Was steht in status und offene_aktion ?
+  Stimmen Raum, Datum und Uhrzeit mit dem überein, was die Person gemeint hat? Was sagt euer
+  Ergebnis über den Wert einer Bestätigung, die die Argumente anzeigt?
+
+  .., "status": "wartet_auf_bestaetigung",..
+  in offene_aktion stehen in JSON die argumente zum ausführen von raum_buchen
+
+  Statt Lerngruppe Kim steht dort "Kim" ansonsten stimmen die Daten überein
+
+  Antwort auf bestaetigen:
+    → raum_buchen(uhrzeit='14:00', name='Kim', raum='O-108', datum='2026-11-05')  [wert]
+    ← Fehler: O-108 ist am 2026-11-05 um 14:00 belegt (Tutorium). Freie Zeitfenster: 11:30, 15:45, 17:30.
+
+  ```powershell
+  docker compose run --rm app orchestrator.py --sitzung kim2 "Dann buch mir den Raum O-108 auf 15:00 Uhr, für die Lerngruppe Kim."
+  docker compose run --rm app orchestrator.py --sitzung kim2 --ablehnen
+  ```
+
+  ### Was macht das Modell nach der Ablehnung?
+
+  status wird als "fertig" eingetragen
+  es gibt einen eintrag "fehler": "abgelehnt"
+  und ein ergebnis: was erwähnt dass die Person abgelehnt hat.
+
+```powershell
+docker compose run --rm app orchestrator.py --sitzung kim3 "Buch mir den Raum O-108 für 15:45 Uhr, für die Lerngruppe Kim."
+docker compose run --rm app orchestrator.py --sitzung kim3 --bestaetigen
+docker compose run --rm app orchestrator.py --sitzung kim3 --bestaetigen
+```
+### 4.2.2 Warum wird nicht doppelt gebucht? Stellt euch vor, der Container stirbt genau während raum_buchen läuft. Welche Eigenschaft muss das Werkzeug dann haben, damit ein erneuter Versuch keinen Schaden anrichtet?
+
+Sitzung kim3 wartet auf keine Bestätigung (Status: fertig).
+"offene_aktion": null
+Nach einer Bestätigung gilt ein Prozess als beendet.
+
+Es soll eine eindeutige Anfrage-ID haben, die sich von der vorherigen unterscheidet, um durchmischen zu verhindern
+
+### 4.2.4. Nennt zwei Situationen in einem echten Deployment, in denen die blockierende Variante aus Teil 2.3 scheitert und die Unterbrechung mit Checkpoint funktioniert.
+
+
 
 | Aufgabe | Umsetzung |
 |---|---|
@@ -347,3 +516,4 @@ Noch offen. Das Teil-4-ZIP aus Moodle unter `uebung_3/starter/` integrieren.
 | 4.4 | Supervisor mit drei Spezialisten umsetzen, messen und eine Stelle verbessern. |
 
 Für die Doku fehlen dann noch die Antworten zu Teil 4 und je zwei bis vier Sätze zu Frameworks, Memory Poisoning, Supervisoren, Bestätigungen, langen Verläufen und Kubernetes. Sitzungen und `memory.json` gehören nicht ins Repository.
+

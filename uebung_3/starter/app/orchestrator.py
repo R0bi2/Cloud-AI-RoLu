@@ -59,14 +59,16 @@ def offene_aufrufe(sitzung: Sitzung) -> list[dict]:
         if m["role"] == "user":
             return []
         if m["role"] == "assistant":
-            erledigt = {n.get("tool_call_id") for n in sitzung.nachrichten[i + 1:] if n["role"] == "tool"}
+            erledigt = {n.get("tool_call_id")
+                        for n in sitzung.nachrichten[i + 1:] if n["role"] == "tool"}
             return [a for a in m.get("tool_calls") or [] if a["id"] not in erledigt]
     return []
 
 
 def ergebnis_anhaengen(sitzung: Sitzung, aufruf_id: str, schritt: Schritt) -> None:
     sitzung.schritte.append(vars(schritt).copy())
-    sitzung.nachrichten.append({"role": "tool", "tool_call_id": aufruf_id, "content": schritt.ergebnis})
+    sitzung.nachrichten.append(
+        {"role": "tool", "tool_call_id": aufruf_id, "content": schritt.ergebnis})
 
 
 # ---------------------------------------------------------------------------
@@ -115,16 +117,13 @@ def aufruf_bearbeiten(sitzung: Sitzung, aufruf: dict, verzeichnis: dict[str, Wer
     """Führt einen Werkzeugaufruf aus, oder unterbricht vor einem schreibenden."""
     werkzeug = verzeichnis.get(aufruf["function"]["name"])
 
-    # TODO 4b: Unterbrechung vor schreibenden Werkzeugen
-    #
-    # Im Moment fragt werkzeug_ausfuehren() wie in Teil 2 im Terminal nach und
-    # blockiert, bis jemand tippt. Ändert das: Ist das Werkzeug schreibend,
-    # führt es NICHT aus, sondern setzt sitzung.status auf
-    # "wartet_auf_bestaetigung", merkt euch den Aufruf in sitzung.offene_aktion
-    # und gebt die Sitzung zurück. ausfuehren() hört dann auf, der Checkpoint
-    # ist geschrieben, das Programm endet. Weiter geht es mit entscheiden().
+    if werkzeug is not None and werkzeug.schreibend:
+        sitzung.status = "wartet_auf_bestaetigung"
+        sitzung.offene_aktion = aufruf
+        return sitzung
 
-    schritt = werkzeug_ausfuehren(als_aufruf(aufruf), verzeichnis, bestaetigen=fragen)
+    schritt = werkzeug_ausfuehren(als_aufruf(
+        aufruf), verzeichnis, bestaetigen=fragen)
     ergebnis_anhaengen(sitzung, aufruf["id"], schritt)
     return sitzung
 
@@ -133,10 +132,12 @@ def entscheiden(sitzung: Sitzung, ja: bool, werkzeuge: list[Werkzeug]) -> Sitzun
     """Die Person hat entschieden: offene Aktion ausführen oder ablehnen, dann weiter."""
     aufruf = sitzung.offene_aktion
     if sitzung.status != "wartet_auf_bestaetigung" or not aufruf:
-        raise SystemExit(f"Sitzung {sitzung.id} wartet auf keine Bestätigung (Status: {sitzung.status}).")
+        raise SystemExit(
+            f"Sitzung {sitzung.id} wartet auf keine Bestätigung (Status: {sitzung.status}).")
     if ja:
         verzeichnis = {w.name: w for w in werkzeuge}
-        schritt = werkzeug_ausfuehren(als_aufruf(aufruf), verzeichnis, bestaetigen=lambda *_: True)
+        schritt = werkzeug_ausfuehren(als_aufruf(
+            aufruf), verzeichnis, bestaetigen=lambda *_: True)
     else:
         schritt = Schritt(aufruf["function"]["name"], aufruf["function"].get("arguments") or "", ABGELEHNT,
                           "abgelehnt")
@@ -174,14 +175,11 @@ def ausfuehren(sitzung: Sitzung, werkzeuge: list[Werkzeug], max_schritte: int = 
             break
         n = len(sitzung.schritte)
         schritt(sitzung, werkzeuge, fenster, temperature)
+        # 4a this saves the sitzung in case the programm crashes
+        speichern(sitzung)
         if zeigen:
             for s in sitzung.schritte[n:]:
                 zeige_schritt(Schritt(**s))
-
-        # TODO 4a (Teil 2): nach jedem Übergang einen Checkpoint schreiben
-        #
-        # Eine Zeile. Wo genau sie steht, entscheidet, wie viel Arbeit bei
-        # einem Absturz verloren geht.
 
     speichern(sitzung)
     return sitzung
@@ -194,8 +192,10 @@ def ausfuehren(sitzung: Sitzung, werkzeuge: list[Werkzeug], max_schritte: int = 
 def zeige_status(s: Sitzung) -> None:
     if s.status == "wartet_auf_bestaetigung":
         f = s.offene_aktion["function"]
-        print(f"\n  ⏸ Wartet auf Bestätigung: {f['name']}({f.get('arguments')})")
-        print(f"    Weiter mit:  orchestrator.py --sitzung {s.id} --bestaetigen   (oder --ablehnen)")
+        print(
+            f"\n  ⏸ Wartet auf Bestätigung: {f['name']}({f.get('arguments')})")
+        print(
+            f"    Weiter mit:  orchestrator.py --sitzung {s.id} --bestaetigen   (oder --ablehnen)")
     else:
         print(f"\n{s.antwort}")
     print(f"\n  Sitzung {s.id} · {s.status} · {len(s.nachrichten)} Nachrichten · {s.modellaufrufe} Modellaufrufe · "
@@ -207,37 +207,50 @@ def zeige_verlauf(s: Sitzung) -> None:
         if m["role"] == "system":
             continue
         if m.get("tool_calls"):
-            text = ", ".join(f"{a['function']['name']}({a['function'].get('arguments')})" for a in m["tool_calls"])
+            text = ", ".join(
+                f"{a['function']['name']}({a['function'].get('arguments')})" for a in m["tool_calls"])
             print(f"  {m['role']:<9} → {text}")
         else:
-            print(f"  {m['role']:<9} {str(m.get('content', '')).replace(chr(10), ' ')[:150]}")
+            print(
+                f"  {m['role']:<9} {str(m.get('content', '')).replace(chr(10), ' ')[:150]}")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Campus-Agent mit Sitzung, Checkpoint und Memory")
+    parser = argparse.ArgumentParser(
+        description="Campus-Agent mit Sitzung, Checkpoint und Memory")
     parser.add_argument("frage", nargs="?")
-    parser.add_argument("--sitzung", default=datetime.now().strftime("s%m%d-%H%M%S"), help="ID der Sitzung")
+    parser.add_argument(
+        "--sitzung", default=datetime.now().strftime("s%m%d-%H%M%S"), help="ID der Sitzung")
     gruppe = parser.add_mutually_exclusive_group()
-    gruppe.add_argument("--bestaetigen", action="store_true", help="offene Aktion ausführen")
-    gruppe.add_argument("--ablehnen", action="store_true", help="offene Aktion ablehnen")
-    gruppe.add_argument("--verlauf", action="store_true", help="gespeicherten Verlauf zeigen")
+    gruppe.add_argument("--bestaetigen", action="store_true",
+                        help="offene Aktion ausführen")
+    gruppe.add_argument("--ablehnen", action="store_true",
+                        help="offene Aktion ablehnen")
+    gruppe.add_argument("--verlauf", action="store_true",
+                        help="gespeicherten Verlauf zeigen")
     parser.add_argument("--prompt", default=STANDARD_PROMPT)
-    parser.add_argument("--ohne-memory", action="store_true", help="kein Langzeit-Memory")
+    parser.add_argument("--ohne-memory", action="store_true",
+                        help="kein Langzeit-Memory")
     parser.add_argument("--ohne-mcp", action="store_true")
     parser.add_argument("--max-schritte", type=int, default=MAX_SCHRITTE)
-    parser.add_argument("--fenster", type=int, default=MAX_NACHRICHTEN, help="Kurzzeit-Fenster in Nachrichten")
+    parser.add_argument("--fenster", type=int, default=MAX_NACHRICHTEN,
+                        help="Kurzzeit-Fenster in Nachrichten")
     args = parser.parse_args()
 
-    # TODO 4a (Teil 3): eine vorhandene Sitzung laden, sonst eine neue anlegen
-    #
     # Im Moment beginnt jeder Aufruf bei null. Nutzt laden(args.sitzung) und
     # legt nur dann eine neue Sitzung an, wenn es noch keine gibt.
-    sitzung = Sitzung(id=args.sitzung)
+    sitzung = laden(args.sitzung)
+    if sitzung is None:
+        sitzung = Sitzung(id=args.sitzung)
+
+    # this one was the default, now sitzung is created if none is found
+    # sitzung = Sitzung(id=args.sitzung)
 
     if args.verlauf:
         zeige_verlauf(sitzung)
         raise SystemExit
-    werkzeuge = alle_werkzeuge(not args.ohne_mcp) + ([] if args.ohne_memory else MEMORY_WERKZEUGE)
+    werkzeuge = alle_werkzeuge(not args.ohne_mcp) + \
+        ([] if args.ohne_memory else MEMORY_WERKZEUGE)
     prompt = lade(args.prompt)
 
     if args.bestaetigen or args.ablehnen:
@@ -245,10 +258,12 @@ if __name__ == "__main__":
         zeige_schritt(Schritt(**sitzung.schritte[-1]))
     elif args.frage:
         if sitzung.status == "wartet_auf_bestaetigung":
-            raise SystemExit("Die Sitzung wartet noch auf --bestaetigen oder --ablehnen.")
+            raise SystemExit(
+                "Die Sitzung wartet noch auf --bestaetigen oder --ablehnen.")
         frage_stellen(sitzung, args.frage, prompt, not args.ohne_memory)
     else:
         parser.error("Frage, --bestaetigen, --ablehnen oder --verlauf angeben")
 
-    ausfuehren(sitzung, werkzeuge, args.max_schritte, args.fenster, prompt.temperature, zeigen=True)
+    ausfuehren(sitzung, werkzeuge, args.max_schritte,
+               args.fenster, prompt.temperature, zeigen=True)
     zeige_status(sitzung)

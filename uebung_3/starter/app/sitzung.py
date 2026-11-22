@@ -42,24 +42,31 @@ def pfad(sitzungs_id: str) -> Path:
 
 def speichern(sitzung: Sitzung) -> Path:
     """Schreibt die Sitzung als JSON nach sitzungen/<id>.json (Checkpoint)."""
-    # TODO 4a (Teil 1): Checkpoint schreiben
-    #
-    # Legt den ORDNER an, falls es ihn nicht gibt, und schreibt asdict(sitzung)
-    # als JSON nach pfad(sitzung.id). ensure_ascii=False hält Umlaute lesbar.
-    # Gebt den Pfad zurück.
+
+    ORDNER.mkdir(parents=True, exist_ok=True)
+    ziel = pfad(sitzung.id)
+    text = json.dumps(asdict(sitzung), ensure_ascii=False)
+    ziel.write_text(text, encoding="utf-8")
+
     # Für Fortgeschrittene: Was passiert mit dem alten Checkpoint, wenn das
     # Programm mitten im Schreiben abstürzt? Schreibt erst in eine .tmp-Datei
     # und benennt sie dann um (Path.replace).
-    raise NotImplementedError("TODO 4a: speichern()")
+    return ziel
 
 
 def laden(sitzungs_id: str) -> Sitzung | None:
     """Liest eine gespeicherte Sitzung. Gibt None zurück, wenn es sie nicht gibt."""
-    # TODO 4a (Teil 1): Checkpoint lesen
-    #
+
     # Gibt es pfad(sitzungs_id) nicht, gebt None zurück. Sonst JSON lesen und
     # daraus wieder eine Sitzung machen: Sitzung(**daten).
-    raise NotImplementedError("TODO 4a: laden()")
+
+    datei = pfad(sitzungs_id)
+
+    if not datei.exists():
+        return None
+
+    daten = json.loads(datei.read_text(encoding="utf-8"))
+    return Sitzung(**daten)
 
 
 def kuerzen(nachrichten: list[dict], max_nachrichten: int = MAX_NACHRICHTEN) -> list[dict]:
