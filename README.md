@@ -682,16 +682,22 @@ Modell: llama · 13 Aufgaben
 | supervisor | 0/4 | 1/1 | 0/4 | 0/1 | 0/1 | 0/1 | 0/1 |
 
 Modell: qwen2.5:3b · 13 Aufgaben
-Variante                  Antwort  Werkz.  ungültig  Fehler  Abbruch  Aufrufe Ø  Modell Ø  Tokens Ø  Dauer Ø
-agent.v1.yaml               3/13    8/13          0       0        0        0.6       1.6      1728    10.8s
-supervisor                  4/13    8/13          0       0        0        0.7       2.6      1321    32.3s
+
+| Variante | Antwort | Werkz. | Ungültig | Fehler | Abbruch | Aufrufe Ø | Modell Ø | Tokens Ø | Dauer Ø |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| agent.v1.yaml | 3/13 | 8/13 | 0 | 0 | 0 | 0.6 | 1.6 | 1728 | 10.8s |
+| supervisor | 4/13 | 8/13 | 0 | 0 | 0 | 0.7 | 2.6 | 1321 | 32.3s |
+
 
 Richtige Antworten nach Typ:
-Variante                       datum      direkt      wissen mehrschritt  schreibend        ohne       fehlt
-agent.v1.yaml                    0/4         1/1         0/4         0/1         1/1         0/1         1/1
-supervisor                       1/4         1/1         0/4         1/1         1/1         0/1         0/1
+
+| Variante | Datum | Direkt | Wissen | Mehrschritt | Schreibend | Ohne | Fehlt |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| agent.v1.yaml | 0/4 | 1/1 | 0/4 | 0/1 | 1/1 | 0/1 | 1/1 |
+| supervisor | 1/4 | 1/1 | 0/4 | 1/1 | 1/1 | 0/1 | 0/1 |
 
 
+Modell llama
 | Variante | Rechnung | Tokens pro richtiger Antwort |
 |---|---|---:|
 | Agent v1 | 1.288 × 13 ÷ 2 | **8.372** |
@@ -705,8 +711,42 @@ Der Supervisor benötigt etwa **2,38-mal so viele Eingabe-Tokens pro richtiger A
 | **Planung** | „Wo kann ich mein Auto abstellen?“ → `raeume_auflisten()` | Der Supervisor wählt einen ungeeigneten Spezialisten bzw. ein falsches Werkzeug, statt die Wissenssuche zu nutzen. |
 | **Übergabe** | „Gibt es am Freitag ein veganes Gericht?“ → `mensa_speiseplan(datum='2026-11-05-SF')` | Die Datumsangabe wird bei der Verarbeitung falsch übertragen. Freitag wird nicht korrekt in ein gültiges Datum umgewandelt. |
 | **Spezialist** | „Was gibt es heute in der Mensa?“ → `heute()` liefert `2026-11-03`, anschließend wird `mensa_speiseplan(datum='2026-11-05')` aufgerufen. | Eher ein Übergabefehler |
+| **Spezialist** (qwen2.5:3b) | „Wie viel ist 17 mal 23?“ → Antwort: Dazu habe ich keine Information. 0 Aufrufe    9.5 s | Es kann keinen richtigen Spezialisten wählen |
 
 
+
+### 4.4.3 Die Spezialisten haben eigene Prompts mit Regeln, die agent.v1 nicht hat. Ist euer Vergleich deshalb fair? Was müsstet ihr zusätzlich messen, um den Effekt der Aufteilung vom Effekt der besseren Prompts zu trennen?
+
+er ist eingeschränkt fair. Den richtigen Spezialisten zu finden geschieht nach gleichen Kriterien wie das antworten des agent.v1
+Die zusätzlichen Regeln des Spezialisten verbessern die Antwortqualität.
+wir müssten einen Agenten mit den selben Regeln wie einen Spezialisten messen.
+
+### 4.4.4 Verbessert eine Stelle, etwa supervisor.v2.yaml mit Beispielen oder einen Spezialisten-Prompt in neuer Version, und messt sie gegen den Stand vorher. Beschreibt im README in drei, vier Sätzen, was ihr geändert habt und was es gebracht hat.
+
+Wir verbessen die Spezialisten zuordnung. In den Messungen wurde „Wo kann ich mein Auto abstellen?“ fälschlich dem Raum-Agenten zugeordnet.
+Das kreisen wir im Prompt enger ein.
+
+ Regeln für die Zuordnung:
+  - raum ist ausschließlich für Seminarräume zuständig:
+    Verfügbarkeit, Belegung, Kapazität und Buchungen.
+  - Fragen zu Parkplätzen, Parkmöglichkeiten, Gebäuden, Büros,
+    Standorten und Ansprechpartnern gehören zu wissen.
+  - Entscheide nach dem Anliegen der Frage. Ein erwähnter Raum
+    allein ist kein Grund, den Spezialisten raum auszuwählen.
+
+```powershell
+docker compose run --rm app supervisor.py "Wo kann ich mein Auto abstellen?" 
+```
+
+⇒ wissen_agent: Wo kann ich mein Auto abstellen?
+  Modellaufruf 1: 637 Eingabe-Tokens · 2 Nachrichten im Verlauf
+  → suche_wissen(begriff='Parkausweis')
+  ← parken.md (1 Treffer): Parkausweis, der 45 Euro pro Semester kostet und im Studierendenportal
+  Modellaufruf 2: 297 Eingabe-Tokens · 4 Nachrichten im Verlauf
+
+Entschuldigung! Ich habe keine spezifischen Informationen über den Parkausweis gefunden. Dazu habe ich keine Information.
+
+  1 Werkzeugaufrufe · 3 Modellaufrufe · 1368 Eingabe-Tokens · 28.2 s · llama3.2:3b
 
 
 

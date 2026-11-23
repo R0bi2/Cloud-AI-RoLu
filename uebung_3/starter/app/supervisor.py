@@ -32,7 +32,7 @@ from prompts import lade
 from werkzeuge import Werkzeug
 from workflow import schema_von
 
-SUPERVISOR_PROMPT = "prompts/supervisor.v1.yaml"
+SUPERVISOR_PROMPT = "prompts/supervisor.v2.yaml"
 
 # Spezialist: Prompt und erlaubte Werkzeuge. Fehlt ein Werkzeug (etwa tage_bis
 # ohne TODO 2), wird es einfach weggelassen.
