@@ -503,7 +503,7 @@ docker compose run --rm app orchestrator.py --sitzung kim3 --bestaetigen
 Sitzung kim3 wartet auf keine Bestätigung (Status: fertig).
 "offene_aktion": null
 Nach der ersten Bestätigung wird die offene Aktion verarbeitet und offene_aktion geleert. Ein zweiter Bestätigungsaufruf wird abgewiesen, weil die Sitzung nicht mehr auf eine Bestätigung wartet. Es kann bei crahses trotzdem zu fehlern kommmen.
-Daher sollte das Werkzeug idempotent sein: dieselbe Anfrage-ID darf nicht erneut verwendet werden
+Daher sollte das Werkzeug idempotent sein: dieselbe Anfrage-ID darf nicht erneut verwendet werden. Das Werkzeug erkennt sie und führt die Aktion nicht erneut aus.
 
 Es soll eine eindeutige Anfrage-ID haben, die sich von der vorherigen unterscheidet, um durchmischen zu verhindern
 
@@ -773,6 +773,8 @@ docker compose run --rm app supervisor.py "Wo kann ich mein Auto abstellen?"
 Entschuldigung! Ich habe keine spezifischen Informationen über den Parkausweis gefunden. Dazu habe ich keine Information.
 
   1 Werkzeugaufrufe · 3 Modellaufrufe · 1368 Eingabe-Tokens · 28.2 s · llama3.2:3b
+
+  Wir bekommen ein verbessertes Ergebnis bei der Wissenssuche aber weiterhin eine falsche Schlussantwort.
 
 
 
