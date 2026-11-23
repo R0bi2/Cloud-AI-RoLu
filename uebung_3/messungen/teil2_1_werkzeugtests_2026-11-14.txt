@@ -1,0 +1,9 @@
+ Container starter-app-run-1a4cb3f0c2b4 Creating
+ Container starter-app-run-1a4cb3f0c2b4 Created
+2026-11-20: Bis zum 2026-11-20 sind es 17 Tage.
+2026-11-03: Bis zum 2026-11-03 sind es 0 Tage.
+2026-11-01: Das Datum 2026-11-01 liegt 2 Tage in der Vergangenheit.
+2026-02-30: Fehler: Bitte ein gültiges Datum im Format JJJJ-MM-TT angeben.
+heute: Fehler: Bitte ein gültiges Datum im Format JJJJ-MM-TT angeben.
+20.11.2026: Fehler: Bitte ein gültiges Datum im Format JJJJ-MM-TT angeben.
+Alle 6 Werkzeugtests bestanden; HEUTE=2026-11-03.

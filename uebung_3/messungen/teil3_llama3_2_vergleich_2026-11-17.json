@@ -1,0 +1,1194 @@
+{
+  "zeitpunkt_utc": "2026-11-17T09:46:27.609450+00:00",
+  "modell": "llama3.2:3b",
+  "heute": "2026-11-03",
+  "dateien_sha256": {
+    "agent.py": "59d0b2363f8a99c8e26e83c5e5c5cf0acd5864dcb904b3c58fc8e7388ec29c30",
+    "aufgaben.json": "195ab1a93ca38439d96db57e36e55c653632084b1f11e20a452cfc6424f20ed0",
+    "llm.py": "f8448ad9b22f6ac7975bc057b724bcf6607a501f078675eda8abc55695bbc096",
+    "mcp_werkzeuge.py": "b9c63b06d33cc570845b5231824f85a8176054f75d3c4144cf00dc9499b96c7e",
+    "messen.py": "e3718d0a4018d9b3c22c7639e8d2533b04dc6973a1d586941173a1cc7ec9c640",
+    "prompts/agent.v1.yaml": "cb1cd28d640de098bbd8bcdec2dd8242a8667d4485174d40164c57548486efed",
+    "prompts/agent.v2.yaml": "f7cecbbbedfc61c81762f5bcea9923a10f562c03df3f8b88b1f3204a600971c0",
+    "prompts/antwort.v1.yaml": "0120e558f7569da1e160232b5c1572d624b2aabe830d61f3ef01132011eaebe6",
+    "prompts/router.v1.yaml": "ac94f1186484f363baf3ac8247d816dfa98a4955743404eb9510210dfecbbb92",
+    "prompts.py": "9cacc6cb2590599c0399d888c54ca0c5c27ef90ee53030ff9acfc82b5049d5dc",
+    "pruefen_teil2.py": "08ee7f06d4d09e2af5b1dac0ed999b4d9e6c3b7e8b9bce3aacfa5eb43b13f737",
+    "werkzeuge.py": "e64ba75152bd9fedb6d61337837317a090ba13e33df9cbda56ab7a3d3d948ac7",
+    "workflow.py": "2f330a043dbbbb4d5d44431d122cbd142a6bb247903fc381f5596acd305d3e4a"
+  },
+  "varianten": {
+    "agent.v1.yaml": [
+      {
+        "aufgabe": "Was gibt es heute in der Mensa?",
+        "erwartet": [
+          "Kürbissuppe",
+          "Maultaschen",
+          "Chili"
+        ],
+        "erwartete_werkzeuge": [
+          "mensa_speiseplan"
+        ],
+        "typ": "datum",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Entschuldigung! Ich habe keine Informationen über das spezifische Datum \"heute\". Dazu habe ich keine Information.",
+          "schritte": [
+            {
+              "werkzeug": "mensa_speiseplan",
+              "argumente": {
+                "datum": "heute"
+              },
+              "ergebnis": "Fehler: 'heute' ist kein Datum im Format JJJJ-MM-TT.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1267,
+          "ausgabe_tokens": 46,
+          "sekunden": 26.74851069700003,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Gibt es am Freitag ein veganes Gericht in der Mensa?",
+        "erwartet": [
+          "Salat",
+          "Pasta"
+        ],
+        "erwartete_werkzeuge": [
+          "mensa_speiseplan"
+        ],
+        "typ": "datum",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Am Freitag gibt es in der Mensa ein veganes Gericht: Gemüsepfanne mit Tofu.",
+          "schritte": [
+            {
+              "werkzeug": "mensa_speiseplan",
+              "argumente": {
+                "datum": "2026-11-05"
+              },
+              "ergebnis": "Mensa am donnerstag, 2026-11-05:\n- Gemüsepfanne mit Tofu (vegan), 3,40 Euro\n- Fisch mit Salzkartoffeln, 3,40 Euro\n- Pizza Margherita, 3,40 Euro",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1327,
+          "ausgabe_tokens": 48,
+          "sekunden": 28.273050230999957,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Hat die Mensa am Samstag offen?",
+        "erwartet": [
+          "geschlossen",
+          "nicht geöffnet",
+          "kein Essen",
+          "Montag bis Freitag",
+          "nein",
+          "Nein"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "datum",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Dazu habe ich keine Information.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "raum": "Mensa",
+                "datum": "2026-11-06"
+              },
+              "ergebnis": "Fehler: Raum MENSA gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1283,
+          "ausgabe_tokens": 35,
+          "sekunden": 28.705124367999986,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Ist O-108 am Donnerstag um 14 Uhr frei?",
+        "erwartet": [
+          "belegt",
+          "Tutorium",
+          "nicht frei",
+          "nicht verfügbar"
+        ],
+        "erwartete_werkzeuge": [
+          "raum_frei"
+        ],
+        "typ": "datum",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "O-108 ist am Donnerstag um 14 Uhr nicht frei.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "raum": "O-108",
+                "datum": "2026-11-04"
+              },
+              "ergebnis": "O-108 am 2026-11-04 (mittwoch): frei um 08:00, 09:45, 11:30, 15:45, 17:30. Belegt: 14:00 (Datenbanken).",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1325,
+          "ausgabe_tokens": 43,
+          "sekunden": 33.398491922999995,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Welcher Seminarraum zum Lernen hat die meisten Plätze?",
+        "erwartet": [
+          "O-201"
+        ],
+        "erwartete_werkzeuge": [
+          "raeume_auflisten"
+        ],
+        "typ": "direkt",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Der Seminarraum mit den meisten Plätzen ist O-201 mit 40 Plätzen.",
+          "schritte": [
+            {
+              "werkzeug": "raeume_auflisten",
+              "argumente": {},
+              "ergebnis": "O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard\nO-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz\nF-012: 12 Plätze, Gebäude F, Erdgeschoss, großer Bildschirm, Gruppentisch",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1328,
+          "ausgabe_tokens": 38,
+          "sekunden": 30.935208761999945,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Was kostet eine Ersatz-Campuskarte?",
+        "erwartet": [
+          "15"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Entschuldigung, ich habe keine Informationen über eine Ersatz-Campuskarte gefunden.",
+          "schritte": [
+            {
+              "werkzeug": "suche_wissen",
+              "argumente": {
+                "begriff": "Ersatz-Campuskarte"
+              },
+              "ergebnis": "Keine Datei enthält 'Ersatz-Campuskarte'. Versuche einen anderen, einfacheren Begriff.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1286,
+          "ausgabe_tokens": 44,
+          "sekunden": 32.01936448700002,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wer sitzt in Raum F-201?",
+        "erwartet": [
+          "Praktikantenamt"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Dazu habe ich keine Information.",
+          "schritte": [
+            {
+              "werkzeug": "raum_buchen",
+              "argumente": {
+                "raum": "F-201",
+                "datum": "heute",
+                "uhrzeit": "08:00",
+                "name": "Anonym"
+              },
+              "ergebnis": "Fehler: Raum F-201 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1294,
+          "ausgabe_tokens": 44,
+          "sekunden": 30.99572876299999,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+        "erwartet": [
+          "Attest"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Wenn du am Tag deiner Klausur krank bist, solltest du dich von deinem Arzt beraten lassen und eine ärztliche Attestation erhalten. Dann kannst du die Attestation bei der Prüfungsbehörde vorlegen, um deine Teilnahme an der Klausur zu rechtfertigen.",
+          "schritte": [
+            {
+              "werkzeug": "suche_wissen",
+              "argumente": {
+                "begriff": "Klausur"
+              },
+              "ergebnis": "pruefungsordnung.md (1 Treffer): § 9 Prüfungsformen. Prüfungen sind Klausuren, mündliche Prüfungen,",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1296,
+          "ausgabe_tokens": 87,
+          "sekunden": 37.36749604800002,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wo kann ich mein Auto abstellen und was kostet das?",
+        "erwartet": [
+          "45",
+          "Parkausweis"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Entschuldigung, ich habe keine Informationen über den Raum P-101 gefunden. Dazu habe ich keine Information.",
+          "schritte": [
+            {
+              "werkzeug": "raum_buchen",
+              "argumente": {
+                "raum": "P-101",
+                "datum": "2026-11-05",
+                "uhrzeit": "08:00",
+                "name": "Studierendenausweis"
+              },
+              "ergebnis": "Fehler: Raum P-101 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1311,
+          "ausgabe_tokens": 70,
+          "sekunden": 11.45684533399998,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wie viele Tage habe ich noch, bis die Prüfungsanmeldung endet?",
+        "erwartet": [
+          "17 Tage",
+          "17 Tag",
+          "noch 17"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "mehrschritt",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Entschuldigung, ich habe keine genauen Informationen über die genauen Prüfungsanmeldefristen.",
+          "schritte": [
+            {
+              "werkzeug": "tage_bis",
+              "argumente": {
+                "datum": "2026-11-05"
+              },
+              "ergebnis": "Bis zum 2026-11-05 sind es 2 Tage.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1282,
+          "ausgabe_tokens": 45,
+          "sekunden": 33.49914212700003,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe Kim.",
+        "erwartet": [
+          "gebucht",
+          "Buchung",
+          "reserviert"
+        ],
+        "erwartete_werkzeuge": [
+          "raum_buchen"
+        ],
+        "typ": "schreibend",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Entschuldigung, es scheint, dass O-108 am Freitag um 9:45 Uhr nicht verfügbar ist. Freie Zeitfenster sind am Freitag um 11:30, 15:45 und 17:30.",
+          "schritte": [
+            {
+              "werkzeug": "raum_buchen",
+              "argumente": {
+                "uhrzeit": "09:45",
+                "name": "Kim",
+                "raum": "O-108",
+                "datum": "2026-11-05"
+              },
+              "ergebnis": "Fehler: O-108 ist am 2026-11-05 um 09:45 belegt (Webapplikationen). Freie Zeitfenster: 11:30, 15:45, 17:30.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1347,
+          "ausgabe_tokens": 93,
+          "sekunden": 42.44103560799999,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wie viel ist 17 mal 23?",
+        "erwartet": [
+          "391"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "ohne",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "{\"name\":\"multipliziere\",\"parameters\":{\"x\":17,\"y\":23}}",
+          "schritte": [],
+          "modellaufrufe": 1,
+          "eingabe_tokens": 1054,
+          "ausgabe_tokens": 19,
+          "sekunden": 3.2930437570000777,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wann ist die nächste Party der Fachschaft Informatik?",
+        "erwartet": [
+          "keine Information",
+          "keine Informationen",
+          "nicht bekannt",
+          "keine Angabe"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "fehlt",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Die nächste Party der Fachschaft Informatik findet in Gebäude O, Raum O-108 statt.",
+          "schritte": [
+            {
+              "werkzeug": "raeume_auflisten",
+              "argumente": {},
+              "ergebnis": "O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard\nO-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz\nF-012: 12 Plätze, Gebäude F, Erdgeschoss, großer Bildschirm, Gruppentisch",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 1330,
+          "ausgabe_tokens": 41,
+          "sekunden": 9.743849023000053,
+          "abgebrochen": false
+        }
+      }
+    ],
+    "agent.v2.yaml": [
+      {
+        "aufgabe": "Was gibt es heute in der Mensa?",
+        "erwartet": [
+          "Kürbissuppe",
+          "Maultaschen",
+          "Chili"
+        ],
+        "erwartete_werkzeuge": [
+          "mensa_speiseplan"
+        ],
+        "typ": "datum",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Entschuldigung! Ich habe mich geirrt. Heute ist Dienstag, der 03.11.2026. \n\nMensa-Speiseplan für heute:\n\n- Frühstück: Müsli mit Früchten und Joghurt\n- Mittagessen: Hühnchenbrust mit Kartoffeln und Gemüse\n- Nachmittagsessen: Salat mit Hühnchen und Brot",
+          "schritte": [
+            {
+              "werkzeug": "heute",
+              "argumente": {},
+              "ergebnis": "Heute ist Dienstag, der 2026-11-03.",
+              "fehler": null
+            },
+            {
+              "werkzeug": "mensa_speiseplan",
+              "argumente": {
+                "datum": "heute"
+              },
+              "ergebnis": "Fehler: 'heute' ist kein Datum im Format JJJJ-MM-TT.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2620,
+          "ausgabe_tokens": 127,
+          "sekunden": 18.735045525000032,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Gibt es am Freitag ein veganes Gericht in der Mensa?",
+        "erwartet": [
+          "Salat",
+          "Pasta"
+        ],
+        "erwartete_werkzeuge": [
+          "mensa_speiseplan"
+        ],
+        "typ": "datum",
+        "richtig": true,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Morgiges Datum: 2026-11-04\n\nMensa-Speiseplan für 2026-11-04:\n- Veganes Gericht: Linsensalat",
+          "schritte": [
+            {
+              "werkzeug": "heute",
+              "argumente": {},
+              "ergebnis": "Heute ist Dienstag, der 2026-11-03.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2589,
+          "ausgabe_tokens": 92,
+          "sekunden": 50.33737108699995,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Hat die Mensa am Samstag offen?",
+        "erwartet": [
+          "geschlossen",
+          "nicht geöffnet",
+          "kein Essen",
+          "Montag bis Freitag",
+          "nein",
+          "Nein"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "datum",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Die Mensa ist am Dienstag, dem 2026-11-03, geschlossen.",
+          "schritte": [
+            {
+              "werkzeug": "heute",
+              "argumente": {},
+              "ergebnis": "Heute ist Dienstag, der 2026-11-03.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2575,
+          "ausgabe_tokens": 74,
+          "sekunden": 45.02548347300001,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Ist O-108 am Donnerstag um 14 Uhr frei?",
+        "erwartet": [
+          "belegt",
+          "Tutorium",
+          "nicht frei",
+          "nicht verfügbar"
+        ],
+        "erwartete_werkzeuge": [
+          "raum_frei"
+        ],
+        "typ": "datum",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "O-108 ist am Donnerstag um 14 Uhr belegt.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "raum": "O-108",
+                "datum": "2026-11-04"
+              },
+              "ergebnis": "O-108 am 2026-11-04 (mittwoch): frei um 08:00, 09:45, 11:30, 15:45, 17:30. Belegt: 14:00 (Datenbanken).",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2645,
+          "ausgabe_tokens": 43,
+          "sekunden": 41.203276413000026,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Welcher Seminarraum zum Lernen hat die meisten Plätze?",
+        "erwartet": [
+          "O-201"
+        ],
+        "erwartete_werkzeuge": [
+          "raeume_auflisten"
+        ],
+        "typ": "direkt",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Der Seminarraum mit den meisten Plätzen ist O-201 mit 40 Plätzen.",
+          "schritte": [
+            {
+              "werkzeug": "raeume_auflisten",
+              "argumente": {},
+              "ergebnis": "O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard\nO-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz\nF-012: 12 Plätze, Gebäude F, Erdgeschoss, großer Bildschirm, Gruppentisch",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2648,
+          "ausgabe_tokens": 38,
+          "sekunden": 42.95481408499995,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Was kostet eine Ersatz-Campuskarte?",
+        "erwartet": [
+          "15"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Es scheint, dass es keine Informationen über eine Ersatz-Campuskarte gibt. Ich habe nach Informationen gesucht, aber leider konnte ich keine relevanten Ergebnisse finden.",
+          "schritte": [
+            {
+              "werkzeug": "suche_wissen",
+              "argumente": {
+                "begriff": "Ersatz-Campuskarte"
+              },
+              "ergebnis": "Keine Datei enthält 'Ersatz-Campuskarte'. Versuche einen anderen, einfacheren Begriff.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2606,
+          "ausgabe_tokens": 61,
+          "sekunden": 43.03139569199993,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wer sitzt in Raum F-201?",
+        "erwartet": [
+          "Praktikantenamt"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider gibt es keinen freien Raum F-201. Die aktuelle Raumübersicht zeigt, dass der Raum nicht verfügbar ist.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "datum": "heute",
+                "raum": "F-201"
+              },
+              "ergebnis": "Fehler: Raum F-201 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2601,
+          "ausgabe_tokens": 54,
+          "sekunden": 48.3443221550001,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+        "erwartet": [
+          "Attest"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider hast du keine Klausur heute, aber du kannst dich auf den nächsten Tag vorbereiten. Wenn du noch nicht deine Speisekarte für morgen ausgewählt hast, kannst du dies tun:\n\nMensa-Speiseplan für morgen: https://www.mensa.de/speiseplan/2026-11-04",
+          "schritte": [
+            {
+              "werkzeug": "heute",
+              "argumente": {},
+              "ergebnis": "Heute ist Dienstag, der 2026-11-03.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2587,
+          "ausgabe_tokens": 82,
+          "sekunden": 47.161659267999994,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wo kann ich mein Auto abstellen und was kostet das?",
+        "erwartet": [
+          "45",
+          "Parkausweis"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Entschuldigung! Es scheint, dass es keine spezifische Anleitung für das Abstellen eines Autos gibt. \n\nUm dir besser zu helfen, benötige ich jedoch mehr Informationen. Kannst du mir bitte sagen, um welches Auto es sich handelt und wo du es abstellen möchtest?",
+          "schritte": [
+            {
+              "werkzeug": "suche_wissen",
+              "argumente": {
+                "begriff": "Auto abstellen"
+              },
+              "ergebnis": "Keine Datei enthält 'Auto abstellen'. Versuche einen anderen, einfacheren Begriff.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2600,
+          "ausgabe_tokens": 85,
+          "sekunden": 48.82158962799997,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wie viele Tage habe ich noch, bis die Prüfungsanmeldung endet?",
+        "erwartet": [
+          "17 Tage",
+          "17 Tag",
+          "noch 17"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "mehrschritt",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "{\"name\":\"tages_bis\",\"parameters\":{\"datum\":\"2026-11-05\"}}",
+          "schritte": [],
+          "modellaufrufe": 1,
+          "eingabe_tokens": 1722,
+          "ausgabe_tokens": 20,
+          "sekunden": 36.34979353599999,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe Kim.",
+        "erwartet": [
+          "gebucht",
+          "Buchung",
+          "reserviert"
+        ],
+        "erwartete_werkzeuge": [
+          "raum_buchen"
+        ],
+        "typ": "schreibend",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Es tut mir leid, aber O-108 ist am Freitag um 09:45 Uhr belegt. Hier sind einige alternative Zeitfenster, in denen du die Lerngruppe Kim buchen kannst:\n\n* 11:30 Uhr\n* 15:45 Uhr\n* 17:30 Uhr\n\nBitte beachte, dass du vorher nach den verfügbaren Zeitfenstern fragen musst, um sicherzustellen, dass du die richtige Zeit buchst.",
+          "schritte": [
+            {
+              "werkzeug": "raum_buchen",
+              "argumente": {
+                "uhrzeit": "09:45",
+                "name": "Kim",
+                "raum": "O-108",
+                "datum": "2026-11-05"
+              },
+              "ergebnis": "Fehler: O-108 ist am 2026-11-05 um 09:45 belegt (Webapplikationen). Freie Zeitfenster: 11:30, 15:45, 17:30.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2667,
+          "ausgabe_tokens": 144,
+          "sekunden": 25.114888269000062,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wie viel ist 17 mal 23?",
+        "erwartet": [
+          "391"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "ohne",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Die Antwort ist 391.",
+          "schritte": [
+            {
+              "werkzeug": "tage_bis",
+              "argumente": {
+                "datum": "2026-11-05"
+              },
+              "ergebnis": "Bis zum 2026-11-05 sind es 2 Tage.",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2586,
+          "ausgabe_tokens": 31,
+          "sekunden": 41.534450675000016,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wann ist die nächste Party der Fachschaft Informatik?",
+        "erwartet": [
+          "keine Information",
+          "keine Informationen",
+          "nicht bekannt",
+          "keine Angabe"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "fehlt",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Die nächste Party der Fachschaft Informatik findet in Gebäude O, Raum O-108 statt.",
+          "schritte": [
+            {
+              "werkzeug": "raeume_auflisten",
+              "argumente": {},
+              "ergebnis": "O-108: 24 Plätze, Gebäude O, Beamer, Whiteboard\nO-201: 40 Plätze, Gebäude O, Beamer, Steckdosen an jedem Platz\nF-012: 12 Plätze, Gebäude F, Erdgeschoss, großer Bildschirm, Gruppentisch",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 2650,
+          "ausgabe_tokens": 41,
+          "sekunden": 41.2249785030001,
+          "abgebrochen": false
+        }
+      }
+    ],
+    "workflow": [
+      {
+        "aufgabe": "Was gibt es heute in der Mensa?",
+        "erwartet": [
+          "Kürbissuppe",
+          "Maultaschen",
+          "Chili"
+        ],
+        "erwartete_werkzeuge": [
+          "mensa_speiseplan"
+        ],
+        "typ": "datum",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Heute gibt es in der Mensa folgende Gerichte: Kürbissuppe mit Brot (vegan), Maultaschen mit Kartoffelsalat und Chili sin Carne (vegan). Alle drei Gerichte kosten jeweils 3,40 Euro.",
+          "schritte": [
+            {
+              "werkzeug": "mensa_speiseplan",
+              "argumente": {
+                "datum": "2026-11-03"
+              },
+              "ergebnis": "Mensa am dienstag, 2026-11-03:\n- Kürbissuppe mit Brot (vegan), 3,40 Euro\n- Maultaschen mit Kartoffelsalat, 3,40 Euro\n- Chili sin Carne (vegan), 3,40 Euro",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 463,
+          "ausgabe_tokens": 97,
+          "sekunden": 24.082828915999926,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Gibt es am Freitag ein veganes Gericht in der Mensa?",
+        "erwartet": [
+          "Salat",
+          "Pasta"
+        ],
+        "erwartete_werkzeuge": [
+          "mensa_speiseplan"
+        ],
+        "typ": "datum",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Nein, es gibt am Freitag kein veganes Gericht in der Mensa. Die geplanten Gerichte am Freitag sind nicht angegeben.",
+          "schritte": [
+            {
+              "werkzeug": "mensa_speiseplan",
+              "argumente": {
+                "datum": "2026-11-05"
+              },
+              "ergebnis": "Mensa am donnerstag, 2026-11-05:\n- Gemüsepfanne mit Tofu (vegan), 3,40 Euro\n- Fisch mit Salzkartoffeln, 3,40 Euro\n- Pizza Margherita, 3,40 Euro",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 474,
+          "ausgabe_tokens": 73,
+          "sekunden": 10.936409422999986,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Hat die Mensa am Samstag offen?",
+        "erwartet": [
+          "geschlossen",
+          "nicht geöffnet",
+          "kein Essen",
+          "Montag bis Freitag",
+          "nein",
+          "Nein"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "datum",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Nein, die Mensa ist am Samstag (heute) nicht offen. Sie ist erst am Freitag, dem 2026-11-06, geöffnet.",
+          "schritte": [
+            {
+              "werkzeug": "mensa_speiseplan",
+              "argumente": {
+                "datum": "2026-11-06"
+              },
+              "ergebnis": "Mensa am freitag, 2026-11-06:\n- Bunter Salatteller (vegan), 3,40 Euro\n- Currywurst mit Pommes, 3,40 Euro\n- Pasta mit Tomatensoße (vegan), 3,40 Euro",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 459,
+          "ausgabe_tokens": 78,
+          "sekunden": 10.653768590000027,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Ist O-108 am Donnerstag um 14 Uhr frei?",
+        "erwartet": [
+          "belegt",
+          "Tutorium",
+          "nicht frei",
+          "nicht verfügbar"
+        ],
+        "erwartete_werkzeuge": [
+          "raum_frei"
+        ],
+        "typ": "datum",
+        "richtig": false,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Leider habe ich keine Informationen über die Verfügbarkeit von Räumen auf dem Campus. Die Verfügbarkeitsanfragen werden von der Verwaltung bearbeitet. Bitte wenden Sie sich an die Verwaltung oder die zuständige Person für die Raumverwaltung.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "raum": "O-108",
+                "datum": "2026-11-04T14:00:00"
+              },
+              "ergebnis": "Fehler: '2026-11-04T14:00:00' ist kein Datum im Format JJJJ-MM-TT.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 437,
+          "ausgabe_tokens": 111,
+          "sekunden": 13.029404074000013,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Welcher Seminarraum zum Lernen hat die meisten Plätze?",
+        "erwartet": [
+          "O-201"
+        ],
+        "erwartete_werkzeuge": [
+          "raeume_auflisten"
+        ],
+        "typ": "direkt",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider habe ich keine Informationen über die Plätze in den Seminarräumen.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "raum": "O-108",
+                "datum": "2026-11-03"
+              },
+              "ergebnis": "O-108 am 2026-11-03 (dienstag): frei um 08:00, 14:00, 15:45, 17:30. Belegt: 09:45 (Cloud-native AI), 11:30 (Cloud-native AI).",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 467,
+          "ausgabe_tokens": 62,
+          "sekunden": 9.980545733999861,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Was kostet eine Ersatz-Campuskarte?",
+        "erwartet": [
+          "15"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Eine Ersatz-Campuskarte kostet 15 Euro.",
+          "schritte": [
+            {
+              "werkzeug": "suche_wissen",
+              "argumente": {
+                "begriff": "Campuskarte"
+              },
+              "ergebnis": "campuskarte.md (2 Treffer): # Campuskarte | Die Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nsemesterticket.md (1 Treffer): Das Ticket ist digital und an die Campuskarte gebunden.\nmensa.md (1 Treffer): Gäste 7,50 Euro. Bezahlt wird nur mit der Campuskarte oder per Girocard,\nlernraeume.md (1 Treffer): am Wochenende. Nach 20 Uhr öffnet die Tür nur mit der Campuskarte.\ndrucken.md (1 Treffer): Gebäude F. Gedruckt wird mit der Campuskarte. Eine Seite schwarzweiß kostet",
+              "fehler": null
+            },
+            {
+              "werkzeug": "lies_datei",
+              "argumente": {
+                "datei": "campuskarte.md"
+              },
+              "ergebnis": "# Campuskarte\n\nDie Campuskarte ist euer Studierendenausweis, eure Bibliothekskarte und eure\nGeldbörse für Mensa und Drucker. Sie gilt nur mit aktuellem\nSemesteraufdruck, den ihr an den Validierungsautomaten in Gebäude A erneuert.\n\n## Verlust\nIst die Karte weg, lasst sie sofort im Studierendenportal sperren, damit\nniemand euer Guthaben ausgibt. Eine Ersatzkarte kostet 15 Euro und liegt nach\nzwei Werktagen im Studierendensekretariat, Raum A-010, zur Abholung bereit.\nRestguthaben wird auf die neue Karte übertragen.\n",
+              "fehler": null
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 570,
+          "ausgabe_tokens": 58,
+          "sekunden": 12.307319306999943,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wer sitzt in Raum F-201?",
+        "erwartet": [
+          "Praktikantenamt"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider habe ich keine Informationen über die Besucher oder Nutzer von Raum F-201. Ich kann dir jedoch die Liste der verfügbaren Räume anbieten: \n\n* Raum 101\n* Raum 102\n* Raum 103\n* ...\n\nWenn du nach einem bestimmten Raum suchst, kann ich dir gerne helfen, diesen zu finden.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "raum": "F-201",
+                "datum": "2026-11-03"
+              },
+              "ergebnis": "Fehler: Raum F-201 gibt es nicht oder er ist nicht buchbar. Nutze raeume_auflisten.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 426,
+          "ausgabe_tokens": 119,
+          "sekunden": 12.80828789799989,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Ich bin am Tag meiner Klausur krank. Was muss ich tun?",
+        "erwartet": [
+          "Attest"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider hast du keine Klausur heute, da es Dienstag, der 2026-11-03, ist. Wenn du jedoch krank bist, solltest du dich von deinem Arzt beraten lassen und eine Nachklausur vereinbaren, falls möglich.",
+          "schritte": [],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 414,
+          "ausgabe_tokens": 100,
+          "sekunden": 11.289162125999837,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wo kann ich mein Auto abstellen und was kostet das?",
+        "erwartet": [
+          "45",
+          "Parkausweis"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "wissen",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider habe ich keine Informationen über Parkmöglichkeiten und -kosten auf der Hochschulcampus. Ich empfehle dir, die offizielle Website der Hochschule zu besuchen oder direkt das Campus-Service-Team zu kontaktieren. Dort solltest du die benötigten Informationen finden.",
+          "schritte": [],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 410,
+          "ausgabe_tokens": 107,
+          "sekunden": 13.372946297999988,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wie viele Tage habe ich noch, bis die Prüfungsanmeldung endet?",
+        "erwartet": [
+          "17 Tage",
+          "17 Tag",
+          "noch 17"
+        ],
+        "erwartete_werkzeuge": [
+          "suche_wissen"
+        ],
+        "typ": "mehrschritt",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider habe ich keine Informationen über die Prüfungsanmeldung für diese Hochschule. Dazu habe ich keine Information.",
+          "schritte": [],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 418,
+          "ausgabe_tokens": 67,
+          "sekunden": 8.18273281100005,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Buche mir O-108 am Freitag um 9:45 Uhr für die Lerngruppe Kim.",
+        "erwartet": [
+          "gebucht",
+          "Buchung",
+          "reserviert"
+        ],
+        "erwartete_werkzeuge": [
+          "raum_buchen"
+        ],
+        "typ": "schreibend",
+        "richtig": false,
+        "werkzeuge_ok": false,
+        "ergebnis": {
+          "antwort": "Leider habe ich keine Möglichkeit, Termine direkt zu buchen. Ich kann dir jedoch empfehlen, dich an das Sekretariat der Lerngruppe Kim oder den Lernplan-Verwaltungsdienst zu wenden, um ein Terminfenster zu buchen.",
+          "schritte": [
+            {
+              "werkzeug": "raum_frei",
+              "argumente": {
+                "raum": "O-108",
+                "datum": "2026-11-05T09:45:00"
+              },
+              "ergebnis": "Fehler: '2026-11-05T09:45:00' ist kein Datum im Format JJJJ-MM-TT.",
+              "fehler": "wert"
+            }
+          ],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 455,
+          "ausgabe_tokens": 109,
+          "sekunden": 13.986877779999986,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wie viel ist 17 mal 23?",
+        "erwartet": [
+          "391"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "ohne",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Das ist eine einfache Rechenaufgabe. 17 mal 23 ergibt 391.",
+          "schritte": [],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 402,
+          "ausgabe_tokens": 62,
+          "sekunden": 7.722993635999956,
+          "abgebrochen": false
+        }
+      },
+      {
+        "aufgabe": "Wann ist die nächste Party der Fachschaft Informatik?",
+        "erwartet": [
+          "keine Information",
+          "keine Informationen",
+          "nicht bekannt",
+          "keine Angabe"
+        ],
+        "erwartete_werkzeuge": [],
+        "typ": "fehlt",
+        "richtig": true,
+        "werkzeuge_ok": true,
+        "ergebnis": {
+          "antwort": "Es tut mir leid, aber ich habe keine Informationen über bevorstehende Veranstaltungen der Fachschaft Informatik.",
+          "schritte": [],
+          "modellaufrufe": 2,
+          "eingabe_tokens": 414,
+          "ausgabe_tokens": 64,
+          "sekunden": 7.475209675000087,
+          "abgebrochen": false
+        }
+      }
+    ]
+  }
+}

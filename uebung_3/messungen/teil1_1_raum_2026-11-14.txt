@@ -1,0 +1,12 @@
+ Container starter-app-run-f6f64ad9e612 Creating
+ Container starter-app-run-f6f64ad9e612 Created
+Werkzeuge: suche_wissen, lies_datei, heute, tage_bis, raeume_auflisten, raum_frei, mensa_speiseplan
+
+  Modellaufruf 1: 837 Eingabe-Tokens
+  → raum_frei(raum='O-108', datum='2026-11-04')
+  ← O-108 am 2026-11-04 (mittwoch): frei um 08:00, 09:45, 11:30, 15:45, 17:30. Belegt: 14:00 (Datenbanken).
+  Modellaufruf 2: 265 Eingabe-Tokens
+
+O-108 ist am Donnerstag um 14 Uhr nicht frei.
+
+  1 Werkzeugaufrufe · 2 Modellaufrufe · 1102 Eingabe-Tokens · 5.9 s · llama3.2:3b

@@ -1,0 +1,12 @@
+ Container starter-app-run-74f35694bc58 Creating
+ Container starter-app-run-74f35694bc58 Created
+Werkzeuge: suche_wissen, lies_datei, heute, tage_bis, raeume_auflisten, raum_frei, mensa_speiseplan
+
+  Modellaufruf 1: 839 Eingabe-Tokens
+  → tage_bis(datum='2026-11-05')
+  ← Bis zum 2026-11-05 sind es 2 Tage.
+  Modellaufruf 2: 220 Eingabe-Tokens
+
+Entschuldigung, ich habe keine genauen Informationen über die genauen Prüfungsanmeldefristen.
+
+  1 Werkzeugaufrufe · 2 Modellaufrufe · 1059 Eingabe-Tokens · 17.2 s · llama3.2:3b

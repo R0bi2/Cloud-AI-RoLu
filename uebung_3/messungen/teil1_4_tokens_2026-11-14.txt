@@ -1,0 +1,17 @@
+time="2026-11-14T10:58:21+01:00" level=warning msg="Found orphan containers ([starter-app-run-8a32dea2bf8f]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+ Container starter-app-run-7eae04009203 Creating
+ Container starter-app-run-7eae04009203 Created
+Werkzeuge: suche_wissen, lies_datei, heute, tage_bis
+
+  Modellaufruf 1: 600 Eingabe-Tokens · 2 Nachrichten im Verlauf
+  → suche_wissen(begriff='pruefungsanmeldung')
+  ← Keine Datei enthält 'pruefungsanmeldung'. Versuche einen anderen, einfacheren Begriff.
+  → lies_datei(datei='pruefungsanmeldung.md')
+  ← # Prüfungsanmeldung  ## Anmeldezeitraum Prüfungen meldet ihr im Portal HISinOne an. Der Anmeldezeitraum für das Wintersemester läuft vom 1. bis 20. November, fü…
+  → tage_bis(datum='heute')  [wert]
+  ← Fehler: Bitte ein gültiges Datum im Format JJJJ-MM-TT angeben.
+  Modellaufruf 2: 528 Eingabe-Tokens · 6 Nachrichten im Verlauf
+
+Keine Information.
+
+  3 Werkzeugaufrufe · 2 Modellaufrufe · 1128 Eingabe-Tokens · 24.1 s · llama3.2:3b
