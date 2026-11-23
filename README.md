@@ -5,7 +5,7 @@
 ## Abgabestand
 
 - [x] Teil 1–3 umgesetzt, gemessen und dokumentiert.
-- [ ] Teil 4 mit den zugehörigen Antworten und Reflexionen ergänzen.
+- [x] Teil 4 mit den zugehörigen Antworten und Reflexionen ergänzen.
 
 Abgabe: **23.11.2026, 23:59 Uhr** in Moodle mit Repository-Link und Commit-Hash.
 Das Repository muss öffentlich oder für `PascalLaube` freigegeben sein.
