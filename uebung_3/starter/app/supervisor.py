@@ -65,13 +65,15 @@ def planen(aufgabe: str, gesamt: Ergebnis) -> Plan:
     """Schritt 1: der Supervisor entscheidet, wer was macht."""
     prompt = lade(SUPERVISOR_PROMPT)
     antwort = client.chat.completions.create(
-        model=MODEL, temperature=prompt.temperature, messages=prompt.nachrichten(aufgabe),
+        model=MODEL, temperature=prompt.temperature, messages=prompt.nachrichten(
+            aufgabe),
         max_tokens=300, response_format=schema_von(Plan))
     zaehlen(gesamt, antwort)
     try:
         return Plan.model_validate_json(antwort.choices[0].message.content or "")
     except ValueError:
-        return Plan(auftraege=[], antwort="Dazu habe ich keine Information.")  # Plan kaputt: ehrlich bleiben
+        # Plan kaputt: ehrlich bleiben
+        return Plan(auftraege=[], antwort="Dazu habe ich keine Information.")
 
 
 def spezialist(name: str, auftrag: str, werkzeuge: list[Werkzeug], bestaetigen=fragen,
@@ -116,7 +118,7 @@ def supervisor(aufgabe: str, werkzeuge: list[Werkzeug], bestaetigen=fragen, zeig
         for a in plan.auftraege:
             print(f"  ⇒ {a.spezialist}_agent: {a.auftrag}")
 
-    # TODO 4d: Aufträge an die Spezialisten verteilen
+    # 4d: Aufträge an die Spezialisten verteilen
     #
     # Für jeden Auftrag a in plan.auftraege:
     #  1. den passenden Spezialisten aus AGENTEN aufrufen, mit a.auftrag, der
@@ -126,6 +128,16 @@ def supervisor(aufgabe: str, werkzeuge: list[Werkzeug], bestaetigen=fragen, zeig
     #     in `gesamt` aufaddieren und abgebrochen übernehmen. Sonst misst
     #     messen.py nur den Supervisor, und der Vergleich ist geschönt.
     teilantworten = []
+
+    for a in plan.auftraege:
+        e = AGENTEN[a.spezialist](
+            a.auftrag, werkzeuge, bestaetigen=bestaetigen, zeigen=zeigen)
+        teilantworten.append((a.spezialist, e.antwort))
+        gesamt.schritte.extend(e.schritte)
+        gesamt.modellaufrufe += e.modellaufrufe
+        gesamt.eingabe_tokens += e.eingabe_tokens
+        gesamt.ausgabe_tokens += e.ausgabe_tokens
+        gesamt.abgebrochen = gesamt.abgebrochen or e.abgebrochen
 
     if not teilantworten:
         gesamt.antwort = plan.antwort or "Dazu habe ich keine Information."
@@ -138,8 +150,10 @@ def supervisor(aufgabe: str, werkzeuge: list[Werkzeug], bestaetigen=fragen, zeig
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Supervisor mit drei Spezialisten")
-    parser.add_argument("aufgabe", nargs="?", default="Was gibt es heute in der Mensa?")
+    parser = argparse.ArgumentParser(
+        description="Supervisor mit drei Spezialisten")
+    parser.add_argument("aufgabe", nargs="?",
+                        default="Was gibt es heute in der Mensa?")
     args = parser.parse_args()
     e = supervisor(args.aufgabe, alle_werkzeuge(), zeigen=True)
     print(f"\n{e.antwort}\n")
