@@ -2,15 +2,6 @@
 
 **Ein Agent mit Werkzeugen · Cloud-native AI · WS 2026/27**
 
-## Abgabestand
-
-- [x] Teil 1–3 umgesetzt, gemessen und dokumentiert.
-- [x] Teil 4 mit den zugehörigen Antworten und Reflexionen ergänzen.
-
-Abgabe: **23.11.2026, 23:59 Uhr** in Moodle mit Repository-Link und Commit-Hash.
-Das Repository muss öffentlich oder für `PascalLaube` freigegeben sein.
-Bei einem öffentlichen Repository gehören Namen und Matrikelnummern nur in den Moodle-Abgabetext.
-
 ## Start
 
 Docker Desktop muss laufen. Einmalig im Hauptordner:
